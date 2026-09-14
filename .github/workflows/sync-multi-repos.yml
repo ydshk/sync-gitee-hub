@@ -108,7 +108,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: ${{ steps.parse.outputs.owner }}/${{ steps.parse.outputs.repo }}
-          token: ${{ secrets.GH_PAT }}
+          # 公开仓库使用默认 GITHUB_TOKEN 即可；若清单中包含私有仓库，请配置 GH_PAT
+          token: ${{ secrets.GH_PAT || github.token }}
           fetch-depth: 0
 
       - name: Mirror to Gitee
