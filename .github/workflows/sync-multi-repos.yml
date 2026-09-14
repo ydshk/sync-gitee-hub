@@ -1,0 +1,123 @@
+name: Sync Multiple Repos to Gitee
+
+# 触发方式：定时 + 手动 + 推送配置文件变更
+on:
+  schedule:
+    # 每天北京时间 8:00 自动同步（UTC 0:00）
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    inputs:
+      repos:
+        description: '要同步的仓库（逗号分隔，格式 owner/repo，留空则同步全部）'
+        required: false
+        default: ''
+  push:
+    branches: [main, master]
+    paths:
+      - '.github/workflows/sync-multi-repos.yml'
+      - 'repos.txt'
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      repos: ${{ steps.list.outputs.repos }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build repo list
+        id: list
+        run: |
+          # 严格校验格式: 必须为 owner/repo（只含一个斜杠，前后均有内容，仅允许字母数字及 _- .）
+          validate_format() {
+            local entry="$1"
+            # 必须匹配 ^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+$ 且只有一个斜杠
+            if ! echo "$entry" | grep -Eq '^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+$'; then
+              echo "ERROR: Invalid format: '$entry'"
+              echo "  Required format: owner/repo (e.g. your-name/repo-name)"
+              echo "  Allowed chars: letters, digits, dot, underscore, hyphen"
+              exit 1
+            fi
+            # 不允许出现多个斜杠
+            if [ "$(echo "$entry" | tr -cd '/' | wc -c)" -ne 1 ]; then
+              echo "ERROR: '$entry' must contain exactly one '/'"
+              exit 1
+            fi
+          }
+
+          # 优先使用手动输入的仓库列表
+          if [ -n "${{ github.event.inputs.repos }}" ]; then
+            IFS=',' read -ra ARR <<< "${{ github.event.inputs.repos }}"
+          else
+            # 否则读取 repos.txt，每行格式: github_owner/repo_name
+            while IFS= read -r line; do
+              # 跳过注释行和空行
+              line=$(echo "$line" | sed 's/#.*//' | xargs)
+              [ -z "$line" ] && continue
+              ARR+=("$line")
+            done < repos.txt
+          fi
+
+          # 校验每一项格式
+          for r in "${ARR[@]}"; do
+            r=$(echo "$r" | xargs)
+            [ -z "$r" ] && continue
+            validate_format "$r"
+          done
+
+          # 构造 JSON 数组给 matrix 使用
+          JSON="["
+          FIRST=1
+          for r in "${ARR[@]}"; do
+            r=$(echo "$r" | xargs)
+            [ -z "$r" ] && continue
+            if [ $FIRST -eq 1 ]; then
+              JSON+="\"$r\""
+              FIRST=0
+            else
+              JSON+=",\"$r\""
+            fi
+          done
+          JSON+="]"
+          echo "repos=$JSON" >> $GITHUB_OUTPUT
+          echo "Will sync: $JSON"
+
+  sync:
+    runs-on: ubuntu-latest
+    needs: prepare
+    strategy:
+      fail-fast: false
+      matrix:
+        repo: ${{ fromJson(needs.prepare.outputs.repos) }}
+    steps:
+      - name: Parse owner and repo
+        id: parse
+        run: |
+          INPUT="${{ matrix.repo }}"
+          OWNER=$(echo "$INPUT" | cut -d'/' -f1)
+          REPO=$(echo "$INPUT" | cut -d'/' -f2)
+          if [ "$OWNER" = "$INPUT" ]; then
+            echo "Invalid format: $INPUT (expected owner/repo)"
+            exit 1
+          fi
+          echo "owner=$OWNER" >> $GITHUB_OUTPUT
+          echo "repo=$REPO" >> $GITHUB_OUTPUT
+
+      - name: Checkout source repo (GitHub)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.parse.outputs.owner }}/${{ steps.parse.outputs.repo }}
+          token: ${{ secrets.GH_PAT }}
+          fetch-depth: 0
+
+      - name: Mirror to Gitee
+        run: |
+          # Gitee端固定: gitee.com/home-assistant-xin/<repo>
+          git remote add gitee https://${{ secrets.GITEE_USERNAME }}:${{ secrets.GITEE_TOKEN }}@gitee.com/home-assistant-xin/${{ steps.parse.outputs.repo }}.git
+          git push gitee --all --force
+          git push gitee --tags --force
+          git remote remove gitee
+
+      - name: Report success
+        run: echo "Synced ${{ steps.parse.outputs.owner }}/${{ steps.parse.outputs.repo }} -> home-assistant-xin/${{ steps.parse.outputs.repo }}"
