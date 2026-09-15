@@ -157,8 +157,15 @@ def _extract_protected(text: str) -> tuple:
 
 
 def _restore_placeholders(text: str, placeholders: dict) -> str:
-    """将占位符替换回原始内容"""
-    for ph, original in placeholders.items():
+    """
+    将占位符替换回原始内容。
+    按 idx 降序还原：外层占位符（idx 大）先还原，其 original 可能含内层占位符
+    （idx 小），内层占位符后还原，从而正确处理嵌套结构（如图片嵌套在链接里）。
+    """
+    if not placeholders:
+        return text
+    sorted_ph = sorted(placeholders.items(), key=lambda x: int(x[0][5:-5]), reverse=True)
+    for ph, original in sorted_ph:
         text = text.replace(ph, original)
     return text
 
