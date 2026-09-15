@@ -130,16 +130,6 @@ jobs:
           echo "gitee_repo=$GITEE_REPO" >> $GITHUB_OUTPUT
           echo "Mapping: GitHub $OWNER/$REPO  ->  Gitee home-assistant-xin/$GITEE_REPO"
 
-      - name: Checkout source repo (GitHub)
-        uses: actions/checkout@v5
-        with:
-          repository: ${{ steps.parse.outputs.owner }}/${{ steps.parse.outputs.repo }}
-          # 公开仓库使用默认 GITHUB_TOKEN；若清单中包含私有仓库，请配置 GH_PAT
-          token: ${{ secrets.GH_PAT || github.token }}
-          fetch-depth: 0
-          # 关闭 submodule 递归，避免源仓库残留 .gitmodules 不完整导致 fatal
-          submodules: false
-
       - name: Verify Gitee target repo exists
         run: |
           GITEE_REPO="${{ steps.parse.outputs.gitee_repo }}"
@@ -150,15 +140,12 @@ jobs:
           echo "Probing Gitee target: home-assistant-xin/${GITEE_REPO}"
 
           # 用 git ls-remote 探测仓库是否存在（不下载内容，只列引用）
-          # 仓库存在且认证通过  → 返回 0
-          # 仓库不存在 / 认证失败 → 返回非 0
           if git ls-remote --heads "${TARGET_URL}" > /dev/null 2>&1; then
             echo "OK: Gitee target 'home-assistant-xin/${GITEE_REPO}' is accessible."
             exit 0
           fi
 
-          # 探测失败，区分两种原因
-          # 用 curl 直接访问 Gitee API 来判断仓库是否存在
+          # 探测失败，用 Gitee API 区分原因
           HTTP_CODE=$(curl -s -o /tmp/gitee_resp.json -w "%{http_code}" \
             -H "Content-Type: application/json" \
             "https://gitee.com/api/v5/repos/home-assistant-xin/${GITEE_REPO}?access_token=${GITEE_TOKEN}")
@@ -182,27 +169,44 @@ jobs:
           fi
           exit 1
 
-      - name: Mirror to Gitee
+      - name: Mirror to Gitee (raw git, no actions/checkout)
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
+          GITEE_USER: ${{ secrets.GITEE_USERNAME }}
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
         run: |
-          git remote add gitee https://${{ secrets.GITEE_USERNAME }}:${{ secrets.GITEE_TOKEN }}@gitee.com/home-assistant-xin/${{ steps.parse.outputs.gitee_repo }}.git
-          git push gitee --all --force
-          git push gitee --tags --force
-          git remote remove gitee
+          set -e
+          OWNER="${{ steps.parse.outputs.owner }}"
+          REPO="${{ steps.parse.outputs.repo }}"
+          GITEE_REPO="${{ steps.parse.outputs.gitee_repo }}"
 
-      - name: Clean up submodule config (avoid post-job fatal)
-        # 源仓库可能含不完整的 submodule 引用（如 .claude/worktrees/...），
-        # 会导致 actions/checkout 的 post-job cleanup 报 fatal。
-        # 在 Mirror 完成后删除所有 submodule 配置，让 post-job 无事可做。
-        if: always()
-        run: |
-          # 删除 .git/config 里所有 submodule.<name>.* 条目
-          SUBMODULES=$(git config --local --name-only --get-regexp '^submodule\.' 2>/dev/null | cut -d. -f2- || true)
-          for sm in $SUBMODULES; do
-            echo "Removing submodule config: $sm"
-            git config --local --remove-section "submodule.$sm" 2>/dev/null || true
-          done
-          # 删除 .gitmodules 文件本身（不影响推送，只清理本地残留）
-          rm -f .gitmodules
+          # 工作目录
+          WORK_DIR="$RUNNER_TEMP/sync-$REPO"
+          rm -rf "$WORK_DIR"
+          mkdir -p "$WORK_DIR"
+
+          # 使用 GitHub token 通过 https 拉取（支持公开/私有仓库）
+          GH_URL="https://x-access-token:${GH_TOKEN}@github.com/${OWNER}/${REPO}.git"
+
+          echo "Cloning $OWNER/$REPO (bare mirror)..."
+          # --mirror: 裸仓库镜像，包含所有 refs（branches/tags/notes/...）
+          # --no-tags: 不单独 fetch tags（mirror 模式已经包含所有 refs）
+          # 不用 --recursive: 避免 submodule 触发 fatal
+          git clone --mirror "$GH_URL" "$WORK_DIR/repo.git"
+
+          cd "$WORK_DIR/repo.git"
+
+          # 推送到 Gitee
+          GITEE_URL="https://${GITEE_USER}:${GITEE_TOKEN}@gitee.com/home-assistant-xin/${GITEE_REPO}.git"
+          git remote add gitee "$GITEE_URL"
+
+          echo "Pushing all refs to Gitee: home-assistant-xin/${GITEE_REPO}..."
+          git push gitee --mirror --force
+
+          # 清理
+          git remote remove gitee
+          cd "$RUNNER_TEMP"
+          rm -rf "$WORK_DIR"
 
       - name: Report success
         run: echo "Synced ${{ steps.parse.outputs.owner }}/${{ steps.parse.outputs.repo }} -> home-assistant-xin/${{ steps.parse.outputs.gitee_repo }}"
