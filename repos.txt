@@ -1,7 +1,2 @@
-# 仓库清单：一行一个，格式为 github_owner/repo_name
-# 注意：repo_name 两端必须一致（Gitee端固定为 home-assistant-xin/<repo_name>）
-# 注释行以#开头，会被忽略
-
-# 示例：
 hassio-addons/repository
 esphome/home-assistant-addon => esphome
