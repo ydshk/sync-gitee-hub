@@ -24,7 +24,7 @@ jobs:
       repos: ${{ steps.list.outputs.repos }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Build repo list
         id: list
@@ -131,12 +131,14 @@ jobs:
           echo "Mapping: GitHub $OWNER/$REPO  ->  Gitee home-assistant-xin/$GITEE_REPO"
 
       - name: Checkout source repo (GitHub)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: ${{ steps.parse.outputs.owner }}/${{ steps.parse.outputs.repo }}
           # 公开仓库使用默认 GITHUB_TOKEN；若清单中包含私有仓库，请配置 GH_PAT
           token: ${{ secrets.GH_PAT || github.token }}
           fetch-depth: 0
+          # 关闭 submodule 递归，避免源仓库残留 .gitmodules 不完整导致 fatal
+          submodules: false
 
       - name: Verify Gitee target repo exists
         run: |

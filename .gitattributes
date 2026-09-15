@@ -1,0 +1,6 @@
+# 强制文本文件使用 LF 行尾，避免 Windows CRLF 导致 bash 解析问题
+repos.txt text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.sh text eol=lf
+*.md text eol=lf
