@@ -4,4 +4,4 @@
 
 # 示例：
 hassio-addons/repository
-esphome/home-assistant-addon
+esphome/home-assistant-addon => esphome
