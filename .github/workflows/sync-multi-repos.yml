@@ -189,5 +189,20 @@ jobs:
           git push gitee --tags --force
           git remote remove gitee
 
+      - name: Clean up submodule config (avoid post-job fatal)
+        # 源仓库可能含不完整的 submodule 引用（如 .claude/worktrees/...），
+        # 会导致 actions/checkout 的 post-job cleanup 报 fatal。
+        # 在 Mirror 完成后删除所有 submodule 配置，让 post-job 无事可做。
+        if: always()
+        run: |
+          # 删除 .git/config 里所有 submodule.<name>.* 条目
+          SUBMODULES=$(git config --local --name-only --get-regexp '^submodule\.' 2>/dev/null | cut -d. -f2- || true)
+          for sm in $SUBMODULES; do
+            echo "Removing submodule config: $sm"
+            git config --local --remove-section "submodule.$sm" 2>/dev/null || true
+          done
+          # 删除 .gitmodules 文件本身（不影响推送，只清理本地残留）
+          rm -f .gitmodules
+
       - name: Report success
         run: echo "Synced ${{ steps.parse.outputs.owner }}/${{ steps.parse.outputs.repo }} -> home-assistant-xin/${{ steps.parse.outputs.gitee_repo }}"
