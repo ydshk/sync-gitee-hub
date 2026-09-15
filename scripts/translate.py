@@ -32,6 +32,14 @@ MONTHLY_FREE_QUOTA = 5_000_000
 # 安全阈值：剩余低于此值停止翻译（避免超额）
 QUOTA_SAFETY_THRESHOLD = 100_000
 
+# 专有名词术语表：这些词不翻译，保持原文
+# 按长度降序匹配，避免短术语先匹配导致长术语被截断（如 "Music Assistant" 先匹配会破坏 "Music Assistant Server"）
+GLOSSARY = [
+    'Music Assistant Server',
+    'Music Assistant',
+    'Home Assistant',
+]
+
 
 def call_tencent_api(text: str, secret_id: str, secret_key: str) -> tuple:
     """
@@ -129,25 +137,44 @@ PLACEHOLDER_RE = re.compile(r'XPLHX\d+XPLHX')
 def _extract_protected(text: str) -> tuple:
     """
     提取 markdown 中不应被翻译的结构，替换为占位符 XPLHX{idx}XPLHX。
-    保护范围：代码块、行内代码、HTML 注释、图片、链接、链接引用定义、裸 URL、HTML 标签。
+    保护范围：代码块、行内代码、HTML 注释、图片、专有名词、链接语法骨架、
+    链接引用定义、裸 URL、HTML 标签、加粗、标题。
+    链接 [text](url) 的 text 部分留给翻译，仅保护 [ 和 ](url) 语法骨架。
     返回 (替换后的文本, 占位符映射 {占位符: 原内容})。
-    顺序很重要：先匹配内层结构（代码、图片），再匹配外层（链接），避免嵌套冲突。
+    顺序很重要：先匹配内层结构（代码、图片、术语），再匹配外层（链接），避免嵌套冲突。
     """
     placeholders = {}
     counter = [0]
 
-    def _protect(m):
+    def _make_ph(original):
         idx = counter[0]
         counter[0] += 1
         ph = f"XPLHX{idx}XPLHX"
-        placeholders[ph] = m.group()
+        placeholders[ph] = original
         return ph
 
+    def _protect(m):
+        return _make_ph(m.group())
+
+    # 1. 代码块、行内代码、HTML 注释、图片（整体保护，不翻译）
     text = re.sub(r'```[\s\S]*?```', _protect, text)
     text = re.sub(r'`[^`]*`', _protect, text)
     text = re.sub(r'<!--[\s\S]*?-->', _protect, text)
     text = re.sub(r'!\[[^\]]*\]\([^)]*(?:\s+"[^"]*")?\)', _protect, text)
-    text = re.sub(r'\[[^\]]*\]\([^)]*(?:\s+"[^"]*")?\)', _protect, text)
+
+    # 2. 专有名词术语表保护（在链接拆分前，确保链接 text 里的术语也被保护不翻译）
+    for term in sorted(GLOSSARY, key=len, reverse=True):
+        if term in text:
+            text = text.replace(term, _make_ph(term))
+
+    # 3. 链接 [text](url)：保护 [ 和 ](url) 语法骨架，text 留给翻译 API
+    def _protect_link(m):
+        link_text = m.group(1)
+        url_part = m.group(2)
+        return f'{_make_ph("[")}{link_text}{_make_ph(f"]{url_part}")}'
+    text = re.sub(r'\[([^\]]*)\](\([^)]*(?:\s+"[^"]*")?\))', _protect_link, text)
+
+    # 4. 链接引用定义、裸 URL、HTML 标签、加粗、标题（整体保护）
     text = re.sub(r'^\[[^\]]*\]:\s*\S+(?:\s+"[^"]*")?\s*$', _protect, text, flags=re.MULTILINE)
     text = re.sub(r'https?://[^\s)\]\)]+', _protect, text)
     text = re.sub(r'<[^>]+>', _protect, text)
