@@ -39,22 +39,89 @@ def call_tencent_api(text: str, secret_id: str, secret_key: str) -> tuple:
     调用腾讯云机器翻译 API（单次请求，文本必须 < 6000 字节）
     返回 (translated_text, used_chars)
     used_chars = 输入字符数 + 输出字符数（腾讯云按 total 字符计费）
+
+    直接用 HTTP 请求，不依赖 SDK，避免类名变化导致的问题
     """
-    from tencentcloud.common import credential
-    from tencentcloud.tmt.v20180321 import tmt_client, models
+    import json
+    import time
+    import hashlib
+    import hmac
+    import requests
 
-    cred = credential.Credential(secret_id, secret_key)
-    client = tmt_client.TmtClient(cred, "ap-beijing")
+    # 腾讯云 API 3.0 签名算法
+    service = "tmt"
+    host = "tmt.tencentcloudapi.com"
+    endpoint = f"https://{host}"
 
-    req = models.TextTranslateRequest()
-    req.SourceText = text
-    req.Source = "en"
-    req.Target = "zh"
-    req.ProjectId = 0
+    # 1. 拼接规范请求串
+    action = "TextTranslate"
+    version = "2018-03-21"
+    region = "ap-beijing"
+    timestamp = int(time.time())
+    date = time.strftime("%Y-%m-%d", time.gmtime(timestamp))
 
-    resp = client.TextTranslate(req)
-    used_chars = len(text) + len(resp.TargetText)
-    return resp.TargetText, used_chars
+    payload = {
+        "SourceText": text,
+        "Source": "en",
+        "Target": "zh",
+        "ProjectId": 0,
+    }
+    payload_json = json.dumps(payload, separators=(',', ':'), ensure_ascii=False)
+
+    # http request method
+    http_method = "POST"
+    canonical_uri = "/"
+    canonical_querystring = ""
+    canonical_headers = f"content-type:application/json; charset=utf-8\nhost:{host}\nx-tc-action:{action.lower()}\n"
+    signed_headers = "content-type;host;x-tc-action"
+    hashed_payload = hashlib.sha256(payload_json.encode("utf-8")).hexdigest()
+    canonical_request = f"{http_method}\n{canonical_uri}\n{canonical_querystring}\n{canonical_headers}\n{signed_headers}\n{hashed_payload}"
+
+    # 2. 拼签名串
+    credential_scope = f"{date}/{service}/tc3_request"
+    hashed_canonical_request = hashlib.sha256(canonical_request.encode("utf-8")).hexdigest()
+    string_to_sign = f"TC3-HMAC-SHA256\n{timestamp}\n{credential_scope}\n{hashed_canonical_request}"
+
+    # 3. 计算签名
+    def _sign(key, msg):
+        return hmac.new(key, msg.encode("utf-8"), hashlib.sha256).digest()
+
+    secret_date = _sign(("TC3" + secret_key).encode("utf-8"), date)
+    secret_service = _sign(secret_date, service)
+    secret_signing = _sign(secret_service, "tc3_request")
+    signature = hmac.new(secret_signing, string_to_sign.encode("utf-8"), hashlib.sha256).hexdigest()
+
+    # 4. Authorization header
+    authorization = (
+        f"TC3-HMAC-SHA256 "
+        f"Credential={secret_id}/{credential_scope}, "
+        f"SignedHeaders={signed_headers}, "
+        f"Signature={signature}"
+    )
+
+    headers = {
+        "Authorization": authorization,
+        "Content-Type": "application/json; charset=utf-8",
+        "Host": host,
+        "X-TC-Action": action,
+        "X-TC-Timestamp": str(timestamp),
+        "X-TC-Version": version,
+        "X-TC-Region": region,
+    }
+
+    resp = requests.post(endpoint, data=payload_json.encode("utf-8"), headers=headers, timeout=30)
+    result = resp.json()
+
+    if "Response" in result and "Error" in result["Response"]:
+        err = result["Response"]["Error"]
+        raise Exception(f"Tencent API error: {err.get('Code', 'Unknown')} - {err.get('Message', '')}")
+
+    if "Response" not in result or "TargetText" not in result["Response"]:
+        raise Exception(f"Unexpected response: {result}")
+
+    translated_text = result["Response"]["TargetText"]
+    used_chars = len(text) + len(translated_text)
+    return translated_text, used_chars
 
 
 def split_markdown(text: str) -> list:

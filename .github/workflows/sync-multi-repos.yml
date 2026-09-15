@@ -209,9 +209,6 @@ jobs:
       - name: Checkout sync-gitee-hub (for translate.py)
         uses: actions/checkout@v5
 
-      - name: Install Tencent Cloud SDK
-        run: pip install tencentcloud-sdk-python-tmt
-
       - name: Mirror + Translate to Gitee
         # 不再用 skip_sync 控制：即使 refs 相同，可能 README.md 还没翻译过
         # translate.py 内部会判断是否需要翻译（基于缓存 hash）
