@@ -138,6 +138,48 @@ jobs:
           token: ${{ secrets.GH_PAT || github.token }}
           fetch-depth: 0
 
+      - name: Verify Gitee target repo exists
+        run: |
+          GITEE_REPO="${{ steps.parse.outputs.gitee_repo }}"
+          GITEE_USER="${{ secrets.GITEE_USERNAME }}"
+          GITEE_TOKEN="${{ secrets.GITEE_TOKEN }}"
+          TARGET_URL="https://${GITEE_USER}:${GITEE_TOKEN}@gitee.com/home-assistant-xin/${GITEE_REPO}.git"
+
+          echo "Probing Gitee target: home-assistant-xin/${GITEE_REPO}"
+
+          # 用 git ls-remote 探测仓库是否存在（不下载内容，只列引用）
+          # 仓库存在且认证通过  → 返回 0
+          # 仓库不存在 / 认证失败 → 返回非 0
+          if git ls-remote --heads "${TARGET_URL}" > /dev/null 2>&1; then
+            echo "OK: Gitee target 'home-assistant-xin/${GITEE_REPO}' is accessible."
+            exit 0
+          fi
+
+          # 探测失败，区分两种原因
+          # 用 curl 直接访问 Gitee API 来判断仓库是否存在
+          HTTP_CODE=$(curl -s -o /tmp/gitee_resp.json -w "%{http_code}" \
+            -H "Content-Type: application/json" \
+            "https://gitee.com/api/v5/repos/home-assistant-xin/${GITEE_REPO}?access_token=${GITEE_TOKEN}")
+
+          echo "Gitee API HTTP code: $HTTP_CODE"
+
+          if [ "$HTTP_CODE" = "404" ]; then
+            echo "::error::Gitee target repo does not exist: home-assistant-xin/${GITEE_REPO}"
+            echo "  Please create an empty repository at:"
+            echo "  https://gitee.com/projects/new?owner=home-assistant-xin&name=${GITEE_REPO}"
+            echo "  (Do NOT initialize with README, otherwise push will be rejected without --force)"
+          elif [ "$HTTP_CODE" = "401" ] || [ "$HTTP_CODE" = "403" ]; then
+            echo "::error::Gitee authentication failed (HTTP $HTTP_CODE)."
+            echo "  Check GITEE_USERNAME and GITEE_TOKEN secrets."
+            echo "  Token must have 'projects' scope."
+            cat /tmp/gitee_resp.json 2>/dev/null || true
+          else
+            echo "::error::Cannot access Gitee target repo (HTTP $HTTP_CODE)."
+            echo "  Response body:"
+            cat /tmp/gitee_resp.json 2>/dev/null || true
+          fi
+          exit 1
+
       - name: Mirror to Gitee
         run: |
           git remote add gitee https://${{ secrets.GITEE_USERNAME }}:${{ secrets.GITEE_TOKEN }}@gitee.com/home-assistant-xin/${{ steps.parse.outputs.gitee_repo }}.git
