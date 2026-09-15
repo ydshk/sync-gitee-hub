@@ -199,18 +199,19 @@ def split_by_length(text: str) -> list:
 def translate_markdown(content: str, secret_id: str, secret_key: str, quota_used: int) -> tuple:
     """
     翻译整个 markdown 文件
-    返回 (translated_content, used_chars, quota_exceeded)
-    quota_exceeded=True 表示翻译中额度用尽，剩余 chunks 保留原文
+    返回 (translated_content, used_chars, quota_exceeded, failed_count)
+    failed_count > 0 表示有 chunk 翻译失败，不应写入缓存
     """
     chunks = split_markdown(content)
     result = []
     total_used = 0
     quota_exceeded = False
+    failed_count = 0
 
     for i, chunk in enumerate(chunks):
         if quota_exceeded:
             # 额度用尽，剩余 chunks 原样保留
-            result.append(chunk['content'] if chunk['type'] == 'code' else chunk['content'])
+            result.append(chunk['content'])
             continue
 
         if chunk['type'] == 'code':
@@ -238,12 +239,13 @@ def translate_markdown(content: str, secret_id: str, secret_key: str, quota_used
                 print(f"    chunk {i+1}/{len(chunks)}: {len(text)} chars -> translated (used {used}, total {quota_used + total_used})")
             except Exception as e:
                 print(f"    chunk {i+1}/{len(chunks)}: FAILED - {e}")
+                failed_count += 1
                 # 失败时保留原文
                 result.append(text)
             # QPS 控制
             time.sleep(API_INTERVAL)
 
-    return ''.join(result), total_used, quota_exceeded
+    return ''.join(result), total_used, quota_exceeded, failed_count
 
 
 def main():
@@ -341,10 +343,19 @@ def main():
             # 文件未变化，从 Gitee 端复制已翻译版本
             gitee_file = translated_dir / rel_path
             if gitee_file.exists():
-                shutil.copy2(gitee_file, md_file)
-                reused_count += 1
-                print(f"  REUSED: {rel_path}")
-                continue
+                # 验证 Gitee 端文件确实是中文（防止缓存被错误写入）
+                gitee_content = gitee_file.read_text(encoding='utf-8')
+                gitee_chinese = len(re.findall(r'[\u4e00-\u9fff]', gitee_content))
+                gitee_total = len(gitee_content)
+                if gitee_total > 0 and gitee_chinese / gitee_total < 0.05:
+                    # Gitee 端文件几乎是英文，缓存无效，重新翻译
+                    print(f"  CACHE INVALID: {rel_path} - Gitee version is English, re-translating")
+                    # 不 continue，继续到翻译流程
+                else:
+                    shutil.copy2(gitee_file, md_file)
+                    reused_count += 1
+                    print(f"  REUSED: {rel_path}")
+                    continue
             # 缓存命中但 Gitee 端文件不存在（异常），继续翻译
 
         # 需要翻译
@@ -374,14 +385,22 @@ def main():
 
         print(f"  TRANSLATING: {rel_path} ({len(content)} chars)...")
         try:
-            translated, used, quota_exceeded = translate_markdown(
+            translated, used, quota_exceeded, chunk_failed = translate_markdown(
                 content, args.secret_id, args.secret_key,
                 quota_used + total_quota_used_this_run
             )
             md_file.write_text(translated, encoding='utf-8')
-            cache[rel_path] = content_hash
-            translated_count += 1
             total_quota_used_this_run += used
+
+            if chunk_failed > 0:
+                # 有 chunk 失败，不写入缓存，下次重新翻译
+                failed_count += 1
+                print(f"  FAILED: {rel_path} - {chunk_failed} chunks failed, not cached (will retry next run)")
+            else:
+                # 全部成功，写入缓存
+                cache[rel_path] = content_hash
+                translated_count += 1
+                print(f"  OK: {rel_path} - all chunks translated, cached")
 
             if quota_exceeded:
                 # 翻译中额度用尽，标记全局
