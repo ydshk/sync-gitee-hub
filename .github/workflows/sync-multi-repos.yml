@@ -206,44 +206,82 @@ jobs:
             echo "skip_sync=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Mirror to Gitee (raw git, no actions/checkout)
+      - name: Checkout sync-gitee-hub (for translate.py)
+        uses: actions/checkout@v5
+
+      - name: Install Tencent Cloud SDK
+        run: pip install tencentcloud-sdk-python-tmt
+
+      - name: Mirror + Translate to Gitee
         if: steps.check_update.outputs.skip_sync != 'true'
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
           GITEE_USER: ${{ secrets.GITEE_USERNAME }}
           GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+          TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
+          TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
         run: |
           set -e
           OWNER="${{ steps.parse.outputs.owner }}"
           REPO="${{ steps.parse.outputs.repo }}"
           GITEE_REPO="${{ steps.parse.outputs.gitee_repo }}"
 
-          # 工作目录
           WORK_DIR="$RUNNER_TEMP/sync-$REPO"
           rm -rf "$WORK_DIR"
           mkdir -p "$WORK_DIR"
 
-          # 使用 GitHub token 通过 https 拉取（支持公开/私有仓库）
           GH_URL="https://x-access-token:${GH_TOKEN}@github.com/${OWNER}/${REPO}.git"
-
-          echo "Cloning $OWNER/$REPO (bare mirror)..."
-          # --mirror: 裸仓库镜像，包含所有 refs（branches/tags/notes/...）
-          # 不用 --recursive: 避免 submodule 触发 fatal
-          git clone --mirror "$GH_URL" "$WORK_DIR/repo.git"
-
-          cd "$WORK_DIR/repo.git"
-
-          # 推送到 Gitee
           GITEE_URL="https://${GITEE_USER}:${GITEE_TOKEN}@gitee.com/home-assistant-xin/${GITEE_REPO}.git"
+
+          # 1. Clone GitHub 仓库（普通 clone，带 working tree）
+          echo "Cloning $OWNER/$REPO..."
+          git clone "$GH_URL" "$WORK_DIR/github_repo"
+          cd "$WORK_DIR/github_repo"
+          git fetch --all --tags
+
+          # 把所有远程分支转为本地分支（用于 push --all）
+          for branch in $(git branch -r | grep -v HEAD | sed 's@origin/@@' | tr -d ' '); do
+            git branch --track "$branch" "origin/$branch" 2>/dev/null || true
+          done
+
+          # 获取默认分支
+          DEFAULT_BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || echo main)
+          echo "Default branch: $DEFAULT_BRANCH"
+
+          cd ..
+
+          # 2. Clone Gitee 仓库（拿缓存 .translation-cache.json 和已翻译版本）
+          echo "Cloning Gitee repo for cache..."
+          if git clone "$GITEE_URL" "$WORK_DIR/gitee_repo" 2>/dev/null; then
+            echo "Gitee repo cloned for cache"
+          else
+            echo "Gitee repo is empty or clone failed (first sync)"
+            mkdir -p "$WORK_DIR/gitee_repo"
+          fi
+
+          # 3. 翻译 .md 文件
+          echo "Translating .md files..."
+          python3 "$GITHUB_WORKSPACE/scripts/translate.py" \
+            --source-dir "$WORK_DIR/github_repo" \
+            --translated-dir "$WORK_DIR/gitee_repo" \
+            --secret-id "$TENCENT_SECRET_ID" \
+            --secret-key "$TENCENT_SECRET_KEY"
+
+          # 4. 提交翻译修改（在默认分支上）
+          cd "$WORK_DIR/github_repo"
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add -A
+          git commit -m "Sync from GitHub + translate .md to Chinese" || echo "No changes to commit (all cached)"
+
+          # 5. Push 到 Gitee
           git remote add gitee "$GITEE_URL"
 
-          # 不能用 git push --mirror：会把 GitHub 的 refs/pull/* 也推过去
-          # Gitee 拒绝接收这些 hidden refs，导致整个 push 失败 (exit 1)
-          # 改用 --all（只 branches）+ --tags（只 tags），跳过 PR refs
-          echo "Pushing branches to Gitee: home-assistant-xin/${GITEE_REPO}..."
+          # 推所有分支（默认分支含翻译，其他分支英文原版）
+          echo "Pushing all branches to Gitee..."
           git push gitee --all --force
 
-          echo "Pushing tags to Gitee: home-assistant-xin/${GITEE_REPO}..."
+          echo "Pushing tags to Gitee..."
           git push gitee --tags --force
 
           # 清理
