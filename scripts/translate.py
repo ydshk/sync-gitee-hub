@@ -3,11 +3,11 @@
 将 GitHub 仓库中的 .md 文件翻译为中文，覆盖原文件。
 
 策略：
-1. 从 translated_dir（Gitee 端）读取 .translation-cache.json
+1. 从 cache_file（本仓库 cache/<gitee_repo>.json）读取翻译缓存
 2. 遍历 source_dir（GitHub 端）所有 .md 文件，计算内容 hash
-3. hash 命中缓存  ->  从 Gitee 端复制已翻译版本，零 API 调用
+3. hash 命中缓存  ->  直接写回缓存的翻译内容，零 API 调用
 4. hash 未命中    ->  调用腾讯云机器翻译 API 翻译
-5. 更新缓存，写入 source_dir/.translation-cache.json
+5. 更新缓存，写回 cache_file；本次配额消耗写入 quota_out（供 finalize 汇总）
 
 腾讯云 TMT API 限制：
 - 单次请求最大 6000 字节（UTF-8）
@@ -19,7 +19,6 @@ import hashlib
 import json
 import os
 import re
-import shutil
 import sys
 import time
 from pathlib import Path
@@ -294,8 +293,12 @@ def main():
     parser = argparse.ArgumentParser(description='Translate .md files to Chinese')
     parser.add_argument('--source-dir', required=True,
                         help='GitHub 仓库目录（英文原版）')
-    parser.add_argument('--translated-dir', required=True,
-                        help='Gitee 仓库目录（已翻译中文版本）')
+    parser.add_argument('--cache-file', required=True,
+                        help='缓存文件路径（本仓库 cache/<gitee_repo>.json）')
+    parser.add_argument('--quota-used', type=int, default=0,
+                        help='全局已用配额（当月，由 prepare 阶段传入）')
+    parser.add_argument('--quota-out',
+                        help='写入本次消耗配额的文件路径（供 finalize 汇总）')
     parser.add_argument('--secret-id', default=os.environ.get('TENCENT_SECRET_ID'))
     parser.add_argument('--secret-key', default=os.environ.get('TENCENT_SECRET_KEY'))
     parser.add_argument('--force', action='store_true',
@@ -306,10 +309,10 @@ def main():
         print("::warning::--force enabled, ignoring cache and re-translating all files.")
 
     source_dir = Path(args.source_dir).resolve()
-    translated_dir = Path(args.translated_dir).resolve()
+    cache_path = Path(args.cache_file).resolve()
 
-    # 读取缓存（含配额计数器）
-    cache_path = translated_dir / '.translation-cache.json'
+    # 读取缓存
+    # 结构：{rel_path: {"hash": "...", "content": "翻译后内容"}}
     if cache_path.exists():
         try:
             with open(cache_path, 'r', encoding='utf-8') as f:
@@ -319,15 +322,9 @@ def main():
     else:
         cache = {}
 
-    # 配额计数器单独存储在 __quota__ 字段
-    # 结构：{"2026-09": 123456, "2026-10": 7890, ...} 按月记录
-    quota_by_month = cache.pop('__quota__', {})
-    if not isinstance(quota_by_month, dict):
-        quota_by_month = {}
-
-    # 当前年月
+    # 配额（从 prepare 传入的全局值，不再嵌在缓存里）
     current_month = time.strftime('%Y-%m')
-    quota_used = quota_by_month.get(current_month, 0)
+    quota_used = args.quota_used
     quota_remaining = MONTHLY_FREE_QUOTA - quota_used
 
     print(f"=== Quota ({current_month}) ===")
@@ -386,24 +383,16 @@ def main():
         content_hash = hashlib.sha256(content.encode('utf-8')).hexdigest()
 
         # 检查缓存（--force 时跳过缓存，总是重新翻译）
-        if not args.force and cache.get(rel_path) == content_hash:
-            # 文件未变化，从 Gitee 端复制已翻译版本
-            gitee_file = translated_dir / rel_path
-            if gitee_file.exists():
-                # 验证 Gitee 端文件确实是中文（防止缓存被错误写入）
-                gitee_content = gitee_file.read_text(encoding='utf-8')
-                gitee_chinese = len(re.findall(r'[\u4e00-\u9fff]', gitee_content))
-                gitee_total = len(gitee_content)
-                if gitee_total > 0 and gitee_chinese / gitee_total < 0.05:
-                    # Gitee 端文件几乎是英文，缓存无效，重新翻译
-                    print(f"  CACHE INVALID: {rel_path} - Gitee version is English, re-translating")
-                    # 不 continue，继续到翻译流程
-                else:
-                    shutil.copy2(gitee_file, md_file)
+        # 缓存结构：{rel_path: {"hash": "...", "content": "..."}}
+        if not args.force:
+            entry = cache.get(rel_path)
+            if isinstance(entry, dict) and entry.get('hash') == content_hash:
+                cached_content = entry.get('content', '')
+                if cached_content:
+                    md_file.write_text(cached_content, encoding='utf-8')
                     reused_count += 1
                     print(f"  REUSED: {rel_path}")
                     continue
-            # 缓存命中但 Gitee 端文件不存在（异常），继续翻译
 
         # 需要翻译
         # 跳过空文件
@@ -418,7 +407,7 @@ def main():
         total_chars = len(content)
         if total_chars > 0 and chinese_chars / total_chars > 0.3:
             # 已经是中文，更新缓存但不翻译
-            cache[rel_path] = content_hash
+            cache[rel_path] = {'hash': content_hash, 'content': content}
             reused_count += 1
             print(f"  REUSED (already Chinese): {rel_path}")
             continue
@@ -445,7 +434,7 @@ def main():
                 print(f"  FAILED: {rel_path} - {chunk_failed} chunks failed, not cached (will retry next run)")
             else:
                 # 全部成功，写入缓存
-                cache[rel_path] = content_hash
+                cache[rel_path] = {'hash': content_hash, 'content': translated}
                 translated_count += 1
                 print(f"  OK: {rel_path} - all chunks translated, cached")
 
@@ -457,16 +446,15 @@ def main():
             print(f"  FAILED: {rel_path} - {e}")
             failed_count += 1
 
-    # 更新配额计数器（当前月累加本次使用量）
-    quota_by_month[current_month] = quota_used + total_quota_used_this_run
-
-    # 把配额数据放回缓存
-    cache['__quota__'] = quota_by_month
-
-    # 写入缓存到 source_dir
-    cache_out = source_dir / '.translation-cache.json'
-    with open(cache_out, 'w', encoding='utf-8') as f:
+    # 写入缓存到 cache_file
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(cache_path, 'w', encoding='utf-8') as f:
         json.dump(cache, f, indent=2, ensure_ascii=False)
+
+    # 写入本次配额消耗（供 finalize 汇总全局配额）
+    if args.quota_out:
+        with open(args.quota_out, 'w', encoding='utf-8') as f:
+            f.write(str(total_quota_used_this_run))
 
     print(f"\n=== Summary ===")
     print(f"Translated:     {translated_count}")
@@ -477,8 +465,6 @@ def main():
     print(f"Quota used this run: {total_quota_used_this_run}")
     print(f"Quota total {current_month}: {quota_used + total_quota_used_this_run}/{MONTHLY_FREE_QUOTA}")
 
-    # 翻译失败不中断整个 workflow（已翻译的部分仍要推送）
-    # 但额度用尽时输出 warning 提醒
     if quota_skipped_count > 0:
         print(f"\n::warning::Translation quota exceeded. {quota_skipped_count} files not translated (kept English). Will retry next month.")
 

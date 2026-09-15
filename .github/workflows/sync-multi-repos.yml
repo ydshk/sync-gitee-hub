@@ -27,9 +27,20 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       repos: ${{ steps.list.outputs.repos }}
+      quota_used: ${{ steps.quota.outputs.quota_used }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+
+      - name: Read global quota
+        id: quota
+        run: |
+          QUOTA_USED=0
+          if [ -f cache/__quota__.json ]; then
+            QUOTA_USED=$(python3 -c "import json,time; d=json.load(open('cache/__quota__.json')); print(d.get(time.strftime('%Y-%m'),0))" 2>/dev/null || echo 0)
+          fi
+          echo "quota_used=$QUOTA_USED" >> $GITHUB_OUTPUT
+          echo "Global quota used this month: $QUOTA_USED"
 
       - name: Build repo list
         id: list
@@ -215,8 +226,6 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Mirror + Translate to Gitee
-        # 不再用 skip_sync 控制：即使 refs 相同，可能 README.md 还没翻译过
-        # translate.py 内部会判断是否需要翻译（基于缓存 hash）
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
           GITEE_USER: ${{ secrets.GITEE_USERNAME }}
@@ -236,46 +245,18 @@ jobs:
           GH_URL="https://x-access-token:${GH_TOKEN}@github.com/${OWNER}/${REPO}.git"
           GITEE_URL="https://${GITEE_USER}:${GITEE_TOKEN}@gitee.com/home-assistant-xin/${GITEE_REPO}.git"
 
-          # 1. Clone GitHub 仓库（只 clone 默认分支，带 working tree）
+          # 1. Clone GitHub 仓库
           echo "Cloning $OWNER/$REPO..."
           git clone "$GH_URL" "$WORK_DIR/github_repo"
           cd "$WORK_DIR/github_repo"
           git fetch --tags
-
-          # 获取默认分支
           DEFAULT_BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || echo main)
           echo "Default branch: $DEFAULT_BRANCH"
-
           cd ..
 
-          # 2. Clone Gitee 仓库（拿缓存 .translation-cache.json 和已翻译版本）
-          echo "Cloning Gitee repo for cache..."
-          if git clone "$GITEE_URL" "$WORK_DIR/gitee_repo" 2>/dev/null; then
-            echo "Gitee repo cloned for cache"
-          else
-            echo "Gitee repo is empty or clone failed (first sync)"
-            mkdir -p "$WORK_DIR/gitee_repo"
-          fi
-
-          # 3. 检查是否真的需要翻译（基于 README.md hash）
-          # 如果 refs 相同且 Gitee 端 README.md 已是中文（hash 在缓存中），跳过整个流程
-          README_PATH="$WORK_DIR/github_repo/README.md"
-          GITEE_README="$WORK_DIR/gitee_repo/README.md"
-          CACHE_FILE="$WORK_DIR/gitee_repo/.translation-cache.json"
-
-          if [ -f "$README_PATH" ] && [ -f "$GITEE_README" ] && [ -f "$CACHE_FILE" ]; then
-            README_HASH=$(sha256sum "$README_PATH" | cut -d' ' -f1)
-            # 单行 Python，避免 YAML 多行解析问题
-            CACHED_HASH=$(python3 -c "import json; print(json.load(open('$CACHE_FILE')).get('README.md',''))" 2>/dev/null || echo "")
-            if [ "$README_HASH" = "$CACHED_HASH" ]; then
-              echo "README.md already translated (hash in cache). Skipping sync."
-              echo "skip_final=true" >> $GITHUB_OUTPUT
-            else
-              echo "README.md needs translation (hash mismatch or not cached)."
-            fi
-          fi
-
-          # 4. 翻译（translate.py 内部会判断是否需要调用 API）
+          # 2. 翻译（缓存从本仓库 cache/ 读取，配额从 prepare 传入）
+          CACHE_FILE="$GITHUB_WORKSPACE/cache/${GITEE_REPO}.json"
+          QUOTA_OUT="$WORK_DIR/quota_this_run.txt"
           FORCE_FLAG=""
           if [ "${{ github.event.inputs.force_retranslate }}" = "true" ]; then
             FORCE_FLAG="--force"
@@ -284,34 +265,114 @@ jobs:
           echo "Translating README.md..."
           python3 "$GITHUB_WORKSPACE/scripts/translate.py" \
             --source-dir "$WORK_DIR/github_repo" \
-            --translated-dir "$WORK_DIR/gitee_repo" \
+            --cache-file "$CACHE_FILE" \
+            --quota-used "${{ needs.prepare.outputs.quota_used }}" \
+            --quota-out "$QUOTA_OUT" \
             --secret-id "$TENCENT_SECRET_ID" \
             --secret-key "$TENCENT_SECRET_KEY" \
             $FORCE_FLAG
 
-          # 5. 提交翻译修改（在默认分支上）
+          # 3. 提交翻译修改并 push 到 Gitee（缓存不进 Gitee，保持镜像纯净）
           cd "$WORK_DIR/github_repo"
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
           git add -A
           git commit -m "Sync from GitHub + translate README.md to Chinese" || echo "No changes to commit (all cached)"
 
-          # 6. Push 到 Gitee（只推默认分支，避免大仓库 --all 卡死）
           git remote add gitee "$GITEE_URL"
-
-          # 切到默认分支
           git checkout "$DEFAULT_BRANCH" 2>/dev/null || true
-
           echo "Pushing $DEFAULT_BRANCH to Gitee..."
           git push gitee "${DEFAULT_BRANCH}:main" --force
-
           echo "Pushing tags to Gitee..."
           git push gitee --tags --force
-
-          # 清理
           git remote remove gitee
-          cd "$RUNNER_TEMP"
-          rm -rf "$WORK_DIR"
+
+          # 4. 准备 artifact（缓存文件 + 本次配额消耗，供 finalize 汇总）
+          mkdir -p "$WORK_DIR/artifact"
+          if [ -f "$CACHE_FILE" ]; then
+            cp "$CACHE_FILE" "$WORK_DIR/artifact/"
+          fi
+          if [ -f "$QUOTA_OUT" ]; then
+            cp "$QUOTA_OUT" "$WORK_DIR/artifact/quota.txt"
+          fi
+
+      - name: Upload cache artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cache-${{ steps.parse.outputs.gitee_repo }}
+          path: ${{ runner.temp }}/sync-${{ steps.parse.outputs.repo }}/artifact/
+          if-no-files-found: ignore
 
       - name: Report success
         run: echo "Synced ${{ steps.parse.outputs.owner }}/${{ steps.parse.outputs.repo }} -> home-assistant-xin/${{ steps.parse.outputs.gitee_repo }}"
+
+  finalize:
+    needs: [prepare, sync]
+    runs-on: ubuntu-latest
+    if: always()
+    concurrency:
+      group: translation-cache-finalize
+      cancel-in-progress: false
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout sync-gitee-hub
+        uses: actions/checkout@v5
+
+      - name: Download all cache artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Merge cache and update quota
+        run: |
+          set -e
+          mkdir -p cache
+
+          # 合并各仓库缓存文件（artifact 名 cache-<gitee_repo>，内含 <gitee_repo>.json）
+          MERGED=0
+          for dir in artifacts/cache-*/; do
+            if [ -d "$dir" ]; then
+              for f in "$dir"*.json; do
+                if [ -f "$f" ]; then
+                  cp "$f" cache/
+                  MERGED=$((MERGED + 1))
+                  echo "Merged $(basename "$f")"
+                fi
+              done
+            fi
+          done
+          echo "Merged $MERGED cache files"
+
+          # 汇总本次配额消耗
+          TOTAL_USED_THIS_RUN=0
+          for dir in artifacts/cache-*/; do
+            if [ -f "${dir}quota.txt" ]; then
+              USED=$(cat "${dir}quota.txt" 2>/dev/null || echo 0)
+              TOTAL_USED_THIS_RUN=$((TOTAL_USED_THIS_RUN + USED))
+            fi
+          done
+
+          # 更新全局配额（当月累加，基于 prepare 读的值）
+          PREV_QUOTA=${{ needs.prepare.outputs.quota_used }}
+          NEW_QUOTA=$((PREV_QUOTA + TOTAL_USED_THIS_RUN))
+          python3 -c "
+          import json, time
+          path = 'cache/__quota__.json'
+          try:
+              d = json.load(open(path))
+          except Exception:
+              d = {}
+          month = time.strftime('%Y-%m')
+          d[month] = max(d.get(month, 0), $NEW_QUOTA)
+          json.dump(d, open(path, 'w'), indent=2, ensure_ascii=False)
+          "
+          echo "Quota: prev=$PREV_QUOTA + this_run=$TOTAL_USED_THIS_RUN = $NEW_QUOTA"
+
+          # 提交并推送缓存到本仓库
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add cache/
+          git commit -m "Update translation cache and quota (used $NEW_QUOTA chars this month)" || echo "No changes to commit"
+          git push 2>/dev/null || echo "Push failed (concurrent update?), cache will refresh next run"
