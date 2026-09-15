@@ -29,107 +29,86 @@ jobs:
       - name: Build repo list
         id: list
         run: |
-          # 校验 GitHub 端 owner/repo 格式
-          validate_github_format() {
-            local entry="$1"
-            if ! echo "$entry" | grep -Eq '^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+$'; then
-              echo "ERROR: Invalid GitHub repo format: '$entry'"
-              echo "  Required format: owner/repo (e.g. your-name/repo-name)"
-              echo "  Allowed chars: letters, digits, dot, underscore, hyphen"
-              exit 1
-            fi
-            if [ "$(echo "$entry" | tr -cd '/' | wc -c)" -ne 1 ]; then
-              echo "ERROR: '$entry' must contain exactly one '/'"
-              exit 1
-            fi
-          }
+          python3 << 'PYEOF'
+          import json, os, re, sys
 
-          # 校验 Gitee 端仓库名格式
-          validate_gitee_name() {
-            local name="$1"
-            if ! echo "$name" | grep -Eq '^[A-Za-z0-9._-]+$'; then
-              echo "ERROR: Invalid Gitee repo name: '$name'"
-              echo "  Allowed chars: letters, digits, dot, underscore, hyphen"
-              exit 1
-            fi
-            if [ ${#name} -gt 100 ]; then
-              echo "ERROR: Gitee repo name too long (>100): '$name'"
-              exit 1
-            fi
-          }
+          # 读取手动输入或 repos.txt
+          manual = "${{ github.event.inputs.repos }}"
+          entries = []
 
-          # 解析单行：返回 "github_full|gitee_repo"
-          parse_entry() {
-            local entry="$1"
-            # 双重保险：去除 \r 防止 CRLF 行尾残留
-            entry=$(echo "$entry" | tr -d '\r' | xargs)
-            local github_full=""
-            local gitee_repo=""
+          if manual:
+              entries = [x.strip() for x in manual.split(',') if x.strip()]
+          else:
+              with open('repos.txt', 'r', encoding='utf-8') as f:
+                  for raw in f:
+                      # 去 CRLF、去注释、去空白
+                      line = raw.replace('\r', '').replace('\n', '')
+                      line = re.sub(r'#.*$', '', line).strip()
+                      if line:
+                          entries.append(line)
 
-            if echo "$entry" | grep -q '=>'; then
-              github_full=$(echo "$entry" | sed 's/=>.*//' | xargs)
-              gitee_repo=$(echo "$entry" | sed 's/.*=>//' | xargs)
-            else
-              github_full=$(echo "$entry" | xargs)
-              gitee_repo=$(echo "$github_full" | cut -d'/' -f2)
-            fi
+          print(f"::debug::Parsed entries: {entries}")
 
-            validate_github_format "$github_full"
-            validate_gitee_name "$gitee_repo"
+          # 正则
+          GH_RE = re.compile(r'^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+$')
+          GITEE_RE = re.compile(r'^[A-Za-z0-9._-]+$')
 
-            echo "${github_full}|${gitee_repo}"
-          }
+          seen = {}
+          result = []
 
-          # 优先使用手动输入的仓库列表
-          if [ -n "${{ github.event.inputs.repos }}" ]; then
-            IFS=',' read -ra ARR <<< "${{ github.event.inputs.repos }}"
-          else
-            while IFS= read -r line; do
-              # 关键：tr -d '\r' 去除 Windows CRLF 行尾残留的 \r
-              line=$(echo "$line" | tr -d '\r' | sed 's/#.*//' | xargs)
-              [ -z "$line" ] && continue
-              ARR+=("$line")
-            done < repos.txt
-          fi
+          for entry in entries:
+              # 解析映射格式 owner/repo => gitee_name
+              if '=>' in entry:
+                  left, right = entry.split('=>', 1)
+                  github_full = left.strip()
+                  gitee_repo = right.strip()
+                  if not github_full or not gitee_repo:
+                      print(f"::error::Invalid mapping (empty side): '{entry}'")
+                      sys.exit(1)
+              else:
+                  github_full = entry.strip()
+                  if '/' not in github_full:
+                      print(f"::error::Invalid format (missing '/'): '{entry}'")
+                      sys.exit(1)
+                  gitee_repo = github_full.split('/', 1)[1]
 
-          # 解析每一项、检测 Gitee 仓库名重复、构造 JSON 对象数组
-          JSON="["
-          FIRST=1
-          declare -A GITEE_SEEN
-          for r in "${ARR[@]}"; do
-            r=$(echo "$r" | tr -d '\r' | xargs)
-            [ -z "$r" ] && continue
-            PARSED=$(parse_entry "$r") || exit 1
-            # 防御：parse_entry 子shell 失败被吞掉时 PARSED 为空
-            if [ -z "$PARSED" ] || [ "$PARSED" = "|" ]; then
-              echo "ERROR: Failed to parse entry: '$r'"
-              exit 1
-            fi
-            GITHUB_FULL=$(echo "$PARSED" | cut -d'|' -f1)
-            GITEE_REPO=$(echo "$PARSED" | cut -d'|' -f2)
+              # 校验
+              if not GH_RE.match(github_full):
+                  print(f"::error::Invalid GitHub repo format: '{github_full}'")
+                  sys.exit(1)
+              if github_full.count('/') != 1:
+                  print(f"::error::'{github_full}' must contain exactly one '/'")
+                  sys.exit(1)
+              if not GITEE_RE.match(gitee_repo):
+                  print(f"::error::Invalid Gitee repo name: '{gitee_repo}'")
+                  sys.exit(1)
+              if len(gitee_repo) > 100:
+                  print(f"::error::Gitee repo name too long: '{gitee_repo}'")
+                  sys.exit(1)
 
-            # 检测 Gitee 仓库名重复（会导致两端互相覆盖）
-            if [ -n "${GITEE_SEEN[$GITEE_REPO]+x}" ]; then
-              echo "ERROR: Duplicate Gitee repo name detected: '$GITEE_REPO'"
-              echo "  Multiple GitHub entries would sync to the same Gitee repository:"
-              echo "    - ${GITEE_SEEN[$GITEE_REPO]}  ->  home-assistant-xin/$GITEE_REPO"
-              echo "    - $GITHUB_FULL  ->  home-assistant-xin/$GITEE_REPO"
-              echo "  Use '=>' to specify a unique Gitee repo name, e.g.:"
-              echo "    $GITHUB_FULL => ${GITEE_REPO}-alt"
-              exit 1
-            fi
-            GITEE_SEEN[$GITEE_REPO]="$GITHUB_FULL"
+              # 重复检测
+              if gitee_repo in seen:
+                  print(f"::error::Duplicate Gitee repo name: '{gitee_repo}'")
+                  print(f"  - {seen[gitee_repo]}  ->  home-assistant-xin/{gitee_repo}")
+                  print(f"  - {github_full}  ->  home-assistant-xin/{gitee_repo}")
+                  sys.exit(1)
+              seen[gitee_repo] = github_full
 
-            if [ $FIRST -eq 1 ]; then
-              JSON+="{\"github\":\"$GITHUB_FULL\",\"gitee\":\"$GITEE_REPO\"}"
-              FIRST=0
-            else
-              JSON+=",{\"github\":\"$GITHUB_FULL\",\"gitee\":\"$GITEE_REPO\"}"
-            fi
-          done
-          JSON+="]"
-          echo "repos=$JSON" >> $GITHUB_OUTPUT
-          echo "Will sync: $JSON"
+              result.append({"github": github_full, "gitee": gitee_repo})
+
+          if not result:
+              print("::error::No repositories to sync. Check repos.txt format.")
+              sys.exit(1)
+
+          # 输出 JSON 给 matrix 用
+          # 注意 GitHub Actions ::set-output 已废弃，用 $GITHUB_OUTPUT 文件
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f"repos={json.dumps(result)}\n")
+
+          print(f"Will sync {len(result)} repos: {json.dumps(result, indent=2)}")
+          PYEOF
+        env:
+          PYTHONIOENCODING: utf-8
 
   sync:
     runs-on: ubuntu-latest
