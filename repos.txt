@@ -1,1 +1,2 @@
+
 music-assistant/home-assistant-addon => music-assistant
