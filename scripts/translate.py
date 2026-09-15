@@ -152,6 +152,8 @@ def _extract_protected(text: str) -> tuple:
     text = re.sub(r'^\[[^\]]*\]:\s*\S+(?:\s+"[^"]*")?\s*$', _protect, text, flags=re.MULTILINE)
     text = re.sub(r'https?://[^\s)\]\)]+', _protect, text)
     text = re.sub(r'<[^>]+>', _protect, text)
+    text = re.sub(r'\*\*', _protect, text)
+    text = re.sub(r'(?m)^#{1,6}\s', _protect, text)
 
     return text, placeholders
 
