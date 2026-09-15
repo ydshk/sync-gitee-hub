@@ -190,7 +190,6 @@ jobs:
 
           echo "Cloning $OWNER/$REPO (bare mirror)..."
           # --mirror: 裸仓库镜像，包含所有 refs（branches/tags/notes/...）
-          # --no-tags: 不单独 fetch tags（mirror 模式已经包含所有 refs）
           # 不用 --recursive: 避免 submodule 触发 fatal
           git clone --mirror "$GH_URL" "$WORK_DIR/repo.git"
 
@@ -200,8 +199,14 @@ jobs:
           GITEE_URL="https://${GITEE_USER}:${GITEE_TOKEN}@gitee.com/home-assistant-xin/${GITEE_REPO}.git"
           git remote add gitee "$GITEE_URL"
 
-          echo "Pushing all refs to Gitee: home-assistant-xin/${GITEE_REPO}..."
-          git push gitee --mirror --force
+          # 不能用 git push --mirror：会把 GitHub 的 refs/pull/* 也推过去
+          # Gitee 拒绝接收这些 hidden refs，导致整个 push 失败 (exit 1)
+          # 改用 --all（只 branches）+ --tags（只 tags），跳过 PR refs
+          echo "Pushing branches to Gitee: home-assistant-xin/${GITEE_REPO}..."
+          git push gitee --all --force
+
+          echo "Pushing tags to Gitee: home-assistant-xin/${GITEE_REPO}..."
+          git push gitee --tags --force
 
           # 清理
           git remote remove gitee
