@@ -61,6 +61,8 @@ jobs:
           # 解析单行：返回 "github_full|gitee_repo"
           parse_entry() {
             local entry="$1"
+            # 双重保险：去除 \r 防止 CRLF 行尾残留
+            entry=$(echo "$entry" | tr -d '\r' | xargs)
             local github_full=""
             local gitee_repo=""
 
@@ -83,7 +85,8 @@ jobs:
             IFS=',' read -ra ARR <<< "${{ github.event.inputs.repos }}"
           else
             while IFS= read -r line; do
-              line=$(echo "$line" | sed 's/#.*//' | xargs)
+              # 关键：tr -d '\r' 去除 Windows CRLF 行尾残留的 \r
+              line=$(echo "$line" | tr -d '\r' | sed 's/#.*//' | xargs)
               [ -z "$line" ] && continue
               ARR+=("$line")
             done < repos.txt
@@ -94,9 +97,14 @@ jobs:
           FIRST=1
           declare -A GITEE_SEEN
           for r in "${ARR[@]}"; do
-            r=$(echo "$r" | xargs)
+            r=$(echo "$r" | tr -d '\r' | xargs)
             [ -z "$r" ] && continue
-            PARSED=$(parse_entry "$r")
+            PARSED=$(parse_entry "$r") || exit 1
+            # 防御：parse_entry 子shell 失败被吞掉时 PARSED 为空
+            if [ -z "$PARSED" ] || [ "$PARSED" = "|" ]; then
+              echo "ERROR: Failed to parse entry: '$r'"
+              exit 1
+            fi
             GITHUB_FULL=$(echo "$PARSED" | cut -d'|' -f1)
             GITEE_REPO=$(echo "$PARSED" | cut -d'|' -f2)
 

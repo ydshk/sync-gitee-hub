@@ -208,6 +208,23 @@ user-a/repo-1,user-b/repo-2=>repo-2-alt
 - 解决：用映射格式 `owner/repo => unique_gitee_name` 为冲突仓库指定不同的 Gitee 名
 - 日志会显示具体冲突的两个条目，方便定位
 
+### Q: 清单里有多个条目，但只同步了第一个 / 看不到后面的条目
+
+通常是 **Windows CRLF 行尾** 导致的：
+
+- 在 Windows 上编辑 `repos.txt` 保存为 CRLF 行尾，推送到 GitHub 后 Actions 在 Ubuntu 上运行 bash
+- bash 的 `read` 会把 `\r` 当作行内容的一部分，导致第二行及之后的条目解析时 `\r` 残留
+- 校验 `=>` 后的 Gitee 名时 `\r` 不在 `[A-Za-z0-9._-]` 范围内 → 校验失败 → 条目被静默跳过
+- 表现：Actions 列表里看不到后续条目对应的 job，像是"只同步了第一个"
+
+**解决方案**（项目已内置防御，无需手动处理）：
+
+1. `.gitattributes` 强制 `repos.txt` 使用 LF 行尾
+2. workflow 内 `tr -d '\r'` 主动去除残留的 `\r`
+3. `parse_entry` 失败时 `|| exit 1` 中止 prepare，不再静默吞错
+
+如果仍遇到此问题，可在本地执行 `dos2unix repos.txt` 转换行尾后重新提交。
+
 ### Q: 定时任务没有触发
 
 - GitHub Actions 的定时任务可能有几分钟到十几分钟的延迟，属于正常现象
