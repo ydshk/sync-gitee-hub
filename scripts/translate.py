@@ -227,14 +227,28 @@ def main():
         print(f"\n::warning::Translation quota exceeded this month. Skipping all translations. Will sync English version only.")
         print(f"  Used {quota_used}/{MONTHLY_FREE_QUOTA} chars in {current_month}.")
 
-    # 遍历所有 .md 文件（排除 .git 目录）
+    # 只翻译根目录的 README.md（不区分大小写），其他 .md 文件保持英文原版
+    # 这样可以大幅节省翻译额度，同时保护其他文档不被改动
     md_files = []
+    skipped_other_md = []
     for p in source_dir.rglob('*.md'):
         if '.git' in p.parts:
             continue
-        md_files.append(p)
+        rel_path_str = str(p.relative_to(source_dir)).replace('\\', '/')
+        # 只翻译根目录的 README.md（不区分大小写）
+        # README.md / readme.md / Readme.md 都识别
+        if rel_path_str.lower() == 'readme.md':
+            md_files.append(p)
+        else:
+            skipped_other_md.append(rel_path_str)
 
-    print(f"Found {len(md_files)} .md files in source dir")
+    print(f"Found {len(md_files)} README.md to translate (root only)")
+    if skipped_other_md:
+        print(f"Skipping {len(skipped_other_md)} other .md files (kept English):")
+        for f in skipped_other_md[:10]:  # 只显示前10个避免日志过长
+            print(f"  - {f}")
+        if len(skipped_other_md) > 10:
+            print(f"  ... and {len(skipped_other_md) - 10} more")
 
     translated_count = 0
     reused_count = 0
