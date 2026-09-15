@@ -124,30 +124,60 @@ def call_tencent_api(text: str, secret_id: str, secret_key: str) -> tuple:
     return translated_text, used_chars
 
 
+PLACEHOLDER_RE = re.compile(r'XPLHX\d+XPLHX')
+
+
+def _extract_protected(text: str) -> tuple:
+    """
+    提取 markdown 中不应被翻译的结构，替换为占位符 XPLHX{idx}XPLHX。
+    保护范围：代码块、行内代码、HTML 注释、图片、链接、链接引用定义、裸 URL、HTML 标签。
+    返回 (替换后的文本, 占位符映射 {占位符: 原内容})。
+    顺序很重要：先匹配内层结构（代码、图片），再匹配外层（链接），避免嵌套冲突。
+    """
+    placeholders = {}
+    counter = [0]
+
+    def _protect(m):
+        idx = counter[0]
+        counter[0] += 1
+        ph = f"XPLHX{idx}XPLHX"
+        placeholders[ph] = m.group()
+        return ph
+
+    text = re.sub(r'```[\s\S]*?```', _protect, text)
+    text = re.sub(r'`[^`]*`', _protect, text)
+    text = re.sub(r'<!--[\s\S]*?-->', _protect, text)
+    text = re.sub(r'!\[[^\]]*\]\([^)]*(?:\s+"[^"]*")?\)', _protect, text)
+    text = re.sub(r'\[[^\]]*\]\([^)]*(?:\s+"[^"]*")?\)', _protect, text)
+    text = re.sub(r'^\[[^\]]*\]:\s*\S+(?:\s+"[^"]*")?\s*$', _protect, text, flags=re.MULTILINE)
+    text = re.sub(r'https?://[^\s)\]\)]+', _protect, text)
+    text = re.sub(r'<[^>]+>', _protect, text)
+
+    return text, placeholders
+
+
+def _restore_placeholders(text: str, placeholders: dict) -> str:
+    """将占位符替换回原始内容"""
+    for ph, original in placeholders.items():
+        text = text.replace(ph, original)
+    return text
+
+
 def split_markdown(text: str) -> list:
     """
     按 markdown 结构切分：
-    - 代码块（```...```）整块保留，不翻译
-    - 行内代码（`...`）保留，不翻译
+    - 占位符（XPLHX\\d+XPLHX，由 _extract_protected 生成）作为 code chunk 不翻译
     - 其他文本按字节长度切分（<= MAX_CHUNK_BYTES）
     """
     chunks = []
-    # 匹配代码块和行内代码
-    pattern = re.compile(r'```[\s\S]*?```|`[^`]*`', re.MULTILINE)
     last_end = 0
 
-    for m in pattern.finditer(text):
-        # 代码块之前的普通文本
+    for m in PLACEHOLDER_RE.finditer(text):
         if m.start() > last_end:
             chunks.extend(split_by_length(text[last_end:m.start()]))
-        # 代码块本身
-        chunks.append({
-            'type': 'code',
-            'content': m.group()
-        })
+        chunks.append({'type': 'code', 'content': m.group()})
         last_end = m.end()
 
-    # 剩余文本
     if last_end < len(text):
         chunks.extend(split_by_length(text[last_end:]))
 
@@ -202,7 +232,8 @@ def translate_markdown(content: str, secret_id: str, secret_key: str, quota_used
     返回 (translated_content, used_chars, quota_exceeded, failed_count)
     failed_count > 0 表示有 chunk 翻译失败，不应写入缓存
     """
-    chunks = split_markdown(content)
+    protected, placeholders = _extract_protected(content)
+    chunks = split_markdown(protected)
     result = []
     total_used = 0
     quota_exceeded = False
@@ -245,7 +276,9 @@ def translate_markdown(content: str, secret_id: str, secret_key: str, quota_used
             # QPS 控制
             time.sleep(API_INTERVAL)
 
-    return ''.join(result), total_used, quota_exceeded, failed_count
+    translated = ''.join(result)
+    final = _restore_placeholders(translated, placeholders)
+    return final, total_used, quota_exceeded, failed_count
 
 
 def main():
@@ -256,7 +289,12 @@ def main():
                         help='Gitee 仓库目录（已翻译中文版本）')
     parser.add_argument('--secret-id', default=os.environ.get('TENCENT_SECRET_ID'))
     parser.add_argument('--secret-key', default=os.environ.get('TENCENT_SECRET_KEY'))
+    parser.add_argument('--force', action='store_true',
+                        help='强制重新翻译，忽略缓存（用于刷新历史错乱的翻译版本）')
     args = parser.parse_args()
+
+    if args.force:
+        print("::warning::--force enabled, ignoring cache and re-translating all files.")
 
     source_dir = Path(args.source_dir).resolve()
     translated_dir = Path(args.translated_dir).resolve()
@@ -338,8 +376,8 @@ def main():
 
         content_hash = hashlib.sha256(content.encode('utf-8')).hexdigest()
 
-        # 检查缓存
-        if cache.get(rel_path) == content_hash:
+        # 检查缓存（--force 时跳过缓存，总是重新翻译）
+        if not args.force and cache.get(rel_path) == content_hash:
             # 文件未变化，从 Gitee 端复制已翻译版本
             gitee_file = translated_dir / rel_path
             if gitee_file.exists():

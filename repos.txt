@@ -1,2 +1,15 @@
+# 仓库清单：一行一个，支持两种格式
+# 1) 简单格式: owner/repo
+#    Gitee 端仓库名 = repo（默认两端一致）
+#
+# 2) 映射格式: owner/repo => gitee_repo_name
+#    Gitee 端仓库名 = gitee_repo_name
+#    用于重名场景：两个不同 owner 下有同名 repo 时必须使用此格式
+#
+# 注释行以 # 开头，会被忽略。空行也会被忽略。
 
+# === 重名场景示例（必须用映射格式）===
+# esphome 和 music-assistant 下都有 home-assistant-addon，必须分别映射
+esphome/home-assistant-addon => esphome
 music-assistant/home-assistant-addon => music-assistant
+

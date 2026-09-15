@@ -11,6 +11,11 @@ on:
         description: '要同步的仓库（逗号分隔，格式 owner/repo 或 owner/repo=>gitee_name，留空则同步全部）'
         required: false
         default: ''
+      force_retranslate:
+        description: '强制重新翻译（忽略缓存，所有 README 重新调用翻译 API，用于刷新历史错乱版本）'
+        required: false
+        type: boolean
+        default: false
   push:
     branches: [main, master]
     paths:
@@ -231,16 +236,11 @@ jobs:
           GH_URL="https://x-access-token:${GH_TOKEN}@github.com/${OWNER}/${REPO}.git"
           GITEE_URL="https://${GITEE_USER}:${GITEE_TOKEN}@gitee.com/home-assistant-xin/${GITEE_REPO}.git"
 
-          # 1. Clone GitHub 仓库（普通 clone，带 working tree）
+          # 1. Clone GitHub 仓库（只 clone 默认分支，带 working tree）
           echo "Cloning $OWNER/$REPO..."
           git clone "$GH_URL" "$WORK_DIR/github_repo"
           cd "$WORK_DIR/github_repo"
-          git fetch --all --tags
-
-          # 把所有远程分支转为本地分支（用于 push --all）
-          for branch in $(git branch -r | grep -v HEAD | sed 's@origin/@@' | tr -d ' '); do
-            git branch --track "$branch" "origin/$branch" 2>/dev/null || true
-          done
+          git fetch --tags
 
           # 获取默认分支
           DEFAULT_BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || echo main)
@@ -276,12 +276,18 @@ jobs:
           fi
 
           # 4. 翻译（translate.py 内部会判断是否需要调用 API）
+          FORCE_FLAG=""
+          if [ "${{ github.event.inputs.force_retranslate }}" = "true" ]; then
+            FORCE_FLAG="--force"
+            echo "Force re-translate enabled for this run."
+          fi
           echo "Translating README.md..."
           python3 "$GITHUB_WORKSPACE/scripts/translate.py" \
             --source-dir "$WORK_DIR/github_repo" \
             --translated-dir "$WORK_DIR/gitee_repo" \
             --secret-id "$TENCENT_SECRET_ID" \
-            --secret-key "$TENCENT_SECRET_KEY"
+            --secret-key "$TENCENT_SECRET_KEY" \
+            $FORCE_FLAG
 
           # 5. 提交翻译修改（在默认分支上）
           cd "$WORK_DIR/github_repo"
@@ -290,11 +296,14 @@ jobs:
           git add -A
           git commit -m "Sync from GitHub + translate README.md to Chinese" || echo "No changes to commit (all cached)"
 
-          # 6. Push 到 Gitee
+          # 6. Push 到 Gitee（只推默认分支，避免大仓库 --all 卡死）
           git remote add gitee "$GITEE_URL"
 
-          echo "Pushing all branches to Gitee..."
-          git push gitee --all --force
+          # 切到默认分支
+          git checkout "$DEFAULT_BRANCH" 2>/dev/null || true
+
+          echo "Pushing $DEFAULT_BRANCH to Gitee..."
+          git push gitee "${DEFAULT_BRANCH}:main" --force
 
           echo "Pushing tags to Gitee..."
           git push gitee --tags --force
