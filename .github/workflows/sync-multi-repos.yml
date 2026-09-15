@@ -169,7 +169,45 @@ jobs:
           fi
           exit 1
 
+      - name: Check if sync is needed (compare GitHub vs Gitee refs)
+        id: check_update
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
+          GITEE_USER: ${{ secrets.GITEE_USERNAME }}
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+        run: |
+          OWNER="${{ steps.parse.outputs.owner }}"
+          REPO="${{ steps.parse.outputs.repo }}"
+          GITEE_REPO="${{ steps.parse.outputs.gitee_repo }}"
+
+          GH_URL="https://x-access-token:${GH_TOKEN}@github.com/${OWNER}/${REPO}.git"
+          GITEE_URL="https://${GITEE_USER}:${GITEE_TOKEN}@gitee.com/home-assistant-xin/${GITEE_REPO}.git"
+
+          echo "Fetching refs from GitHub: $OWNER/$REPO..."
+          GH_REFS=$(git ls-remote "$GH_URL" 2>&1 | grep -v 'refs/pull/' || true)
+
+          echo "Fetching refs from Gitee: home-assistant-xin/${GITEE_REPO}..."
+          GITEE_REFS=$(git ls-remote "$GITEE_URL" 2>&1 | grep -v 'refs/pull/' || true)
+
+          # 对比两端的所有 refs（branches + tags，过滤掉 PR refs）
+          if [ "$GH_REFS" = "$GITEE_REFS" ] && [ -n "$GH_REFS" ]; then
+            echo "No changes detected. GitHub and Gitee refs are identical."
+            echo "skip_sync=true" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected (or Gitee is empty). Sync needed."
+            if [ -z "$GITEE_REFS" ]; then
+              echo "  Reason: Gitee target repo is empty (first sync)."
+            else
+              echo "  GitHub refs:"
+              echo "$GH_REFS" | sed 's/^/    /'
+              echo "  Gitee refs:"
+              echo "$GITEE_REFS" | sed 's/^/    /'
+            fi
+            echo "skip_sync=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Mirror to Gitee (raw git, no actions/checkout)
+        if: steps.check_update.outputs.skip_sync != 'true'
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
           GITEE_USER: ${{ secrets.GITEE_USERNAME }}
