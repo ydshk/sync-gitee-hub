@@ -268,14 +268,8 @@ jobs:
 
           if [ -f "$README_PATH" ] && [ -f "$GITEE_README" ] && [ -f "$CACHE_FILE" ]; then
             README_HASH=$(sha256sum "$README_PATH" | cut -d' ' -f1)
-            CACHED_HASH=$(python3 -c "
-import json
-try:
-    with open('$CACHE_FILE') as f:
-        c = json.load(f)
-        print(c.get('README.md', ''))
-except: print('')
-")
+            # 单行 Python，避免 YAML 多行解析问题
+            CACHED_HASH=$(python3 -c "import json; print(json.load(open('$CACHE_FILE')).get('README.md',''))" 2>/dev/null || echo "")
             if [ "$README_HASH" = "$CACHED_HASH" ]; then
               echo "README.md already translated (hash in cache). Skipping sync."
               echo "skip_final=true" >> $GITHUB_OUTPUT
