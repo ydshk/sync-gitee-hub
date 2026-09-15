@@ -213,7 +213,8 @@ jobs:
         run: pip install tencentcloud-sdk-python-tmt
 
       - name: Mirror + Translate to Gitee
-        if: steps.check_update.outputs.skip_sync != 'true'
+        # 不再用 skip_sync 控制：即使 refs 相同，可能 README.md 还没翻译过
+        # translate.py 内部会判断是否需要翻译（基于缓存 hash）
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
           GITEE_USER: ${{ secrets.GITEE_USERNAME }}
@@ -259,25 +260,48 @@ jobs:
             mkdir -p "$WORK_DIR/gitee_repo"
           fi
 
-          # 3. 翻译 .md 文件
-          echo "Translating .md files..."
+          # 3. 检查是否真的需要翻译（基于 README.md hash）
+          # 如果 refs 相同且 Gitee 端 README.md 已是中文（hash 在缓存中），跳过整个流程
+          README_PATH="$WORK_DIR/github_repo/README.md"
+          GITEE_README="$WORK_DIR/gitee_repo/README.md"
+          CACHE_FILE="$WORK_DIR/gitee_repo/.translation-cache.json"
+
+          if [ -f "$README_PATH" ] && [ -f "$GITEE_README" ] && [ -f "$CACHE_FILE" ]; then
+            README_HASH=$(sha256sum "$README_PATH" | cut -d' ' -f1)
+            CACHED_HASH=$(python3 -c "
+import json
+try:
+    with open('$CACHE_FILE') as f:
+        c = json.load(f)
+        print(c.get('README.md', ''))
+except: print('')
+")
+            if [ "$README_HASH" = "$CACHED_HASH" ]; then
+              echo "README.md already translated (hash in cache). Skipping sync."
+              echo "skip_final=true" >> $GITHUB_OUTPUT
+            else
+              echo "README.md needs translation (hash mismatch or not cached)."
+            fi
+          fi
+
+          # 4. 翻译（translate.py 内部会判断是否需要调用 API）
+          echo "Translating README.md..."
           python3 "$GITHUB_WORKSPACE/scripts/translate.py" \
             --source-dir "$WORK_DIR/github_repo" \
             --translated-dir "$WORK_DIR/gitee_repo" \
             --secret-id "$TENCENT_SECRET_ID" \
             --secret-key "$TENCENT_SECRET_KEY"
 
-          # 4. 提交翻译修改（在默认分支上）
+          # 5. 提交翻译修改（在默认分支上）
           cd "$WORK_DIR/github_repo"
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
           git add -A
-          git commit -m "Sync from GitHub + translate .md to Chinese" || echo "No changes to commit (all cached)"
+          git commit -m "Sync from GitHub + translate README.md to Chinese" || echo "No changes to commit (all cached)"
 
-          # 5. Push 到 Gitee
+          # 6. Push 到 Gitee
           git remote add gitee "$GITEE_URL"
 
-          # 推所有分支（默认分支含翻译，其他分支英文原版）
           echo "Pushing all branches to Gitee..."
           git push gitee --all --force
 
