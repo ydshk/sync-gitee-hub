@@ -2,8 +2,3 @@
 # 翻译时这些词保持原文不译，每行一个，# 注释行和空行忽略
 # 代码会按长度降序匹配，文件内顺序不影响，但建议长词在前便于阅读
 
-Music Assistant Server
-Music Assistant
-Home Assistant
-ESPHome
-esphome
