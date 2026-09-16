@@ -379,11 +379,19 @@ def translate_markdown(content: str, api_key: str, quota_used: int) -> tuple:
     final = final.replace(_LINK_SEP, '')
     # 清理翻译 API 拆开占位符产生的残留 XPLHX 片段及其周围多余空格
     final = re.sub(r'\s*XPLHX\s*', ' ', final, flags=re.IGNORECASE)
-    # 修复加粗标记内部的前导空格（翻译 API 可能在 ** 开头后插入空格：** text** → **text**）
-    # 只去加粗内部前导空格，不动加粗结尾 ** 后的空格，避免 **text** → more 丢失空格
-    def _strip_bold_leading(m):
-        return f'**{m.group(1).lstrip()}**'
-    final = re.sub(r'\*\*(.+?)\*\*', _strip_bold_leading, final)
+    # 修复加粗内部前后空格（** text ** → **text**）
+    def _strip_bold(m):
+        return f'**{m.group(1).strip()}**'
+    final = re.sub(r'\*\*(.+?)\*\*', _strip_bold, final)
+    # 修复加粗未闭合：** 数量不成对时去掉最后一个多余的 **，避免后续文本全部被加粗
+    if final.count('**') % 2 == 1:
+        idx = final.rfind('**')
+        final = final[:idx] + final[idx + 2:]
+    # 修复标题多空格：##  关于 → ## 关于
+    final = re.sub(r'(?m)^(#{1,6})\s{2,}', r'\1 ', final)
+    # 修复链接 text 前后多余空格：[ text ](url) → [text](url)，[ text ][ref] → [text][ref]
+    final = re.sub(r'\[\s*([^\[\]]+?)\s*\]\(', r'[\1](', final)
+    final = re.sub(r'\[\s*([^\[\]]+?)\s*\]\[', r'[\1][', final)
     return final, total_used, quota_exceeded, failed_count
 
 
