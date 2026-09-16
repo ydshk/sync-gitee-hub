@@ -183,10 +183,13 @@ def _extract_protected(text: str) -> tuple:
         return _make_ph(m.group())
 
     # 1. 代码块、行内代码、HTML 注释、图片（整体保护，不翻译）
+    #    引用图片 ![alt][ref] 必须先于引用链接保护，否则嵌套 [![alt][ref]][website]
+    #    里内层 ] 会使步骤 3b 的 [^\]]* 无法匹配外层，导致 [website] 被翻译失效。
     text = re.sub(r'```[\s\S]*?```', _protect, text)
     text = re.sub(r'`[^`]*`', _protect, text)
     text = re.sub(r'<!--[\s\S]*?-->', _protect, text)
     text = re.sub(r'!\[[^\]]*\]\([^)]*(?:\s+"[^"]*")?\)', _protect, text)
+    text = re.sub(r'!\[[^\]]*\]\[[^\]]*\]', _protect, text)
 
     # 2. 专有名词术语表保护（在链接拆分前，确保链接 text 里的术语也被保护不翻译）
     for term in _GLOSSARY_SORTED:
