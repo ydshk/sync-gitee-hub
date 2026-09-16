@@ -4,5 +4,5 @@
 
 Music Assistant Server
 Music Assistant
-Home Assistant
+Home AssistantESPHome
 esphome

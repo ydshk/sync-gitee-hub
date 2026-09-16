@@ -16,6 +16,7 @@
 """
 import argparse
 import hashlib
+import hmac
 import json
 import os
 import re
@@ -53,6 +54,32 @@ def _load_glossary() -> list:
 
 
 GLOSSARY = _load_glossary()
+# 预排序：长词在前，避免短词先匹配截断长词（如 "Music Assistant" 不会破坏 "Music Assistant Server"）
+_GLOSSARY_SORTED = sorted(GLOSSARY, key=len, reverse=True)
+
+
+def _load_translation_map() -> dict:
+    """从 scripts 同级的 translation-map.txt 加载翻译映射表 {源词: 目标词}
+    用于纠正翻译 API 的系统性误译（如 Documentation 误译为"文件"应为"文档"）
+    """
+    map_path = Path(__file__).resolve().parent.parent / 'translation-map.txt'
+    mapping = {}
+    if map_path.exists():
+        for line in map_path.read_text(encoding='utf-8').splitlines():
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+            if '=>' in line:
+                source, target = line.split('=>', 1)
+                source, target = source.strip(), target.strip()
+                if source and target:
+                    mapping[source] = target
+    return mapping
+
+
+TRANSLATION_MAP = _load_translation_map()
+# 预排序：长源词在前，避免短词先匹配截断长词
+_TRANSLATION_MAP_SORTED = sorted(TRANSLATION_MAP.items(), key=lambda x: len(x[0]), reverse=True)
 
 
 def call_tencent_api(text: str, secret_id: str, secret_key: str) -> tuple:
@@ -63,10 +90,7 @@ def call_tencent_api(text: str, secret_id: str, secret_key: str) -> tuple:
 
     直接用 HTTP 请求，不依赖 SDK，避免类名变化导致的问题
     """
-    import json
-    import time
-    import hashlib
-    import hmac
+
     import requests
 
     # 腾讯云 API 3.0 签名算法
@@ -177,9 +201,14 @@ def _extract_protected(text: str) -> tuple:
     text = re.sub(r'!\[[^\]]*\]\([^)]*(?:\s+"[^"]*")?\)', _protect, text)
 
     # 2. 专有名词术语表保护（在链接拆分前，确保链接 text 里的术语也被保护不翻译）
-    for term in sorted(GLOSSARY, key=len, reverse=True):
+    for term in _GLOSSARY_SORTED:
         if term in text:
             text = text.replace(term, _make_ph(term))
+
+    # 2b. 翻译映射表保护（源词替换为占位符，占位符映射到目标词，翻译后还原为目标词）
+    for source, target in _TRANSLATION_MAP_SORTED:
+        if source in text:
+            text = text.replace(source, _make_ph(target))
 
     # 3. 链接 [text](url)：保护 [ 和 ](url) 语法骨架，text 留给翻译 API
     def _protect_link(m):
@@ -259,7 +288,17 @@ def split_by_length(text: str) -> list:
                     if len((line_buf + line + '\n').encode('utf-8')) > MAX_CHUNK_BYTES:
                         if line_buf:
                             chunks.append({'type': 'text', 'content': line_buf})
-                        line_buf = line + '\n'
+                        # 单行超长时按字节切分，避免超过 API 限制
+                        line_content = line + '\n'
+                        if len(line_content.encode('utf-8')) > MAX_CHUNK_BYTES:
+                            encoded = line_content.encode('utf-8')
+                            for j in range(0, len(encoded), MAX_CHUNK_BYTES):
+                                chunk_str = encoded[j:j+MAX_CHUNK_BYTES].decode('utf-8', errors='ignore')
+                                if chunk_str:
+                                    chunks.append({'type': 'text', 'content': chunk_str})
+                            line_buf = ''
+                        else:
+                            line_buf = line_content
                     else:
                         line_buf += line + '\n'
                 if line_buf:
@@ -381,28 +420,11 @@ def main():
         print(f"\n::warning::Translation quota exceeded this month. Skipping all translations. Will sync English version only.")
         print(f"  Used {quota_used}/{MONTHLY_FREE_QUOTA} chars in {current_month}.")
 
-    # 只翻译根目录的 README.md（不区分大小写），其他 .md 文件保持英文原版
-    # 这样可以大幅节省翻译额度，同时保护其他文档不被改动
-    md_files = []
-    skipped_other_md = []
-    for p in source_dir.rglob('*.md'):
-        if '.git' in p.parts:
-            continue
-        rel_path_str = str(p.relative_to(source_dir)).replace('\\', '/')
-        # 只翻译根目录的 README.md（不区分大小写）
-        # README.md / readme.md / Readme.md 都识别
-        if rel_path_str.lower() == 'readme.md':
-            md_files.append(p)
-        else:
-            skipped_other_md.append(rel_path_str)
+    # 只翻译根目录的 README.md（不区分大小写），不递归子目录
+    # 大仓库可能有数千个 .md（docs、组件文档等），递归遍历只为找根 README 浪费 IO
+    md_files = [p for p in source_dir.glob('*.md') if p.name.lower() == 'readme.md']
 
-    print(f"Found {len(md_files)} README.md to translate (root only)")
-    if skipped_other_md:
-        print(f"Skipping {len(skipped_other_md)} other .md files (kept English):")
-        for f in skipped_other_md[:10]:  # 只显示前10个避免日志过长
-            print(f"  - {f}")
-        if len(skipped_other_md) > 10:
-            print(f"  ... and {len(skipped_other_md) - 10} more")
+    print(f"Found {len(md_files)} README.md to translate (root only, subdirectories skipped)")
 
     translated_count = 0
     reused_count = 0
