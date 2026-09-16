@@ -245,14 +245,28 @@ def _extract_protected(text: str) -> tuple:
 def _restore_placeholders(text: str, placeholders: dict) -> str:
     """
     将占位符替换回原始内容。
+    用模糊匹配 XPLHX\\s*\\d+\\s*XPLHX 还原，容忍翻译 API 在占位符内插入空格
+    （如 XPLHX26XPLHX → XPLHX 26XPLHX）。
     按 idx 降序还原：外层占位符（idx 大）先还原，其 original 可能含内层占位符
     （idx 小），内层占位符后还原，从而正确处理嵌套结构（如图片嵌套在链接里）。
     """
     if not placeholders:
         return text
+    # 模糊匹配：容忍翻译 API 在 XPLHX 和数字间插入空格
+    ph_fuzzy = re.compile(r'XPLHX\s*(\d+)\s*XPLHX', re.IGNORECASE)
+    # 按 idx 降序排序，处理嵌套
     sorted_ph = sorted(placeholders.items(), key=lambda x: int(x[0][5:-5]), reverse=True)
-    for ph, original in sorted_ph:
-        text = text.replace(ph, original)
+    ph_by_idx = {int(ph[5:-5]): original for ph, original in sorted_ph}
+
+    def _restore(m):
+        idx = int(m.group(1))
+        return ph_by_idx.get(idx, m.group())
+
+    # 循环还原：外层占位符还原后可能含内层占位符（被翻译 API 加空格），需要再次匹配
+    prev = None
+    while text != prev:
+        prev = text
+        text = ph_fuzzy.sub(_restore, text)
     return text
 
 
