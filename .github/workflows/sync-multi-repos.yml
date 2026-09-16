@@ -232,8 +232,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
           GITEE_USER: ${{ secrets.GITEE_USERNAME }}
           GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
-          TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
-          TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: |
           set -e
           OWNER="${{ steps.parse.outputs.owner }}"
@@ -270,8 +269,7 @@ jobs:
             --cache-file "$CACHE_FILE" \
             --quota-used "${{ needs.prepare.outputs.quota_used }}" \
             --quota-out "$QUOTA_OUT" \
-            --secret-id "$TENCENT_SECRET_ID" \
-            --secret-key "$TENCENT_SECRET_KEY" \
+            --api-key "$DEEPL_API_KEY" \
             $FORCE_FLAG
 
           # 3. 提交翻译修改并 push 到 Gitee（缓存不进 Gitee，保持镜像纯净）

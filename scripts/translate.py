@@ -29,7 +29,7 @@ MAX_CHUNK_BYTES = 4000
 # QPS 控制（秒）
 API_INTERVAL = 0.25
 # 腾讯云机器翻译每月免费额度：500 万字符
-MONTHLY_FREE_QUOTA = 5_000_000
+MONTHLY_FREE_QUOTA = 500_000
 # 安全阈值：剩余低于此值停止翻译（避免超额）
 QUOTA_SAFETY_THRESHOLD = 100_000
 
@@ -88,90 +88,40 @@ _TRANSLATION_MAP_PATTERNS = [
 ]
 
 
-def call_tencent_api(text: str, secret_id: str, secret_key: str) -> tuple:
+def call_deepl_api(text: str, api_key: str) -> tuple:
     """
-    调用腾讯云机器翻译 API（单次请求，文本必须 < 6000 字节）
+    调用 DeepL 翻译 API
     返回 (translated_text, used_chars)
-    used_chars = 输入字符数 + 输出字符数（腾讯云按 total 字符计费）
-
-    直接用 HTTP 请求，不依赖 SDK，避免类名变化导致的问题
+    used_chars = 输入字符数（DeepL 按输入字符计费）
+    API Key 以 :fx 结尾为免费版，用 api-free.deepl.com；否则用 api.deepl.com
     """
-
     import requests
 
-    # 腾讯云 API 3.0 签名算法
-    service = "tmt"
-    host = "tmt.tencentcloudapi.com"
-    endpoint = f"https://{host}"
+    if api_key.endswith(':fx'):
+        endpoint = "https://api-free.deepl.com/v2/translate"
+    else:
+        endpoint = "https://api.deepl.com/v2/translate"
 
-    # 1. 拼接规范请求串
-    action = "TextTranslate"
-    version = "2018-03-21"
-    region = "ap-beijing"
-    timestamp = int(time.time())
-    date = time.strftime("%Y-%m-%d", time.gmtime(timestamp))
-
-    payload = {
-        "SourceText": text,
-        "Source": "en",
-        "Target": "zh",
-        "ProjectId": 0,
-    }
-    payload_json = json.dumps(payload, separators=(',', ':'), ensure_ascii=False)
-
-    # http request method
-    http_method = "POST"
-    canonical_uri = "/"
-    canonical_querystring = ""
-    canonical_headers = f"content-type:application/json; charset=utf-8\nhost:{host}\nx-tc-action:{action.lower()}\n"
-    signed_headers = "content-type;host;x-tc-action"
-    hashed_payload = hashlib.sha256(payload_json.encode("utf-8")).hexdigest()
-    canonical_request = f"{http_method}\n{canonical_uri}\n{canonical_querystring}\n{canonical_headers}\n{signed_headers}\n{hashed_payload}"
-
-    # 2. 拼签名串
-    credential_scope = f"{date}/{service}/tc3_request"
-    hashed_canonical_request = hashlib.sha256(canonical_request.encode("utf-8")).hexdigest()
-    string_to_sign = f"TC3-HMAC-SHA256\n{timestamp}\n{credential_scope}\n{hashed_canonical_request}"
-
-    # 3. 计算签名
-    def _sign(key, msg):
-        return hmac.new(key, msg.encode("utf-8"), hashlib.sha256).digest()
-
-    secret_date = _sign(("TC3" + secret_key).encode("utf-8"), date)
-    secret_service = _sign(secret_date, service)
-    secret_signing = _sign(secret_service, "tc3_request")
-    signature = hmac.new(secret_signing, string_to_sign.encode("utf-8"), hashlib.sha256).hexdigest()
-
-    # 4. Authorization header
-    authorization = (
-        f"TC3-HMAC-SHA256 "
-        f"Credential={secret_id}/{credential_scope}, "
-        f"SignedHeaders={signed_headers}, "
-        f"Signature={signature}"
+    resp = requests.post(
+        endpoint,
+        data={
+            "auth_key": api_key,
+            "text": text,
+            "source_lang": "EN",
+            "target_lang": "ZH",
+        },
+        timeout=30
     )
-
-    headers = {
-        "Authorization": authorization,
-        "Content-Type": "application/json; charset=utf-8",
-        "Host": host,
-        "X-TC-Action": action,
-        "X-TC-Timestamp": str(timestamp),
-        "X-TC-Version": version,
-        "X-TC-Region": region,
-    }
-
-    resp = requests.post(endpoint, data=payload_json.encode("utf-8"), headers=headers, timeout=30)
     result = resp.json()
 
-    if "Response" in result and "Error" in result["Response"]:
-        err = result["Response"]["Error"]
-        raise Exception(f"Tencent API error: {err.get('Code', 'Unknown')} - {err.get('Message', '')}")
+    if "message" in result:
+        raise Exception(f"DeepL API error: {result['message']}")
 
-    if "Response" not in result or "TargetText" not in result["Response"]:
+    if "translations" not in result or not result["translations"]:
         raise Exception(f"Unexpected response: {result}")
 
-    translated_text = result["Response"]["TargetText"]
-    used_chars = len(text) + len(translated_text)
+    translated_text = result["translations"][0]["text"]
+    used_chars = len(text)
     return translated_text, used_chars
 
 
@@ -335,7 +285,7 @@ def split_by_length(text: str) -> list:
     return chunks
 
 
-def translate_markdown(content: str, secret_id: str, secret_key: str, quota_used: int) -> tuple:
+def translate_markdown(content: str, api_key: str, quota_used: int) -> tuple:
     """
     翻译整个 markdown 文件
     返回 (translated_content, used_chars, quota_exceeded, failed_count)
@@ -373,7 +323,7 @@ def translate_markdown(content: str, secret_id: str, secret_key: str, quota_used
                 continue
 
             try:
-                translated, used = call_tencent_api(text, secret_id, secret_key)
+                translated, used = call_deepl_api(text, api_key)
                 result.append(translated)
                 total_used += used
                 print(f"    chunk {i+1}/{len(chunks)}: {len(text)} chars -> translated (used {used}, total {quota_used + total_used})")
@@ -404,8 +354,8 @@ def main():
                         help='全局已用配额（当月，由 prepare 阶段传入）')
     parser.add_argument('--quota-out',
                         help='写入本次消耗配额的文件路径（供 finalize 汇总）')
-    parser.add_argument('--secret-id', default=os.environ.get('TENCENT_SECRET_ID'))
-    parser.add_argument('--secret-key', default=os.environ.get('TENCENT_SECRET_KEY'))
+    parser.add_argument('--api-key', default=os.environ.get('DEEPL_API_KEY'),
+                        help='DeepL API Key（免费版以 :fx 结尾）')
     parser.add_argument('--force', action='store_true',
                         help='强制重新翻译，忽略缓存（用于刷新历史错乱的翻译版本）')
     args = parser.parse_args()
@@ -510,7 +460,7 @@ def main():
         print(f"  TRANSLATING: {rel_path} ({len(content)} chars)...")
         try:
             translated, used, quota_exceeded, chunk_failed = translate_markdown(
-                content, args.secret_id, args.secret_key,
+                content, args.api_key,
                 quota_used + total_quota_used_this_run
             )
             md_file.write_text(translated, encoding='utf-8')

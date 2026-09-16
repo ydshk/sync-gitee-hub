@@ -1,6 +1,0 @@
-{
-  "README.md": {
-    "hash": "5ee90f60f6139fb6fa676447245666ab48094e6f260a24eee0af2939caeb865e",
-    "content": "# ESPHome [![Discord Chat](https://img.shields.io/discord/429907082951524364.svg)](https://discord.gg/KhAMKrd)  [![GitHub release](https://img.shields.io/github/release/esphome/esphome.svg)](https://GitHub.com/esphome/esphome/releases/)\n\n<a href=\"https://esphome.io/\">\n  <picture>\n    <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://media.esphome.io/logo/logo-text-on-dark.svg\", alt=\"ESPHome Logo\">\n    <img src=\"https://media.esphome.io/logo/logo-text-on-light.svg\" alt=\"ESPHome Logo\">\n  </picture>\n</a>\n\n这是Home Assistant 应用仓库，用于ESPHome。对于ESPHome 源码，请访问[esphome](https://github.com/esphome/esphome)。\n\n**文档：** https://esphome.io/\n\n有关问题，请访问[问题跟踪器](https://github.com/esphome/esphome/issues)。\n\n有关功能请求，请参阅[功能请求](https://github.com/orgs/esphome/discussions)。\n"
-  }
-}
