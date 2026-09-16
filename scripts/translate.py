@@ -58,6 +58,24 @@ GLOSSARY = _load_glossary()
 _GLOSSARY_SORTED = sorted(GLOSSARY, key=len, reverse=True)
 
 
+def _load_translate_files() -> list:
+    """从 scripts 同级的 translate-files.txt 加载要翻译的文件名列表
+    文件不存在时用默认值 [README.md]
+    """
+    files_path = Path(__file__).resolve().parent.parent / 'translate-files.txt'
+    filenames = []
+    if files_path.exists():
+        for line in files_path.read_text(encoding='utf-8').splitlines():
+            line = line.strip()
+            if line and not line.startswith('#'):
+                filenames.append(line)
+    return filenames if filenames else ['README.md']
+
+
+TRANSLATE_FILES = _load_translate_files()
+_TRANSLATE_FILES_LOWER = set(f.lower() for f in TRANSLATE_FILES)
+
+
 def _load_translation_map() -> dict:
     """从 scripts 同级的 translation-map.txt 加载翻译映射表 {源词: 目标词}
     用于纠正翻译 API 的系统性误译（如 Documentation 误译为"文件"应为"文档"）
@@ -404,11 +422,17 @@ def main():
         print(f"\n::warning::Translation quota exceeded this month. Skipping all translations. Will sync English version only.")
         print(f"  Used {quota_used}/{MONTHLY_FREE_QUOTA} chars in {current_month}.")
 
-    # 只翻译根目录的 README.md（不区分大小写），不递归子目录
-    # 大仓库可能有数千个 .md（docs、组件文档等），递归遍历只为找根 README 浪费 IO
-    md_files = [p for p in source_dir.glob('*.md') if p.name.lower() == 'readme.md']
+    # 翻译根目录和一级子目录下的目标文件（不区分大小写）
+    # 不递归更深层目录，避免大仓库遍历数千个 .md 文件
+    md_files = []
+    for p in source_dir.glob('*.md'):
+        if p.name.lower() in _TRANSLATE_FILES_LOWER:
+            md_files.append(p)
+    for p in source_dir.glob('*/*.md'):
+        if p.name.lower() in _TRANSLATE_FILES_LOWER:
+            md_files.append(p)
 
-    print(f"Found {len(md_files)} README.md to translate (root only, subdirectories skipped)")
+    print(f"Found {len(md_files)} files to translate ({', '.join(TRANSLATE_FILES)} in root + subdirs)")
 
     translated_count = 0
     reused_count = 0
