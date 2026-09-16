@@ -12,3 +12,4 @@ procedure => 步骤
 stream => 串流
 power => 功能
 App repository => 应用仓库
+source => 源码
