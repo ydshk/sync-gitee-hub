@@ -217,11 +217,10 @@ def _extract_protected(text: str) -> tuple:
             text = text.replace(term, _make_ph(term))
 
     # 3. 链接 [text](url)：保护 [ 和 ](url) 语法骨架，text 留给翻译 API
-    # text 前后插入 _LINK_SEP（零宽空格），使步骤 5 映射表 \b 词边界能匹配 text 首尾的词
     def _protect_link(m):
         link_text = m.group(1)
         url_part = m.group(2)
-        return f'{_make_ph("[")}{_LINK_SEP}{link_text}{_LINK_SEP}{_make_ph(f"]{url_part}")}'
+        return f'{_make_ph("[")}{link_text}{_make_ph(f"]{url_part}")}'
     text = re.sub(r'\[([^\]]*)\](\([^)]*(?:\s+"[^"]*")?\))', _protect_link, text)
 
     # 4. 链接引用定义、裸 URL、HTML 标签、加粗、标题（整体保护）
@@ -232,11 +231,13 @@ def _extract_protected(text: str) -> tuple:
     text = re.sub(r'(?m)^#{1,6}\s', _protect, text)
 
     # 5. 翻译映射表保护（在 URL/引用定义/链接骨架保护之后，避免映射词替换破坏 URL）
-    # 此时 URL、引用定义、链接的 ](url) 部分已是占位符，映射表只作用于待翻译文本
-    # 用 \b 词边界 + IGNORECASE：避免匹配代码标识符子串（如 supervisor_add_on_repository），
-    # 覆盖句首大写（如 Repository/Manager）
+    # 占位符 XPLHX{idx}XPLHX 以字母 X 开头（词字符），正文词紧挨占位符时 \b 无法匹配。
+    # 临时在所有占位符前后插入 _LINK_SEP（零宽空格，非词字符），使 \b 能正确匹配。
+    # 映射表执行后立即去掉 _LINK_SEP，避免它被翻译 API 转为空格污染链接 text。
+    text = PLACEHOLDER_RE.sub(f'{_LINK_SEP}\\g<0>{_LINK_SEP}', text)
     for pattern, target in _TRANSLATION_MAP_PATTERNS:
         text = pattern.sub(lambda m: _make_ph(target), text)
+    text = text.replace(_LINK_SEP, '')
 
     return text, placeholders
 

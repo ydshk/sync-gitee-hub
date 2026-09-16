@@ -10,3 +10,5 @@ manager => 管理器
 offline => 离线
 procedure => 步骤
 stream => 串流
+power => 功能
+App repository => 应用仓库
