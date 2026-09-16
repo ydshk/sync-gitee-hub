@@ -193,12 +193,20 @@ def _extract_protected(text: str) -> tuple:
         if term in text:
             text = text.replace(term, _make_ph(term))
 
-    # 3. 链接 [text](url)：保护 [ 和 ](url) 语法骨架，text 留给翻译 API
+    # 3a. 行内链接 [text](url)：保护 [ 和 ](url) 语法骨架，text 留给翻译 API
     def _protect_link(m):
         link_text = m.group(1)
         url_part = m.group(2)
         return f'{_make_ph("[")}{link_text}{_make_ph(f"]{url_part}")}'
     text = re.sub(r'\[([^\]]*)\](\([^)]*(?:\s+"[^"]*")?\))', _protect_link, text)
+
+    # 3b. 引用链接 [text][ref]：保护 [ 和 ][ref] 语法骨架，text 留给翻译 API
+    # ref 部分必须保护不翻译，否则与引用定义 [ref]: url 不匹配导致链接失效
+    def _protect_ref_link(m):
+        link_text = m.group(1)
+        ref_part = m.group(2)
+        return f'{_make_ph("[")}{link_text}{_make_ph(f"]{ref_part}")}'
+    text = re.sub(r'\[([^\]]*)\](\[[^\]]*\])', _protect_ref_link, text)
 
     # 4. 链接引用定义、裸 URL、HTML 标签、加粗、标题（整体保护）
     text = re.sub(r'^\[[^\]]*\]:\s*\S+(?:\s+"[^"]*")?\s*$', _protect, text, flags=re.MULTILINE)
@@ -368,6 +376,8 @@ def translate_markdown(content: str, api_key: str, quota_used: int) -> tuple:
     final = final.replace(_LINK_SEP, '')
     # 清理翻译 API 拆开占位符产生的残留 XPLHX 片段及其周围多余空格
     final = re.sub(r'\s*XPLHX\s*', ' ', final, flags=re.IGNORECASE)
+    # 修复加粗标记后的多余空格（翻译 API 可能在 ** 后插入空格）
+    final = final.replace('** ', '**')
     return final, total_used, quota_exceeded, failed_count
 
 
