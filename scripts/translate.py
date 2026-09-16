@@ -379,8 +379,11 @@ def translate_markdown(content: str, api_key: str, quota_used: int) -> tuple:
     final = final.replace(_LINK_SEP, '')
     # 清理翻译 API 拆开占位符产生的残留 XPLHX 片段及其周围多余空格
     final = re.sub(r'\s*XPLHX\s*', ' ', final, flags=re.IGNORECASE)
-    # 修复加粗标记后的多余空格（翻译 API 可能在 ** 后插入空格）
-    final = final.replace('** ', '**')
+    # 修复加粗标记内部的前导空格（翻译 API 可能在 ** 开头后插入空格：** text** → **text**）
+    # 只去加粗内部前导空格，不动加粗结尾 ** 后的空格，避免 **text** → more 丢失空格
+    def _strip_bold_leading(m):
+        return f'**{m.group(1).lstrip()}**'
+    final = re.sub(r'\*\*(.+?)\*\*', _strip_bold_leading, final)
     return final, total_used, quota_exceeded, failed_count
 
 
