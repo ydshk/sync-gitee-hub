@@ -383,10 +383,13 @@ def translate_markdown(content: str, api_key: str, quota_used: int) -> tuple:
     def _strip_bold(m):
         return f'**{m.group(1).strip()}**'
     final = re.sub(r'\*\*(.+?)\*\*', _strip_bold, final)
-    # 修复加粗未闭合：** 数量不成对时去掉最后一个多余的 **，避免后续文本全部被加粗
-    if final.count('**') % 2 == 1:
-        idx = final.rfind('**')
-        final = final[:idx] + final[idx + 2:]
+    # 修复加粗未闭合：按行检查 ** 是否成对，奇数个时去掉该行最后一个 **（CommonMark 加粗不跨行）
+    def _fix_bold_per_line(line):
+        if line.count('**') % 2 == 1:
+            idx = line.rfind('**')
+            return line[:idx] + line[idx + 2:]
+        return line
+    final = '\n'.join(_fix_bold_per_line(ln) for ln in final.split('\n'))
     # 修复标题多空格：##  关于 → ## 关于
     final = re.sub(r'(?m)^(#{1,6})\s{2,}', r'\1 ', final)
     # 修复链接 text 前后多余空格：[ text ](url) → [text](url)，[ text ][ref] → [text][ref]
