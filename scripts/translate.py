@@ -32,13 +32,27 @@ MONTHLY_FREE_QUOTA = 5_000_000
 # 安全阈值：剩余低于此值停止翻译（避免超额）
 QUOTA_SAFETY_THRESHOLD = 100_000
 
-# 专有名词术语表：这些词不翻译，保持原文
-# 按长度降序匹配，避免短术语先匹配导致长术语被截断（如 "Music Assistant" 先匹配会破坏 "Music Assistant Server"）
-GLOSSARY = [
+# 专有名词术语表默认值（glossary.txt 不存在时回落使用）
+DEFAULT_GLOSSARY = [
     'Music Assistant Server',
     'Music Assistant',
     'Home Assistant',
 ]
+
+
+def _load_glossary() -> list:
+    """从 scripts 同级的 glossary.txt 加载术语表，文件不存在时用默认值"""
+    glossary_path = Path(__file__).resolve().parent.parent / 'glossary.txt'
+    terms = []
+    if glossary_path.exists():
+        for line in glossary_path.read_text(encoding='utf-8').splitlines():
+            line = line.strip()
+            if line and not line.startswith('#'):
+                terms.append(line)
+    return terms if terms else DEFAULT_GLOSSARY
+
+
+GLOSSARY = _load_glossary()
 
 
 def call_tencent_api(text: str, secret_id: str, secret_key: str) -> tuple:
