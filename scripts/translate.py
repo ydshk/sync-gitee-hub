@@ -80,6 +80,12 @@ def _load_translation_map() -> dict:
 TRANSLATION_MAP = _load_translation_map()
 # 预排序：长源词在前，避免短词先匹配截断长词
 _TRANSLATION_MAP_SORTED = sorted(TRANSLATION_MAP.items(), key=lambda x: len(x[0]), reverse=True)
+# 预编译正则：\b 词边界防止匹配代码标识符子串（如 supervisor_add_on_repository），
+# re.IGNORECASE 覆盖句首大写（如 Repository/Manager），re.escape 防止源词含正则元字符
+_TRANSLATION_MAP_PATTERNS = [
+    (re.compile(r'\b' + re.escape(source) + r'\b', re.IGNORECASE), target)
+    for source, target in _TRANSLATION_MAP_SORTED
+]
 
 
 def call_tencent_api(text: str, secret_id: str, secret_key: str) -> tuple:
@@ -221,10 +227,10 @@ def _extract_protected(text: str) -> tuple:
 
     # 5. 翻译映射表保护（在 URL/引用定义/链接骨架保护之后，避免映射词替换破坏 URL）
     # 此时 URL、引用定义、链接的 ](url) 部分已是占位符，映射表只作用于待翻译文本
-    # （含链接 text 残留的误译词，如 [repository](url) 的 text "repository" 会被纠正为"仓库"）
-    for source, target in _TRANSLATION_MAP_SORTED:
-        if source in text:
-            text = text.replace(source, _make_ph(target))
+    # 用 \b 词边界 + IGNORECASE：避免匹配代码标识符子串（如 supervisor_add_on_repository），
+    # 覆盖句首大写（如 Repository/Manager）
+    for pattern, target in _TRANSLATION_MAP_PATTERNS:
+        text = pattern.sub(lambda m: _make_ph(target), text)
 
     return text, placeholders
 
