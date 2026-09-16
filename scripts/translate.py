@@ -389,6 +389,8 @@ def translate_markdown(content: str, secret_id: str, secret_key: str, quota_used
     final = _restore_placeholders(translated, placeholders)
     # 清理链接 text 与占位符之间插入的零宽空格分隔符
     final = final.replace(_LINK_SEP, '')
+    # 清理翻译 API 拆开占位符产生的残留 XPLHX 片段及其周围多余空格
+    final = re.sub(r'\s*XPLHX\s*', ' ', final, flags=re.IGNORECASE)
     return final, total_used, quota_exceeded, failed_count
 
 
