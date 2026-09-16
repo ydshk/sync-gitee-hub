@@ -4,3 +4,12 @@
 # 每行一个映射，# 注释行和空行忽略
 # 源词不区分大小写（re.IGNORECASE），用 \b 词边界匹配避免误伤代码标识符
 
+Documentation => 文档
+repository => 仓库
+manager => 管理器
+offline => 离线
+procedure => 步骤
+stream => 串流
+power => 功能
+App repository => 应用仓库
+source => 源码

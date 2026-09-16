@@ -258,23 +258,15 @@ def _restore_placeholders(text: str, placeholders: dict) -> str:
 
 def split_markdown(text: str) -> list:
     """
-    按 markdown 结构切分：
-    - 占位符（XPLHX\\d+XPLHX，由 _extract_protected 生成）作为 code chunk 不翻译
-    - 其他文本按字节长度切分（<= MAX_CHUNK_BYTES）
+    按段落切分文本（含占位符），让翻译 API 看到完整句子上下文。
+    占位符 XPLHX\\d+XPLHX 是不认识的文本，翻译 API 通常保留不动。
+    超长文本按字节长度切分（<= MAX_CHUNK_BYTES）。
+    
+    之前的策略是按占位符切分，占位符之间的短文本独立翻译，
+    导致翻译 API 缺乏上下文（如 " for " → " 为 "，". For the " → ".为 "）。
+    改为整段送翻译 API，翻译 API 能看到完整句子，翻译质量更好。
     """
-    chunks = []
-    last_end = 0
-
-    for m in PLACEHOLDER_RE.finditer(text):
-        if m.start() > last_end:
-            chunks.extend(split_by_length(text[last_end:m.start()]))
-        chunks.append({'type': 'code', 'content': m.group()})
-        last_end = m.end()
-
-    if last_end < len(text):
-        chunks.extend(split_by_length(text[last_end:]))
-
-    return chunks
+    return split_by_length(text)
 
 
 def split_by_length(text: str) -> list:
