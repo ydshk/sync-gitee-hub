@@ -97,6 +97,9 @@ def call_deepl_api(text: str, api_key: str) -> tuple:
     """
     import requests
 
+    if not api_key:
+        raise Exception("DeepL API Key is empty. Check DEEPL_API_KEY secret in GitHub Actions.")
+
     if api_key.endswith(':fx'):
         endpoint = "https://api-free.deepl.com/v2/translate"
     else:
@@ -112,6 +115,10 @@ def call_deepl_api(text: str, api_key: str) -> tuple:
         },
         timeout=30
     )
+
+    if resp.status_code != 200:
+        raise Exception(f"DeepL API HTTP {resp.status_code}: {resp.text[:200]}")
+
     result = resp.json()
 
     if "message" in result:
