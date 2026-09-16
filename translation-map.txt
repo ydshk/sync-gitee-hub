@@ -2,9 +2,11 @@
 # 翻译前把源词替换为占位符，翻译后还原为目标词
 # 用于纠正翻译 API 的系统性误译（如 Documentation 误译为"文件"）
 # 每行一个映射，# 注释行和空行忽略
-# 注意：源词区分大小写，代码按长度降序匹配
+# 源词不区分大小写（re.IGNORECASE），用 \b 词边界匹配避免误伤代码标识符
 
 Documentation => 文档
 repository => 仓库
 manager => 管理器
 offline => 离线
+procedure => 步骤
+stream => 串流

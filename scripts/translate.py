@@ -176,6 +176,11 @@ def call_tencent_api(text: str, secret_id: str, secret_key: str) -> tuple:
 
 
 PLACEHOLDER_RE = re.compile(r'XPLHX\d+XPLHX')
+# 零宽空格，用作链接 text 与占位符的分隔符。
+# 占位符 XPLHX{idx}XPLHX 以字母 X 开头/结尾（词字符），链接 text 紧挨占位符时
+# \b 词边界无法匹配 text 首尾的词。插入 \u200b（非词字符）使 \b 正确匹配。
+# 还原后需清理（translate_markdown 末尾 .replace(_LINK_SEP, '')）。
+_LINK_SEP = '\u200b'
 
 
 def _extract_protected(text: str) -> tuple:
@@ -212,10 +217,11 @@ def _extract_protected(text: str) -> tuple:
             text = text.replace(term, _make_ph(term))
 
     # 3. 链接 [text](url)：保护 [ 和 ](url) 语法骨架，text 留给翻译 API
+    # text 前后插入 _LINK_SEP（零宽空格），使步骤 5 映射表 \b 词边界能匹配 text 首尾的词
     def _protect_link(m):
         link_text = m.group(1)
         url_part = m.group(2)
-        return f'{_make_ph("[")}{link_text}{_make_ph(f"]{url_part}")}'
+        return f'{_make_ph("[")}{_LINK_SEP}{link_text}{_LINK_SEP}{_make_ph(f"]{url_part}")}'
     text = re.sub(r'\[([^\]]*)\](\([^)]*(?:\s+"[^"]*")?\))', _protect_link, text)
 
     # 4. 链接引用定义、裸 URL、HTML 标签、加粗、标题（整体保护）
@@ -374,6 +380,8 @@ def translate_markdown(content: str, secret_id: str, secret_key: str, quota_used
 
     translated = ''.join(result)
     final = _restore_placeholders(translated, placeholders)
+    # 清理链接 text 与占位符之间插入的零宽空格分隔符
+    final = final.replace(_LINK_SEP, '')
     return final, total_used, quota_exceeded, failed_count
 
 
