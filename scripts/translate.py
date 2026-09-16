@@ -108,10 +108,12 @@ def call_deepl_api(text: str, api_key: str) -> tuple:
     resp = requests.post(
         endpoint,
         data={
-            "auth_key": api_key,
             "text": text,
             "source_lang": "EN",
             "target_lang": "ZH",
+        },
+        headers={
+            "Authorization": f"DeepL-Auth-Key {api_key}",
         },
         timeout=30
     )
