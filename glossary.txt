@@ -6,5 +6,4 @@ Home Assistant
 Music Assistant Server
 Music Assistant
 Home Assistant ESPHome
-Home AssistantESPHome
 esphome

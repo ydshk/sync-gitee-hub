@@ -205,11 +205,6 @@ def _extract_protected(text: str) -> tuple:
         if term in text:
             text = text.replace(term, _make_ph(term))
 
-    # 2b. 翻译映射表保护（源词替换为占位符，占位符映射到目标词，翻译后还原为目标词）
-    for source, target in _TRANSLATION_MAP_SORTED:
-        if source in text:
-            text = text.replace(source, _make_ph(target))
-
     # 3. 链接 [text](url)：保护 [ 和 ](url) 语法骨架，text 留给翻译 API
     def _protect_link(m):
         link_text = m.group(1)
@@ -223,6 +218,13 @@ def _extract_protected(text: str) -> tuple:
     text = re.sub(r'<[^>]+>', _protect, text)
     text = re.sub(r'\*\*', _protect, text)
     text = re.sub(r'(?m)^#{1,6}\s', _protect, text)
+
+    # 5. 翻译映射表保护（在 URL/引用定义/链接骨架保护之后，避免映射词替换破坏 URL）
+    # 此时 URL、引用定义、链接的 ](url) 部分已是占位符，映射表只作用于待翻译文本
+    # （含链接 text 残留的误译词，如 [repository](url) 的 text "repository" 会被纠正为"仓库"）
+    for source, target in _TRANSLATION_MAP_SORTED:
+        if source in text:
+            text = text.replace(source, _make_ph(target))
 
     return text, placeholders
 

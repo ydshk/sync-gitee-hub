@@ -6,4 +6,5 @@
 
 Documentation => 文档
 repository => 仓库
+manager => 管理器
 offline => 离线
