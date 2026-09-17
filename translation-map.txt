@@ -4,3 +4,17 @@
 # 每行一个映射，# 注释行和空行忽略
 # 源词不区分大小写（re.IGNORECASE），用 \b 词边界匹配避免误伤代码标识符
 
+# 技术标签词（配置说明/问题模板中未翻译的英文标签）
+Pull Request => 拉取请求
+Reproduction => 重现步骤
+Environment => 环境
+Stability => 稳定性
+Examples => 示例
+Default => 默认
+Format => 格式
+Branch => 分支
+Quality => 质量
+Context => 上下文
+Fork => 分叉
+Note => 注意
+issues => 问题

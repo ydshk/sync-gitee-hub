@@ -374,6 +374,10 @@ def translate_markdown(content: str, api_key: str, quota_used: int) -> tuple:
             time.sleep(API_INTERVAL)
 
     translated = ''.join(result)
+    # 中英混排加空格：在中文与英文/数字边界插入空格，提升排版可读性
+    # 在占位符还原前执行，代码块/URL 等占位符区域不受影响
+    translated = re.sub(r'([\u4e00-\u9fff])([a-zA-Z0-9])', r'\1 \2', translated)
+    translated = re.sub(r'([a-zA-Z0-9])([\u4e00-\u9fff])', r'\1 \2', translated)
     final = _restore_placeholders(translated, placeholders)
     # 清理链接 text 与占位符之间插入的零宽空格分隔符
     final = final.replace(_LINK_SEP, '')
