@@ -278,12 +278,14 @@ jobs:
             $FORCE_FLAG
 
           # 2b. 把缓存和使用量 commit 回 translation-service 仓库（用 GH_PAT 确保写权限）
+          #     并行仓库各自 push 到不同子目录 cache/<repo>/，pull --rebase 合并无冲突
           cd "$GITHUB_WORKSPACE/translation-service"
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/ydshk/translation-service.git"
           git add cache/
           git commit -m "Update translation cache for ${GITEE_REPO}" || echo "No cache changes to commit"
+          git pull --rebase origin main || echo "Pull rebase failed, pushing anyway"
           git push
 
           # 3. 提交翻译修改并 push 到 Gitee（缓存不进 Gitee，保持镜像纯净）
