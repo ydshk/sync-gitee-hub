@@ -224,8 +224,15 @@ jobs:
             echo "skip_sync=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Checkout sync-gitee-hub (for translate.py)
+      - name: Checkout sync-gitee-hub (for translate scripts + config)
         uses: actions/checkout@v5
+
+      - name: Checkout translation-service
+        uses: actions/checkout@v5
+        with:
+          repository: home-assistant-xin/translation-service
+          path: translation-service
+          token: ${{ secrets.GH_PAT || github.token }}
 
       - name: Mirror + Translate to Gitee
         env:
@@ -255,9 +262,8 @@ jobs:
           echo "Default branch: $DEFAULT_BRANCH"
           cd ..
 
-          # 2. 翻译（缓存从本仓库 cache/ 读取，配额从 prepare 传入）
-          CACHE_FILE="$GITHUB_WORKSPACE/cache/${GITEE_REPO}.json"
-          QUOTA_OUT="$WORK_DIR/quota_this_run.txt"
+          # 2. 翻译（缓存和使用量由 translation-service 管理）
+          CACHE_DIR="$GITHUB_WORKSPACE/cache/${GITEE_REPO}"
           FORCE_FLAG=""
           if [ "${{ github.event.inputs.force_retranslate }}" = "true" ]; then
             FORCE_FLAG="--force"
@@ -266,9 +272,8 @@ jobs:
           echo "Translating README.md..."
           python3 "$GITHUB_WORKSPACE/scripts/translate.py" \
             --source-dir "$WORK_DIR/github_repo" \
-            --cache-file "$CACHE_FILE" \
-            --quota-used "${{ needs.prepare.outputs.quota_used }}" \
-            --quota-out "$QUOTA_OUT" \
+            --cache-dir "$CACHE_DIR" \
+            --service-dir "$GITHUB_WORKSPACE/translation-service" \
             --api-key "$DEEPL_API_KEY" \
             $FORCE_FLAG
 
