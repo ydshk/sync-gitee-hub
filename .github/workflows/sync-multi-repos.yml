@@ -23,26 +23,17 @@ on:
       - 'repos.txt'
       - 'glossary.txt'
       - 'translation-map.txt'
+      - 'scripts/postprocess.py'
+      - 'scripts/translate.py'
 
 jobs:
   prepare:
     runs-on: ubuntu-latest
     outputs:
       repos: ${{ steps.list.outputs.repos }}
-      quota_used: ${{ steps.quota.outputs.quota_used }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-
-      - name: Read global quota
-        id: quota
-        run: |
-          QUOTA_USED=0
-          if [ -f cache/__quota__.json ]; then
-            QUOTA_USED=$(python3 -c "import json,time; d=json.load(open('cache/__quota__.json')); print(d.get(time.strftime('%Y-%m'),0))" 2>/dev/null || echo 0)
-          fi
-          echo "quota_used=$QUOTA_USED" >> $GITHUB_OUTPUT
-          echo "Global quota used this month: $QUOTA_USED"
 
       - name: Build repo list
         id: list
@@ -86,7 +77,7 @@ jobs:
               else:
                   github_full = entry.strip()
                   if '/' not in github_full:
-                      print(f"::error::Invalid format (missing '/'): '{entry}'")
+                      print(f"::error::Invalid format (missing '/'): '{github_full}'")
                       sys.exit(1)
                   gitee_repo = github_full.split('/', 1)[1]
 
@@ -119,7 +110,6 @@ jobs:
               sys.exit(1)
 
           # 输出 JSON 给 matrix 用
-          # 注意 GitHub Actions ::set-output 已废弃，用 $GITHUB_OUTPUT 文件
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
               f.write(f"repos={json.dumps(result)}\n")
 
@@ -224,10 +214,10 @@ jobs:
             echo "skip_sync=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Checkout sync-gitee-hub (for translate scripts + config)
+      - name: Checkout sync-gitee-hub (for scripts + config + cache)
         uses: actions/checkout@v5
 
-      - name: Checkout translation-service
+      - name: Checkout translation-service (for translator.py only)
         uses: actions/checkout@v5
         with:
           repository: ydshk/translation-service
@@ -262,8 +252,8 @@ jobs:
           echo "Default branch: $DEFAULT_BRANCH"
           cd ..
 
-          # 2. 翻译（缓存和使用量存放在 translation-service 仓库内，多调用方共享）
-          CACHE_DIR="$GITHUB_WORKSPACE/translation-service/cache/${GITEE_REPO}"
+          # 2. 翻译（缓存在 sync-gitee-hub 仓库内）
+          CACHE_DIR="$GITHUB_WORKSPACE/cache/${GITEE_REPO}"
           FORCE_FLAG=""
           if [ "${{ github.event.inputs.force_retranslate }}" = "true" ]; then
             FORCE_FLAG="--force"
@@ -276,17 +266,6 @@ jobs:
             --service-dir "$GITHUB_WORKSPACE/translation-service" \
             --api-key "$DEEPL_API_KEY" \
             $FORCE_FLAG
-
-          # 2b. 把缓存和使用量 commit 回 translation-service 仓库（用 GH_PAT 确保写权限）
-          #     并行仓库各自 push 到不同子目录 cache/<repo>/，pull --rebase 合并无冲突
-          cd "$GITHUB_WORKSPACE/translation-service"
-          git config user.email "action@github.com"
-          git config user.name "GitHub Action"
-          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/ydshk/translation-service.git"
-          git add cache/
-          git commit -m "Update translation cache for ${GITEE_REPO}" || echo "No cache changes to commit"
-          git pull --rebase origin main || echo "Pull rebase failed, pushing anyway"
-          git push
 
           # 3. 提交翻译修改并 push 到 Gitee（缓存不进 Gitee，保持镜像纯净）
           cd "$WORK_DIR/github_repo"
@@ -303,13 +282,10 @@ jobs:
           git push gitee --tags --force
           git remote remove gitee
 
-          # 4. 准备 artifact（缓存文件 + 本次配额消耗，供 finalize 汇总）
+          # 4. 准备缓存 artifact（供 finalize 合并）
           mkdir -p "$WORK_DIR/artifact"
-          if [ -f "$CACHE_FILE" ]; then
-            cp "$CACHE_FILE" "$WORK_DIR/artifact/"
-          fi
-          if [ -f "$QUOTA_OUT" ]; then
-            cp "$QUOTA_OUT" "$WORK_DIR/artifact/quota.txt"
+          if [ -f "$CACHE_DIR/cache.json" ]; then
+            cp "$CACHE_DIR/cache.json" "$WORK_DIR/artifact/${GITEE_REPO}.json"
           fi
 
       - name: Upload cache artifact
@@ -341,7 +317,7 @@ jobs:
         with:
           path: artifacts
 
-      - name: Merge cache and update quota
+      - name: Merge cache and push
         run: |
           set -e
           mkdir -p cache
@@ -352,43 +328,20 @@ jobs:
             if [ -d "$dir" ]; then
               for f in "$dir"*.json; do
                 if [ -f "$f" ]; then
-                  cp "$f" cache/
+                  GITEE_NAME=$(basename "$f" .json)
+                  mkdir -p "cache/$GITEE_NAME"
+                  cp "$f" "cache/$GITEE_NAME/cache.json"
                   MERGED=$((MERGED + 1))
-                  echo "Merged $(basename "$f")"
+                  echo "Merged cache for $GITEE_NAME"
                 fi
               done
             fi
           done
           echo "Merged $MERGED cache files"
 
-          # 汇总本次配额消耗
-          TOTAL_USED_THIS_RUN=0
-          for dir in artifacts/cache-*/; do
-            if [ -f "${dir}quota.txt" ]; then
-              USED=$(cat "${dir}quota.txt" 2>/dev/null || echo 0)
-              TOTAL_USED_THIS_RUN=$((TOTAL_USED_THIS_RUN + USED))
-            fi
-          done
-
-          # 更新全局配额（当月累加，基于 prepare 读的值）
-          PREV_QUOTA=${{ needs.prepare.outputs.quota_used }}
-          NEW_QUOTA=$((PREV_QUOTA + TOTAL_USED_THIS_RUN))
-          python3 -c "
-          import json, time
-          path = 'cache/__quota__.json'
-          try:
-              d = json.load(open(path))
-          except Exception:
-              d = {}
-          month = time.strftime('%Y-%m')
-          d[month] = max(d.get(month, 0), $NEW_QUOTA)
-          json.dump(d, open(path, 'w'), indent=2, ensure_ascii=False)
-          "
-          echo "Quota: prev=$PREV_QUOTA + this_run=$TOTAL_USED_THIS_RUN = $NEW_QUOTA"
-
           # 提交并推送缓存到本仓库
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
           git add cache/
-          git commit -m "Update translation cache and quota (used $NEW_QUOTA chars this month)" || echo "No changes to commit"
+          git commit -m "Update translation cache" || echo "No changes to commit"
           git push 2>/dev/null || echo "Push failed (concurrent update?), cache will refresh next run"

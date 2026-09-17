@@ -67,6 +67,13 @@ def fix_duplicate_cjk(text):
     return text
 
 
+def fix_double_negation(text):
+    """修复双重否定：不未→未，不不→不"""
+    text = text.replace('不未', '未')
+    text = re.sub(r'不不', '不', text)
+    return text
+
+
 def fix_title(text):
     """修复标题多空格：##  关于 → ## 关于"""
     return re.sub(r'(?m)^(#{1,6})\s{2,}', r'\1 ', text)
@@ -86,7 +93,7 @@ def fix_cjk_space(text):
 
 def fix_punct_space(text):
     """去掉中文标点前后的多余空格"""
-    text = re.sub(r' ([，。！？；：）」】])', r'\1', text)
+    text = re.sub(r' ([，。！？；：）」】（])', r'\1', text)
     text = re.sub(r'([，。！？；：（「【]) ', r'\1', text)
     return text
 
@@ -103,5 +110,6 @@ def run(translated, placeholders):
     final = fix_link(final)
     final = fix_cjk_space(final)
     final = fix_duplicate_cjk(final)
+    final = fix_double_negation(final)
     final = fix_punct_space(final)
     return final

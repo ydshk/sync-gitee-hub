@@ -4,17 +4,17 @@
 
 职责划分：
   本脚本（translate.py）：占位符保护、段落拆分、后处理、文件遍历
-  translation-service：纯翻译（查缓存 → 调 DeepL API → 返回翻译）
+  translation-service：缓存查询 + 翻译（查缓存 → 命中返回 / 未命中调 API → 更新缓存）
   postprocess.py：后处理（还原占位符 + 格式修复）
 
 流程：
   1. 按 markdown 段落拆分
   2. 每段：extract_protected → translation_service.translate() → postprocess.run()
   3. 拼接段落，写回文件
+
+缓存目录由 --cache-dir 指定，物理位置在 sync-gitee-hub 仓库内（cache/<repo>/）。
 """
 import argparse
-import hashlib
-import json
 import os
 import re
 import sys
@@ -202,7 +202,7 @@ def main():
     if args.force:
         print("::warning::--force enabled, ignoring cache.")
 
-    # 加载 translation-service
+    # 加载 translation-service（缓存查询 + 翻译）
     service_path = Path(args.service_dir).resolve()
     sys.path.insert(0, str(service_path))
     from translator import translate as translate_fn
