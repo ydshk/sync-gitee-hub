@@ -36,17 +36,34 @@ def cjk_latin_spacing(text):
 
 
 def fix_bold(text):
-    """修复加粗内部前后空格 + 按行检查未闭合的 **"""
+    """修复加粗内部前后空格 + 按行修复奇数个 **"""
     def _strip_bold(m):
         return f'**{m.group(1).strip()}**'
     text = re.sub(r'\*\*(.+?)\*\*', _strip_bold, text)
 
     def _fix_bold_per_line(line):
-        if line.count('**') % 2 == 1:
-            idx = line.rfind('**')
-            return line[:idx] + line[idx + 2:]
-        return line
+        if line.count('**') % 2 == 0:
+            return line
+        idx = line.rfind('**')
+        after = line[idx + 2:]
+        if after.strip():
+            return line + '**'
+        return line[:idx] + line[idx + 2:]
     text = '\n'.join(_fix_bold_per_line(ln) for ln in text.split('\n'))
+    return text
+
+
+def fix_not_untranslated(text):
+    """将未翻译的 NOT（后接中文）替换为'不'"""
+    return re.sub(r'\bNOT\s+([\u4e00-\u9fff])', r'不\1', text)
+
+
+def fix_duplicate_cjk(text):
+    """去掉连续重复的中文词（版本版本→版本，步骤步骤→步骤）"""
+    prev = None
+    while text != prev:
+        prev = text
+        text = re.sub(r'([\u4e00-\u9fff]{2,})\1', r'\1', text)
     return text
 
 
@@ -80,9 +97,11 @@ def run(translated, placeholders):
     final = restore_placeholders(translated, placeholders)
     final = final.replace(_LINK_SEP, '')
     final = re.sub(r'\s*XPLHX\s*', ' ', final, flags=re.IGNORECASE)
+    final = fix_not_untranslated(final)
     final = fix_bold(final)
     final = fix_title(final)
     final = fix_link(final)
     final = fix_cjk_space(final)
+    final = fix_duplicate_cjk(final)
     final = fix_punct_space(final)
     return final
