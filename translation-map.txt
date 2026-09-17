@@ -21,3 +21,4 @@ issues => 问题
 Version => 版本
 Logs => 日志
 Both => 两者
+stable => 稳定

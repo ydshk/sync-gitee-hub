@@ -374,10 +374,10 @@ def translate_markdown(content: str, api_key: str, quota_used: int) -> tuple:
             time.sleep(API_INTERVAL)
 
     translated = ''.join(result)
-    # 中英混排加空格：在中文与英文/数字边界插入空格，提升排版可读性
+    # 中英混排加空格：在中文与英文/数字边界统一为单个空格，压缩 DeepL 产生的多余空格
     # 在占位符还原前执行，代码块/URL 等占位符区域不受影响
-    translated = re.sub(r'([\u4e00-\u9fff])([a-zA-Z0-9])', r'\1 \2', translated)
-    translated = re.sub(r'([a-zA-Z0-9])([\u4e00-\u9fff])', r'\1 \2', translated)
+    translated = re.sub(r'([\u4e00-\u9fff]) *([a-zA-Z0-9])', r'\1 \2', translated)
+    translated = re.sub(r'([a-zA-Z0-9]) *([\u4e00-\u9fff])', r'\1 \2', translated)
     final = _restore_placeholders(translated, placeholders)
     # 清理链接 text 与占位符之间插入的零宽空格分隔符
     final = final.replace(_LINK_SEP, '')
@@ -401,6 +401,9 @@ def translate_markdown(content: str, api_key: str, quota_used: int) -> tuple:
     final = re.sub(r'\[\s*([^\[\]]+?)\s*\]\[', r'[\1][', final)
     # 去掉中文字符之间的多余空格（映射表占位符还原后中文词间可能残留空格）
     final = re.sub(r'([\u4e00-\u9fff]) (?=[\u4e00-\u9fff])', r'\1', final)
+    # 去掉中文标点前后的多余空格
+    final = re.sub(r' ([，。！？；：）」】])', r'\1', final)
+    final = re.sub(r'([，。！？；：（「【]) ', r'\1', final)
     return final, total_used, quota_exceeded, failed_count
 
 
