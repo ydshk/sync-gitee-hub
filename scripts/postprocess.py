@@ -1,0 +1,88 @@
+"""
+后处理逻辑：对翻译 API 返回的结果应用格式修复。
+独立模块，可单独迭代——改后处理不需重新调翻译 API。
+"""
+import re
+
+_LINK_SEP = '\u200b'
+
+PLACEHOLDER_RE = re.compile(r'XPLHX\d+XPLHX', re.IGNORECASE)
+
+
+def restore_placeholders(text, placeholders):
+    """将占位符替换回原始内容，容忍翻译 API 在占位符内插入空格"""
+    if not placeholders:
+        return text
+    ph_fuzzy = re.compile(r'XPLHX\s*(\d+)\s*XPLHX', re.IGNORECASE)
+    sorted_ph = sorted(placeholders.items(), key=lambda x: int(x[0][5:-5]), reverse=True)
+    ph_by_idx = {int(ph[5:-5]): original for ph, original in sorted_ph}
+
+    def _restore(m):
+        idx = int(m.group(1))
+        return ph_by_idx.get(idx, m.group())
+
+    prev = None
+    while text != prev:
+        prev = text
+        text = ph_fuzzy.sub(_restore, text)
+    return text
+
+
+def cjk_latin_spacing(text):
+    """中英混排加空格，压缩 DeepL 产生的多余空格"""
+    text = re.sub(r'([\u4e00-\u9fff]) *([a-zA-Z0-9])', r'\1 \2', text)
+    text = re.sub(r'([a-zA-Z0-9]) *([\u4e00-\u9fff])', r'\1 \2', text)
+    return text
+
+
+def fix_bold(text):
+    """修复加粗内部前后空格 + 按行检查未闭合的 **"""
+    def _strip_bold(m):
+        return f'**{m.group(1).strip()}**'
+    text = re.sub(r'\*\*(.+?)\*\*', _strip_bold, text)
+
+    def _fix_bold_per_line(line):
+        if line.count('**') % 2 == 1:
+            idx = line.rfind('**')
+            return line[:idx] + line[idx + 2:]
+        return line
+    text = '\n'.join(_fix_bold_per_line(ln) for ln in text.split('\n'))
+    return text
+
+
+def fix_title(text):
+    """修复标题多空格：##  关于 → ## 关于"""
+    return re.sub(r'(?m)^(#{1,6})\s{2,}', r'\1 ', text)
+
+
+def fix_link(text):
+    """修复链接 text 前后多余空格"""
+    text = re.sub(r'\[\s*([^\[\]]+?)\s*\]\(', r'[\1](', text)
+    text = re.sub(r'\[\s*([^\[\]]+?)\s*\]\[', r'[\1][', text)
+    return text
+
+
+def fix_cjk_space(text):
+    """去掉中文字符之间的多余空格"""
+    return re.sub(r'([\u4e00-\u9fff]) (?=[\u4e00-\u9fff])', r'\1', text)
+
+
+def fix_punct_space(text):
+    """去掉中文标点前后的多余空格"""
+    text = re.sub(r' ([，。！？；：）」】])', r'\1', text)
+    text = re.sub(r'([，。！？；：（「【]) ', r'\1', text)
+    return text
+
+
+def run(translated, placeholders):
+    """后处理主入口：还原占位符 + 全部格式修复"""
+    translated = cjk_latin_spacing(translated)
+    final = restore_placeholders(translated, placeholders)
+    final = final.replace(_LINK_SEP, '')
+    final = re.sub(r'\s*XPLHX\s*', ' ', final, flags=re.IGNORECASE)
+    final = fix_bold(final)
+    final = fix_title(final)
+    final = fix_link(final)
+    final = fix_cjk_space(final)
+    final = fix_punct_space(final)
+    return final
