@@ -277,10 +277,11 @@ jobs:
             --api-key "$DEEPL_API_KEY" \
             $FORCE_FLAG
 
-          # 2b. 把缓存和使用量 commit 回 translation-service 仓库
+          # 2b. 把缓存和使用量 commit 回 translation-service 仓库（用 GH_PAT 确保写权限）
           cd "$GITHUB_WORKSPACE/translation-service"
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/ydshk/translation-service.git"
           git add cache/
           git commit -m "Update translation cache for ${GITEE_REPO}" || echo "No cache changes to commit"
           git push
