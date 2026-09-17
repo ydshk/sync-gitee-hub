@@ -1,0 +1,1717 @@
+{
+  "888b12167e38e9919ba709c1edecc6bc91b3b099667d929a4db0e3e9e75987d3": {
+    "source": "XPLHX0XPLHX\n==================================",
+    "api_result": "XPLHX0XPLHX\n==================================",
+    "ts": "2026-09-17T09:11:47.001526+00:00"
+  },
+  "9fd632de9b5ce8a904a9e55a27ca06c1bc318a7d7123a15d42875544093db657": {
+    "source": "XPLHX1XPLHXXPLHX0XPLHXXPLHX2XPLHX",
+    "api_result": "XPLHX1XPLHXXPLHX0XPLHXXPLHX2XPLHX",
+    "ts": "2026-09-17T09:11:47.802171+00:00"
+  },
+  "f59260b6cc44c6af9b920efb69eb7059ed7986138b42515c501855d074fbf029": {
+    "source": "This is the XPLHX2XPLHX App repository for XPLHX1XPLHX for a convenient way to run the XPLHX3XPLHXXPLHX0XPLHXXPLHX4XPLHX",
+    "api_result": "这是适用于 XPLHX1XPLHX 的 XPLHX2XPLHX 应用仓库，可方便地运行 XPLHX3XPLHXXPLHX0XPLHXXPLHX4XPLHX",
+    "ts": "2026-09-17T09:11:48.829622+00:00"
+  },
+  "55eb5f49909f87051ea565901d449556a5a4f799ff45e463da280c86c5c4d818": {
+    "source": "XPLHX0XPLHX is a music library manager for your offline and online music sources, combined with the power of XPLHX1XPLHX to easily stream your favourite music to a wide range of supported players.",
+    "api_result": "XPLHX0XPLHX 是一款用于管理您的离线和在线音乐资源的音乐库管理器，结合了 XPLHX1XPLHX 的强大功能，可轻松将您喜爱的音乐流式传输到各种受支持的播放器上。",
+    "ts": "2026-09-17T09:11:50.005624+00:00"
+  },
+  "87428bf89af63a3c454e07e243876a1a6cf38c2c698e772416a1a6920bd2fc90": {
+    "source": "XPLHX1XPLHXDocumentation:XPLHX2XPLHX XPLHX0XPLHX",
+    "api_result": "XPLHX1XPLHX文档：XPLHX2XPLHX XPLHX0XPLHX",
+    "ts": "2026-09-17T09:11:50.834957+00:00"
+  },
+  "f8290e68abc3a0f513f88f9bd53db57150de2b1a4c02d37cbc27c8bf1b02dd08": {
+    "source": "For XPLHX2XPLHX, please go to XPLHX0XPLHXthe issue trackerXPLHX1XPLHX.",
+    "api_result": "关于 XPLHX2XPLHX 的问题，请访问 XPLHX0XPLHX 问题跟踪器 XPLHX1XPLHX。",
+    "ts": "2026-09-17T09:11:51.803522+00:00"
+  },
+  "e473f73bfed4e7a4d23be2cf35598e5d880163271e18f4e070463b645c2af2e4": {
+    "source": "For feature requests, please see XPLHX0XPLHXfeature requestsXPLHX1XPLHX.",
+    "api_result": "如需提出功能请求，请参阅 XPLHX0XPLHX功能请求XPLHX1XPLHX。",
+    "ts": "2026-09-17T09:11:52.648119+00:00"
+  },
+  "873b86812028fd82ad6a8e5dc07fe75d531c0301957ce549d1826dd290b5d884": {
+    "source": "XPLHX0XPLHXInstallation",
+    "api_result": "XPLHX0XPLHX安装",
+    "ts": "2026-09-17T09:11:53.417613+00:00"
+  },
+  "378f542e77881e2476e965921947441c3ce8fcb7631c60197bec40deda4c08e6": {
+    "source": "If you want to add this repository manually, please follow the procedure highlighted in the XPLHX1XPLHXXPLHX0XPLHX websiteXPLHX2XPLHX. Use the following URL to add this repository: XPLHX3XPLHX",
+    "api_result": "如果您想手动添加此软件源，请按照 XPLHX1XPLHXXPLHX0XPLHX 网站XPLHX2XPLHX 上标注的步骤操作。请使用以下 URL 添加此软件源：XPLHX3XPLHX",
+    "ts": "2026-09-17T09:11:54.369896+00:00"
+  },
+  "fae4402ddbb254fe21c62fe22c26400fd590231c7cd29e69766f19677366d3aa": {
+    "source": "XPLHX0XPLHX\nXPLHX1XPLHX",
+    "api_result": "XPLHX0XPLHX\nXPLHX1XPLHX",
+    "ts": "2026-09-17T09:11:55.162858+00:00"
+  },
+  "65aebb75c910ddc0bbd64b719eff68cdbaf7acfa021ac2e1bd375c7a8d101384": {
+    "source": "XPLHX0XPLHXChangelog",
+    "api_result": "XPLHX0XPLHX变更日志",
+    "ts": "2026-09-17T09:11:55.905276+00:00"
+  },
+  "c77acd58ef53edee833d22c2aa685857aff8d6d6eab4e041f04ee8ec1fe8dc1a": {
+    "source": "XPLHX0XPLHX0.1.13",
+    "api_result": "XPLHX0XPLHX0.1.13",
+    "ts": "2026-09-17T09:11:56.712852+00:00"
+  },
+  "e3ce018852eba0a3c60d6a7ad50365afd8b4a06ca56f2edacc50f5263f78234b": {
+    "source": "Built on XPLHX0XPLHX v0.1.6, and through it XPLHX1XPLHX v0.7.2.",
+    "api_result": "基于 XPLHX0XPLHX v0.1.6 构建，并通过其构建了 XPLHX1XPLHX v0.7.2。",
+    "ts": "2026-09-17T09:11:57.718488+00:00"
+  },
+  "008abc2ab407c807240fa2a77bdbfcdb40a415eff38f7388d064028a674a69ff": {
+    "source": "- An audio output that goes away and comes back is now picked up again on its\n  own, usually within a few seconds, instead of leaving this player silent until\n  the next track starts. XPLHX0XPLHX's Pu",
+    "api_result": "- 音频输出时断时续的情况现在会自动恢复，\n  通常只需几秒钟，而不是让播放器保持静默直到\n  下一首曲目开始。XPLHX0XPLHX提到的PulseAudio重启是常见\n  情况；另一种情况则是 USB DAC 被拔出后重新插入。在\n  输出中断期间，播放器会丢弃当前音频而非陷入停滞，因此\n  该组中的其他播放器仍能不受干扰地继续播放；当输出恢复时，\n  该播放器会从当前正在播放的曲目中途重新加入。\n- 它不会无休止地持续尝试。系统会进行五次尝试，第一次在输出中断后约两\n  秒进行，后续每次等待时间均为前一次的两倍，最长不超过三十\n  秒——总共覆盖约一分钟的时间，这比音频\n  服务器重启所需时间更长，也比重新插入 DAC 所需时间更长。 此后，\n  播放器会在日志中记录该情况，并等待下一首曲目——此时\n  输出端口本就会重新打开。因此，对于永远无法恢复的输出端口，\n  重试时间仅为一分钟，而非无休止地持续下去。",
+    "ts": "2026-09-17T09:11:58.987517+00:00"
+  },
+  "5548c98b26d3c3fb5ed11683632534ed48542367f0b0498817420f30c82d3d54": {
+    "source": "XPLHX0XPLHX0.1.12",
+    "api_result": "XPLHX0XPLHX0.1.12",
+    "ts": "2026-09-17T09:11:59.746905+00:00"
+  },
+  "8fdec49345c7f39f08bc15a4d5790a25f9e66ef97e0bd35251667420fc753eb7": {
+    "source": "- Two new settings, XPLHX3XPLHXCommand to run when playback startsXPLHX4XPLHX and XPLHX5XPLHXCommand to run\n  when playback stopsXPLHX6XPLHX, for switching something on while the music plays — an\n  am",
+    "api_result": "- 两个新设置：XPLHX3XPLHXCommand（在播放开始时执行）XPLHX4XPLHX 和 XPLHX5XPLHXCommand（在\n  播放停止时执行）XPLHX6XPLHX，用于在音乐播放时开启某些设备——例如\n  功放继电器、一盏灯。每个都是一个 shell 命令，每次\n  流媒体开始或结束时都会在应用内部执行。这不会导致音频中断，且命令\n  执行失败时仅会在日志中记录一行，而非使播放器停止；XPLHX0XPLHX\n  用于标识属于上述两种事件中的哪一种。若留空则不执行任何操作，这\n  正是绝大多数系统所期望的。同一镜像的 Docker Compose 部署中\n  将其命名为 XPLHX1XPLHX 和 XPLHX2XPLHX。\n- 这两个设置会执行命令，因此该应用的 AppArmor 配置文件现在允许\n  播放器启动一个 shell，并通过它运行该应用中的程序，而\n  此前它完全无法做到这一点。 值得明确指出的是，因为这是该配置文件\n  有史以来首次允许播放器执行的操作：任何通过网络\n  接管播放器的人现在都能访问一个 shell，而此前\n  根本没有任何可访问的内容。 它并未允许任何操作\n  超出播放器原本的权限范围——该shell及其启动的所有程序均在\n  播放器自身的配置文件下运行，不具备任何权限，且只能打开\n  该配置文件中列出的文件。将这两个设置均留空并不会关闭该功能：无论哪种方式，\n  配置文件都保持不变。",
+    "ts": "2026-09-17T09:12:00.926078+00:00"
+  },
+  "85c9012b8b33015a26f18940a35c68ec9d5757115bd0243d9eb2dd67db33760e": {
+    "source": "XPLHX0XPLHX0.1.11",
+    "api_result": "XPLHX0XPLHX0.1.11",
+    "ts": "2026-09-17T09:12:01.673130+00:00"
+  },
+  "dbf45ff5397bec919f5038545f8bcbc5d4d9cc980c3e473cbf19cfd317ca5406": {
+    "source": "- New XPLHX7XPLHXAudio bufferXPLHX8XPLHX setting, in milliseconds. Leave it empty and nothing\n  changes: the player uses its own XPLHX13XPLHX, which suits almost every system.\n  Raise it where the sou",
+    "api_result": "- 新增 XPLHX7XPLHX 音频缓冲区 XPLHX8XPLHX 设置，单位为毫秒。若留空，则\n  不会发生任何变化：播放器将使用其自身的 XPLHX13XPLHX 值，该值适用于几乎所有系统。\n  如果在负载较重或速度较慢的机器上出现声音卡顿或中断，请提高该值——\n  这样可以预先缓冲更多音频以填补空隙——但代价是\n  曲目开始时和快进/快退时的等待时间会更长。 同一镜像的 Docker Compose\n  部署中，该参数默认值为 XPLHX0XPLHX。\n- 该播放器现在在 XPLHX6XPLHX 的设备列表中将自身命名为 XPLHX9XPLHXMusic\n  AssistantXPLHX10XPLHX / XPLHX11XPLHXLocal AudioXPLHX12XPLHX。 此前它会列出\n  其构建所基于的库（XPLHX1XPLHX 和 XPLHX2XPLHX）的制造商和型号。除此之外\n  没有任何变化，且您为播放器命名的名称也保持不变。\n- 仅针对该 Compose 部署还有两项设置，详见\n  仓库中的 XPLHX3XPLHX：XPLHX4XPLHX 将一个音频 XPLHX14XPLHX 移至\n  播放器广播列表的最前端，这样仅\n  仅支持特定格式时，可将其固定在该位置；而 XPLHX5XPLHX 则在同一台机器上运行多个容器时，为每个容器\n  分配独立的标识。此处未提供这两项设置，\n  因为它们在此场景中无需解决任何问题：该应用通过 Home\n  Assistant 自身的音频输出进行播放，该输出会进行转换，且每个系统仅使用一个播放器。",
+    "ts": "2026-09-17T09:12:02.859043+00:00"
+  },
+  "ce0c3e58c9f2735785b360485d7e312d3fc3cf4db74dec84ac6672c50c342e5d": {
+    "source": "XPLHX0XPLHX0.1.10",
+    "api_result": "XPLHX0XPLHX0.1.10",
+    "ts": "2026-09-17T09:12:03.702164+00:00"
+  },
+  "7764b2d057d77918a794b63cb3f371cd6e00d1f26f387f1a02c66fbb445a0ab6": {
+    "source": "Built on XPLHX0XPLHX v0.1.5, and through it XPLHX1XPLHX v0.7.2.",
+    "api_result": "基于 XPLHX0XPLHX v0.1.5 构建，并由此衍生出 XPLHX1XPLHX v0.7.2。",
+    "ts": "2026-09-17T09:12:04.530005+00:00"
+  },
+  "f22e288426beb62c7f8dea2fb0bfc5745469885982b6f9e8dc7c4b194d0fc7a2": {
+    "source": "- The player can now play through a PulseAudio or PipeWire server directly,\n  rather than only through ALSA's bridges to them. Nothing changes for this app:\n  it plays through the PulseAudio that XPLH",
+    "api_result": "- 播放器现在可以直接通过 PulseAudio 或 PipeWire 服务器进行播放，\n  而不再仅通过 ALSA 的桥接功能连接至这些服务器。 对于本应用而言，一切保持不变：\n  它仍通过 XPLHX5XPLHX 映射到 ALSA 之上的 PulseAudio 进行播放，\n  与之前完全相同，输出设备仍可在 XPLHX6XPLHXAudioXPLHX7XPLHX 面板中选择。 这些\n  新的后端适用于同一镜像的 Docker Compose 部署，在\n  音频系统采用音频服务器而非声卡的机器上——在那里，它们可以为\n  特定的输出端或节点，它们会在主机的混音器中以各自的\n  名称显示，并且从服务器获取时间同步——这对需要\n  与其他播放器保持同步的播放器而言至关重要。\n- 针对该 Compose 部署，仅当 XPLHX0XPLHX\n  被设置为恰好 XPLHX1XPLHX 或 XPLHX2XPLHX 时，有一处变更：这两个名称现在会选择新的\n  原生后端，而非同名的 ALSA 插件设备。 它们连接到\n  同一台服务器，因此音频会继续播放，且容器会在每次启动时的日志中\n  记录其采用的路径。XPLHX3XPLHX 和 XPLHX4XPLHX 则是\n  回退方案。",
+    "ts": "2026-09-17T09:12:05.651931+00:00"
+  },
+  "3744cfd35acf9b00b50edaa49ac514ee46707dd970dfc6ae2d15664d1fe2f084": {
+    "source": "XPLHX0XPLHX0.1.9",
+    "api_result": "XPLHX0XPLHX0.1.9",
+    "ts": "2026-09-17T09:12:06.383184+00:00"
+  },
+  "9c79cbb7579bbd59a354e9e7b23a3b50f060f4d04a5bf8093758d5a33cbdbf3e": {
+    "source": "Fixes the error XPLHX0XPLHX recorded every time this app was stopped. That\nis what 0.1.3 set out to do as well; this is why it kept happening.",
+    "api_result": "修复了每次停止此应用时都会记录的错误 XPLHX0XPLHX。这\n也是 0.1.3 版本原本打算解决的问题；正因如此，该错误才会反复出现。",
+    "ts": "2026-09-17T09:12:07.310119+00:00"
+  },
+  "1aa480a9eb53c67ddb3ff72e985fb44060d8a729c0da8d70a2c4475edda1c126": {
+    "source": "- Stopping the app no longer ends in XPLHX0XPLHX. The\n  two-second deadline added in 0.1.3 was never able to fire. This app runs\n  behind an AppArmor profile, and that profile did not let it signal th",
+    "api_result": "- 停止该应用时不再出现 XPLHX0XPLHX 错误。\n  0.1.3 版本中添加的 2 秒超时机制从未触发过。 该应用在\n  AppArmor 配置文件下运行，而该配置文件不允许它在两个\n  捆绑的守护进程切换到各自的用户账户后向其发送信号——因此\n  无论是停止信号还是随后应触发的强制终止信号都未能送达，没有任何\n  机制限制等待时间，因此 XPLHX2XPLHX 在十秒后\n  与之前完全一样地终止了容器。 现在，该应用能在约两\n  秒内自主停止运行。该配置文件仅允许向其自身进程发送信号，\n  而容器中仅存在这些进程。\n- 在某些系统上，该播放器根本不会出现在 XPLHX1XPLHX 中。 该\n  配置文件还会阻止捆绑的 mDNS 守护进程打开其用于监听\n  网络的套接字，因此该进程在启动时失败，并在应用运行期间\n  每秒重启一次，且未发布任何信息。这种情况是否发生\n  取决于底层内核，因此并非所有用户都会遇到此问题。",
+    "ts": "2026-09-17T09:12:08.534943+00:00"
+  },
+  "d446dcb59c9a427de7c251fb302aa7362e874bb8ba519cbf0697864292ca9287": {
+    "source": "XPLHX0XPLHX0.1.8",
+    "api_result": "XPLHX0XPLHX0.1.8",
+    "ts": "2026-09-17T09:12:09.295037+00:00"
+  },
+  "6714f8760228bbda124315df18b9ad8916c7a2eec548de2b9bd6c49612b7a4dd": {
+    "source": "Built on XPLHX0XPLHX v0.1.4, and through it XPLHX1XPLHX v0.7.2.",
+    "api_result": "基于 XPLHX0XPLHX v0.1.4 构建，并通过该版本实现了 XPLHX1XPLHX v0.7.2。",
+    "ts": "2026-09-17T09:12:10.215607+00:00"
+  },
+  "3f84141ea7bb44b81df0edfc932de3545b7d73d05a9b74bb765d97fbcc20f30d": {
+    "source": "- Nothing is changed for you. This is the player itself moving up to its\n  current release; none of what it changes upstream shows up in playback here.",
+    "api_result": "- 对您而言没有任何变化。这是播放器本身升级到了其\n  当前版本；上游的任何更改都不会体现在这里的播放中。",
+    "ts": "2026-09-17T09:12:11.075125+00:00"
+  },
+  "151c98d5c39aa8140115135990d13e215f1d217743e5249bd1e74b05a4d7275a": {
+    "source": "XPLHX0XPLHX0.1.7",
+    "api_result": "XPLHX0XPLHX0.1.7",
+    "ts": "2026-09-17T09:12:11.845151+00:00"
+  },
+  "dda51c4d8fb5345259c48861f31ba3ec7639f5311a4d53e76b6cd001f67359b7": {
+    "source": "- The player is called XPLHX1XPLHXLocal AudioXPLHX2XPLHX by XPLHX9XPLHX, rather than taking the name\n  of the machine it runs on. If you never set a name, this player is about to\n  be renamed from XPL",
+    "api_result": "- 该播放器被命名为 XPLHX1XPLHXLocal AudioXPLHX2XPLHX 至 XPLHX9XPLHX，而不是采用\n  其运行所在设备的名称。 如果您从未设置过名称，该播放器即将\n  在 XPLHX0XPLHX 中从 XPLHX3XPLHXhomeassistantXPLHX4XPLHX 重命名为 XPLHX5XPLHXLocal AudioXPLHX6XPLHX ——\n  请在 XPLHX7XPLHXPlayer nameXPLHX8XPLHX 中输入旧名称以保留它。\n- 该应用不再询问主机的 UTS 命名空间。该功能此前仅用于\n  从主机读取上述名称，如今已无此需求。",
+    "ts": "2026-09-17T09:12:12.920843+00:00"
+  },
+  "84d5d568ac7236b9e056becb4f55ec7e25365573820f2ed05d6450703f468b41": {
+    "source": "XPLHX0XPLHX0.1.6",
+    "api_result": "XPLHX0XPLHX0.1.6",
+    "ts": "2026-09-17T09:12:13.699812+00:00"
+  },
+  "2ee6cac7c8db787c0016248edd18b17156bb19a3bc1afd8999e705d10871389c": {
+    "source": "- The log now names the audio output this app plays through at every start —\n  which output it is, how loud it is set, and which socket on the card it is\n  coming out of. Until now a healthy start sai",
+    "api_result": "- 日志现在会在每次启动时记录该应用通过哪个音频输出通道播放声音——\n  具体是哪个输出通道、音量设置为多少，以及声音是从声卡上的哪个插孔\n  输出的。此前，如果启动正常，日志中根本不会显示任何信息，这导致\n  在报告“无声音”时，日志中没有任何可供参考的内容。\n- 针对音量已调高且未静音但仍无声的输出通道，新增了一条警告，\n  因为该通道被路由到一个未连接任何设备的接口上。 当声卡的\n  耳机插孔处于使用状态，而线路输出被选中时，\n  就会出现这种情况，通常只需重新插入扬声器即可解决。只有\n  声卡实际报告为不可用的端口才会被命名，因此对于无法\n  检测到是否插入设备的声卡，系统不会进行干预。\n- 过去未报错的两种情况现在会提示错误：在\n  XPLHX0XPLHXAudioXPLHX1XPLHX面板中选定的输出未出现在PulseAudio的列表中——一个未连接的USB\n  DAC，或音频卡已被重命名——以及完全没有音频输出。这两种情况都意味着\n  音频被传送到了发送目标以外的地方，却没有任何提示\n  信息。\n- 对于您而言，一切仍保持不变。音量和输出选择\n  与本机上的其他所有应用程序共享，您仍可在\n  XPLHX2XPLHXAudioXPLHX3XPLHX面板中自行设置。",
+    "ts": "2026-09-17T09:12:14.922802+00:00"
+  },
+  "6f9696d6aa65a6d6661226c490f91fa1fbe41f9765f7ddf7adb68aff10ca54fd": {
+    "source": "XPLHX0XPLHX0.1.5",
+    "api_result": "XPLHX0XPLHX0.1.5",
+    "ts": "2026-09-17T09:12:15.645843+00:00"
+  },
+  "40c0f614e2d033e4b6438292ea737aa504f3d6eff32c86f2254ee3cbdcdf2b77": {
+    "source": "Built on XPLHX0XPLHX v0.1.3.",
+    "api_result": "基于 XPLHX0XPLHX v0.1.3 构建。",
+    "ts": "2026-09-17T09:12:16.543300+00:00"
+  },
+  "e6aa126a7f94376abea24cb927697ab7af692b7dac63f58dd44c182f47cf3370": {
+    "source": "- Music now plays at the XPLHX1XPLHX the sound card supports. The player offered\n  XPLHX0XPLHX the formats it accepts worst first, and XPLHX0XPLHX sends\n  the first one on the list it can encode, so t",
+    "api_result": "- 音乐现在通过声卡支持的 XPLHX1XPLHX 格式播放。 该播放器列出的\n  XPLHX0XPLHX 支持的格式按从差到好的顺序排列，而 XPLHX0XPLHX 会发送\n  列表中它能编码的第一个格式，因此无论扬声器质量多好，\n  音频最终以 22.05 kHz 的采样率输出。 现在，列表中排在首位的是输出\n  所能支持的最佳格式，对于普通声卡而言，即 48 kHz 16 位立体声。",
+    "ts": "2026-09-17T09:12:17.620822+00:00"
+  },
+  "02a08f55dc144e5c43a1dff88cd8d2db2e0044f09c8bdcde60a813f3ade3546d": {
+    "source": "XPLHX0XPLHX0.1.4",
+    "api_result": "XPLHX0XPLHX0.1.4",
+    "ts": "2026-09-17T09:12:18.427003+00:00"
+  },
+  "d6cf555007442782dac25f96e3d31dc21668360b31f93b604a6ccdd7a9799405": {
+    "source": "- The log now says so at start when the XPLHX2XPLHX audio output this app\n  plays through is muted or turned all the way down. That is silence at every\n  XPLHX1XPLHX volume setting, and until now it h",
+    "api_result": "- 现在，当该应用\n  通过 XPLHX2XPLHX 音频输出播放时，如果该输出被静音或音量调至最低，日志会在启动时显示相关信息。 这意味着无论\n  XPLHX1XPLHX音量设置为何，都会出现静音，而此前该问题在任何地方均未显现症状：\n  播放器会正常显示，接受音乐并进行播放，但最终毫无声响。该警告\n  指明了输出设备及其触发该问题的XPLHX0XPLHX命令。\n- 这对您没有任何影响。该输出电平与本机上的所有其他应用\n  共享，您可以在 XPLHX3XPLHXAudioXPLHX4XPLHX 面板中自行设置，因此本应用\n  仅报告该设置，而非在每次重启时覆盖它。",
+    "ts": "2026-09-17T09:12:19.589606+00:00"
+  },
+  "f1e261deacd1b09642e4779ff04c88580b285d8b88b48f6dc0d60a84368ddce3": {
+    "source": "XPLHX0XPLHX0.1.3",
+    "api_result": "XPLHX0XPLHX0.1.3",
+    "ts": "2026-09-17T09:12:20.425321+00:00"
+  },
+  "b9246b0872282c4807bccd1521c4810b5c259b5e6ef4572704f9f9660bfde3f2": {
+    "source": "Fixes the error XPLHX0XPLHX recorded every time this app was stopped.",
+    "api_result": "修复了每次停止此应用时都会记录的错误 XPLHX0XPLHX。",
+    "ts": "2026-09-17T09:12:21.213054+00:00"
+  },
+  "bf9eb5c12ec3449d1252ee1f75a746f798eb48d6e13a1a34c059abd6b3608015": {
+    "source": "- Stopping the app no longer ends in XPLHX0XPLHX. The\n  shutdown had no deadline of its own, so a bundled daemon that did not answer\n  its stop signal held the container open until XPLHX3XPLHX gave up",
+    "api_result": "- 停止应用时不再导致 XPLHX0XPLHX 错误。由于\n  该关闭操作本身没有截止时间，因此某个未响应\n  停止信号的捆绑守护进程会使容器保持打开状态，直到 XPLHX3XPLHX 在十\n  秒后放弃并将其终止。 现在，每个服务在被\n  终止前都有两秒钟的停止时间，这使得整个关闭过程都控制在 XPLHX3XPLHX 允许的时间范围内。\n  该应用始终能达到“已停止”状态；不同之处在于，它现在能\n  干净利落地达到该状态，而不是被记录为失败。\n- AppArmor 配置文件中的三个子配置文件会接受应用程序\n  被允许发送给它们的每一个信号。这三个子配置文件中均缺少 XPLHX1XPLHX，而 s6 在每次常规停止时会\n  将其与 XPLHX2XPLHX 一起发送，因此每次停止都会导致一次拒绝。",
+    "ts": "2026-09-17T09:12:22.391435+00:00"
+  },
+  "765a4b1444cb42385c0b68814bcc4c30b691daaaeda0d7df7cd6b58bc3a17d0c": {
+    "source": "XPLHX0XPLHX0.1.2",
+    "api_result": "XPLHX0XPLHX0.1.2",
+    "ts": "2026-09-17T09:12:23.175038+00:00"
+  },
+  "d1e4cf0230053735fb3dd370cd15ef9dc7a5f54a20420ebc9d04eaccf231dd0a": {
+    "source": "Built on XPLHX0XPLHX v0.1.1.",
+    "api_result": "基于 XPLHX0XPLHX v0.1.1 构建。",
+    "ts": "2026-09-17T09:12:23.941140+00:00"
+  },
+  "b1ece30d7e50b1f55392de83cedbb1a745e89a49a159536638966f884b1f8f57": {
+    "source": "- The player name is a regular field on the configuration screen now, rather\n  than folded away as an unused option. Empty still means this system's\n  hostname.\n- A XPLHX0XPLHX value carrying credenti",
+    "api_result": "- 玩家名称现已成为配置界面上的常规字段，而非\n  作为未使用选项被折叠隐藏。若留空，则仍默认采用该系统的\n  主机名。\n- 携带凭据的 XPLHX0XPLHX 值不再将其打印回\n  播放器的日志中：每条包含服务器名称的行都会屏蔽其用户信息。",
+    "ts": "2026-09-17T09:12:24.932008+00:00"
+  },
+  "db94aff80d0d554748e0594ae0e912af7d47a1a3d23fc55c0837c2e30e26dac7": {
+    "source": "XPLHX0XPLHX0.1.1",
+    "api_result": "XPLHX0XPLHX0.1.1",
+    "ts": "2026-09-17T09:12:25.697884+00:00"
+  },
+  "8e388c414a8bc690fa7611d6eb29f8ebb46a7d24c78374bdf928545e7d20bdcd": {
+    "source": "Fixes the AppArmor profile under real store-install enforcement, where 0.1.0's\navahi crash-looped and the control socket never came up:",
+    "api_result": "修复了在“真实商店安装”强制执行模式下的 AppArmor 配置文件，此前在该模式下，0.1.0 版本的\navahi 会陷入崩溃循环，且控制套接字始终无法建立：",
+    "ts": "2026-09-17T09:12:26.779541+00:00"
+  },
+  "0855777cc48b65a78dea4ac3778453bb1033dd2d87e74d07fb11dc931d29c36e": {
+    "source": "- File locking is its own AppArmor permission: the daemons' pid files and the\n  player's control-socket lock now carry XPLHX0XPLHX alongside XPLHX1XPLHX.\n- The child profiles' signal rules no longer n",
+    "api_result": "- 文件锁定是 AppArmor 中的一个独立权限：守护进程的 PID 文件和\n  播放器的控制套接字锁现在除了 XPLHX1XPLHX 之外，还带有 XPLHX0XPLHX 权限。\n- 子配置文件的信号规则不再直接命名该配置文件：Supervisor\n  会将配置文件名重写为已安装的简短名称，其前缀取决于\n  应用的安装方式，因此命名的对等方永远无法在所有情况下都匹配。",
+    "ts": "2026-09-17T09:12:27.835738+00:00"
+  },
+  "043ffa5c16ea1d696f6f9428c1654e8af9b1582d2719c4b452f9ccca208c806e": {
+    "source": "XPLHX0XPLHX0.1.0",
+    "api_result": "XPLHX0XPLHX0.1.0",
+    "ts": "2026-09-17T09:12:28.605816+00:00"
+  },
+  "42b3dba0771eab6a4aae053c25ffec79b9f52bbd57a0c1ccfba01252cb18c206": {
+    "source": "Initial release, built on XPLHX0XPLHX v0.1.0.",
+    "api_result": "初始版本，基于 XPLHX0XPLHX v0.1.0 构建。",
+    "ts": "2026-09-17T09:12:29.435781+00:00"
+  },
+  "5a57679e870521e330af818c3edf2ee1d66e328911939910e6853a35d8c90c5e": {
+    "source": "- Plays XPLHX0XPLHX audio out of the machine XPLHX1XPLHX runs on, as a\n  Sendspin player, on its own or synchronized with a group.\n- Found by XPLHX0XPLHX automatically over mDNS, with no configuration",
+    "api_result": "- 在运行 XPLHX1XPLHX 的设备上播放 XPLHX0XPLHX 的音频，作为\n  Sendspin 播放器，既可独立运行，也可与组同步。\n- XPLHX0XPLHX 会通过 mDNS 自动发现该设备，无需任何配置。\n- 通过 XPLHX1XPLHX 的音频系统进行播放，因此声卡可在\n  应用程序自身的“音频”面板中进行选择。\n- 可选播放器名称、日志级别，以及在\n  无法进行设备发现的网络环境中使用的固定服务器地址。\n- 音量、静音和扬声器延迟设置在重启和更新后仍会保留。\n- 随附一个 AppArmor 配置文件，该配置文件不会授予播放器本身任何权限。",
+    "ts": "2026-09-17T09:12:30.527120+00:00"
+  },
+  "7e061900a29f5021a52e308ce251b83c2b710c1f227addc9a412d3e6f14584dc": {
+    "source": "XPLHX0XPLHXLocal Audio",
+    "api_result": "XPLHX0XPLHX本地音频",
+    "ts": "2026-09-17T09:12:31.345669+00:00"
+  },
+  "93e917e1c30ae739536f916c54b7fd1d3346dcb15b87e0856e2ef78af205355c": {
+    "source": "Turns the machine running XPLHX1XPLHX into a XPLHX0XPLHX player. Plug\nspeakers, an amplifier or a USB DAC into the box, start this app, and it appears\nin XPLHX0XPLHX alongside your other speakers — ab",
+    "api_result": "将运行 XPLHX1XPLHX 的设备转变为 XPLHX0XPLHX 播放器。 将\n扬声器、功放或 USB 数模转换器连接到该设备，启动此应用后，它便会\n出现在 XPLHX0XPLHX 中，与其他扬声器并列——既可独立播放，也可\n与整个音响组同步播放。",
+    "ts": "2026-09-17T09:12:32.408997+00:00"
+  },
+  "01188237135bd56a50e7a9316b3e8ad883970c1193649169d580518839a87827": {
+    "source": "The player is XPLHX1XPLHXSendspinXPLHX2XPLHX, the playback and\nsynchronization protocol built into XPLHX0XPLHX.",
+    "api_result": "该播放器是 XPLHX1XPLHXSendspinXPLHX2XPLHX，这是内置于 XPLHX0XPLHX 中的\n播放和同步协议。",
+    "ts": "2026-09-17T09:12:33.283802+00:00"
+  },
+  "163cc9696862370fcd54f79594b30ce567641f88577e916406f769aa99b8c6cb": {
+    "source": "XPLHX0XPLHXWhat you need",
+    "api_result": "XPLHX0XPLHX您需要准备的物品",
+    "ts": "2026-09-17T09:12:34.051669+00:00"
+  },
+  "f73fd7493a0c957dca79f4d1df31ed7d07483dc840bc91604d2c47def19bd525": {
+    "source": "- XPLHX0XPLHX 2.7 or newer. Sendspin is built into XPLHX0XPLHX and\n  cannot be turned off, so there is nothing to enable.\n- XPLHX0XPLHX and this player on the same local network. Discovery and audio\n ",
+    "api_result": "- XPLHX0XPLHX 2.7 或更高版本。Sendspin 已内置于 XPLHX0XPLHX 中，\n  且无法关闭，因此无需进行任何启用操作。\n- XPLHX0XPLHX 与该播放器位于同一局域网内。设备发现和音频传输\n  均在局域网内完成；不涉及反向代理、HTTPS 或 VPN。\n- 需有一台通过有线连接至本机的播放设备。",
+    "ts": "2026-09-17T09:12:35.110946+00:00"
+  },
+  "dea0e20e0b1b5f0a26314a776ba46cdbb11e5502b1c8c706ec0c4f1ce188244e": {
+    "source": "XPLHX0XPLHXGetting started",
+    "api_result": "XPLHX0XPLHX入门指南",
+    "ts": "2026-09-17T09:12:35.895488+00:00"
+  },
+  "14b65b2dbcbc9640005ef3aa270173e1c1e900b55662f532467b39c08ab04d68": {
+    "source": "1. Install and start the app.\n2. Open XPLHX1XPLHXSettings → Apps → Local Audio → AudioXPLHX2XPLHX and pick the output your\n   speakers are on.\n3. In XPLHX0XPLHX the player appears by itself, named aft",
+    "api_result": "1. 安装并启动该应用。\n2. 打开 XPLHX1XPLHX设置 → 应用 → 本地音频 → AudioXPLHX2XPLHX，然后选择你的\n   扬声器所在的输出设备。\n3. 在 XPLHX0XPLHX 中，播放器会自动出现，其名称取自本设备名称——\n   通常为 XPLHX3XPLHXhomeassistantXPLHX4XPLHX。请将 XPLHX5XPLHX播放器名称XPLHX6XPLHX 设置为更合适的名称。",
+    "ts": "2026-09-17T09:12:37.102183+00:00"
+  },
+  "dc999d60f0731f0515b380d337eaa6dc83edaeb7571f6996a201cefb77cc1b6e": {
+    "source": "Nothing else needs configuring. XPLHX0XPLHX finds the player over mDNS and\nconnects to it.",
+    "api_result": "无需进行其他配置。XPLHX0XPLHX 会通过 mDNS 查找播放器并\n与其建立连接。",
+    "ts": "2026-09-17T09:12:37.958012+00:00"
+  },
+  "208dd48d2243f8184aa466f570f74c2951ab84932f03be04e6f870dcae0fc1ba": {
+    "source": "XPLHX0XPLHXChoosing where the sound comes out",
+    "api_result": "XPLHX0XPLHX选择声音的输出位置",
+    "ts": "2026-09-17T09:12:38.822751+00:00"
+  },
+  "d67227a7c829839c639550a2153b0f30305b2aafb39277c9f3d3fe48df0e63cd": {
+    "source": "The XPLHX1XPLHXAudioXPLHX2XPLHX panel on this app's page in XPLHX0XPLHX chooses the sound card.\nThis is XPLHX0XPLHX's own audio routing, shared by every app, and it is where\na USB DAC gets selected. N",
+    "api_result": "在 XPLHX0XPLHX 中该应用页面的 XPLHX1XPLHXAudioXPLHX2XPLHX 面板中选择声卡。\n这是 XPLHX0XPLHX 自身的音频路由设置，所有应用程序均共用该设置，而\nUSB DAC 正是在此处被选定的。该应用程序自身的配置中没有任何选项用于选择\n输出设备；“音频”面板才是解决问题的全部答案。",
+    "ts": "2026-09-17T09:12:39.954612+00:00"
+  },
+  "9f63afd70ab896dae3fc108f197a8efca3d048ab582675205bbe65ea727d698f": {
+    "source": "A USB DAC plugged in while the app is running is not picked up until the app is\nrestarted.",
+    "api_result": "在应用程序运行时插入的 USB 数模转换器（DAC）不会被识别，直到应用程序\n重新启动后才会被识别。",
+    "ts": "2026-09-17T09:12:40.817149+00:00"
+  },
+  "aad6585e9281f11078a2426278623d41921356438eeeb374808cc3e12693222a": {
+    "source": "XPLHX0XPLHXDirect hardware output is not available here",
+    "api_result": "XPLHX0XPLHX此处不支持直接硬件输出",
+    "ts": "2026-09-17T09:12:41.580572+00:00"
+  },
+  "6286a324c5aeeaff8daba6cebd78e3f25902ddcdcfe463bbe4418875409faa16": {
+    "source": "This app plays through XPLHX2XPLHX's audio system, and cannot open a sound\ncard directly. XPLHX2XPLHX does not grant an app raw access to the sound\nhardware without also handing it every other device ",
+    "api_result": "该应用通过 XPLHX2XPLHX 的音频系统进行播放，无法直接访问声卡。\nXPLHX2XPLHX 不会在未同时授予应用访问该机器上所有其他设备的权限的情况下，\n允许应用直接访问音频硬件，而这并非\n该应用愿意做出的权衡。 这就是为什么需要在 XPLHX3XPLHXAudioXPLHX4XPLHX\n面板中选择声卡，而不是通过指定 XPLHX0XPLHX 或 XPLHX1XPLHX 设备来实现。",
+    "ts": "2026-09-17T09:12:42.744681+00:00"
+  },
+  "2655a6c26188938cfefdc9f645e335c7ba511c9d6108c2f1df2924b980b8f6b8": {
+    "source": "If you need exclusive, bit-perfect access to a DAC, run the container XPLHX2XPLHX of\nthis player instead of the app. See the\nXPLHX0XPLHXrepository READMEXPLHX1XPLHX.",
+    "api_result": "如果您需要对 DAC 进行专属且位精确的访问，请运行该播放器中的\nXPLHX2XPLHX 容器，而非使用应用程序。请参阅\nXPLHX0XPLHX 仓库中的 README.XPLHX1XPLHX 文件。",
+    "ts": "2026-09-17T09:12:43.825370+00:00"
+  },
+  "1f495948227e1b77b56340667b05b1e12fa971bd61e319e263dd8f4088a87d04": {
+    "source": "XPLHX0XPLHXConnecting to one specific server",
+    "api_result": "XPLHX0XPLHX连接到一台特定服务器",
+    "ts": "2026-09-17T09:12:44.567731+00:00"
+  },
+  "9fb46ca6a6f13dcc2aec73d08200023266b0143a77841310877e9f23be56cafe": {
+    "source": "Leave XPLHX1XPLHXXPLHX0XPLHX serverXPLHX2XPLHX empty unless discovery genuinely does not work.\nSetting it makes the player dial out to that address instead of waiting to be\nfound, and XPLHX3XPLHXstops",
+    "api_result": "除非发现功能确实无法正常工作，否则请将 XPLHX1XPLHXXPLHX0XPLHX 服务器 XPLHX2XPLHX 留空。\n设置此选项后，播放器将主动连接到该地址，而非等待被\n发现，同时XPLHX3XPLHX会使其无法被发现XPLHX4XPLHX。",
+    "ts": "2026-09-17T09:12:45.550224+00:00"
+  },
+  "27d7ab78c52cff75186f903910a35aae471276974159a52d6ee2c69d40b29377": {
+    "source": "Both the player and the server still have to be on the same local network for\naudio to work. This setting is not a way to reach a server across a VPN or\nthrough a proxy.",
+    "api_result": "玩家和服务器仍需位于同一局域网内，\n音频功能才能正常工作。此设置无法用于通过VPN或\n代理连接到服务器。",
+    "ts": "2026-09-17T09:12:46.492239+00:00"
+  },
+  "655812cc18f450a260713a847367600435a00a1f697504229887c1156a8c81cd": {
+    "source": "Do not put credentials in this field. It is shown as plain text on the\nconfiguration page and is included in XPLHX0XPLHX backups.",
+    "api_result": "请勿在此字段中填写凭据。该字段的内容将在\n配置页面上以明文形式显示，并包含在 XPLHX0XPLHX 备份中。",
+    "ts": "2026-09-17T09:12:47.407882+00:00"
+  },
+  "7f45fcd163ebd41ddf90b28da4e7505c225cc2c0f93f7b2ea958d4007de15c68": {
+    "source": "XPLHX0XPLHXIf the sound breaks up",
+    "api_result": "XPLHX0XPLHX如果声音断断续续",
+    "ts": "2026-09-17T09:12:48.193567+00:00"
+  },
+  "469af28a70488aca98a95074d014c55f338c175641898e8678bac868f0911d88": {
+    "source": "XPLHX0XPLHXAudio bufferXPLHX1XPLHX is how much audio the player keeps queued up, in milliseconds.\nLeave it empty and the player uses its own XPLHX2XPLHX, which is right for almost\nevery system. Raise ",
+    "api_result": "XPLHX0XPLHX音频缓冲区XPLHX1XPLHX表示播放器保持在队列中的音频时长，单位为毫秒。\n若留空，播放器将使用其自身的XPLHX2XPLHX值，该值对几乎\n所有系统都适用。 如果在负载较重或运行较慢的\n机器上出现声音卡顿或中断的情况，请提高该值——这样队列中将有更多内容填补空隙。其代价是\n曲目开始时和快进/快退时的等待时间会更长，因此请分步提高该值，\n而不是直接调到最大。",
+    "ts": "2026-09-17T09:12:49.401456+00:00"
+  },
+  "ee83e10ddf75a3187a8826221c53eb14181b4a2ef5e155504d311fab627ab27a": {
+    "source": "XPLHX0XPLHXSwitching an amplifier on with the music",
+    "api_result": "XPLHX0XPLHX随着音乐开启功放",
+    "ts": "2026-09-17T09:12:50.170205+00:00"
+  },
+  "dd3a86b9ea9343cc353cc4063cd087e546faecb3a7327d7fb3fc3fab320e15a9": {
+    "source": "XPLHX0XPLHXCommand to run when playback startsXPLHX1XPLHX and XPLHX2XPLHXCommand to run when playback\nstopsXPLHX3XPLHX are for the amplifier or the light that should be on for as long as this\nplayer i",
+    "api_result": "XPLHX0XPLHX播放开始时执行的命令XPLHX1XPLHX和XPLHX2XPLHX播放\n停止时执行的命令XPLHX3XPLHX用于控制功放或指示灯，使其在该\n播放器播放期间保持开启状态。 若将这两个字段均留空，则不会执行任何操作，这正是绝大多数\n系统所期望的。",
+    "ts": "2026-09-17T09:12:51.381037+00:00"
+  },
+  "16c797f101a32f39b821de4abd8cb2d576a5305b91dd821bdff38478a1fb3ec2": {
+    "source": "Each is a shell command, and it is run as typed, inside this app, on every stream\nthat starts or ends — so it is only as good as what this app can reach. XPLHX0XPLHX at\na smart relay's HTTP endpoint i",
+    "api_result": "每条都是一个 shell 命令，会在该应用内部，针对每个开始或结束的流，按输入的形式执行——\n因此其效果仅取决于该应用能够触及的范围。智能中继的 HTTP 端点上的 XPLHX0XPLHX\n是常见的格式：",
+    "ts": "2026-09-17T09:12:52.455950+00:00"
+  },
+  "4d9fe45925a36d1ff53d48a6234b79f9a5ce97e7bb6c048681a9335c8e4350e2": {
+    "source": "XPLHX0XPLHX",
+    "api_result": "XPLHX0XPLHX",
+    "ts": "2026-09-17T09:12:53.258455+00:00"
+  },
+  "0bba13f32d87dcbf6ea4b3537dfe709c017f19c5158de08312c979142956c068": {
+    "source": "The command does not hold up playback, and one that fails writes a line in the\nlog rather than stopping the player. Anything it prints goes to the log too,\nwhich is the place to look when a command is",
+    "api_result": "该命令不会暂停播放，且若命令执行失败，系统会向\n日志中写入一行信息，而非停止播放器。该命令输出的任何内容也会写入日志，\n当命令未按预期执行时，请查阅日志。\nXPLHX0XPLHX 在其 XPLHX3XPLHX 中即为 XPLHX1XPLHX 或 XPLHX2XPLHX，因此一条命令即可\n同时处理这两个字段。",
+    "ts": "2026-09-17T09:12:54.577968+00:00"
+  },
+  "39bc29e05b70063a19967dd46b3da08baef340a8d8f4906e8dba7d802250742c": {
+    "source": "Two things worth knowing before you use them. A command here runs with the same\naccess this app has, so treat the field the way you would treat a terminal on\nthis machine — and only paste in something",
+    "api_result": "在使用之前，有两点值得了解。此处的命令将以该应用相同的\n权限运行，因此请像对待本机上的终端一样对待该输入框——\n并且只粘贴你理解的内容。 此外，无论是否\n填写这两个字段，都不会触发该功能：无论您是否\n设置了命令，该应用都允许运行命令，因为其所需的权限是在应用\n安装时就已确定的，而非在您保存设置时才生效。",
+    "ts": "2026-09-17T09:12:55.718864+00:00"
+  },
+  "117d3b8058d5a7bcf5613866106f5ff720b12fb0b72af96aa0af0ea07cc38166": {
+    "source": "XPLHX0XPLHXVolume, mute and delay",
+    "api_result": "XPLHX0XPLHX音量、静音和延迟",
+    "ts": "2026-09-17T09:12:56.561295+00:00"
+  },
+  "afd6da9a8e964c3885eca8e662de8d0bbcde22656bb8ae7475403e1c9f0a18a3": {
+    "source": "Volume, mute and the speaker delay are remembered across restarts and app\nupdates, in the app's own storage.",
+    "api_result": "音量、静音和扬声器延迟设置会在应用重启和更新后\n保留下来，保存在应用自身的存储空间中。",
+    "ts": "2026-09-17T09:12:57.476870+00:00"
+  },
+  "55ae133ca6f34436ee4d77dc720938e6552aa788730fb5131c944915def4428e": {
+    "source": "If this player lands slightly behind the others in a group — an amplifier or an\nactive speaker with its own processing will do that — open the player's settings\nin XPLHX0XPLHX and raise its delay, in ",
+    "api_result": "如果该播放器在音频组中稍稍落后于其他设备——带独立处理功能的功放或\n有源音箱就会出现这种情况——请在 XPLHX0XPLHX 中打开该播放器的设置，\n将其延迟（单位为毫秒）调高至与音频离开该设备后，\n该硬件所增加的延迟值相等的数值。 这样，播放器就会\n更早地输出\n音频，使其与整个音频组保持同步，而不是\n出现延迟。该设置会被保存，因此重启后依然有效。",
+    "ts": "2026-09-17T09:12:58.717071+00:00"
+  },
+  "556c330708261e61c3f13a0f6ce9d983b4643ba63a26826b05362fc205ab85a3": {
+    "source": "XPLHX0XPLHXNo sound at any volume",
+    "api_result": "XPLHX0XPLHX无论音量大小均无声音",
+    "ts": "2026-09-17T09:12:59.485119+00:00"
+  },
+  "183974ac1c992f68b887ffee0cfbaee056fd121324d133b2bbf87a358a1820a1": {
+    "source": "If the player shows up in XPLHX0XPLHX and plays, but nothing comes out at\nany volume setting, the fault is in the XPLHX1XPLHX audio output rather than\nin the player. Most often that output is muted or",
+    "api_result": "如果播放器在 XPLHX0XPLHX 中显示并正常播放，但在\n任何音量设置下都没有声音输出，那么问题出在 XPLHX1XPLHX 的音频输出端，而非\n播放器本身。大多数情况下，该输出端被静音或音量调至零。 Music\nAssistant 无法提高音量：该功能仅调节此应用发送的音频，而非\n其传输目标设备的输出电平。",
+    "ts": "2026-09-17T09:13:00.592935+00:00"
+  },
+  "e030e06d23c82e18cc77ed22ce76a96904a768242dbd536f8c96d9fd1b8fb9eb": {
+    "source": "That level is XPLHX0XPLHX's, shared by every app on this machine and\nremembered across reboots, so something else may have set it. This app says so\nin its log when it starts, and names the output and ",
+    "api_result": "该级别属于 XPLHX0XPLHX，由本机上的所有应用程序共享，且\n在重启后仍会被保留，因此可能是其他程序设置的。该应用程序在启动时\n会在日志中注明这一点，并给出具体原因及解决方法。请通过 Home\nAssistant 主机控制台或终端应用程序操作：",
+    "ts": "2026-09-17T09:13:01.717629+00:00"
+  },
+  "683630494019b3850fc980377ef5fd2bb453ce267ba2b916d4551299083ef65f": {
+    "source": "XPLHX0XPLHX lists the outputs with their index; use the index of the one\nthis app plays through, which is the one the log names. This app will not set\nthe level for you — it is shared, so it stays you",
+    "api_result": "XPLHX0XPLHX 列出了各输出及其索引；请使用\n本应用播放时对应的索引，即日志中提到的那个。 本应用不会为您\n设置电平——该电平是共享的，因此您仍需在 XPLHX1XPLHXAudioXPLHX2XPLHX\n面板中自行选择。",
+    "ts": "2026-09-17T09:13:02.747857+00:00"
+  },
+  "132af3868b9dd671bb29e68ba22f187a2cb8361f0bc6c681221404e82b0a88c1": {
+    "source": "If XPLHX0XPLHX shows the level is already up, the output may instead be\nrouted to a port with nothing plugged into it — a line-out on a card whose\nheadphone jack is the one in use, say. The audio reac",
+    "api_result": "如果 XPLHX0XPLHX 显示音量已调至最大，输出信号可能会被\n路由到一个未连接任何设备的端口——例如，某张声卡上的线路输出端口，而\n此时正在使用的是该声卡的耳机插孔。 音频到达该接口后便会停止\n传输，无论音量大小。拔下并重新插上扬声器或耳机，这样就足以让声卡\n检测到它们并切换输出；或者在 XPLHX1XPLHXAudioXPLHX2XPLHX\n面板中选择一个已连接设备的输出端口。 日志会在每次启动时注明当前播放所用的端口，因此\n建议先阅读日志。",
+    "ts": "2026-09-17T09:13:03.843223+00:00"
+  },
+  "df0e80c21d9fd7e8be2d5a4aa3febcb654870f0a7410c6327d09ec355dbf4565": {
+    "source": "XPLHX0XPLHXIf the sound stops part-way through",
+    "api_result": "XPLHX0XPLHX如果声音在播放中途停止",
+    "ts": "2026-09-17T09:13:04.665824+00:00"
+  },
+  "5faec1e32a914ec400d1365b552ca851ebaa29e53d9f3dc2e8cb0bcc597f581b": {
+    "source": "An output that was working and then goes away — XPLHX0XPLHX's audio server\nrestarting, or a USB DAC unplugged — no longer leaves this player silent until\nthe next track. It notices, and keeps trying t",
+    "api_result": "原本正常工作但随后中断的输出——无论是 XPLHX0XPLHX 的音频服务器\n重启，还是 USB DAC 被拔出——都不会再导致该播放器保持静默状态，直到\n下一首曲目开始。 它会察觉到这一情况，并持续尝试重新打开输出设备：大约\n一分钟内尝试五次，第一次是在声音\n停止后几秒钟，随后每次间隔都比前一次更长。如果输出设备在此\n期间恢复，音乐会从中途接续播放，而\n本端则无需进行任何操作。 该播放组中正在播放的其他所有内容\n在此期间均不受影响，照常播放。",
+    "ts": "2026-09-17T09:13:05.918546+00:00"
+  },
+  "0914238f45ad3db5a2153fc5d6aecf4396d1740e12fe38eed3edc1166dd5b792": {
+    "source": "If it does not come back inside that minute the player stops asking and says so\nin its log, rather than retrying forever. Nothing is stuck: the next track opens\nthe output afresh, so playing something",
+    "api_result": "如果在一分钟内未能恢复，播放器就会停止请求，并在日志中记录这一情况，\n而不是无限期地重试。没有任何内容会被卡住：下一首曲目会\n重新打开输出流，因此，一旦之前丢失的内容\n重新出现，播放新内容就是恢复的途径。",
+    "ts": "2026-09-17T09:13:07.095747+00:00"
+  },
+  "de76c9645e428cc9b366f8865e3ad47543bddc1abc625f5c811fb13615e473f6": {
+    "source": "XPLHX0XPLHXKnown rough edges",
+    "api_result": "XPLHX0XPLHX已知的毛边",
+    "ts": "2026-09-17T09:13:07.866398+00:00"
+  },
+  "3075298791891abc482e41d0b98ab7e538f6cade467d3b3a84f95ee407d7faf5": {
+    "source": "This app is XPLHX0XPLHXexperimentalXPLHX1XPLHX. It works, but it has not been through wide testing\non real hardware.",
+    "api_result": "该应用为XPLHX0XPLHX实验版XPLHX1XPLHX。虽然可以正常运行，但尚未在真实硬件上\n进行广泛测试。",
+    "ts": "2026-09-17T09:13:08.791038+00:00"
+  },
+  "ebf7e61aa50a8dc1ceee16918e61e6028fea3796715f0d224de840765baf8514": {
+    "source": "- The log may carry a one-off warning banner from the mDNS compatibility layer\n  the player is built against. It is printed outside the player's own log XPLHX0XPLHX\n  and is harmless.",
+    "api_result": "- 日志中可能会出现一条来自 mDNS 兼容性层的单次警告横幅，\n  该横幅由播放器构建时所基于的 mDNS 兼容性层生成。它会显示在播放器自身日志 XPLHX0XPLHX 之外，\n  且不会造成任何影响。",
+    "ts": "2026-09-17T09:13:09.989682+00:00"
+  },
+  "9d04e198a7de30bc3cc2d1b10cbe82f5bfb90c2d99414447e8d2596019ea555a": {
+    "source": "Problems and feedback belong in the\nXPLHX0XPLHXrepository's XPLHX2XPLHXXPLHX1XPLHX.",
+    "api_result": "问题和反馈应提交至\nXPLHX0XPLHX代码库的XPLHX2XPLHXXPLHX1XPLHX文件中。",
+    "ts": "2026-09-17T09:13:10.893563+00:00"
+  },
+  "9ab1f54400c246324552afad0b8c4a26ca2483d19a44c9aee33b301e459fc656": {
+    "source": "XPLHX0XPLHX[2.10.3] - 11.09.2026",
+    "api_result": "XPLHX0XPLHX[2.10.3] - 2026年9月11日",
+    "ts": "2026-09-17T09:13:11.683430+00:00"
+  },
+  "50aca3422823e84c31b6c606179604498a5525d40842ca1791b3c193cc8835b7": {
+    "source": "XPLHX0XPLHX📦 XPLHX1XPLHX Release",
+    "api_result": "XPLHX0XPLHX📦 XPLHX1XPLHX 发布",
+    "ts": "2026-09-17T09:13:12.543366+00:00"
+  },
+  "fef1116c1f3e44abd9adc285b2aa50e4d927528ad6f7155a516ea3f63c36c5e5": {
+    "source": "_Changes since XPLHX0XPLHX2.10.2XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.10.2XPLHX1XPLHX 以来的更改_",
+    "ts": "2026-09-17T09:13:13.642513+00:00"
+  },
+  "3259feea67886de645b9a4b13739c4e3ea00189dd2f64eed1126c53bd59c5833": {
+    "source": "XPLHX0XPLHX🚀 Features and enhancements",
+    "api_result": "XPLHX0XPLHX🚀 功能与改进",
+    "ts": "2026-09-17T09:13:14.423390+00:00"
+  },
+  "d56ef21637c6c4d02eb571cf849d1eaaa469307b9785a7dfd9a4da08ac19dc3a": {
+    "source": "- Align party and music quiz plugin icons with the frontend menu (by @MarvinSchenkel in #6258)\n- XPLHX0XPLHX the global autoplay setting to off (by @MarvinSchenkel in #6276)",
+    "api_result": "- 将派对和音乐问答插件图标与前端菜单对齐（由 @MarvinSchenkel 在 #6258 中提出）\n- 将全局自动播放设置设为关闭（由 @MarvinSchenkel 在 #6276 中提出）",
+    "ts": "2026-09-17T09:13:15.425660+00:00"
+  },
+  "6dcff4d9222092fd4114d4373e9fd725c0a5e01e42ce2d2cfad3058832bcfb78": {
+    "source": "XPLHX0XPLHX🐛 Bugfixes",
+    "api_result": "XPLHX0XPLHX🐛 错误修复",
+    "ts": "2026-09-17T09:13:16.273442+00:00"
+  },
+  "707fac183838dd4e07df3bb647f22ca9c7958d00221b4b82e21e80a594081a20": {
+    "source": "- Play the newest episode when you ask for the latest one (by @OzGav in #6178)\n- Show ARD Audiothek episodes in the right order (by @OzGav in #6179)\n- Deezer: keep cover art and artist on user-uploade",
+    "api_result": "- 当你询问最新一集时，播放最新一集（由 @OzGav 在 #6178 中提出）\n- 按正确顺序显示 ARD Audiothek 的节目（由 @OzGav 在 #6179 中提出）\n- Deezer：保留用户上传曲目的封面图和艺人信息（由 @jdaberkow 在 #6202 中提出）\n- 对于启用了提供商过滤器的用户，播放纯 URL 链接而非随机曲目（由 @MarvinSchenkel 在 #6205 中提出）\n- 修复移除服务提供商后侧边栏快捷方式卡住的问题（由 @OzGav 在 #6207 中提出）\n- 修复 Deezer 账户隔离问题并明确认证失败原因（由 @jdaberkow 在 #6213 中提出）\n- 修复 Plex Connect 在大型播放队列中启动错误曲目（由 @MarvinSchenkel 在 #6217 中提交）\n- 修复当数据库中存在损坏的分析行时 Sonic Similarity 无法加载的问题（由 @MarvinSchenkel 在 #6218 中提交）\n- 按实际添加日期对 Apple Music 媒体库进行排序（由 @MarvinSchenkel 在 #6219 中实现）\n- 修复同步播放器上播放公告后，其他播放器未重新分组的问题（由 @MarvinSchenkel 在 #6220 中实现）\n- 将通用 LinkPlay OEM 设备路由至通用 WiiM 后端（由 @OzGav 在 #6223 中提出）\n- Plex 提供商——错误地将空媒体容器视为歌词（由 @caraar12345 在 #6229 中提出）\n- 将本地播放列表封面保留在子文件夹中，而非用拼贴图替换（由 @OzGav 在 #6230 中提出）\n- 阻止 TuneIn 同步将非收藏电台视为失败项目（由 @OzGav 在 #6231 中提出）\n- 防止 Sonos S1 播放事件阻塞事件循环（由 @OzGav 在 #6235 中提出）\n- 跳过损坏的音频文件，而非导致播放请求崩溃（由 @OzGav 在 #6242 中提出）\n- Tidal：修复带有 Dolby Atmos XPLHX0XPLHX 标记的曲目播放问题（由 @jozefKruszynski 在 #6244 中提交）\n- 修复 Jellyfin 12 的播放和封面显示问题（由 @MarvinSchenkel 在 #6251 中提交）\n- 修复单曲“Endless Mix”循环播放时仅循环播放少数几首歌曲的问题（由 @MarvinSchenkel 在 #6254 中提出）\n- 广播电台开始播放时显示电台徽标，而非上一首歌曲的封面图（由 @OzGav 在 #6256 中提出）\n- 修复 Bose Soundtouch 中的预设槽位分配和 XML 编码问题（由 @fmunkes 在 #6260 中提交）\n- 修复 Profiler 插件在 CPU 分析期间发生内存泄漏的问题（由 @marcelveldt 在 #6266 中提交）\n- 对于长度超过音频缓冲区的曲目，保持 MilkDrop 可视化效果器持续运行（由 @jozefKruszynski 在 #6272 中提出）\n- 解决 Sonos 音箱在播放几首曲目时出现断音的问题（由 @marcelveldt 在 #6278 中提出）",
+    "ts": "2026-09-17T09:13:17.445313+00:00"
+  },
+  "8de288d63ae0585f2aa38ae3a64a77e3422d5f4a036fdcd5eb208036626f14d7": {
+    "source": "XPLHX0XPLHX🧰 Maintenance and dependency bumps",
+    "api_result": "XPLHX0XPLHX🧰 维护及依赖版本更新",
+    "ts": "2026-09-17T09:13:18.243609+00:00"
+  },
+  "bed13eead6309ead6f781f683794fe23d6ee83a24a695919a3f7e7dcc9a6c791": {
+    "source": "XPLHX0XPLHX\nXPLHX1XPLHX7 changesXPLHX2XPLHX",
+    "api_result": "XPLHX0XPLHX\nXPLHX1XPLHX7 更改XPLHX2XPLHX",
+    "ts": "2026-09-17T09:13:19.074087+00:00"
+  },
+  "f459d504494cb307d239232bee7fbe1d506c3ed197966f0d6f4d452c98e16a2a": {
+    "source": "- Rename the DI provider to Digitally Imported (by @OzGav in #6197)\n- Use the coloured Sendspin logo for the provider icon (by @MarvinSchenkel in #6225)\n- Pace a stream by what is being served (by @ma",
+    "api_result": "- 将 DI 提供商重命名为 Digitally Imported（由 @OzGav 在 #6197 中提出）\n- 使用彩色 Sendspin 徽标作为提供商图标（由 @MarvinSchenkel 在 #6225 中提出）\n- 根据正在播放的内容调整流媒体播放节奏（由 @marcelveldt 在 #6237 中提出）\n- BBC Sounds：移除重复功能（由 @kieranhogg 在 #6245 中提出）\n- 当 Sonos 音箱无法播放某首曲目时发出提示（由 @marcelveldt 在 #6246 中提出）\n- 确保 Sonos 能持续播放包含短曲目的专辑（由 @marcelveldt 在 #6247 中提出）\n- 启用调试日志不再导致服务器变慢（由 @marcelveldt 在 #6265 中提出）",
+    "ts": "2026-09-17T09:13:20.084038+00:00"
+  },
+  "2f8ce7bfb1e2c90d676521f87133dba15a12bdda784b24675313a03de805c17a": {
+    "source": "XPLHX0XPLHX:bow: Thanks to our contributors",
+    "api_result": "XPLHX0XPLHX:bow: 感谢各位贡献者",
+    "ts": "2026-09-17T09:13:20.906690+00:00"
+  },
+  "f12bc58fc5b401ab2df0b1f1cab099b38708e4a6ed2e04896c438f11edd70324": {
+    "source": "Special thanks to the following contributors who helped with this release:",
+    "api_result": "特别感谢以下为本版本发布提供帮助的贡献者：",
+    "ts": "2026-09-17T09:13:21.793392+00:00"
+  },
+  "62ca007c0c8f1a5bd256473ee8ec82e4059637e6fb1c1e09fc2d2b791f5fbe15": {
+    "source": "@MarvinSchenkel, @OzGav, @caraar12345, @fmunkes, @jdaberkow, @jozefKruszynski, @kieranhogg, @marcelveldt",
+    "api_result": "@MarvinSchenkel、@OzGav、@caraar12345、@fmunkes、@jdaberkow、@jozefKruszynski、@kieranhogg、@marcelveldt",
+    "ts": "2026-09-17T09:13:22.751626+00:00"
+  },
+  "5b641a756735a303844cb6d5e99c8bea0575495999417d57b830aa0928623b74": {
+    "source": "XPLHX0XPLHX[2.10.2] - 04.09.2026",
+    "api_result": "XPLHX0XPLHX[2.10.2] - 2026年9月4日",
+    "ts": "2026-09-17T09:13:23.556065+00:00"
+  },
+  "163057178f391cc3ef1c85ff5a958a9f0bdb40ba43f79f35262f31b8a02cd20d": {
+    "source": "_Changes since XPLHX0XPLHX2.10.1XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.10.1XPLHX1XPLHX 以来的变更_",
+    "ts": "2026-09-17T09:13:24.482927+00:00"
+  },
+  "ab55bf0c96f1b0c739eb6aa876c79f5322bec8e153d6e741806ce729219b4218": {
+    "source": "- Align smart playlists similar music with Endless Mixes (by @MarvinSchenkel in #6121)\n- Set a global XPLHX0XPLHX for the Autoplay and Crossfade switches (by @MarvinSchenkel in #6130)\n- Clarify the gl",
+    "api_result": "- 将“智能播放列表”中的相似音乐与“无尽混音”功能对齐（由 @MarvinSchenkel 在 #6121 中实现）\n- 为“自动播放”和“交叉淡入淡出”开关设置全局选项 XPLHX0XPLHX（由 @MarvinSchenkel 在 #6130 中实现）\n- 明确全局“自动播放”和“淡入淡出”XPLHX1XPLHX 开关的含义（由 @MarvinSchenkel 在 #6187 中实现）",
+    "ts": "2026-09-17T09:13:25.689897+00:00"
+  },
+  "5f7097eba981d6855a486061646d7091860d826ab1253a67370638dcf235c969": {
+    "source": "- Fix filesystem scan crash on non-decimal digits in names (by @OzGav in #6102)\n- Attach the parent album to imported album tracks (by @OzGav in #6111)\n- XPLHX0XPLHX the Fully Kiosk output codec to AA",
+    "api_result": "- 修复了文件系统扫描过程中因文件名中包含非十进制数字而导致的崩溃问题（由 @OzGav 在 #6102 中提出）\n- 将父专辑关联到导入的专辑曲目（由 @OzGav 在 #6111 中提出）\n- 将“完全信息亭”模式的输出编解码器更改为 AAC（由 @OzGav 在 #6112 中提出）\n- Spotify：同步音乐库专辑时跳过空条目（由 @MarvinSchenkel 在 #6114 中提出）\n- 修复 YouTube Music 中合作曲目专辑中缺失曲目问题（由 @MarvinSchenkel 在 #6115 中提出）\n- Sonos 音箱现可播放您添加到播放队列中的曲目（由 @marcelveldt 在 #6116 中提交）\n- 修复 BBC Sounds 推荐内容无法加载的问题（由 @MarvinSchenkel 在 #6117 中提交）\n- 在 Sendspin 设置流程中恢复配对令牌支持（由 @meiser79 在 #6122 中提交）\n- Apple Music：不再将仅限购买的音乐库项目报告为可用（由 @anthonws 在 #6123 中提交）\n- 移除音乐服务提供商后清理侧边栏快捷方式（由 @OzGav 在 #6124 中实现）\n- 跨音效过渡在较慢的音源上不再缩短至几秒钟（由 @marcelveldt 在 #6128 中实现）\n- 新创建的令牌现在会显示在令牌列表中（由 @marcelveldt 在 #6131 中提出）\n- 修复了与添加下一首曲目相关的各种 XPLHX2XPLHX 问题（由 @marcelveldt 在 #6132 中提出）\n- 修复了原始 PCM 输入被源编解码器解码的问题（由 @OzGav 在 #6137 中提交）\n- 修复了当音频源为通过 Soloist 连接的 Spotify 时，支持队列功能的音箱（如 Sonos）上的淡入淡出问题（由 @marcelveldt 在 #6141 中提交）\n- 清空播放队列后，AI DJ 不再静音（由 @MarvinSchenkel 在 #6142 中修复）\n- 在流式播放模式下，淡入淡出设置的更改现将在下一首曲目生效（由 @MarvinSchenkel 在 #6143 中修复）\n- 当调度器保存其状态时，确保核心/任务仍可解析（由 @OzGav 在 #6145 中实现）\n- 显示 Podcast Index 登录或剧集查询失败的原因（由 @OzGav 在 #6146 中实现）\n- 修复 BBC Sounds 在更新收听状态时，有时会使用库 ID 而不是提供商 ID 的问题（由 @kieranhogg 在 #6150 中实现）\n- 在生成流派和动态电台种子时，使用艺术家的热门曲目（由 @jozefKruszynski 在 #6155 中实现）\n- 修复 Internet Archive 搜索中缺失 Live Music Archive 内容的问题（由 @OzGav 在 #6157 中提交）\n- 在 Sonos 上对单首歌曲进行快进/快退操作现在可立即生效（由 @marcelveldt 在 #6158 中提交）\n- 允许最多同时播放 3 个 YouTube Music 流（由 @MarvinSchenkel 在 #6160 中实现）\n- 在“最近播放”播放列表中显示音乐库中的曲目（由 @MarvinSchenkel 在 #6161 中实现）\n- 修复 AirPlay 控制连接中断时 aiohttp 会话泄漏的问题（由 @MarvinSchenkel 在 #6162 中提出）\n- 修复荷兰语（nl-NL）Alexa 唤醒词失效的问题（由 @R3inoudR 在 #6164 中提出）\n- Deezer：修复多个实例共享同一账户的问题（由 @jdaberkow 在 #6169 中提交）\n- 跳过 Spotify 拒绝跳过的曲目，而非记录崩溃（由 @marcelveldt 在 #6171 中提交）\n- 更经济的曲目切换：Spotify Soloist 显示其真实的单流限制（由 @marcelveldt 在 #6172 中提交）\n- Deezer：修复定位时未到达请求位置的问题（由 @jdaberkow 在 #6174 中提交）\n- 修复 Spotify Soloist 的新下载功能（由 @aauren 在 #6176 中提交）\n- AirPlay：当发现没有端口时，回退到 XPLHX1XPLHX 端口（由 @MarvinSchenkel 在 #6185 中提交）\n- 使“音乐问答”中的题目可作答（由 @MarvinSchenkel 在 #6189 中提交）\n- 为 PulseAudio 设置主目录（由 @aauren 在 #6190 中提交）",
+    "ts": "2026-09-17T09:13:26.900571+00:00"
+  },
+  "4e148ba1d020149456f1c3a2a8b0165d00df586bf15c67e9a7a117d7cdcd7978": {
+    "source": "- Treat the iBroadcast library the same as others that contain a user's tracks (by @OzGav in #6147)\n- Quieter track changes: don't warn when the next track has to wait for a free Spotify slot (by @mar",
+    "api_result": "- 将 iBroadcast 库与其他包含用户曲目的库一视同仁（由 @OzGav 在 #6147 中提出）\n- 更低调的曲目切换：当下一首曲目需要等待 Spotify 空闲时段时，不再显示警告（由 @marcelveldt 在 #6170 中提出）",
+    "ts": "2026-09-17T09:13:28.029276+00:00"
+  },
+  "db5a3c9351dbe996c3339eadfb880a39f69fb5ca83e91f38b86b8c9a196e1792": {
+    "source": "@MarvinSchenkel, @OzGav, @R3inoudR, @aauren, @anthonws, @chrisuthe, @jdaberkow, @jozefKruszynski, @kieranhogg, @marcelveldt, @meiser79",
+    "api_result": "@MarvinSchenkel、@OzGav、@R3inoudR、@aauren、@anthonws、@chrisuthe、@jdaberkow、@jozefKruszynski、@kieranhogg、@marcelveldt、@meiser79",
+    "ts": "2026-09-17T09:13:29.051050+00:00"
+  },
+  "8f53ceaaf12fbaa0f822b88b215d29962fefb8d134ced76610bb08866d3bc77d": {
+    "source": "XPLHX0XPLHX[2.10.1] - 29.08.2026",
+    "api_result": "XPLHX0XPLHX[2.10.1] - 2026年8月29日",
+    "ts": "2026-09-17T09:13:29.900748+00:00"
+  },
+  "e086a8018c4076319701b4a00d2cd15080c51214a175373df1c48ea12ef9ae3a": {
+    "source": "_Changes since XPLHX0XPLHX2.10.0XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.10.0XPLHX1XPLHX 以来的更改_",
+    "ts": "2026-09-17T09:13:30.726232+00:00"
+  },
+  "abd317d7c17f63858622c85d2a083c31d693222e0c8fbbac345fc7a88db6f977": {
+    "source": "- Add bluetooth audio constants (by @mzellho in #6052)\n- Make Sendspin on Cast devices opt-in and mark it experimental (by @marcelveldt in #6081)\n- Let speakers with guest access play without a setup ",
+    "api_result": "- 添加蓝牙音频常量（由 @mzellho 在 #6052 中提出）\n- 将 Cast 设备上的 Sendspin 设为需手动启用，并标记为实验性功能（由 @marcelveldt 在 #6081 中提出）\n- 允许具有访客访问权限的扬声器无需设置步骤即可播放（由 @marcelveldt 在 #6088 中提出）",
+    "ts": "2026-09-17T09:13:31.738520+00:00"
+  },
+  "96fcff4b6e30d3d3be1b63e5ab4b75e80befdd73a1d4cfdc0e489a15482a2b09": {
+    "source": "- Snapcast: resume music after an announcement (by @MarvinSchenkel in #5968)\n- Keep the AirPlay connection alive when seeking (by @marcelveldt in #6050)\n- Fix an AirPlay speaker going silent when it j",
+    "api_result": "- Snapcast：播报结束后恢复音乐播放（由 @MarvinSchenkel 在 #5968 中提出）\n- 在快进/快退时保持 AirPlay 连接不中断（由 @marcelveldt 在 #6050 中提出）\n- 修复 AirPlay 扬声器加入群组后静音的问题（由 @marcelveldt 在 #6051 中提出）\n- 防止 CLAP 权重下载导致 sonic_analysis 初始化超时（由 @chrisuthe 在 #6053 中提出）\n- 修复当两个进程同时启动 AirPlay 扬声器时，扬声器会静音的问题（由 @marcelveldt 在 #6054 中提出）\n- 当快进/快退操作需要片刻时间时，不再重启 AirPlay 扬声器（由 @marcelveldt 在 #6055 中提交）\n- 当群组领导者退出时，保持音频播放器的播放队列不变（由 @marcelveldt 在 #6056 中提交）\n- 修复了音箱所在的组与另一个组合并后，该音箱保持静音的问题（由 @marcelveldt 在 #6057 中提出）\n- 在暂停或停止时，立即停止组内所有 AirPlay 音箱的播放（由 @marcelveldt 在 #6058 中提出）\n- 确保 AirPlay 播放器的流媒体模式由用户自行控制（由 @marcelveldt 在 #6059 中提出）\n- 加快在播放速度较慢的音源中快进的速度（由 @marcelveldt 在 #6060 中提出）\n- 为 AirPlay 播放器添加 24 位音频切换选项（由 @marcelveldt 在 #6061 提出）\n- 修复组内成员脱离网络后无法重新加入的问题（由 @marcelveldt 在 #6062 提出）\n- 修复了跳转到其他章节时 Spotify 有声书停止播放的问题（由 @marcelveldt 在 #6063 中提出）\n- 修复了更新至 2.10 版本后 Spotify 无法加载的问题（由 @kiegsgroot 在 #6065 中提出）\n- 修复了 Apple TV 在切换曲目后进度条消失的问题（由 @marcelveldt 在 #6067 中提出）\n- 修复了当语言非英语时 YouTube Music 搜索结果为空的问题（由 @marcelveldt 在 #6068 中提出）\n- 修复 Spotify Connect 播放时无法进行分组的问题（由 @marcelveldt 在 #6070 中提出）\n- 关闭音箱电源时停止播放音乐（由 @marcelveldt 在 #6074 中提出）\n- 通知提示音结束后停止随机播放音乐（由 @marcelveldt 在 #6075 中提出）\n- 修复 AirPlay 播放器在快进时无法加载下一段流媒体而导致卡死的问题（由 @marcelveldt 在 #6076 中提出）\n- 当扬声器在 XPLHX0XPLHX 之外被关闭时停止音乐播放（由 @marcelveldt 在 #6077 中提出）\n- 将 aioaudiobookshelf 升级至 0.1.25（由 @fmunkes 在 #6078 中提交）\n- 当群组围绕其领导者解散时停止播放音乐（由 @marcelveldt 在 #6083 中提交）\n- 修复 Spotify Connect 群组音量默认设为 100% 的问题（由 @OzGav 在 #6087 中提交）\n- 在 Spotify 账户匹配检查中解码百分比编码的用户名（由 @mescon 在 #6089 中提交）",
+    "ts": "2026-09-17T09:13:32.911826+00:00"
+  },
+  "75c088b990ef1108f08b51325127e1a4a169d0f9f3ccd8d43aff2418a3c3ea25": {
+    "source": "XPLHX0XPLHX🎨 Frontend Changes",
+    "api_result": "XPLHX0XPLHX🎨 前端变更",
+    "ts": "2026-09-17T09:13:33.662301+00:00"
+  },
+  "97b006f13a77449e5dd62e35f3a75361dc7cc88db6e507191bf7af1dfab5b342": {
+    "source": "- Scope audio sources in Browse to the selected player (by @marcelveldt in XPLHX0XPLHX#2660XPLHX1XPLHX)\n- Fix the mobile player blur on Chromium browsers (by @marcelveldt in XPLHX2XPLHX#2662XPLHX3XPLH",
+    "api_result": "- 在“浏览”中将音频源范围限定为所选播放器（由 @marcelveldt 在 XPLHX0XPLHX#2660XPLHX1XPLHX 提出）\n- 修复 Chromium 浏览器中移动播放器显示模糊的问题（由 @marcelveldt 在 XPLHX2XPLHX#2662XPLHX3XPLHX 中提出）\n- 远程 ID 和配对码共用一个代码输入框（由 @marcelveldt 在 XPLHX4XPLHX#2661XPLHX5XPLHX 中提出）\n- 修复加载转圈图标显示过小的问题（由 @marcelveldt 在 XPLHX6XPLHX#2669XPLHX7XPLHX 中实现）\n- 在持续集成（CI）中检查 Python 包的构建情况（由 @marcelveldt 在 XPLHX8XPLHX#2668XPLHX9XPLHX 中实现）\n- 屏蔽 setuptools 关于 assets 目录的警告（由 @marcelveldt 提交，问题编号 XPLHX10XPLHX#2667XPLHX11XPLHX）\n- 清理 Python 打包配置（由 @marcelveldt 提交于 XPLHX12XPLHX#2666XPLHX13XPLHX）\n- 移除未使用的 VS Code 工作区文件（由 @marcelveldt 在 XPLHX14XPLHX#2665XPLHX15XPLHX 中实现）\n- 移除未使用的 webhint 配置文件（由 @marcelveldt 在 XPLHX16XPLHX#2664XPLHX17XPLHX 中完成）\n- 移除了未使用的浏览器目标配置文件（由 @marcelveldt 在 XPLHX18XPLHX#2663XPLHX19XPLHX 中实现）\n- 整理设置流程对话框（由 @marcelveldt 在 XPLHX20XPLHX#2673XPLHX21XPLHX 中实现）\n- 保留其提供程序已不再加载的图标（由 @ChrisB85 在 XPLHX22XPLHX#2670XPLHX23XPLHX 中实现）\n- 为前端 PR 添加 Copilot 审查说明片段（由 @chrisuthe 提交，见 XPLHX24XPLHX#2672XPLHX25XPLHX）",
+    "ts": "2026-09-17T09:13:34.614945+00:00"
+  },
+  "4bf0ee46f04d094e82081e36b326c194caeb861c870c85b7264edc5de4ba7b42": {
+    "source": "XPLHX0XPLHX\nXPLHX1XPLHX6 changesXPLHX2XPLHX",
+    "api_result": "XPLHX0XPLHX\nXPLHX1XPLHX6 更改XPLHX2XPLHX",
+    "ts": "2026-09-17T09:13:35.572988+00:00"
+  },
+  "c2a011bc8ee93f2bc0eb00b0cfe673d5cf42892c18f7d60b6b2885ef9f097d82": {
+    "source": "- Keep a live source on its player when moving it to another one fails (by @marcelveldt in #6045)\n- Keep translation syncs and backport PRs out of the release notes (by @marcelveldt in #6048)\n- Update",
+    "api_result": "- 当将源移至另一个播放器失败时，保持源在原播放器上的活跃状态（由 @marcelveldt 在 #6045 中提出）\n- 将翻译同步和回溯移植 PR 排除在发布说明之外（由 @marcelveldt 在 #6048 中提出）\n- 将 airplay-cli 更新至 v0.5.3（由 @musicassistant-bot[bot] 在 #6071 中提出）\n- 整理 seek 命令中的源查找逻辑（由 @marcelveldt 在 #6072 中提出）\n- 确保“停止”操作不会中断已重新开始的播放（由 @marcelveldt 在 #6082 中提出）\n- 当立体声对断电时，将其从所属组中分离（由 @marcelveldt 在 #6084 中提出）",
+    "ts": "2026-09-17T09:13:36.701904+00:00"
+  },
+  "df58999f1318dfcd91486715356be6ff018c06315862f0d6a4d0871084289c82": {
+    "source": "@ChrisB85, @MarvinSchenkel, @OzGav, @chrisuthe, @fmunkes, @kiegsgroot, @marcelveldt, @mescon, @mzellho",
+    "api_result": "@ChrisB85、@MarvinSchenkel、@OzGav、@chrisuthe、@fmunkes、@kiegsgroot、@marcelveldt、@mescon、@mzellho",
+    "ts": "2026-09-17T09:13:37.582899+00:00"
+  },
+  "85c0954dfd21591c73482405d2978923b6facc875d62be660db34a3c5ec81176": {
+    "source": "XPLHX1XPLHXXPLHX0XPLHX App",
+    "api_result": "XPLHX1XPLHXXPLHX0XPLHX 应用程序",
+    "ts": "2026-09-17T09:13:38.453383+00:00"
+  },
+  "1d1b9a07a2a1cc5d25dff630b967a7976632dc9fe51aa3d8c086c3a652e4ec68": {
+    "source": "The official XPLHX0XPLHX App for XPLHX1XPLHX.",
+    "api_result": "适用于 XPLHX1XPLHX 的官方 XPLHX0XPLHX 应用程序。",
+    "ts": "2026-09-17T09:13:39.255757+00:00"
+  },
+  "6c31c414ff90d27f31362042401aa5089d060b5e7273408446ae197ce80dcccc": {
+    "source": "XPLHX1XPLHXAbout XPLHX0XPLHX",
+    "api_result": "XPLHX1XPLHX关于 XPLHX0XPLHX",
+    "ts": "2026-09-17T09:13:40.047113+00:00"
+  },
+  "1e0bac4ac0ee709de0f2d734d1ee979a6bf1f833d552fa11476443547eb76231": {
+    "source": "XPLHX0XPLHX is a free, open-source music library manager that connects to your streaming services and a wide range of connected speakers. Turn your XPLHX1XPLHX instance into your own personal music st",
+    "api_result": "XPLHX0XPLHX 是一款免费的开源音乐库管理器，可连接您的流媒体服务和各种联网音箱。将您的 XPLHX1XPLHX 实例变为您专属的个人音乐流媒体中心！",
+    "ts": "2026-09-17T09:13:41.012323+00:00"
+  },
+  "b93a0fb34d51a62364c6127985b3f3e2c4718ddf4cac402286e7086ed86a15d0": {
+    "source": "XPLHX0XPLHXFeatures",
+    "api_result": "XPLHX0XPLHX功能",
+    "ts": "2026-09-17T09:13:41.770198+00:00"
+  },
+  "74776cae87425c156b61ae875da1dc7c729d56497254a4dbec4033f507c66642": {
+    "source": "- 🎵 XPLHX1XPLHXMulti-source Music LibraryXPLHX2XPLHX: Connect Spotify, YouTube Music, Qobuz, Tidal, and more\n- 🔊 XPLHX3XPLHXUniversal Player SupportXPLHX4XPLHX: Works with Sonos, Chromecast, AirPlay, ",
+    "api_result": "- 🎵 XPLHX1XPLHX多来源音乐库XPLHX2XPLHX：支持连接 Spotify、YouTube Music、Qobuz、Tidal 等服务\n- 🔊 XPLHX3XPLHX通用播放器支持XPLHX4XPLHX：兼容 Sonos、Chromecast、AirPlay、DLNA、Squeezebox 以及更多设备\n- 🎶 XPLHX5XPLHX统一音乐库XPLHX6XPLHX：将来自不同来源的所有音乐汇集于一处\n- 🎯 XPLHX7XPLHX智能播放XPLHX8XPLHX：无缝播放、淡入淡出及音频标准化\n- 📱 XPLHX9XPLHX精美界面XPLHX10XPLHX：可通过XPLHX0XPLHX访问的现代化网页界面\n- 🏠 XPLHX11XPLHXXPLHX0XPLHX 集成XPLHX12XPLHX：与 XPLHX0XPLHX 媒体播放器平台完全集成",
+    "ts": "2026-09-17T09:13:42.829024+00:00"
+  },
+  "d9094af1301812bd6c05c0472dca524fbfd936719de52f02957b93761fa85c7c": {
+    "source": "1. Navigate to XPLHX2XPLHXSettingsXPLHX3XPLHX → XPLHX4XPLHXAppsXPLHX5XPLHX → XPLHX6XPLHXApp StoreXPLHX7XPLHX in XPLHX1XPLHX\n2. Search for \"XPLHX0XPLHX\"\n3. Click XPLHX8XPLHXInstallXPLHX9XPLHX\n4. Wait f",
+    "api_result": "1. 导航至 XPLHX2XPLHX设置XPLHX3XPLHX → XPLHX4XPLHX应用XPLHX5XPLHX → XPLHX6XPLHX应用商店XPLHX7XPLHX 在 XPLHX1XPLHX\n2. 搜索“XPLHX0XPLHX”\n3. 点击 XPLHX8XPLHX安装XPLHX9XPLHX\n4. 等待安装完成\n5. 点击 XPLHX10XPLHX“开始”XPLHX11XPLHX\n6. 打开 XPLHX12XPLHXWeb UI XPLHX13XPLHX 来设置 XPLHX0XPLHX",
+    "ts": "2026-09-17T09:13:43.899852+00:00"
+  },
+  "3afe34826f5bc9c9f27906ece171667f10f5b3419b2fb2672b4c1168bc6f0cec": {
+    "source": "XPLHX0XPLHXConfiguration",
+    "api_result": "XPLHX0XPLHX配置",
+    "ts": "2026-09-17T09:13:44.677129+00:00"
+  },
+  "d2967a4d8b4bbaea626a1aa3d9b6b0d626929559ebd386a6fe9ddfb266d2b660": {
+    "source": "XPLHX0XPLHXAvailable Options",
+    "api_result": "XPLHX0XPLHX可用选项",
+    "ts": "2026-09-17T09:13:45.465550+00:00"
+  },
+  "fc3a54f84844a816ff02fd06f3be863ad06e846093e2bae438f913f8e33c4e11": {
+    "source": "XPLHX0XPLHXlog_level",
+    "api_result": "XPLHX0XPLHX日志级别",
+    "ts": "2026-09-17T09:13:46.254632+00:00"
+  },
+  "47bc1a01479af7da96c7aa81b31a4a89b9c3e897690c65b59b720714971cd789": {
+    "source": "Set the (global) logging level:",
+    "api_result": "设置（全局）日志级别：",
+    "ts": "2026-09-17T09:13:47.097977+00:00"
+  },
+  "9079463d8de839163bd114bdf1c14280c2be6c35321cd4c98835d9a2675eb606": {
+    "source": "- XPLHX0XPLHX: Only show errors\n- XPLHX1XPLHX: Show warnings and errors\n- XPLHX2XPLHX: Normal logging (recommended)\n- XPLHX3XPLHX: Detailed logging for troubleshooting",
+    "api_result": "- XPLHX0XPLHX：仅显示错误\n- XPLHX1XPLHX：显示警告和错误\n- XPLHX2XPLHX：常规日志记录（推荐）\n- XPLHX3XPLHX：用于故障排除的详细日志记录",
+    "ts": "2026-09-17T09:13:48.065769+00:00"
+  },
+  "14564deb60802abd76dce2dd23a2e4fa549e724c22c8c16449d32d43584e0694": {
+    "source": "XPLHX1XPLHXXPLHX3XPLHXXPLHX2XPLHX: XPLHX0XPLHX",
+    "api_result": "XPLHX1XPLHXXPLHX3XPLHXXPLHX2XPLHX：XPLHX0XPLHX",
+    "ts": "2026-09-17T09:13:48.942899+00:00"
+  },
+  "39110b6ebf6221c426bde76d5770109890177fc8ba872a74d9da480123453975": {
+    "source": "XPLHX2XPLHXRecommendationXPLHX3XPLHX: Consider using XPLHX0XPLHX level only to troubleshoot any XPLHX4XPLHX.\nBest to keep the global setting set to just XPLHX1XPLHX.",
+    "api_result": "XPLHX2XPLHX建议XPLHX3XPLHX：仅在排查任何XPLHX4XPLHX问题时，才考虑使用XPLHX0XPLHX级别。\n最好将全局设置仅保留为XPLHX1XPLHX。",
+    "ts": "2026-09-17T09:13:49.901976+00:00"
+  },
+  "fb999b930a7ee2034bafd53bf55a359ac5fc85ab0d114f7b9d73e904a333b9cb": {
+    "source": "TIP: Within XPLHX0XPLHX, each provider allows you to override the log level.",
+    "api_result": "提示：在 XPLHX0XPLHX 中，每个提供商都允许您覆盖日志级别。",
+    "ts": "2026-09-17T09:13:50.745933+00:00"
+  },
+  "e63271b2003b8b0473a945b1c3770b13872545de2218bdd7a613fed05ab00865": {
+    "source": "XPLHX0XPLHXsafe_mode",
+    "api_result": "XPLHX0XPLHX安全模式",
+    "ts": "2026-09-17T09:13:51.530036+00:00"
+  },
+  "45ca85c0b8504e570c6e853b73549d8b4569868ec7738f49ae9e63cb268124ea": {
+    "source": "When enabled, XPLHX0XPLHX starts without loading any providers. This is useful for troubleshooting startup XPLHX1XPLHX or provider-related problems.",
+    "api_result": "启用此选项后，XPLHX0XPLHX 将不加载任何提供程序而启动。这对于排查 XPLHX1XPLHX 的启动问题或与提供程序相关的问题非常有用。",
+    "ts": "2026-09-17T09:13:52.460619+00:00"
+  },
+  "99c0a9052a3075e91f54566b04cf0b6d6e6a74f91b90f51de6d03cee5dbfccba": {
+    "source": "XPLHX0XPLHXGetting Started",
+    "api_result": "XPLHX0XPLHX入门指南",
+    "ts": "2026-09-17T09:13:53.236443+00:00"
+  },
+  "7f598ed52eee8226ae0293b8ad6f15b92caa14382c14c69f083b7d2ae641baf7": {
+    "source": "1. After starting the App, click XPLHX0XPLHXOpen Web UIXPLHX1XPLHX\n2. Follow the onboarding wizard to set up your first music provider\n3. Connect your speakers/players\n4. Start enjoying your music!",
+    "api_result": "1. 启动应用后，点击 XPLHX0XPLHX“打开 Web UI”XPLHX1XPLHX\n2. 按照入门向导的提示设置您的首个音乐服务提供商\n3. 连接您的音箱/播放器\n4. 开始享受您的音乐吧！",
+    "ts": "2026-09-17T09:13:54.247189+00:00"
+  },
+  "7a5d6722c507f7f8ced210e2e65a3e743fa9c1c742457b29ee11ff36d36ab001": {
+    "source": "XPLHX1XPLHXOptional: XPLHX0XPLHX Integration",
+    "api_result": "XPLHX1XPLHX可选：XPLHX0XPLHX 集成",
+    "ts": "2026-09-17T09:13:55.064801+00:00"
+  },
+  "24a2f68952cd66f52bcba2921005ee41857d8a7bbe31341726786f8efebca0de": {
+    "source": "For advanced automation and control, you can optionally install the XPLHX2XPLHXXPLHX0XPLHX integrationXPLHX3XPLHX in XPLHX1XPLHX. This integration allows you to:",
+    "api_result": "为了实现高级自动化和控制，您可以选择在 XPLHX1XPLHX 中安装 XPLHX2XPLHXXPLHX0XPLHX 集成模块 XPLHX3XPLHX。通过该集成模块，您可以：",
+    "ts": "2026-09-17T09:13:55.995408+00:00"
+  },
+  "7b4fee443300e5b85648e57b78f2e412179a6940714219a1fcaadfde5dcff293": {
+    "source": "- 🤖 XPLHX2XPLHXAutomate music playbackXPLHX3XPLHX from XPLHX1XPLHX automations and scripts\n- 🎛️ XPLHX4XPLHXControl playbackXPLHX5XPLHX using XPLHX1XPLHX services\n- 📊 XPLHX6XPLHXAccess player statesXPL",
+    "api_result": "- 🤖 XPLHX2XPLHX通过XPLHX1XPLHX的自动化和脚本实现音乐播放自动化\n- 🎛️ XPLHX4XPLHX通过 XPLHX1XPLHX 服务控制播放\n- 📊 XPLHX6XPLHX在仪表盘中访问播放器状态和属性\n- 🎵 XPLHX8XPLHX在您的 XPLHX1XPLHX 场景和例程中使用 XPLHX0XPLHXXPLHX9XPLHX",
+    "ts": "2026-09-17T09:13:57.008750+00:00"
+  },
+  "2cd09e023d6e593f696e9a81e0dd02e497a3dc20a9a04be5b680f8f9a8f704e5": {
+    "source": "XPLHX0XPLHXTo install the integration:XPLHX1XPLHX",
+    "api_result": "XPLHX0XPLHX要安装该集成：XPLHX1XPLHX",
+    "ts": "2026-09-17T09:13:57.803357+00:00"
+  },
+  "d6171c3dc700ad42d18326a224e058f5a625f2ceeab3669c7ebf2f0511870d68": {
+    "source": "The XPLHX0XPLHX server should be auto detected by XPLHX1XPLHX once you install the App (or any XPLHX0XPLHX server in your network). On the Devices & services page, you should be greeted with a card fo",
+    "api_result": "安装该应用后（或网络中存在任何 XPLHX0XPLHX 服务器），XPLHX1XPLHX 应能自动检测到 XPLHX0XPLHX 服务器。在“设备与服务”页面上，您将看到已检测到的服务器的卡片，只需点击即可轻松完成集成设置。",
+    "ts": "2026-09-17T09:13:59.154848+00:00"
+  },
+  "8b9a5e8cc59a9f1d1e7b56de8307e20fffeb2c0d2ed1baebfd197a2b0257f68f": {
+    "source": "XPLHX2XPLHXXPLHX4XPLHXXPLHX3XPLHX: The App provides the XPLHX0XPLHX server, while the integration provides the XPLHX1XPLHX entities and automation capabilities. The App works perfectly fine without th",
+    "api_result": "XPLHX2XPLHXXPLHX4XPLHXXPLHX3XPLHX：该应用程序提供 XPLHX0XPLHX 服务器，而集成则提供 XPLHX1XPLHX 实体和自动化功能。 如果您仅想使用 Web 界面，即使不进行集成，该应用程序也能正常运行。",
+    "ts": "2026-09-17T09:14:00.089811+00:00"
+  },
+  "e800c5b161fb26f34e1f5602e7645e35f5f142fd81149eb56e359917e8fcf0fc": {
+    "source": "XPLHX0XPLHXDocumentation",
+    "api_result": "XPLHX0XPLHX文档",
+    "ts": "2026-09-17T09:14:00.897411+00:00"
+  },
+  "4792c2b49d5811b49165c7b3a5d01a0f7d04c30e251fd4cc020b64e5490f905b": {
+    "source": "For detailed documentation, visit:",
+    "api_result": "如需查看详细文档，请访问：",
+    "ts": "2026-09-17T09:14:01.622379+00:00"
+  },
+  "f8104453e1455a4c90fe872deebc006dcf6a2d8ef347da75dd94327ee85ef88c": {
+    "source": "- 📖 XPLHX0XPLHXOfficial DocumentationXPLHX1XPLHX\n- 💬 XPLHX2XPLHXCommunity DiscussionsXPLHX3XPLHX\n- 🐛 XPLHX4XPLHXSupport & Issue TrackerXPLHX5XPLHX\n- 💭 XPLHX6XPLHXDiscord ServerXPLHX7XPLHX",
+    "api_result": "- 📖 XPLHX0XPLHX官方文档XPLHX1XPLHX\n- 💬 XPLHX2XPLHX社区讨论XPLHX3XPLHX\n- 🐛 XPLHX4XPLHX支持与问题跟踪器XPLHX5XPLHX\n- 💭 XPLHX6XPLHXDiscord服务器XPLHX7XPLHX",
+    "ts": "2026-09-17T09:14:02.547212+00:00"
+  },
+  "631841cf55ebd1e4c405df5ecd8360ca0ac5a1a8b411b1dfaebec44541597a87": {
+    "source": "XPLHX0XPLHXSupport",
+    "api_result": "XPLHX0XPLHX支持",
+    "ts": "2026-09-17T09:14:03.321531+00:00"
+  },
+  "edb1f6ac5550ccd9dddb157b56d69ad3bdef9154ef7975d0e34a73e5a66ef029": {
+    "source": "If you encounter any XPLHX0XPLHX:",
+    "api_result": "如果您遇到任何 XPLHX0XPLHX：",
+    "ts": "2026-09-17T09:14:04.118567+00:00"
+  },
+  "7cc4d7afadd0d1385c626053c93c3ff8e3aa6f021bde9b85183042c7ba649409": {
+    "source": "1. Check the App XPLHX10XPLHX (available in the XPLHX0XPLHX App page)\n2. Visit the XPLHX1XPLHXdocumentationXPLHX2XPLHX\n3. Search existing XPLHX9XPLHX at XPLHX3XPLHXmusic-assistant/supportXPLHX4XPLHX\n4",
+    "api_result": "1. 查看应用 XPLHX10XPLHX（可在 XPLHX0XPLHX 应用页面中找到）\n2. 访问 XPLHX1XPLHX文档XPLHX2XPLHX\n3. 在 XPLHX3XPLHXmusic-assistant/supportXPLHX4XPLHX 中搜索现有的 XPLHX9XPLHX\n4. 在 XPLHX5XPLHXDiscordXPLHX6XPLHX 或 XPLHX7XPLHXGitHub 讨论区XPLHX8XPLHX 寻求帮助",
+    "ts": "2026-09-17T09:14:05.106408+00:00"
+  },
+  "82e8c54d633cbdd480fb517428c6b39b5added2e497861112dfc82d42a2e36c0": {
+    "source": "XPLHX0XPLHXUpdates",
+    "api_result": "XPLHX0XPLHX更新",
+    "ts": "2026-09-17T09:14:05.855850+00:00"
+  },
+  "5d4b8e5084c441571aedc7f579e925a3fbe6acb527a70bfc54eec0a9887756f8": {
+    "source": "This is the XPLHX0XPLHXXPLHX2XPLHXXPLHX1XPLHX channel. Updates are released after thorough testing and are recommended for everyday use.",
+    "api_result": "这是 XPLHX0XPLHXXPLHX2XPLHXXPLHX1XPLHX 频道。更新版本在经过全面测试后发布，建议用于日常使用。",
+    "ts": "2026-09-17T09:14:06.743463+00:00"
+  },
+  "d6d1152d4f45529c401275a492c6dd7402736673538ca015518222aeab311fd7": {
+    "source": "XPLHX0XPLHXUpdate Frequency",
+    "api_result": "XPLHX0XPLHX更新频率",
+    "ts": "2026-09-17T09:14:07.546528+00:00"
+  },
+  "4ed44bcb9a401aa0281aaf1dbee059bebd43546361f8e6a658ae366e6da80302": {
+    "source": "- Major releases: Every few months (more or less once per quarter)\n- Bug fixes: As needed\n- Security updates: Immediately",
+    "api_result": "- 主要版本发布：每隔几个月（大致每季度一次）\n- 错误修复：视情况而定\n- 安全更新：立即发布",
+    "ts": "2026-09-17T09:14:08.531468+00:00"
+  },
+  "6ba2619c15230a68fca2d976af60f041f0f9aeb7bd30e1904d4e4c6d87959c40": {
+    "source": "XPLHX0XPLHXXPLHX1XPLHX Information",
+    "api_result": "XPLHX0XPLHXXPLHX1XPLHX 信息",
+    "ts": "2026-09-17T09:14:09.285795+00:00"
+  },
+  "53adcc57b066a99b2dad26ef7b8fb1ca94c1ffb7e15575fe881f79c6460b236a": {
+    "source": "This App uses XPLHX1XPLHX releases of XPLHX0XPLHX. For the latest features, consider the BETA or NIGHTLY versions (use at your own risk).",
+    "api_result": "本应用使用 XPLHX1XPLHX 版本的 XPLHX0XPLHX。如需体验最新功能，建议尝试 BETA 或 NIGHTLY 版本（使用风险自负）。",
+    "ts": "2026-09-17T09:14:10.242557+00:00"
+  },
+  "5e4fe32fbe6634f0d4fad23e9b26fbca7287f65e27840b8d4ccc1e093f66655a": {
+    "source": "XPLHX0XPLHXData Storage",
+    "api_result": "XPLHX0XPLHX数据存储",
+    "ts": "2026-09-17T09:14:11.065887+00:00"
+  },
+  "7679778f3e953055689b67d814ff48566316845f79f311a146996be044bd9d68": {
+    "source": "All XPLHX0XPLHX data is stored within the App's data directory:",
+    "api_result": "所有 XPLHX0XPLHX 数据均存储在应用程序的数据目录中：",
+    "ts": "2026-09-17T09:14:11.883302+00:00"
+  },
+  "cb867f9a804b75db2556024c851984e9389e9a4f0496fe56e13b034228f2f77d": {
+    "source": "- Music library database\n- Configuration settings",
+    "api_result": "- 音乐库数据库\n- 配置设置",
+    "ts": "2026-09-17T09:14:12.685608+00:00"
+  },
+  "164aa305dc1107f72d576d35c519801ec7b7a05ac2914ce1282ac2c5be6d43c9": {
+    "source": "Making a backup of the XPLHX0XPLHX App within XPLHX1XPLHX will therefore also include your XPLHX0XPLHX data. Please ensure to always make a backup before updating to a new XPLHX2XPLHX so you can alway",
+    "api_result": "因此，在 XPLHX1XPLHX 中对 XPLHX0XPLHX 应用程序进行备份时，也会包含您的 XPLHX0XPLHX 数据。 请务必在更新到新的 XPLHX2XPLHX 之前先进行备份，这样您就可以随时轻松恢复到之前的 XPLHX3XPLHX！",
+    "ts": "2026-09-17T09:14:13.594436+00:00"
+  },
+  "68dbe27dab4ebe19559672f5def8c98529263d6f463c9570ed731a39daabd707": {
+    "source": "XPLHX0XPLHXPerformance Tips",
+    "api_result": "XPLHX0XPLHX性能提示",
+    "ts": "2026-09-17T09:14:14.341916+00:00"
+  },
+  "244d8899a5a7c3a8daa13b9951a625171b80d25ae4f355939443d805e4fcae74": {
+    "source": "- Use a fast storage medium (SSD recommended)\n- Ensure adequate RAM (minimum 4GB for XPLHX1XPLHX + this App)\n- Keep your XPLHX0XPLHX instance updated",
+    "api_result": "- 使用高速存储介质（建议使用 SSD）\n- 确保内存充足（XPLHX1XPLHX 加上本应用至少需要 4GB 内存）\n- 保持您的 XPLHX0XPLHX 实例处于最新状态",
+    "ts": "2026-09-17T09:14:15.321481+00:00"
+  },
+  "2395ae36a6f80df3af6ee77f3bec2c80153936281406864487c098019dbf2394": {
+    "source": "XPLHX0XPLHXContributing",
+    "api_result": "XPLHX0XPLHX贡献",
+    "ts": "2026-09-17T09:14:16.057359+00:00"
+  },
+  "a2169b23e7fbc63081a03a3ca683e0062d6b65f7dd66ab54444e8990f40a0636": {
+    "source": "XPLHX0XPLHX is open source! Contributions are welcome:",
+    "api_result": "XPLHX0XPLHX 是开源的！欢迎贡献代码：",
+    "ts": "2026-09-17T09:14:16.836965+00:00"
+  },
+  "cd40f64c630801f6059514cc09c034eb9f70742e921599750b595a0f87c455b3": {
+    "source": "- 🐛 XPLHX0XPLHXReport bugsXPLHX1XPLHX\n- 💡 XPLHX2XPLHXSuggest featuresXPLHX3XPLHX\n- 🔧 Submit pull requests\n- 📝 Improve documentation",
+    "api_result": "- 🐛 XPLHX0XPLHX报告错误XPLHX1XPLHX\n- 💡 XPLHX2XPLHX提出功能建议XPLHX3XPLHX\n- 🔧 提交拉取请求\n- 📝 完善文档",
+    "ts": "2026-09-17T09:14:18.109823+00:00"
+  },
+  "cf5a1e98bc925416943b753567133bd2f50c826a9f98689611d3ff2a634da57b": {
+    "source": "Visit the XPLHX1XPLHXXPLHX0XPLHX organizationXPLHX2XPLHX on GitHub to contribute.",
+    "api_result": "请访问 GitHub 上的 XPLHX1XPLHXXPLHX0XPLHX 组织 XPLHX2XPLHX，参与贡献。",
+    "ts": "2026-09-17T09:14:19.062644+00:00"
+  },
+  "09d990b95392a51098ea5e01ec14f9acfcfdcd7a681f5d63f92833331521ef57": {
+    "source": "XPLHX0XPLHXLicense",
+    "api_result": "XPLHX0XPLHX许可证",
+    "ts": "2026-09-17T09:14:19.826074+00:00"
+  },
+  "92b451acbdda3930ec0741c1faaa09771c11fd8f1a6cddf37fcbb95149fe3595": {
+    "source": "XPLHX0XPLHX is licensed under the Apache License 2.0.",
+    "api_result": "XPLHX0XPLHX 根据 Apache 2.0 许可协议发布。",
+    "ts": "2026-09-17T09:14:20.707638+00:00"
+  },
+  "6e2fd291379602245c172ad89747a3542c5681dc7639033547709b0462b32ab1": {
+    "source": "XPLHX0XPLHX[2.11.0b2] - 08.09.2026",
+    "api_result": "XPLHX0XPLHX[2.11.0b2] - 2026年9月8日",
+    "ts": "2026-09-17T09:14:21.494891+00:00"
+  },
+  "42bc52ab3820318b2236c7dec6f8b286490de62d71ab23d800910ae69759cf10": {
+    "source": "XPLHX0XPLHX📦 Beta Release",
+    "api_result": "XPLHX0XPLHX📦 Beta 版本发布",
+    "ts": "2026-09-17T09:14:22.338124+00:00"
+  },
+  "fae60028a8a8c01892f6fc550a627d86ac4aaee507918d2d844daf583e5b55f5": {
+    "source": "_Changes since XPLHX0XPLHX2.11.0b1XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.11.0b1XPLHX1XPLHX 以来的更改_",
+    "ts": "2026-09-17T09:14:23.192948+00:00"
+  },
+  "b8aa29e70e08093ac4c4d02015f8ef71bb5dcaefe251e4bf838e52b9baaa259a": {
+    "source": "- Add external ID lookup infrastructure (by @dmoo500 in #5110)\n- Match imported playlist tracks against other providers when their source is gone (by @marcelveldt in #5986)\n- Add playlist migration be",
+    "api_result": "- 添加外部 ID 查询功能（由 @dmoo500 在 #5110 中提出）\n- 当导入的播放列表中的曲目其来源已不存在时，将其与其他服务商进行匹配（由 @marcelveldt 在 #5986 中提出）\n- 添加不同服务商之间的播放列表迁移功能（由 @marcelveldt 在 #5989 中提出）\n- 通过二维码而非密码登录 Overcast（由 @OzGav 在 #6126 中提出）\n- 支持使用 Plex 的响度数据（由 @chicco-carone 在 #6166 中提出）\n- 为 Tidal 服务商添加 ARTIST_TRACKS 支持（由 @jozefKruszynski 在 #6167 中提出）\n- 显示曲目最初的发行年份（由 @OzGav 在 #6182 中提出）\n- 明确全局“自动播放”和“交叉淡入淡出”XPLHX0XPLHX 开关的功能（由 @MarvinSchenkel 在 #6187 中提出）\n- 优先采用音乐提供商提供的响度元数据，而非内置测量值（由 @MarvinSchenkel 在 #6188 中实现）\n- 为 LG SPx Cast 设备添加测得的 SendSpin 延迟（由 @Toverbal 在 #6204 中实现）\n- 在设置过程中通过 mDNS 预填充 AmpliPi 主机信息（由 @mcaulifn 在 #6206 中实现）\n- 以原始位深度播放高分辨率广播电台（由 @OzGav 在 #6214 中实现）",
+    "ts": "2026-09-17T09:14:24.347690+00:00"
+  },
+  "aa7f1e2b5aee71d4f02b5aed4e0916e9cd8bc18a5c467e310fa5ba3bdc5befa4": {
+    "source": "- Clean up sidebar shortcuts when a music provider is removed (by @OzGav in #6124)\n- Show why a Podcast Index login or episode lookup failed (by @OzGav in #6146)\n- Use artist top tracks when sampling ",
+    "api_result": "- 移除音乐服务提供商后清理侧边栏快捷方式（由 @OzGav 在 #6124 中提出）\n- 显示 Podcast Index 登录或剧集查询失败的原因（由 @OzGav 在 #6146 中提出）\n- 在生成流派和动态电台种子时使用艺人的热门曲目（由 @jozefKruszynski 在 #6155 中提出）\n- 在“最近播放”播放列表中显示音乐库中的曲目（由 @MarvinSchenkel 在 #6161 中提出）\n- Deezer：修复多个实例共享同一账户的问题（由 @jdaberkow 在 #6169 中提出）\n- 跳过 Spotify 拒绝播放的曲目，而非记录崩溃（由 @marcelveldt 在 #6171 中提出）\n- 更经济的曲目切换：Spotify Soloist 显示其真实的单流限制（由 @marcelveldt 在 #6172 中提出）\n- 更改播放队列后，Sonos 不再播放过时的下一首曲目（由 @marcelveldt 在 #6173 中提出）\n- Deezer：修复快进时定位未达到请求位置的问题（由 @jdaberkow 在 #6174 中提出）\n- 修复 Spotify Soloist 的新下载功能（由 @aauren 在 #6176 中提出）\n- 询问“最新一集”时播放最新一集（由 @OzGav 在 #6178 中提出）\n- 按正确顺序显示 ARD Audiothek 的剧集（由 @OzGav 在 #6179 中提出）\n- 防止 Sendspin 元数据进度因过时的已用时间外推而出现偏差（由 @teancom 在 #6183 中提交）\n- AirPlay：当发现无端口时，回退到 XPLHX0XPLHX 端口（由 @MarvinSchenkel 在 #6185 中提交）\n- 使“音乐问答”中的题目可作答（由 @MarvinSchenkel 在 #6189 中提出）\n- 为 PulseAudio 设置主目录（由 @aauren 在 #6190 中提出）\n- 改进 BBC Sounds 中播放列表的处理方式（由 @kieranhogg 在 #6195 中提出）\n- 对于启用了提供商过滤器的用户，播放普通 URL 而不是随机曲目（由 @MarvinSchenkel 在 #6205 中提出）\n- 修复删除提供商后侧边栏快捷方式卡住的问题（由 @OzGav 在 #6207 中提出）\n- 修复 Deezer 账户隔离问题并明确认证失败原因（由 @jdaberkow 在 #6213 中提出）\n- 修复 Plex Connect 在大型播放列表中启动错误曲目（由 @MarvinSchenkel 在 #6217 中提交）\n- 修复当数据库中存在损坏的分析行时 Sonic Similarity 无法加载的问题（由 @MarvinSchenkel 在 #6218 中提交）\n- 按实际添加日期对 Apple Music 资料库进行排序（由 @MarvinSchenkel 在 #6219 中实现）\n- 修复同步播放器上播放公告后，其他播放器未重新分组的问题（由 @MarvinSchenkel 在 #6220 中实现）",
+    "ts": "2026-09-17T09:14:25.662149+00:00"
+  },
+  "b39d590fb53cba03cdb091a680dcaf10a89c179251981d4126ecf56c579b42d3": {
+    "source": "- Keep the app on screen while it reconnects after being backgrounded (by @MarvinSchenkel in XPLHX0XPLHX#2689XPLHX1XPLHX)\n- Remove playlist import schema gate (by @marcelveldt in XPLHX2XPLHX#2692XPLHX",
+    "api_result": "- 当应用被移至后台后重新连接时，保持应用在屏幕上显示（由 @MarvinSchenkel 在 XPLHX0XPLHX#2689XPLHX1XPLHX 提出）\n- 移除播放列表导入模式限制（由 @marcelveldt 在 XPLHX2XPLHX#2692XPLHX3XPLHX 提出）\n- 实现不同提供商之间的播放列表迁移（由 @marcelveldt 在 XPLHX4XPLHX#2647XPLHX5XPLHX 中提出）\n- 更正了关于哪些滤波器需要立体声的 DSP 帮助文本（由 @OzGav 在 XPLHX6XPLHX#2677XPLHX7XPLHX 中实现）\n- 移除提供商后保持侧边栏快捷方式整洁（由 @OzGav 在 XPLHX8XPLHX#2694XPLHX9XPLHX 中实现）\n- 将 eslint 从 10.7.0 升级至 10.9.1（由 @[dependabot[bot]](XPLHX22XPLHX) 在 XPLHX10XPLHX#2685XPLHX11XPLHX 中完成）\n- 将 reka-ui 从 2.10.1 升级至 2.10.3（由 @[dependabot[bot]](XPLHX23XPLHX) 在 XPLHX12XPLHX#2639XPLHX13XPLHX 中操作）\n- 将 lint-staged 从 16.4.0 升级至 17.4.1（由 @[dependabot[bot]](XPLHX24XPLHX) 在 XPLHX14XPLHX#2682XPLHX15XPLHX 中执行）\n- 将 oxlint 和 eslint-plugin-oxlint 升级（由 @[dependabot[bot]](XPLHX25XPLHX) 在 XPLHX16XPLHX#2684XPLHX17XPLHX 中执行）\n- 将 marked 从 18.0.9 升级至 18.0.11（由 @[dependabot[bot]](XPLHX26XPLHX) 在 XPLHX18XPLHX#2683XPLHX19XPLHX 中操作）\n- 将 typescript-eslint 从 8.64.0 升级至 8.68.0（由 @[dependabot[bot]](XPLHX27XPLHX) 在 XPLHX20XPLHX#2686XPLHX21XPLHX)",
+    "ts": "2026-09-17T09:14:26.848737+00:00"
+  },
+  "0dcbded1d1d0fda54871f646a9dd1de7203da670448fb92bd47e6bca9815131b": {
+    "source": "XPLHX0XPLHX\nXPLHX1XPLHX18 changesXPLHX2XPLHX",
+    "api_result": "XPLHX0XPLHX\nXPLHX1XPLHX18 处更改XPLHX2XPLHX",
+    "ts": "2026-09-17T09:14:27.729709+00:00"
+  },
+  "a18ab30d42eec37f6b45f6db0969e9d81287319355051e0819e8d338e229ab49": {
+    "source": "- Fake Sendspin devices for testing the pairing screens (by @marcelveldt in #6085)\n- Move most webserver settings behind the advanced toggle (by @OzGav in #6168)\n- Quieter track changes: don't warn wh",
+    "api_result": "- 用于测试配对界面的模拟 Sendspin 设备（由 @marcelveldt 在 #6085 中提出）\n- 将大部分 Web 服务器设置移至“高级”切换按钮之后（由 @OzGav 在 #6168 中提出）\n- 更安静的歌曲切换：当下一首歌曲需要等待 Spotify 空闲时段时不再提示（由 @marcelveldt 在 #6170 中提交）\n- 集中查看 Spotify 是否已为 Soloist 配置好（由 @marcelveldt 在 #6175 中提交）\n- 在详细日志级别记录“智能淡入淡出”排序结果（由 @MarvinSchenkel 在 #6186 中提出）\n- 针对包含关键问题的 PR 草稿，添加“关键审查门”工作流（由 @chrisuthe 在 #6191 中提出）\n- 将 auntie-sounds 升级至 2.0.9（由 @kieranhogg 在 #6192 中实现）\n- 在代码审查中停止标记有效的 Python 3.14 语法（PEP 758）（由 @chrisuthe 在 #6193 中实现）\n- 对 BBC Sounds 进行了多项代码改进和测试（由 @kieranhogg 在 #6194 中完成）\n- 将 DI 提供商重命名为 Digitally Imported（由 @OzGav 在 #6197 中完成）\n- 将 critical-review 审核闸门切换为定时轮询机制（由 @chrisuthe 在 #6201 中提出）\n- 将 deno 从 2.9.5 升级至 2.9.6（由 @dependabot[bot] 在 #6209 中提出）\n- 将 bidict 从 0.23.1 升级至 0.24.1（由 @dependabot[bot] 在 #6210 中完成）\n- 将 huggingface-hub 从 1.26.1 升级至 1.30.0（由 @dependabot[bot] 在 #6211 中提交）\n- 将未发布到发布说明中的更改保留下来（由 @MarvinSchenkel 在 #6216 中提出）\n- 移除原定在 2.9 之后进行的设置迁移（由 @OzGav 在 #6221 中提出）\n- 将提供商图标替换为彩色 Sendspin 徽标（由 @MarvinSchenkel 在 #6225 中提交）\n- 将 aioslimproto 更新至 3.2.0 版本（由 @MarvinSchenkel 在 #6227 中提交）",
+    "ts": "2026-09-17T09:14:28.832911+00:00"
+  },
+  "bad7ad94a078509fa6af4047a5428b90defaa150d2ba3ad5daab93b1db6a5e46": {
+    "source": "@MarvinSchenkel, @OzGav, @Toverbal, @aauren, @chicco-carone, @chrisuthe, @dmoo500, @jdaberkow, @jozefKruszynski, @kieranhogg, @marcelveldt, @mcaulifn, @teancom",
+    "api_result": "@MarvinSchenkel, @OzGav, @Toverbal, @aauren, @chicco-carone, @chrisuthe, @dmoo500, @jdaberkow, @jozefKruszynski, @kieranhogg, @marcelveldt, @mcaulifn, @teancom",
+    "ts": "2026-09-17T09:14:30.026038+00:00"
+  },
+  "be10326a0d9569d52d3e99d177d1373fbb33a40e6d0eec09ea6fa2e9edf8d100": {
+    "source": "XPLHX0XPLHX[2.11.0b1] - 02.09.2026",
+    "api_result": "XPLHX0XPLHX[2.11.0b1] - 2026年9月2日",
+    "ts": "2026-09-17T09:14:30.859370+00:00"
+  },
+  "b19d3dd963693832d77e3b173e3c9b8fdbf3059243398c84a0520e9a2b678aa8": {
+    "source": "_Changes since XPLHX0XPLHX2.11.0b0XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.11.0b0XPLHX1XPLHX 以来的变更_",
+    "ts": "2026-09-17T09:14:31.680905+00:00"
+  },
+  "a6d4e6973bbcd5d61ab383431f693da87dc78da8b1a86e99488c51be3bfcd08b": {
+    "source": "XPLHX0XPLHX🚀 New Providers",
+    "api_result": "XPLHX0XPLHX🚀 新服务商",
+    "ts": "2026-09-17T09:14:32.487065+00:00"
+  },
+  "79a7195c77d8cf9f8cad6da2ad1cd12e369f7eadf60f8d7139481b6be19f57e4": {
+    "source": "- Add Yoto provider (by @pantsman0 in #5584)\n- Add VRT MAX music provider (by @bollewolle in #6098)",
+    "api_result": "- 添加 Yoto 音乐服务提供商（由 @pantsman0 在 #5584 中实现）\n- 添加 VRT MAX 音乐服务提供商（由 @bollewolle 在 #6098 中实现）",
+    "ts": "2026-09-17T09:14:33.418333+00:00"
+  },
+  "e46c35a0e244d1a9839f9eb2fba509bd919342c751c46555bcbf2df25f9fb502": {
+    "source": "- Add support for transcoding plex streams before playback (by @chicco-carone in #4615)\n- Serve Pandora stations as dynamic radio stations (by @chrisuthe in #5557)\n- SiriusXM Library Swap (by @MizterB",
+    "api_result": "- 添加对播放前转码 Plex 流的支持（由 @chicco-carone 在 #4615 中提交）\n- 将 Pandora 电台作为动态电台提供（由 @chrisuthe 在 #5557 中提交）\n- SiriusXM 库交换功能（由 @MizterB 在 #5603 中实现）\n- 添加蓝牙音频常量（由 @mzellho 在 #6052 中实现）\n- 在 Sendspin 需要时自动启用 AirPlay（由 @teancom 在 #6079 中实现）\n- 将 Cast 设备上的 Sendspin 设为需手动启用，并标记为实验性功能（由 @marcelveldt 在 #6081 中提出）\n- 允许具有访客访问权限的扬声器无需设置步骤即可播放（由 @marcelveldt 在 #6088 中提出）\n- 使平衡滑块在单声道曲目上生效（由 @OzGav 在 #6104 中提出）\n- 通过引入抖动机制，更早重试失败的提供商加载（由 @balloob 在 #6119 中提出）\n- 将“智能播放列表”中的“相似音乐”与“无尽混音”保持一致（由 @MarvinSchenkel 在 #6121 中提出）\n- 为“自动播放”和“交叉淡入淡出”开关设置全局 XPLHX0XPLHX 参数（由 @MarvinSchenkel 在 #6130 中提出）\n- 添加支持“智能淡入淡出”功能的智能随机播放排序（由 @leonkdk 在 #6144 中实现）\n- 为将 AI Radio 节目作为可播放的电台做好核心准备（由 @MarvinSchenkel 在 #6148 中实现）\n- 支持 Bandcamp 歌曲歌词（由 @ALERTua 在 #6152 中实现）\n- 智能淡入淡出：在复杂的过渡中不再出现生硬的切入或无法听到的淡入淡出效果（由 @marcelveldt 在 #6163 中实现）",
+    "ts": "2026-09-17T09:14:34.612896+00:00"
+  },
+  "049632acd5a5ff47a43bcb9902b2340ad346be3b09e355cc6f478b92c939856e": {
+    "source": "- Resolve the party player without guest access outside remote mode (by @jozefKruszynski in #5930)\n- Stop the CLAP weights download from timing out sonic_analysis setup (by @chrisuthe in #6053)\n- Fix ",
+    "api_result": "- 解决远程模式外无访客权限的派对播放器问题（由 @jozefKruszynski 在 #5930 中提出）\n- 防止 CLAP 权重下载因超时而导致 sonic_analysis 设置失败（由 @chrisuthe 在 #6053 中提出）\n- 修复 AirPlay 播放器在快进/快退操作无法加载下一段流媒体时卡死的问题（由 @marcelveldt 在 #6076 中提出）\n- 当扬声器在 XPLHX0XPLHX 之外被关闭时停止播放音乐（由 @marcelveldt 在 #6077 中提出）\n- 将 aioaudiobookshelf 升级至 0.1.25（由 @fmunkes 在 #6078 中提交）\n- 当群组围绕其领导者解散时停止播放音乐（由 @marcelveldt 在 #6083 中提交）\n- 修复 Spotify Connect 群组音量默认设置为 100% 的问题（由 @OzGav 在 #6087 中提交）\n- 在 Spotify 账户匹配检查中解码百分比编码的用户名（由 @mescon 在 #6089 中提交）\n- 为国际用户恢复 BBC Sounds 电台回放菜单（由 @kieranhogg 在 #6099 中提交）\n- 修复因缓存过期导致 BBC Sounds 电台节目元数据卡死的问题（由 @kieranhogg 在 #6101 中提交）\n- 修复文件系统扫描时因文件名中包含非十进制数字导致的崩溃问题（由 @OzGav 在 #6102 中提交）\n- 将父专辑关联到导入的专辑曲目（由 @OzGav 在 #6111 中提交）\n- 将 Fully Kiosk 输出编解码器更改为 AAC（由 @OzGav 在 #6112 中提交）\n- 修复关机时 Chromecast 播放器卸载错误（由 @balloob 在 #6113 中提交）\n- Spotify：同步音乐库专辑时跳过空条目（由 @MarvinSchenkel 在 #6114 中提出）\n- 修复 YouTube Music 中合作曲目专辑缺失曲目问题（由 @MarvinSchenkel 在 #6115 中提出）\n- Sonos 音箱现可播放您添加到播放队列中的曲目（由 @marcelveldt 在 #6116 中提交）\n- 修复 BBC Sounds 推荐内容无法加载的问题（由 @MarvinSchenkel 在 #6117 中提交）\n- 在 Sendspin 设置流程中恢复配对令牌支持（由 @meiser79 在 #6122 中提交）\n- Apple Music：不再将仅限购买的库项目报告为可用（由 @anthonws 在 #6123 中提交）\n- 修复 AriaCast 接收器从任意主机获取专辑封面图片的问题（由 @MarvinSchenkel 在 #6127 中提交）\n- 在较慢的音源上，淡入淡出效果不再缩短至仅几秒钟（由 @marcelveldt 在 #6128 中提交）\n- 新创建的令牌现在会显示在令牌列表中（由 @marcelveldt 在 #6131 中提出）\n- 修复了与下一首曲目入队相关的各种 XPLHX2XPLHX 问题（由 @marcelveldt 在 #6132 中提出）\n- 修复了原始 PCM 输入被源编解码器解码的问题（由 @OzGav 在 #6137 中提交）\n- 修复了当音频源为通过 Soloist 连接的 Spotify 时，支持加入播放队列的扬声器（如 Sonos）上的淡入淡出问题（由 @marcelveldt 在 #6141 中提交）\n- 清空播放队列后，AI DJ 不再静音（由 @MarvinSchenkel 在 #6142 中提交）\n- 在流式播放模式下，淡入淡出设置的更改现在会在下一首曲目生效（由 @MarvinSchenkel 在 #6143 中提交）\n- 当调度器持久化其状态时，确保核心/任务仍可解析（由 @OzGav 在 #6145 中实现）\n- 修复 BBC Sounds 在更新收听状态时，有时会使用库 ID 而不是提供商 ID 的问题（由 @kieranhogg 在 #6150 中提交）\n- 修复 BBC Sounds 菜单数据有时过时的问题（由 @kieranhogg 在 #6153 中提交）\n- 在客户端 SSL 上下文中支持系统 CA 证书（由 @ecohash-co 在 #6154 中提交）\n- 修复 Internet Archive 搜索中缺失 Live Music Archive 内容的问题（由 @OzGav 在 #6157 中提交）\n- 在 Sonos 上对单首曲目进行快进/快退操作现在可立即生效（由 @marcelveldt 在 #6158 中提出）\n- 允许最多 3 个 YouTube Music 流同时播放（由 @MarvinSchenkel 在 #6160 中提出）\n- 修复了 AirPlay 控制连接断开时 aiohttp 会话泄漏的问题（由 @MarvinSchenkel 在 #6162 中提交）\n- 修复了 nl-NL 语言的 Alexa 唤醒词无法正常使用的问题（由 @R3inoudR 在 #6164 中提交）",
+    "ts": "2026-09-17T09:14:35.760240+00:00"
+  },
+  "e26c9065da17cb105d7bfb03998509335c9b255c38a1e549685ada0a3e70a533": {
+    "source": "- Tidy up the setup flow dialog (by @marcelveldt in XPLHX0XPLHX#2673XPLHX1XPLHX)\n- Keep artwork whose provider is no longer loaded (by @ChrisB85 in XPLHX2XPLHX#2670XPLHX3XPLHX)\n- Add a Copilot review ",
+    "api_result": "- 整理了设置流程对话框（由 @marcelveldt 在 XPLHX0XPLHX#2673XPLHX1XPLHX 中提出）\n- 保留提供者已不再加载的资源（由 @ChrisB85 在 XPLHX2XPLHX#2670XPLHX3XPLHX 中提出）\n- 为前端 PR 添加 Copilot 审查说明片段（由 @chrisuthe 提交，问题编号 XPLHX4XPLHX#2672XPLHX5XPLHX）\n- 在播放列表导入中添加匹配策略选项（由 @marcelveldt 在 XPLHX6XPLHX#2646XPLHX7XPLHX 中提出）\n- 修复播放列表导入的匹配策略 XPLHX14XPLHX 检查点（由 @marcelveldt 在 XPLHX8XPLHX#2675XPLHX9XPLHX 中提交）\n- 将前端仓库中已开启的 XPLHX15XPLHX 问题移至支持仓库（由 @marcelveldt 在 XPLHX10XPLHX#2674XPLHX11XPLHX 中提出）\n- 更新浏览器标题栏，显示当前曲目和艺人（由 @phiychai 在 XPLHX12XPLHX#2649XPLHX13XPLHX 中提出）",
+    "ts": "2026-09-17T09:14:36.731227+00:00"
+  },
+  "ad84ba25f0cc6367ae4fb358c1e5ce3e14a9e067d7f333780fb11a5b4c2262e0": {
+    "source": "XPLHX0XPLHX\nXPLHX1XPLHX17 changesXPLHX2XPLHX",
+    "api_result": "XPLHX0XPLHX\nXPLHX1XPLHX17项变更XPLHX2XPLHX",
+    "ts": "2026-09-17T09:14:37.594330+00:00"
+  },
+  "1ce2022a7c3fad827373e97abe760775be64e3774a450b390a2ee22654b014df": {
+    "source": "- Keep a stop from cutting off playback that already restarted (by @marcelveldt in #6082)\n- Detach a stereo pair from its group when it is powered off (by @marcelveldt in #6084)\n- Bump ya-passport-aut",
+    "api_result": "- 确保暂停操作不会中断已重新开始的播放（由 @marcelveldt 在 #6082 中提出）\n- 当立体声对断电时，将其从所属组中分离（由 @marcelveldt 在 #6084 中提出）\n- 将 ya-passport-auth 升级至 2.0.1（由 @trudenboy 在 #6090 中提出）\n- 在代码审查指南中添加跨仓库前端支持说明（由 @chrisuthe 在 #6091 中提出）\n- 在跨仓库审核指南中添加对 shared-models 的支持（由 @chrisuthe 在 #6092 中提交）\n- 将服务器仓库中已创建的 XPLHX1XPLHX 问题转发至支持仓库（由 @marcelveldt 在 #6094 中提交）\n- 添加 PR-description-XPLHX0XPLHX 代码审查检查项（由 @chrisuthe 在 #6100 中提出）\n- 将 pylast 从 7.0.2 升级至 7.1.0（由 @dependabot[bot] 在 #6105 中提出）\n- 将 ruff 从 0.15.22 升级至 0.16.5（由 @dependabot[bot] 在 #6107 中完成）\n- 当更改涉及存储数据时，询问是否需要迁移（由 @MarvinSchenkel 在 #6120 中提出）\n- Yandex Station：移除未使用的 CSRF 请求路径（由 @MarvinSchenkel 在 #6125 中提出）\n- 撤销用户的全部令牌后，现在会断开所有连接（由 @marcelveldt 在 #6133 中实现）\n- 删除用户后，现在会清理与其关联的所有内容（由 @marcelveldt 在 #6134 中实现）\n- 简化 WebSocket 会话的断开方式（由 @marcelveldt 在 #6135 中实现）\n- 完成 #6135 中开始的 WebSocket 会话清理工作（由 @marcelveldt 在 #6136 中实现）\n- 将 iBroadcast 库与其他包含用户曲目的库一视同仁（由 @OzGav 在 #6147 中实现）\n- 完善模式升级和 PR 描述审核指南（由 @chrisuthe 在 #6149 中实现）",
+    "ts": "2026-09-17T09:14:38.722100+00:00"
+  },
+  "9ae7f868a6af9057a50093f55e9b2d8634730fd62a635a66dca6cd3fa02329d5": {
+    "source": "@ALERTua, @ChrisB85, @MarvinSchenkel, @MizterB, @OzGav, @R3inoudR, @anthonws, @balloob, @bollewolle, @chicco-carone, @chrisuthe, @ecohash-co, @fmunkes, @jozefKruszynski, @kieranhogg, @leonkdk, @marcel",
+    "api_result": "@ALERTua、@ChrisB85、@MarvinSchenkel、@MizterB、@OzGav、@R3inoudR、@anthonws、@balloob、@bollewolle、@chicco-carone、@chrisuthe、@ecohash-co、 @fmunkes, @jozefKruszynski, @kieranhogg, @leonkdk, @marcelveldt, @meiser79, @mescon, @mzellho, @pantsman0, @phiychai, @teancom, @trudenboy",
+    "ts": "2026-09-17T09:14:39.777645+00:00"
+  },
+  "947f9d050b612892ca3be35b21cd118b1d2998cc27b6d4061d50decc8a8632e1": {
+    "source": "XPLHX0XPLHX[2.11.0b0] - 28.08.2026",
+    "api_result": "XPLHX0XPLHX[2.11.0b0] - 2026年8月28日",
+    "ts": "2026-09-17T09:14:40.622842+00:00"
+  },
+  "fd226a22f00ab65294d071bbb3056e08e3355991f5d83ebf57766b437e59798d": {
+    "source": "_Changes since XPLHX0XPLHX2.10.0rc7XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.10.0rc7XPLHX1XPLHX 以来的更改_",
+    "ts": "2026-09-17T09:14:41.482459+00:00"
+  },
+  "8bd2483121f7bf46893c09188bfbb8152e75633f9ea3190a457aa62a7ce430d1": {
+    "source": "- Report completed plays back to Tidal (by @jozefKruszynski in #5835)\n- Improve local album and artist folder matching (by @marcelveldt in #5939)\n- Add an icon for the XPLHX0XPLHX provider (by @maximm",
+    "api_result": "- 将已播放的歌曲反馈给 Tidal（由 @jozefKruszynski 在 #5835 中提交）\n- 改进本地专辑和艺人文件夹的匹配功能（由 @marcelveldt 在 #5939 中提交）\n- 为 XPLHX0XPLHX 提供程序添加图标（由 @maximmaxim345 在 #6023 中实现）\n- 将配对码显示为专用输入框（由 @marcelveldt 在 #6028 中提交）\n- 对于从未通过该提供商播放过的安装，移除已停用的本地音频提供商（由 @chrisuthe 在 #6029 中提交）\n- 允许为服务器设置可配置的名称和外部 URL（由 @marcelveldt 在 #6031 中提出）\n- 单击即可批准新的 Sendspin 设备（由 @maximmaxim345 在 #6035 中提出）\n- 允许在播放器自身设置中启用 Spotify Connect 或 AirPlay 接收器（由 @marcelveldt 在 #6042 中提出）\n- 当一个守护进程故障时，保持其他播放器的 Spotify Connect 和 AirPlay 设备继续运行（由 @marcelveldt 在 #6043 中提出）",
+    "ts": "2026-09-17T09:14:42.554965+00:00"
+  },
+  "6ae74354c8a02267a64d2644765cb58b6c66bd38d9e3570f1db2fbe199119fd3": {
+    "source": "- Snapcast: resume music after an announcement (by @MarvinSchenkel in #5968)\n- Spotify Connect no longer disappears when a different account connects (by @marcelveldt in #6019)\n- Selecting a source no",
+    "api_result": "- Snapcast：播报结束后恢复音乐播放（由 @MarvinSchenkel 在 #5968 中提交）\n- 当连接其他账户时，Spotify Connect 不会再消失（由 @marcelveldt 在 #6019 中提交）\n- 选择音源后，播放不再需要五秒钟才能开始（由 @marcelveldt 在 #6021 中提出）\n- 取消正在处理的任务会在释放分析模型前完成（由 @chrisuthe 在 #6024 中提出）\n- 当曲目丢失 CLAP 窗口时，会重试 Sonic Analysis（由 @chrisuthe 在 #6034 中提出）\n- 在快进/快退时保持 AirPlay 连接（由 @marcelveldt 在 #6050 中提出）\n- 修复 AirPlay 扬声器加入组后静音的问题（由 @marcelveldt 在 #6051 中提交）\n- 修复当两个进程同时启动 AirPlay 扬声器时其静音的问题（由 @marcelveldt 在 #6054 中提交）\n- 当跳转需要片刻时间时，停止重启 AirPlay 扬声器（由 @marcelveldt 在 #6055 中提出）\n- 当群组领导者退出时，保留音频播放器的播放队列（由 @marcelveldt 在 #6056 中提出）\n- 修复了扬声器所在的组与另一个组合并后扬声器保持静音的问题（由 @marcelveldt 在 #6057 中提出）\n- 暂停或停止播放时，立即停止组内所有 AirPlay 扬声器的播放（由 @marcelveldt 在 #6058 中提出）\n- 允许用户自行控制 AirPlay 播放器的流媒体模式（由 @marcelveldt 在 #6059 中提出）\n- 加快慢速音源中的快进速度（由 @marcelveldt 在 #6060 中提出）\n- 为 AirPlay 播放器添加 24 位音频切换功能（由 @marcelveldt 在 #6061 中提出）\n- 修复群组成员脱离网络后无法重新加入的问题（由 @marcelveldt 在 #6062 中提出）\n- 修复了跳转到另一个章节时 Spotify 有声读物停止播放的问题（由 @marcelveldt 在 #6063 中提出）\n- 修复了更新至 2.10 版本后 Spotify 无法加载的问题（由 @kiegsgroot 在 #6065 中提出）\n- 修复 Apple TV 在切换曲目后进度条消失的问题（由 @marcelveldt 在 #6067 中报告）\n- 修复 YouTube Music 在非英语环境下搜索无结果的问题（由 @marcelveldt 在 #6068 中报告）\n- 修复 Spotify Connect 播放时无法进行分组的问题（由 @marcelveldt 在 #6070 中提出）\n- 关闭音箱电源时停止播放音乐（由 @marcelveldt 在 #6074 中提出）\n- 通知提示音播放后不再随机播放音乐（由 @marcelveldt 在 #6075 中提出）",
+    "ts": "2026-09-17T09:14:43.664993+00:00"
+  },
+  "9a087c5b828df49c454ee2a2785cc49bddbc91556c278ed5688e5cafbdc6c946": {
+    "source": "- Show pairing codes as dedicated input boxes (by @marcelveldt in XPLHX0XPLHX#2657XPLHX1XPLHX)\n- No more XPLHX28XPLHX badge when adding a provider (by @marcelveldt in XPLHX2XPLHX#2656XPLHX3XPLHX)\n- Sh",
+    "api_result": "- 将配对码显示为独立的输入框（由 @marcelveldt 在 XPLHX0XPLHX#2657XPLHX1XPLHX 中提出）\n- 添加提供商时不再显示 XPLHX28XPLHX 徽章（由 @marcelveldt 在 XPLHX2XPLHX#2656XPLHX3XPLHX 中提出）\n- 在“关于”页面显示服务器名称、地址和远程访问信息（由 @marcelveldt 在 XPLHX4XPLHX#2658XPLHX5XPLHX 中提出）\n- 显示需要设置的音频输入和设备（由 @maximmaxim345 在 XPLHX6XPLHX#2659XPLHX7XPLHX 中提出）\n- 在“浏览”功能中筛选选定播放器的音频源（由 @marcelveldt 在 XPLHX8XPLHX#2660XPLHX9XPLHX 提出）\n- 修复 Chromium 浏览器中移动播放器显示模糊的问题（由 @marcelveldt 在 XPLHX10XPLHX#2662XPLHX11XPLHX 中提出）\n- 远程 ID 和配对码采用统一的代码输入界面（由 @marcelveldt 在 XPLHX12XPLHX#2661XPLHX13XPLHX 提出）\n- 修复加载转圈图标显示过小的问题（由 @marcelveldt 在 XPLHX14XPLHX#2669XPLHX15XPLHX 提出）\n- 在持续集成（CI）中检查 Python 包的构建情况（由 @marcelveldt 在 XPLHX16XPLHX#2668XPLHX17XPLHX 中提交）\n- 抑制 setuptools 关于 assets 目录的警告（由 @marcelveldt 在 XPLHX18XPLHX#2667XPLHX19XPLHX 中实现）\n- 清理 Python 打包配置（由 @marcelveldt 在 XPLHX20XPLHX#2666XPLHX21XPLHX 中完成）\n- 移除未使用的 VS Code 工作区文件（由 @marcelveldt 在 XPLHX22XPLHX#2665XPLHX23XPLHX 中实现）\n- 移除未使用的 webhint 配置文件（由 @marcelveldt 在 XPLHX24XPLHX#2664XPLHX25XPLHX 中完成）\n- 移除未使用的浏览器目标配置文件（由 @marcelveldt 在 XPLHX26XPLHX#2663XPLHX27XPLHX 中提出）",
+    "ts": "2026-09-17T09:14:44.646145+00:00"
+  },
+  "e7705fcb1d283c4777591809540a87e4c1699c4f3c1bda73d5d7c287660ef716": {
+    "source": "XPLHX0XPLHX\nXPLHX1XPLHX16 changesXPLHX2XPLHX",
+    "api_result": "XPLHX0XPLHX\nXPLHX1XPLHX16 更改XPLHX2XPLHX",
+    "ts": "2026-09-17T09:14:45.517391+00:00"
+  },
+  "2eac67ddd843a99933e3065e5f046ba07fc6d57007b2e6fe70a01992f22add7f": {
+    "source": "- Hide the Sendspin legacy clients option (by @maximmaxim345 in #6025)\n- Set up Spotify Connect and AirPlay Receiver once and pick the players they serve (by @marcelveldt in #6026)\n- Use the new Sends",
+    "api_result": "- 隐藏“Sendspin 旧版客户端”选项（由 @maximmaxim345 在 #6025 中提出）\n- 只需设置一次 Spotify Connect 和 AirPlay 接收器，即可选择它们所支持的播放器（由 @marcelveldt 在 #6026 中提出）\n- 将提供商图标更新为新的 Sendspin 标志（由 @MarvinSchenkel 在 #6030 中提交）\n- 配对提示文本现显示为“配对码”而非“PIN”（由 @marcelveldt 在 #6033 中提交）\n- 将基础镜像版本更新至 1.6.3（由 @marcelveldt 在 #6037 中实现）\n- 在提供程序卸载时清理 snapcast mdns 记录（由 @marcelveldt 在 #6038 中实现）\n- 整理了在替换 Connect/AirPlay 守护进程时的播放任务处理（由 @marcelveldt 在 #6040 中实现）\n- 修复了发布说明过长导致无法创建版本的问题（由 @marcelveldt 在 #6041 中实现）\n- 在 scrobbler 播放器选择器中隐藏非音频播放器（由 @marcelveldt 在 #6044 中提交）\n- 当将实时源移动到另一个播放器失败时，将其保留在原播放器中（由 @marcelveldt 在 #6045 中提交）\n- 防止在发布候选版待处理时意外触发 XPLHX0XPLHX 自动发布（由 @MarvinSchenkel 在 #6047 中实现）\n- 将翻译同步和回溯 PR 排除在发布说明之外（由 @marcelveldt 在 #6048 中实现）\n- 将 CodSpeedHQ/action 从 5.0.3 升级至 5.2.1（由 @dependabot[bot] 在 #6066 中提交）\n- 记录 Spotify 有声读物章节无法跳过的原因（由 @marcelveldt 在 #6069 中提交）\n- 将 airplay-cli 更新至 v0.5.3（由 @musicassistant-bot[bot] 在 #6071 中提交）\n- 整理 seek 命令中的源查找逻辑（由 @marcelveldt 在 #6072 中提交）",
+    "ts": "2026-09-17T09:14:46.623223+00:00"
+  },
+  "acbce53e2ffccf0cf6a2f0d96ef5dd1d40c80cb18b85e591fff834310f82ea32": {
+    "source": "@MarvinSchenkel, @chrisuthe, @jozefKruszynski, @kiegsgroot, @marcelveldt, @maximmaxim345",
+    "api_result": "@MarvinSchenkel、@chrisuthe、@jozefKruszynski、@kiegsgroot、@marcelveldt、@maximmaxim345",
+    "ts": "2026-09-17T09:14:47.459306+00:00"
+  },
+  "dd931effedc974815890b448826ebcdb83e51ed5eff29a3f06e1b28e83ff4433": {
+    "source": "XPLHX1XPLHXXPLHX0XPLHX (BETA) App",
+    "api_result": "XPLHX1XPLHXXPLHX0XPLHX（测试版）应用程序",
+    "ts": "2026-09-17T09:14:48.333336+00:00"
+  },
+  "4a23d1a28caef7f23f9c4c51a75287d7c008bc779c5a2bdd4be0a8b29dc6c798": {
+    "source": "The official BETA release channel for XPLHX0XPLHX.",
+    "api_result": "XPLHX0XPLHX 的官方 BETA 发布频道。",
+    "ts": "2026-09-17T09:14:49.104780+00:00"
+  },
+  "aae3e0632bc74d80020b3d025776cbcf50b02e41d2bb943bf2ca183b4b6a7b59": {
+    "source": "XPLHX0XPLHX⚠️ Important Notice",
+    "api_result": "XPLHX0XPLHX⚠️ 重要通知",
+    "ts": "2026-09-17T09:14:49.885618+00:00"
+  },
+  "2652c238a8fb99541b734002af74da41faf3bb888a9eb7d925affe6d5fe3a96a": {
+    "source": "This is a XPLHX1XPLHXBETAXPLHX2XPLHX XPLHX3XPLHX of XPLHX0XPLHX. It contains new features and improvements that are being tested before the XPLHX4XPLHX release.",
+    "api_result": "这是 XPLHX1XPLHXBETAXPLHX2XPLHX XPLHX3XPLHX 的 XPLHX0XPLHX 版本。其中包含一些新功能和改进，这些内容将在 XPLHX4XPLHX 发布前进行测试。",
+    "ts": "2026-09-17T09:14:50.857365+00:00"
+  },
+  "49a341d1013a2eaf777a473e39448f767559fe28e6d1f41eaa2c353b25eaa0b0": {
+    "source": "XPLHX0XPLHXUse this App if you:XPLHX1XPLHX",
+    "api_result": "XPLHX0XPLHX如果您符合以下情况，请使用此应用：XPLHX1XPLHX",
+    "ts": "2026-09-17T09:14:51.671935+00:00"
+  },
+  "791802db8ee66f89963e15c6e93ff83fc640868b7592c193953f0e7027b87796": {
+    "source": "- Want early access to new features\n- Are willing to help test and report XPLHX1XPLHX\n- Can tolerate occasional bugs or instability\n- Want to contribute to making XPLHX0XPLHX better",
+    "api_result": "- 希望抢先体验新功能\n- 愿意协助测试并反馈 XPLHX1XPLHX\n- 能容忍偶尔出现的 bug 或不稳定情况\n- 希望为改进 XPLHX0XPLHX 贡献力量",
+    "ts": "2026-09-17T09:14:52.652188+00:00"
+  },
+  "adc8c3060882f319604e611e40184032d163e7e2a71f5e84cd6856a993e308f8": {
+    "source": "XPLHX0XPLHXDO NOT use this App if you:XPLHX1XPLHX",
+    "api_result": "XPLHX0XPLHX如果您符合以下情况，请勿使用本应用程序：XPLHX1XPLHX",
+    "ts": "2026-09-17T09:14:53.547471+00:00"
+  },
+  "d659f2c93086f067aaef1f41e5623858078388f952368852467b0274ec13b322": {
+    "source": "- Need a XPLHX1XPLHX, production-ready system at all times\n- Are not comfortable troubleshooting XPLHX0XPLHX\n- Cannot afford any downtime in your music setup",
+    "api_result": "- 需要一套随时可投入生产的 XPLHX1XPLHX 系统\n- 不擅长排查 XPLHX0XPLHX 的故障\n- 音乐设备绝不能出现任何停机情况",
+    "ts": "2026-09-17T09:14:54.552209+00:00"
+  },
+  "7d475806890fcb7c7f62ddc74d88932613b624a38d20723e0f35346ced0556e1": {
+    "source": "XPLHX0XPLHXWhat is BETA?",
+    "api_result": "XPLHX0XPLHX什么是BETA？",
+    "ts": "2026-09-17T09:14:55.348372+00:00"
+  },
+  "61ec4b4ddda118ea5c4fc403a6ce606eac98232927e531b6d63fa700e535dcac": {
+    "source": "BETA releases are feature-complete versions that are being tested before becoming XPLHX0XPLHX releases. They typically include:",
+    "api_result": "BETA 版本是功能已完备的版本，在正式发布为 XPLHX0XPLHX 版本之前处于测试阶段。它们通常包含：",
+    "ts": "2026-09-17T09:14:56.209604+00:00"
+  },
+  "ce7dbd9fccd16fc751f7d2bc70b276243ae657a7b9d0761d37f8630abf27cc83": {
+    "source": "- ✨ New features not yet in XPLHX0XPLHX\n- 🔧 Performance improvements\n- 🐛 Bug fixes from previous versions\n- 🧪 Changes that need real-world testing",
+    "api_result": "- ✨ XPLHX0XPLHX 版本中尚未包含的新功能\n- 🔧 性能优化\n- 🐛 修复了之前版本中的 bug\n- 🧪 需要实际环境测试的更改",
+    "ts": "2026-09-17T09:14:57.213313+00:00"
+  },
+  "ba05ddfe74c0d864873cf9beab53cf45fa9563f18314fc1ae4f9710c566ed93d": {
+    "source": "XPLHX0XPLHXDifferences from XPLHX1XPLHX",
+    "api_result": "XPLHX0XPLHX与XPLHX1XPLHX的区别",
+    "ts": "2026-09-17T09:14:58.003109+00:00"
+  },
+  "6e6ec01b96fc81292cf0619b5926c3ee369b77b33af0133bbf74e69c237e773c": {
+    "source": "| Aspect    | XPLHX2XPLHX               | BETA                                  |\n| --------- | -------------------- | ------------------------------------- |\n| XPLHX0XPLHX | Highly XPLHX3XPLHX       ",
+    "api_result": "| 方面    | XPLHX2XPLHX | BETA |\n| --------- | -------------------- | ------------------------------------- |\n| XPLHX0XPLHX | 高度 XPLHX3XPLHX | 通常为 XPLHX4XPLHX，可能包含 XPLHX1XPLHX |\n| 功能  | 经过充分测试的功能 | 正在测试的新功能 |\n| 更新   | 更新频率较低 | 更新频率较高 |\n| 用例  | 生产环境 | 测试与早期采用 |",
+    "ts": "2026-09-17T09:14:58.982675+00:00"
+  },
+  "81aa012086b59a2f5ef69e7f5218ba552457fb74fc8ecb7cf2596f3ed3c7554a": {
+    "source": "XPLHX0XPLHXReporting XPLHX1XPLHX",
+    "api_result": "XPLHX0XPLHX报告 XPLHX1XPLHX",
+    "ts": "2026-09-17T09:14:59.927222+00:00"
+  },
+  "9221bed75fc69f6139a5b346ae63edbd18da90787113a72e81b4fce9d24c0866": {
+    "source": "As a BETA tester, your feedback is invaluable! Please report XPLHX0XPLHX you encounter:",
+    "api_result": "作为 BETA 测试者，您的反馈非常宝贵！请报告您遇到的 XPLHX0XPLHX：",
+    "ts": "2026-09-17T09:15:00.810040+00:00"
+  },
+  "320e1fb515d1b8435d708084c026feebbcaa32ef616d4775d86b9be27d480179": {
+    "source": "XPLHX0XPLHXBefore Reporting",
+    "api_result": "XPLHX0XPLHX提交报告前",
+    "ts": "2026-09-17T09:15:01.574848+00:00"
+  },
+  "ce06456845b8cd0ebd4582d7a0deb53db15d580c6391b75ca2afb7f681b31c8f": {
+    "source": "1. Check the App XPLHX6XPLHX (enable XPLHX0XPLHX logging if needed globally or on a per-provider level)\n2. Search XPLHX1XPLHXexisting XPLHX4XPLHXXPLHX2XPLHX\n3. Verify the issue doesn't occur in the XP",
+    "api_result": "1. 检查应用程序 XPLHX6XPLHX（如有需要，请在全球范围内或按提供商级别启用 XPLHX0XPLHX 日志记录）\n2. 搜索 XPLHX1XPLHX、现有的 XPLHX4XPLHX、XPLHX2XPLHX\n3. 如条件允许，请验证该问题在 XPLHX5XPLHX 和 XPLHX3XPLHX 中是否未出现",
+    "ts": "2026-09-17T09:15:02.620949+00:00"
+  },
+  "32cb1ff86f120a3a831ed77350b572f4e4bd9628e48fd4bf75f46d2212d1e56c": {
+    "source": "XPLHX0XPLHXWhen Reporting",
+    "api_result": "XPLHX0XPLHX在提交报告时",
+    "ts": "2026-09-17T09:15:03.424625+00:00"
+  },
+  "bbb4694c05740dc4516c009bf6f7939aef251ec6289c0c593648651dbda944db": {
+    "source": "Include:",
+    "api_result": "包括：",
+    "ts": "2026-09-17T09:15:04.144297+00:00"
+  },
+  "b5f4da0be7729aa9506d3310776ef939a08e097cff9267f7cf1dbeec60359548": {
+    "source": "- 📋 Steps to reproduce the issue\n- 📝 Full XPLHX2XPLHX from the App (or download the full logfile from within MA's web interface)\n- 🔢 XPLHX0XPLHX XPLHX1XPLHX (visible in Web UI)\n- 🎵 Which music provide",
+    "api_result": "- 📋 重现该问题的步骤\n- 📝 来自应用程序的完整 XPLHX2XPLHX 日志（或从 MA 的 Web 界面下载完整的日志文件）\n- 🔢 XPLHX0XPLHX XPLHX1XPLHX（可在 Web 界面中查看）\n- 🎵 您正在使用的音乐服务商\n- 🔊 受影响的播放器",
+    "ts": "2026-09-17T09:15:05.120991+00:00"
+  },
+  "fdb896c474aa671498eab8205fd81ec0510bf69379d6cb30b339612cc4b0108f": {
+    "source": "XPLHX2XPLHXWhere to reportXPLHX3XPLHX: XPLHX0XPLHXGitHub Support RepositoryXPLHX1XPLHX",
+    "api_result": "XPLHX2XPLHX在哪里提交问题XPLHX3XPLHX：XPLHX0XPLHXGitHub 支持仓库XPLHX1XPLHX",
+    "ts": "2026-09-17T09:15:06.043655+00:00"
+  },
+  "0e22ef949b6c03a08374bc5e38b4d94f5734c93f987220ddd1b8345565fa8a9c": {
+    "source": "BETA releases are updated more frequently than XPLHX0XPLHX releases. In general, more or less once a week.",
+    "api_result": "BETA 版本的更新频率高于 XPLHX0XPLHX 版本。通常来说，大约每周一次。",
+    "ts": "2026-09-17T09:15:06.909030+00:00"
+  },
+  "0dc1fe5a993e79a28daacefe4bf00e81d4757ecad01068dfdf1f1da5d88eccd2": {
+    "source": "XPLHX0XPLHXKnown Limitations and notes",
+    "api_result": "XPLHX0XPLHX已知限制和注意事项",
+    "ts": "2026-09-17T09:15:07.738486+00:00"
+  },
+  "2d7f217e7c21dfbd0182a9bfdb172b17c658ebc1707de99da54c82d62d7de317": {
+    "source": "- BETA versions may have breaking changes\n- Some features might be partially implemented\n- Database migrations may occur between versions\n- Performance optimizations might still be in progress\n- You c",
+    "api_result": "- BETA 版本可能会包含破坏性变更\n- 部分功能可能尚未完全实现\n- 不同版本之间可能会发生数据库迁移\n- 性能优化工作可能仍在进行中\n- 无法从 XPLHX1XPLHX 迁移到 XPLHX0XPLHX（反之亦然）",
+    "ts": "2026-09-17T09:15:08.875540+00:00"
+  },
+  "675e14795bddbd1f5aace5d2883c3a7700108817dae115a58dc9df4c9ff6fdae": {
+    "source": "TIP: If you want to test the BETA XPLHX0XPLHX while keeping the XPLHX2XPLHX XPLHX1XPLHX, simply stop the XPLHX3XPLHX App and run the BETA App. Reverting back to XPLHX4XPLHX is then as easy as stopping",
+    "api_result": "提示：如果您想测试 BETA XPLHX0XPLHX 版本，同时保留 XPLHX2XPLHX XPLHX1XPLHX 版本，只需停止 XPLHX3XPLHX 应用，然后运行 BETA 应用即可。 若要恢复使用 XPLHX4XPLHX，只需再次停止 BETA 应用并启动 XPLHX5XPLHX 即可。这两个应用无法同时运行。",
+    "ts": "2026-09-17T09:15:09.950010+00:00"
+  },
+  "40c778fdb8304456c13c8d96dca497027b4228a6e7bff5b61fdcd64976f0d0a4": {
+    "source": "XPLHX0XPLHXGetting Help",
+    "api_result": "XPLHX0XPLHX获取帮助",
+    "ts": "2026-09-17T09:15:10.775063+00:00"
+  },
+  "e944e1c7ea3d8af866dc7cf236d700f1b0e93c6446b73cd76dbce47e2a5d83d1": {
+    "source": "- 📖 XPLHX0XPLHXBETA DocumentationXPLHX1XPLHX\n- 💬 XPLHX2XPLHXCommunity DiscussionsXPLHX3XPLHX\n- 🐛 XPLHX4XPLHXReport BETA XPLHX8XPLHXXPLHX5XPLHX\n- � XPLHX6XPLHXDiscord ServerXPLHX7XPLHX",
+    "api_result": "- 📖 XPLHX0XPLHXBETA 文档XPLHX1XPLHX\n- 💬 XPLHX2XPLHX社区讨论XPLHX3XPLHX\n- 🐛 XPLHX4XPLHXBETA版报告 XPLHX8XPLHXXPLHX5XPLHX\n- � XPLHX6XPLHXDiscord服务器XPLHX7XPLHX",
+    "ts": "2026-09-17T09:15:11.812668+00:00"
+  },
+  "5e1d0eaca8c269c9a67786f36efe86d5299efc2f156c6ec0d990a8aaa39a6d33": {
+    "source": "XPLHX0XPLHXWhat's New in BETA",
+    "api_result": "XPLHX0XPLHX BETA 版本的新功能",
+    "ts": "2026-09-17T09:15:12.611858+00:00"
+  },
+  "a9ea58da63f323a794312731bc311acc9d2877ec88a56f9a25c4cf2e89f4f289": {
+    "source": "Check the XPLHX0XPLHXCHANGELOGXPLHX1XPLHX for detailed information about what's new in this BETA XPLHX2XPLHX.",
+    "api_result": "请查阅 XPLHX0XPLHXCHANGELOGXPLHX1XPLHX，了解此 BETA 版 XPLHX2XPLHX 的新功能详情。",
+    "ts": "2026-09-17T09:15:13.536642+00:00"
+  },
+  "0f5b52c352a09fe289cac52ababcee120826acae128d3529d67c8d552d7f74a2": {
+    "source": "XPLHX0XPLHXBeta Testing Best Practices",
+    "api_result": "XPLHX0XPLHX Beta 测试最佳实践",
+    "ts": "2026-09-17T09:15:14.292683+00:00"
+  },
+  "3f8b1798cd6982b690c6ebc298ad5ef5ade108ca322c569cae992005ceb2c052": {
+    "source": "1. XPLHX0XPLHXRegular BackupsXPLHX1XPLHX: Always maintain recent backups\n2. XPLHX2XPLHXMonitor XPLHX12XPLHXXPLHX3XPLHX: Keep an eye on XPLHX13XPLHX for XPLHX10XPLHX\n3. XPLHX4XPLHXReport XPLHX11XPLHXXP",
+    "api_result": "1. XPLHX0XPLHX定期备份XPLHX1XPLHX：始终保留最新备份\n2. XPLHX2XPLHX监控 XPLHX12XPLHXXPLHX3XPLHX：密切关注 XPLHX13XPLHX，以防 XPLHX10XPLHX\n3. XPLHX4XPLHX报告 XPLHX11XPLHXXPLHX5XPLHX：通过报告错误帮助我们改进\n4. XPLHX6XPLHX请保持耐心XPLHX7XPLHX：部分功能可能无法完美运行\n5. XPLHX8XPLHX及时更新XPLHX9XPLHX：安装更新以获取最新修复程序",
+    "ts": "2026-09-17T09:15:15.422410+00:00"
+  },
+  "5315486c86700081c4f4fcf234a48c744b711c0a625f7edaf596a6f663c52cc7": {
+    "source": "Making a backup of the XPLHX0XPLHX App within XPLHX1XPLHX will also include your XPLHX0XPLHX data. Please ensure to always make a backup before updating to a new XPLHX2XPLHX so you can always easily r",
+    "api_result": "在 XPLHX1XPLHX 中对 XPLHX0XPLHX 应用进行备份时，也会包含您的 XPLHX0XPLHX 数据。 请务必在更新到新的 XPLHX2XPLHX 之前先进行备份，这样您就能随时轻松恢复到之前的 XPLHX3XPLHX！",
+    "ts": "2026-09-17T09:15:16.333208+00:00"
+  },
+  "799660ff8dc4d065009450f8f349cf85e3812672e190e8a6e4895c9e19290a3c": {
+    "source": "XPLHX0XPLHXRollback Strategy",
+    "api_result": "XPLHX0XPLHX回滚策略",
+    "ts": "2026-09-17T09:15:17.243106+00:00"
+  },
+  "b7b895625787d50e0aee77e0b9d93e4a7deccc293cdd965a907956e4b647bccb": {
+    "source": "XPLHX0XPLHXIf Things Break",
+    "api_result": "XPLHX0XPLHX如果东西坏了",
+    "ts": "2026-09-17T09:15:18.013991+00:00"
+  },
+  "2fbf7a26f31354dc0199b1bfda04d6f18844767f5d9bd57b84cbf25a0182f1f4": {
+    "source": "1. XPLHX0XPLHXStop the AppXPLHX1XPLHX\n2. XPLHX2XPLHXRestore from backupXPLHX3XPLHX (you made one, right?)\n3. XPLHX4XPLHXReport the issueXPLHX5XPLHX",
+    "api_result": "1. XPLHX0XPLHX停止该应用程序XPLHX1XPLHX\n2. XPLHX2XPLHX从备份中恢复XPLHX3XPLHX（你已经创建备份了，对吧？）\n3. XPLHX4XPLHX报告问题XPLHX5XPLHX",
+    "ts": "2026-09-17T09:15:18.990827+00:00"
+  },
+  "1c5b725cfb48dcc943c507ffc7828b81e99f9e0a56ff722284b9004bee95e046": {
+    "source": "As a BETA tester, you're already contributing! You can also:",
+    "api_result": "作为一名BETA测试员，您已经为项目做出了贡献！您还可以：",
+    "ts": "2026-09-17T09:15:19.827677+00:00"
+  },
+  "4bdc14052cacbd8441cd3819e4701b43d06abb04c0f76f17537143af513c3ea7": {
+    "source": "- 🐛 XPLHX0XPLHXReport detailed bugsXPLHX1XPLHX\n- 💡 XPLHX2XPLHXSuggest improvementsXPLHX3XPLHX\n- 🔧 Submit pull requests\n- 📝 Help with documentation\n- 💬 Help others on XPLHX4XPLHXDiscordXPLHX5XPLHX",
+    "api_result": "- 🐛 XPLHX0XPLHX报告详细错误XPLHX1XPLHX\n- 💡 XPLHX2XPLHX提出改进建议XPLHX3XPLHX\n- 🔧 提交拉取请求\n- 📝 协助编写文档\n- 💬 在 XPLHX4XPLHXDiscord 上帮助他人XPLHX5XPLHX",
+    "ts": "2026-09-17T09:15:20.832486+00:00"
+  },
+  "8b36ffdb5d4d3f79a49fc6446a08a0ef42ca97f05a3411f398e2a7977446d216": {
+    "source": "XPLHX0XPLHXRelease Cycle",
+    "api_result": "XPLHX0XPLHX发布周期",
+    "ts": "2026-09-17T09:15:21.658100+00:00"
+  },
+  "53ad50576614a859c51f80ec3bdb12d13d5c9ba3df8c1c932ce0a37f9f5ffd6a": {
+    "source": "BETA releases are the final testing stage before XPLHX1XPLHX releases. Your testing helps ensure XPLHX0XPLHX for all users!",
+    "api_result": "BETA 版本是 XPLHX1XPLHX 正式发布前的最后测试阶段。您的测试有助于确保所有用户都能获得 XPLHX0XPLHX！",
+    "ts": "2026-09-17T09:15:22.661546+00:00"
+  },
+  "0232dfbf5c76b79da26a6fbca163bd3d610649ef7d06a480237ff5d831b19c74": {
+    "source": "XPLHX1XPLHXXPLHX0XPLHX DEV App",
+    "api_result": "XPLHX1XPLHXXPLHX0XPLHX DEV 应用程序",
+    "ts": "2026-09-17T09:15:23.473271+00:00"
+  },
+  "f76c75c5a1a89416591947843d039b97edf7b1ec517e554c97f94561f8e48e0a": {
+    "source": "This is a special development App for XPLHX0XPLHX that allows developers to quickly test specific branches, pull requests, or even forks of XPLHX0XPLHX directly in XPLHX1XPLHX.",
+    "api_result": "这是一个专为 XPLHX0XPLHX 开发的特殊应用，它允许开发者在 XPLHX1XPLHX 中直接快速测试 XPLHX0XPLHX 的特定分支、拉取请求，甚至分支。",
+    "ts": "2026-09-17T09:15:24.425796+00:00"
+  },
+  "a85501223826faa7964c63ace644a05f6069ab033feb2e76a29a462cf8463582": {
+    "source": "XPLHX0XPLHXPurpose",
+    "api_result": "XPLHX0XPLHX用途",
+    "ts": "2026-09-17T09:15:25.198650+00:00"
+  },
+  "80eefc9da856776415ab8158c7bff3113eab9c46842b4a4c529bf62d380bdcc2": {
+    "source": "This App is designed for:",
+    "api_result": "本应用适用于：",
+    "ts": "2026-09-17T09:15:25.967135+00:00"
+  },
+  "6912e05a49fc4a208b0a02236059b31324036afe17abcb4607c7bc95362bda1b": {
+    "source": "- Testing pull requests before merging\n- Developing and debugging new features\n- Testing forks of XPLHX0XPLHX\n- Running custom branches for testing",
+    "api_result": "- 在合并之前测试拉取请求\n- 开发和调试新功能\n- 测试 XPLHX0XPLHX 的分支\n- 运行自定义分支进行测试",
+    "ts": "2026-09-17T09:15:26.927065+00:00"
+  },
+  "501b38d8a2ab2fffaae90fdf3eaae84f71b35ab702d98e64399babdc1cc567b0": {
+    "source": "XPLHX0XPLHXHow It Works",
+    "api_result": "XPLHX0XPLHX工作原理",
+    "ts": "2026-09-17T09:15:27.722732+00:00"
+  },
+  "1af76f02c514449a5c7d91e21e95202b801b410b5ac6a432b15877631ffabbc3": {
+    "source": "Unlike the regular XPLHX0XPLHX App which uses pre-built releases, this Dev App:",
+    "api_result": "与使用预构建版本的常规 XPLHX0XPLHX 应用不同，这款开发者应用：",
+    "ts": "2026-09-17T09:15:28.567024+00:00"
+  },
+  "3beaaaa19a426818bf6a63b69059685a7cde2df465b96690a7bf4fda035a96f4": {
+    "source": "1. Builds and installs the server from a specified Git source (XPLHX1XPLHX, PR, or XPLHX3XPLHX)\n2. Builds and installs the frontend from a specified Git source (XPLHX2XPLHX, PR, or XPLHX4XPLHX)\n3. Sta",
+    "api_result": "1. 根据指定的 Git 源代码（XPLHX1XPLHX、PR 或 XPLHX3XPLHX）构建并安装服务器\n2. 根据指定的 Git 源代码（XPLHX2XPLHX、PR 或 XPLHX4XPLHX）构建并安装前端\n3. 使用您的自定义代码启动 XPLHX0XPLHX",
+    "ts": "2026-09-17T09:15:29.623748+00:00"
+  },
+  "21af644f56c1e615cd909c918fc96d6cc5f274ad0d22141f0d9ae6dd9c97b224": {
+    "source": "The build process:",
+    "api_result": "构建过程：",
+    "ts": "2026-09-17T09:15:30.358305+00:00"
+  },
+  "9d6355f2d9eff16140eb682295f158001f21be6fa737890d203b6b39dc3bfb3a": {
+    "source": "1. Installs the server package from the specified Git reference\n2. Builds the frontend with the package manager detected from its lockfile (pnpm, yarn, or npm)\n3. Installs the frontend as a Python pac",
+    "api_result": "1. 从指定的 Git 引用安装服务器包\n2. 使用从其锁定文件中检测到的包管理器（pnpm、yarn 或 npm）构建前端\n3. 将前端作为 Python 包进行安装 （覆盖原有的 XPLHX1XPLHX 前端）\n4. 启动 XPLHX0XPLHX",
+    "ts": "2026-09-17T09:15:31.341620+00:00"
+  },
+  "2c9d1499e6eca211ed344aa6a45bb2fe0e4604b90c1c5d6a66fdfaa0fb2e8793": {
+    "source": "The App image is built on top of the nightly server image, so the dependency set, the bundled\napp variables and the cliairplay binary are already in place. Installing a XPLHX0XPLHX only has to\napply w",
+    "api_result": "应用镜像是在夜间构建的服务器镜像基础上构建的，因此依赖项集、打包的\n应用变量以及 cliairplay 二进制文件都已就位。安装 XPLHX0XPLHX 时只需\n应用与该夜间构建版本实际不同的部分即可。",
+    "ts": "2026-09-17T09:15:32.479828+00:00"
+  },
+  "9d0859571825a2b8ffa9eda528a5ecb9902f8a2fa1508820b22ef24fceda0f04": {
+    "source": "XPLHX0XPLHXBasic Configuration",
+    "api_result": "XPLHX0XPLHX基本配置",
+    "ts": "2026-09-17T09:15:33.253126+00:00"
+  },
+  "9a597aca529d1406b3a087dbca91c7cf6596d8432f0c57664112e5c8f3fc93a1": {
+    "source": "XPLHX0XPLHXServer Repository Configuration",
+    "api_result": "XPLHX0XPLHX服务器存储库配置",
+    "ts": "2026-09-17T09:15:34.025640+00:00"
+  },
+  "d25d5fe5a68a137ef1bd6cd3619762b4d4b3710499d8c93dfa2e624a58183647": {
+    "source": "Use the XPLHX0XPLHX option to specify which XPLHX2XPLHX of the XPLHX1XPLHX server to install:",
+    "api_result": "使用 XPLHX0XPLHX 选项来指定要安装 XPLHX1XPLHX 服务器中的哪个 XPLHX2XPLHX：",
+    "ts": "2026-09-17T09:15:34.842041+00:00"
+  },
+  "97d076f506ecae2863578fea6f141071fb10323acd7242d5051776d14a28c771": {
+    "source": "XPLHX2XPLHXXPLHX4XPLHXXPLHX3XPLHX: XPLHX0XPLHX or just XPLHX1XPLHX",
+    "api_result": "XPLHX2XPLHXXPLHX4XPLHXXPLHX3XPLHX：XPLHX0XPLHX 或仅 XPLHX1XPLHX",
+    "ts": "2026-09-17T09:15:35.789108+00:00"
+  },
+  "04f0231db45066d2f72f04d59cbc532e57ea8ba5a0245686e59ba95a76cef198": {
+    "source": "- XPLHX6XPLHXXPLHX18XPLHXXPLHX7XPLHX: XPLHX0XPLHX, XPLHX1XPLHX, or any XPLHX19XPLHX name, including one with a slash like XPLHX2XPLHX\n- XPLHX8XPLHXXPLHX16XPLHXXPLHX9XPLHX: XPLHX3XPLHX (will checkout P",
+    "api_result": "- XPLHX6XPLHXXPLHX18XPLHXXPLHX7XPLHX： XPLHX0XPLHX、XPLHX1XPLHX 或任何 XPLHX19XPLHX 格式的名称，包括包含斜杠的名称（如 XPLHX2XPLHX）\n- XPLHX8XPLHXXPLHX16XPLHXXPLHX9XPLHX: XPLHX3XPLHX（将检出 PR #123）\n- XPLHX10XPLHXXPLHX21XPLHXXPLHX11XPLHX： XPLHX4XPLHX，或 XPLHX5XPLHX 以使用该 XPLHX22XPLHX 的 XPLHX17XPLHX XPLHX20XPLHX\n- XPLHX12XPLHXCommitXPLHX13XPLHX：完整提交 SHA\n- XPLHX14XPLHX空值/空白XPLHX15XPLHX：使用应用镜像中内置的夜间构建版本（快速模式——无需安装）",
+    "ts": "2026-09-17T09:15:36.800529+00:00"
+  },
+  "9fff1ad3d0bd1a117b845534e13a0316e5d0a297b19cdc2605df6e6941391e4f": {
+    "source": "XPLHX0XPLHXXPLHX2XPLHXXPLHX1XPLHX:",
+    "api_result": "XPLHX0XPLHXXPLHX2XPLHXXPLHX1XPLHX：",
+    "ts": "2026-09-17T09:15:37.638424+00:00"
+  },
+  "1f6043fa18e3999e84977a03996baaafd6442ef02a75af45cd06c5aeac4ec74b": {
+    "source": "XPLHX1XPLHXXPLHX3XPLHXXPLHX2XPLHX: XPLHX0XPLHX (empty - uses the nightly build baked into the App image)",
+    "api_result": "XPLHX1XPLHXXPLHX3XPLHXXPLHX2XPLHX: XPLHX0XPLHX（空值——使用内置于应用镜像中的夜间构建版本）",
+    "ts": "2026-09-17T09:15:38.679429+00:00"
+  },
+  "ddcc0cd71318d0ac93916b92f54b76b091d7f81a9a3880cf3f751ff364ba20a3": {
+    "source": "> XPLHX1XPLHXXPLHX3XPLHXXPLHX2XPLHX: When XPLHX0XPLHX is left empty or blank, the App runs the nightly build that is already installed in its image, so nothing is downloaded at startup. Rebuild the Ap",
+    "api_result": "> XPLHX1XPLHXXPLHX3XPLHXXPLHX2XPLHX：当 XPLHX0XPLHX 留空或未填写时，应用将运行其镜像中已安装的夜间构建版本，因此启动时不会下载任何内容。 请重新构建应用以切换到更新的夜间构建版本。",
+    "ts": "2026-09-17T09:15:39.699743+00:00"
+  },
+  "0439bc24ed0f54840ccb948cafd403437c2e0d4de13189ecff9500fae5993d5a": {
+    "source": "XPLHX0XPLHXFrontend Repository Configuration",
+    "api_result": "XPLHX0XPLHX 前端仓库配置",
+    "ts": "2026-09-17T09:15:40.696537+00:00"
+  },
+  "af91b5ac7b51aab78db98fb748fe3ef0d58894e9ce411f9ce622f82c26c15f52": {
+    "source": "Use the XPLHX0XPLHX option to specify which XPLHX2XPLHX of the XPLHX1XPLHX frontend to install:",
+    "api_result": "使用 XPLHX0XPLHX 选项来指定要安装 XPLHX1XPLHX 前端中的哪个 XPLHX2XPLHX：",
+    "ts": "2026-09-17T09:15:41.643525+00:00"
+  },
+  "a557bd50c970df98e9e4885dce21497a22c1c5877bbb572f1c101e5218231105": {
+    "source": "XPLHX2XPLHXXPLHX4XPLHXXPLHX3XPLHX: Same as server_repo - XPLHX0XPLHX or just XPLHX1XPLHX",
+    "api_result": "XPLHX2XPLHXXPLHX4XPLHXXPLHX3XPLHX：与 server_repo 相同——XPLHX0XPLHX 或仅 XPLHX1XPLHX",
+    "ts": "2026-09-17T09:15:42.568770+00:00"
+  },
+  "429ebf1644349e432160947782708a182b53e68ae069a726ce2976aa111e820b": {
+    "source": "- XPLHX6XPLHXXPLHX18XPLHXXPLHX7XPLHX: XPLHX0XPLHX, XPLHX1XPLHX, or any XPLHX19XPLHX name, including one with a slash like XPLHX2XPLHX\n- XPLHX8XPLHXXPLHX16XPLHXXPLHX9XPLHX: XPLHX3XPLHX (will checkout P",
+    "api_result": "- XPLHX6XPLHXXPLHX18XPLHXXPLHX7XPLHX： XPLHX0XPLHX、XPLHX1XPLHX 或任何 XPLHX19XPLHX 名称，包括带有斜杠的名称（如 XPLHX2XPLHX）\n- XPLHX8XPLHXXPLHX16XPLHXXPLHX9XPLHX：XPLHX3XPLHX（将检出 PR #789）\n- XPLHX10XPLHXXPLHX21XPLHXXPLHX11XPLHX： XPLHX4XPLHX，或 XPLHX5XPLHX 以使用该 XPLHX22XPLHX 的 XPLHX17XPLHX XPLHX20XPLHX\n- XPLHX12XPLHXCommitXPLHX13XPLHX：完整提交 SHA\n- XPLHX14XPLHX空值/留空XPLHX15XPLHX：跳过前端构建（使用打包的前端）",
+    "ts": "2026-09-17T09:15:43.703872+00:00"
+  },
+  "ea4a6303e54d0d7a85d5b7148ec4ea9a8fe94b3a55217d6c88e7121cfe8f05a9": {
+    "source": "XPLHX1XPLHXXPLHX3XPLHXXPLHX2XPLHX: XPLHX0XPLHX (empty - uses bundled frontend, no build)",
+    "api_result": "XPLHX1XPLHXXPLHX3XPLHXXPLHX2XPLHX: XPLHX0XPLHX（为空——使用捆绑的前端，无需构建）",
+    "ts": "2026-09-17T09:15:44.710031+00:00"
+  },
+  "8d69da6b9ef1e47a1ca7cb1b28cccdaa4a186f2a249cc83509d99da5d4a3d2fa": {
+    "source": "> XPLHX1XPLHXXPLHX5XPLHXXPLHX2XPLHX: When XPLHX0XPLHX is left empty or blank, the frontend build will be XPLHX3XPLHXskipped entirelyXPLHX4XPLHX. This significantly reduces startup time and is ideal wh",
+    "api_result": "> XPLHX1XPLHXXPLHX5XPLHXXPLHX2XPLHX：当 XPLHX0XPLHX 留空或未填写时，前端构建将被 XPLHX3XPLHX完全跳过XPLHX4XPLHX。 这能显著缩短启动时间，在仅需测试后端功能时尤为理想。此时将改用服务器安装包中捆绑的前端。",
+    "ts": "2026-09-17T09:15:45.775359+00:00"
+  },
+  "64cfcacf48179568733f05681bda8663b78b183d542a78f02a7212f06d51c546": {
+    "source": "XPLHX0XPLHXFull Configuration XPLHX1XPLHX",
+    "api_result": "XPLHX0XPLHX完整配置 XPLHX1XPLHX",
+    "ts": "2026-09-17T09:15:46.551181+00:00"
+  },
+  "6e0a13b9aa90b2b949cbd523ac3c9cc593bef6b1001db3feb0454f6a1aac02b2": {
+    "source": "XPLHX1XPLHXFast Mode (Backend Testing Only)\nXPLHX0XPLHX\nRuns the nightly build from the App image, no installs required. Fastest startup time.",
+    "api_result": "XPLHX1XPLHX快速模式（仅限后端测试）\nXPLHX0XPLHX\n从应用镜像运行夜间构建版本，无需安装。启动速度最快。",
+    "ts": "2026-09-17T09:15:47.538783+00:00"
+  },
+  "e2924edba576e1533fbce3df368203ae1679be4e6db28f19f7b66fa6823241b6": {
+    "source": "XPLHX2XPLHXBackend Development Mode\nXPLHX0XPLHX\nBuilds server from the XPLHX1XPLHX XPLHX3XPLHX, skips frontend build. Good for testing backend changes quickly.",
+    "api_result": "XPLHX2XPLHX后端开发模式\nXPLHX0XPLHX\n从 XPLHX1XPLHX 到 XPLHX3XPLHX 构建服务器，跳过前端构建。适合快速测试后端更改。",
+    "ts": "2026-09-17T09:15:48.483525+00:00"
+  },
+  "4b2025c33a0440e2645d33426449599d451d3410ab90c04ed7b720a64bf9a5cf": {
+    "source": "XPLHX1XPLHXFull Development Mode\nXPLHX0XPLHX\nBuilds both server (PR #456) and frontend (PR #789) from source. Full control for comprehensive testing.",
+    "api_result": "XPLHX1XPLHX完整开发模式\nXPLHX0XPLHX\n从源代码构建服务器（PR #456）和前端（PR #789）。可全面控制，便于进行全面测试。",
+    "ts": "2026-09-17T09:15:49.472610+00:00"
+  },
+  "d1a69d5ed91bbc56831650e05e6d89611a70237baa66f18f4753e7bdb8692d3e": {
+    "source": "XPLHX0XPLHXImportant Notes",
+    "api_result": "XPLHX0XPLHX重要说明",
+    "ts": "2026-09-17T09:15:50.280506+00:00"
+  },
+  "e8f50f16a033cf51d1e4902ba76acb8c3754dfeb37dac31a613b1f92a1f675a1": {
+    "source": "XPLHX0XPLHXBuild Time",
+    "api_result": "XPLHX0XPLHX构建时间",
+    "ts": "2026-09-17T09:15:51.086199+00:00"
+  },
+  "569f3bc7cf94df56e2496933eaadce67206a752fd7e621deff2a6226cc6d39df": {
+    "source": "Build time varies depending on your configuration:\n- XPLHX3XPLHXBoth emptyXPLHX4XPLHX (XPLHX0XPLHX and XPLHX1XPLHX): Fastest - no installs, runs the nightly build from the image\n- XPLHX5XPLHXOnly XPLH",
+    "api_result": "构建时间因您的配置而异：\n- XPLHX3XPLHXBoth emptyXPLHX4XPLHX（XPLHX0XPLHX 和 XPLHX1XPLHX）：最快——无需安装，直接从镜像运行夜间构建版本\n- XPLHX5XPLHX仅指定 XPLHX2XPLHXXPLHX6XPLHX：中等速度——仅构建服务器端，跳过前端（适用于后端测试）\n- XPLHX7XPLHX同时指定XPLHX8XPLHX：最慢——从源代码构建服务器和前端（完整开发模式）",
+    "ts": "2026-09-17T09:15:52.239839+00:00"
+  },
+  "f7890d165314800d2caab0a3ca04e0746156347bca57e4611c680b32fafc0aee": {
+    "source": "XPLHX1XPLHXTipXPLHX2XPLHX: Leave XPLHX0XPLHX empty when only testing backend features to significantly reduce startup time!",
+    "api_result": "XPLHX1XPLHXTipXPLHX2XPLHX：若仅测试后端功能，请将 XPLHX0XPLHX 留空，以大幅缩短启动时间！",
+    "ts": "2026-09-17T09:15:53.130984+00:00"
+  },
+  "97f945508003c3408c0be885d0284de893eb1beb721a6cf5ba06cc7c3c5f6792": {
+    "source": "XPLHX0XPLHXSafe Mode",
+    "api_result": "XPLHX0XPLHX安全模式",
+    "ts": "2026-09-17T09:15:53.918506+00:00"
+  },
+  "c0d2e0462ff18962437830280d25e8647360226cf3b88fa174cdef8b3c09cfd7": {
+    "source": "- Set XPLHX0XPLHX if you need to start XPLHX1XPLHX without loading providers\n- Useful for debugging any startup XPLHX2XPLHX",
+    "api_result": "- 如果需要在不加载提供程序的情况下启动 XPLHX1XPLHX，请将 XPLHX0XPLHX 设为有效\n- 适用于调试任何启动过程中的 XPLHX2XPLHX",
+    "ts": "2026-09-17T09:15:55.006624+00:00"
+  },
+  "fb8996f66701b37af5bca8ad5a31b72a8110355e3db865728d5d9ac37e0ad929": {
+    "source": "XPLHX0XPLHXXPLHX1XPLHX Syntax",
+    "api_result": "XPLHX0XPLHXXPLHX1XPLHX 语法",
+    "ts": "2026-09-17T09:15:55.818994+00:00"
+  },
+  "96e787560902ed6c970412df99bec06a3246d9a1bfc62f9028552614c7b5fcbf": {
+    "source": "When specifying a XPLHX3XPLHX, use XPLHX0XPLHX (e.g., XPLHX1XPLHX, XPLHX2XPLHX). The App will automatically fetch and checkout the PR for you.",
+    "api_result": "指定 XPLHX3XPLHX 时，请使用 XPLHX0XPLHX（例如：XPLHX1XPLHX、XPLHX2XPLHX）。该应用会自动为您检索并签出该 PR。",
+    "ts": "2026-09-17T09:15:57.107270+00:00"
+  },
+  "6a332cf575b5eb387c17be11c8b4b703c767775e2ed12a6c8bbcfa3a16b41be2": {
+    "source": "XPLHX0XPLHXTroubleshooting",
+    "api_result": "XPLHX0XPLHX故障排除",
+    "ts": "2026-09-17T09:15:57.857010+00:00"
+  },
+  "d31cb338d3ffe8ac889ae8739f6a7b637ff643425c1e61ed070f09f72d25470b": {
+    "source": "XPLHX0XPLHXApp won't start",
+    "api_result": "XPLHX0XPLHX 应用无法启动",
+    "ts": "2026-09-17T09:15:58.700258+00:00"
+  },
+  "afca2a059fa906c3ae3496572130a7082e0cbcf2a37a392bc0638c36e11db553": {
+    "source": "1. Check the App XPLHX6XPLHX for build errors\n2. Verify the XPLHX3XPLHX/PR/XPLHX5XPLHX exists and is accessible\n3. Try using a known-good XPLHX4XPLHX like XPLHX0XPLHX or XPLHX1XPLHX\n4. Enable XPLHX2XP",
+    "api_result": "1. 检查应用程序 XPLHX6XPLHX 是否存在构建错误\n2. 验证 XPLHX3XPLHX/PR/XPLHX5XPLHX 是否存在且可访问\n3. 尝试使用已知可用的 XPLHX4XPLHX，例如 XPLHX0XPLHX 或 XPLHX1XPLHX\n4. 启用 XPLHX2XPLHX 以绕过提供程序加载",
+    "ts": "2026-09-17T09:15:59.720319+00:00"
+  },
+  "bbecb1a0483a4943b1f076671111c9fd9389decdc129541ea566ded634042561": {
+    "source": "XPLHX0XPLHXBuild failures",
+    "api_result": "XPLHX0XPLHX构建失败",
+    "ts": "2026-09-17T09:16:00.452456+00:00"
+  },
+  "c07e8e98489d64085b2bd8d06baf53c08f9f2e8d3aa9342463a30a31b6571005": {
+    "source": "- Ensure the specified Git reference exists - the log names the repository and reference it could not reach\n- Check if there are dependency conflicts in the XPLHX0XPLHX\n- Frontend build requires Node.",
+    "api_result": "- 确保指定的 Git 引用存在——日志中提到了无法访问的仓库和引用\n- 检查 XPLHX0XPLHX 中是否存在依赖冲突\n- 前端构建需要 Node.js——构建失败可能表明前端代码不兼容",
+    "ts": "2026-09-17T09:16:01.485017+00:00"
+  },
+  "d2c38b14dc9d23988f8bde871791f88937f319dff947845b228da450ee848d29": {
+    "source": "XPLHX0XPLHXPerformance XPLHX1XPLHX",
+    "api_result": "XPLHX0XPLHX性能 XPLHX1XPLHX",
+    "ts": "2026-09-17T09:16:02.312354+00:00"
+  },
+  "0f32d090e0a969037b31a9564fbe780e1b58ad2cdada776630a061cecca95247": {
+    "source": "- Building from source uses more resources\n- Only use this App for development testing, not as a daily driver",
+    "api_result": "- 从源代码构建会消耗更多资源\n- 请仅将此应用用于开发测试，不要作为日常主力机使用",
+    "ts": "2026-09-17T09:16:03.273640+00:00"
+  },
+  "dafcd3f6756fd399a996f436d530cd91c90d0d0c68854e63a3251e07cefcdefc": {
+    "source": "XPLHX0XPLHXDeveloper Workflow",
+    "api_result": "XPLHX0XPLHX开发人员工作流程",
+    "ts": "2026-09-17T09:16:04.076513+00:00"
+  },
+  "aa711e0b315354d1ad3be08702b512502fab3c90d90e3f6b7d1d6a65e44966d7": {
+    "source": "XPLHX0XPLHXTesting a PR",
+    "api_result": "XPLHX0XPLHX测试PR",
+    "ts": "2026-09-17T09:16:04.842617+00:00"
+  },
+  "abaa02fab315ae867131fab97cd422a8bab1cfc5681f55e601b2ae253457ee6d": {
+    "source": "1. Find the PR number (e.g., #456)\n2. Configure: XPLHX0XPLHX\n3. Restart the App\n4. Test the changes",
+    "api_result": "1. 查找 PR 编号（例如：#456）\n2. 配置：XPLHX0XPLHX\n3. 重启应用\n4. 测试更改效果",
+    "ts": "2026-09-17T09:16:05.862882+00:00"
+  },
+  "b12d7ec7444780abef8c0520299fd609ae4a2f77192ebefbefa102b5953992c1": {
+    "source": "XPLHX0XPLHXDeveloping Features",
+    "api_result": "XPLHX0XPLHX功能开发",
+    "ts": "2026-09-17T09:16:06.692466+00:00"
+  },
+  "b413c6a1f6991fc385adcf46e2e9783abfea8d9d657920bb647cab82a71a0fe6": {
+    "source": "1. Push your XPLHX1XPLHX to your XPLHX2XPLHX\n2. Configure: XPLHX0XPLHX\n3. Restart the App\n4. Test and iterate",
+    "api_result": "1. 将您的 XPLHX1XPLHX 推送到 XPLHX2XPLHX\n2. 配置：XPLHX0XPLHX\n3. 重启应用程序\n4. 测试并迭代",
+    "ts": "2026-09-17T09:16:07.679663+00:00"
+  },
+  "138d888035f39a61f7b147acb234abb4544570921d0482cd3f9e93a4c35352ac": {
+    "source": "XPLHX0XPLHXTesting Both Server and Frontend Changes",
+    "api_result": "XPLHX0XPLHX测试服务器和前端两方面的更改",
+    "ts": "2026-09-17T09:16:08.773436+00:00"
+  },
+  "5f4dad67d51c024dc8a2c108b5001139e9c4810bb9628c00727cfcc5fcb80471": {
+    "source": "This allows you to test coordinated changes across both repositories.",
+    "api_result": "这使您能够测试两个代码库之间的协调变更。",
+    "ts": "2026-09-17T09:16:09.532828+00:00"
+  },
+  "0e1c6ab17642b94cbbe96dd2d1e29151f576ba9b6ce5840b4b32298a2c78fb68": {
+    "source": "This is a developer tool and is not supported for regular users. If you encounter XPLHX0XPLHX:",
+    "api_result": "这是一款开发工具，不面向普通用户提供支持。如果您遇到 XPLHX0XPLHX：",
+    "ts": "2026-09-17T09:16:10.403677+00:00"
+  },
+  "07b8a1b7b9eff9011972ef4397250ea3f8340f9a3684ef9e6e44272f14437b10": {
+    "source": "- Check the App XPLHX2XPLHX\n- Verify your Git references are correct\n- Test with the XPLHX1XPLHX branches first\n- Ask in the XPLHX0XPLHX developer Discord channel",
+    "api_result": "- 检查应用程序 XPLHX2XPLHX\n- 确认您的 Git 引用是否正确\n- 先使用 XPLHX1XPLHX 分支进行测试\n- 在 XPLHX0XPLHX 开发者 Discord 频道中提问",
+    "ts": "2026-09-17T09:16:11.457422+00:00"
+  },
+  "b0ccf338e48710535c5cff8a8839f8d042a639979fdd3a4616e91a7db0b77664": {
+    "source": "XPLHX0XPLHXDifferences from Regular App",
+    "api_result": "XPLHX0XPLHX与常规应用的区别",
+    "ts": "2026-09-17T09:16:12.288621+00:00"
+  },
+  "2fc28ee32bb42379a407f96b232a046a412dbb7d969ec4d0084113de34de658c": {
+    "source": "| Feature      | Regular App       | DEV App (Nightly mode)    | DEV App (Source mode)    |\n| ------------ | ----------------- | ------------------------- | ------------------------ |\n| Installation |",
+    "api_result": "| 功能 | 常规应用 | 开发版应用（夜间模式）    | 开发版应用（源代码模式）    |\n| ------------ | ----------------- | ------------------------- | ------------------------ |\n| 安装 | 预编译版本 | 镜像中的夜间构建 | 源代码编译 |\n| 启动时间 | 快 | 快 | 较慢（构建时间） |\n| XPLHX0XPLHX    | XPLHX1XPLHX 版本   | 夜间构建 | 开发代码 |\n| 前端     | 捆绑提供 | 捆绑提供 | 源代码编译 |\n| 更新     | 自动 | 手动（重启） | 手动（修改配置）   |\n| 应用场景     | 生产环境 | 快速后端测试     | 全面开发/测试 |",
+    "ts": "2026-09-17T09:16:13.501498+00:00"
+  },
+  "030e1230ac8c4bb929bb195b4cc713942e4174348c308f2570e54b994d97e91c": {
+    "source": "XPLHX1XPLHXConfiguration Modes:XPLHX2XPLHX\n- XPLHX3XPLHXFast modeXPLHX4XPLHX: Both repos empty - Runs the nightly build from the image, no installs\n- XPLHX5XPLHXBackend dev modeXPLHX6XPLHX: Only XPLHX",
+    "api_result": "XPLHX1XPLHX配置模式：XPLHX2XPLHX\n- XPLHX3XPLHX快速模式XPLHX4XPLHX：两个仓库均为空——从镜像运行夜间构建，不进行任何安装\n- XPLHX5XPLHX后端开发模式XPLHX6XPLHX：仅指定 XPLHX0XPLHX — 构建服务器，使用捆绑的前端\n- XPLHX7XPLHX完整开发模式XPLHX8XPLHX：两个仓库均已指定 - 从源代码构建所有内容",
+    "ts": "2026-09-17T09:16:14.601852+00:00"
+  },
+  "617e4c903c68c69a6b6366627d9e44e94a28c448494aadda3db3fc19d44967e9": {
+    "source": "XPLHX0XPLHX[2.11.0.dev2026091703] - 17.09.2026",
+    "api_result": "XPLHX0XPLHX[2.11.0.dev2026091703] - 2026年9月17日",
+    "ts": "2026-09-17T09:16:15.481376+00:00"
+  },
+  "3eda9348d43f01c19293fe53237d84759171fa696497fe2854c12e5f7861fff5": {
+    "source": "XPLHX0XPLHX📦 Nightly Release",
+    "api_result": "XPLHX0XPLHX📦 夜间版本",
+    "ts": "2026-09-17T09:16:16.365750+00:00"
+  },
+  "7dfaf0d8959f3d2641791a6c4b268b331372a41b9b215872e491dbd3bba6ae88": {
+    "source": "_Changes since XPLHX0XPLHX2.11.0.dev2026091603XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.11.0.dev2026091603XPLHX1XPLHX_ 以来的变更_",
+    "ts": "2026-09-17T09:16:17.330440+00:00"
+  },
+  "630b2cc4ebfbf18b34f5675875f80a9abb493c2bb788434ed76ef27b559dd9eb": {
+    "source": "- Implement Apple Music external ID lookup (ISRC/UPC) (by @dmoo500 in #5353)\n- Let the sample rates setting apply to Sonos players (by @RyanAtTanagra in #6356)\n- Add external id lookup to Qobuz provid",
+    "api_result": "- 实现 Apple Music 外部 ID 查询（ISRC/UPC）（由 @dmoo500 在 #5353 中提出）\n- 使采样率设置适用于 Sonos 播放器（由 @RyanAtTanagra 在 #6356 中提出）\n- 为 Qobuz 提供商添加外部 ID 查询功能（由 @teancom 在 #6357 中提出）\n- 通过 API 报告流媒体服务器地址（由 @marcelveldt 在 #6370 中提出）",
+    "ts": "2026-09-17T09:16:18.312363+00:00"
+  },
+  "9ca6817bdeb537c55cce69262823cdbbe95aae0686b12664391acd122aa2a3f5": {
+    "source": "- Properly surface \"Other versions\" of an album from Youtube Music (by @NasaGeek in #6159)\n- Keep the duplicate track walk from freezing the library database (by @OzGav in #6236)\n- Ensure that the in-",
+    "api_result": "- 正确显示 YouTube Music 中专辑的“其他版本”（由 @NasaGeek 在 #6159 中提出）\n- 防止重复曲目浏览导致音乐库数据库卡死（由 @OzGav 在 #6236 中提出）\n- 确保在 Audiobookshelf 进行套接字更新时，音乐库视图不会“丢失”媒体项目（由 @fmunkes 在 #6363 中提出）\n- 对于非 JSON 格式的登录请求正文，返回 HTTP 400 状态码而非 500（由 @MarvinSchenkel 在 #6371 中提出）\n- 将 YouTube Music 视为实时音源（由 @MarvinSchenkel 在 #6373 中提出）",
+    "ts": "2026-09-17T09:16:19.527319+00:00"
+  },
+  "42fef731d650b57323ff10d1eb7a66aae78bedbd5a0736ae158b11a2b54ebf68": {
+    "source": "- Give the add-provider dialog more room (by @marcelveldt in XPLHX0XPLHX#2788XPLHX1XPLHX)\n- Explain and check the server addresses in the setup wizard (by @marcelveldt in XPLHX2XPLHX#2783XPLHX3XPLHX)\n",
+    "api_result": "- 为“添加提供商”对话框留出更多空间（由 @marcelveldt 在 XPLHX0XPLHX#2788XPLHX1XPLHX 提出）\n- 在设置向导中说明并验证服务器地址（由 @marcelveldt 提出，见 XPLHX2XPLHX#2783XPLHX3XPLHX）\n- 将入门流程以弹窗形式显示，并修复步骤间的跳转问题（由 @marcelveldt 提出，见 XPLHX4XPLHX#2782XPLHX5XPLHX）\n- 优化入门向导的措辞并添加推荐的第一步（由 @marcelveldt 在 XPLHX6XPLHX#2781XPLHX7XPLHX 中提出）\n- 当音乐源未被共享时，在音频详细信息中显示源名称（由 @marcelveldt 在 XPLHX8XPLHX#2784XPLHX9XPLHX 中提出）\n- 当测试套件繁忙时，防止入门测试超时（由 @marcelveldt 在 XPLHX10XPLHX#2787XPLHX11XPLHX 中提出）\n- 使用单一检查来判断插件是否已加载（由 @marcelveldt 在 XPLHX12XPLHX#2785XPLHX13XPLHX 中提出）\n- 捕获对应用程序自行计算的状态的错误写入（由 @marcelveldt 提出，见 XPLHX14XPLHX#2786XPLHX15XPLHX）\n- 共享选项中将“成员”改为“用户”（由 @marcelveldt 在 XPLHX16XPLHX#2780XPLHX17XPLHX 中提出）",
+    "ts": "2026-09-17T09:16:20.596026+00:00"
+  },
+  "399af3d41a9f56f5c464eeacfffa7bb9d4a267bafe5875b2cd558a38178b1363": {
+    "source": "- Announce a loaded provider only after its commands are registered (by @marcelveldt in #6375)",
+    "api_result": "- 仅在加载的提供程序的命令注册完成后才宣布该提供程序（由 @marcelveldt 在 #6375 中提出）",
+    "ts": "2026-09-17T09:16:21.499646+00:00"
+  },
+  "6e525bdb3d6773aa48159997ec07f064c75c14e2a9925c67e8dbc22de17780fe": {
+    "source": "@MarvinSchenkel, @NasaGeek, @OzGav, @RyanAtTanagra, @dmoo500, @fmunkes, @marcelveldt, @teancom",
+    "api_result": "@MarvinSchenkel、@NasaGeek、@OzGav、@RyanAtTanagra、@dmoo500、@fmunkes、@marcelveldt、@teancom",
+    "ts": "2026-09-17T09:16:22.394538+00:00"
+  },
+  "7fe566ec90cac998af858b2430e2e55b2d70468f6f04fa6d786864adc5ba033d": {
+    "source": "XPLHX0XPLHX[2.11.0.dev2026091603] - 16.09.2026",
+    "api_result": "XPLHX0XPLHX[2.11.0.dev2026091603] - 2026年9月16日",
+    "ts": "2026-09-17T09:16:23.265621+00:00"
+  },
+  "fd679eb9045d843b73ce6e4a88856bb6787020675b76e617f01f0ccfa7fde701": {
+    "source": "_Changes since XPLHX0XPLHX2.11.0.dev2026091503XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.11.0.dev2026091503XPLHX1XPLHX_ 以来的更改_",
+    "ts": "2026-09-17T09:16:24.301277+00:00"
+  },
+  "f3099e181b7cd547881b5d07317aabd49b0ac8b1565bf60f08399b6b094b648a": {
+    "source": "- Implement Spotify external ID lookup (ISRC/UPC) (by @dmoo500 in #5356)\n- Load Plex library metadata in batches instead of one item at a time (by @RyanAtTanagra in #6353)",
+    "api_result": "- 实现 Spotify 外部 ID 查询（ISRC/UPC）（由 @dmoo500 在 #5356 中提出）\n- 批量加载 Plex 媒体库元数据，而非逐个加载（由 @RyanAtTanagra 在 #6353 中提出）",
+    "ts": "2026-09-17T09:16:25.368643+00:00"
+  },
+  "1ce2b1386b04c0b6dcbf4e4a4b825791e27b0ef93b5ada0a1bcc7453d3773168": {
+    "source": "- Keep provider item lookups scoped to their own media type (by @jdaberkow in #6203)\n- Fix Pandora album pages failing to open (by @OzGav in #6308)\n- Hold back every caller while a provider rate limit",
+    "api_result": "- 将服务商项目的查询范围限制在其自身的媒体类型内（由 @jdaberkow 在 #6203 中提出）\n- 修复了 Pandora 专辑页面无法打开的问题（由 @OzGav 在 #6308 中提出）\n- 在提供商速率限制生效期间，暂停所有调用请求（由 @balloob 在 #6332 中提交）\n- 防止某音乐提供商导致每次 XPLHX0XPLHX 查询失败（由 @stvncode 在 #6351 中提交）\n- 移除提供商已不再拥有的项目的映射关系（由 @RyanAtTanagra 在 #6355 中实现）\n- 修复库中的艺人和专辑获取到无效提供商链接的问题（由 @marcelveldt 在 #6362 中实现）",
+    "ts": "2026-09-17T09:16:26.590949+00:00"
+  },
+  "a859ff9e0f785ac0b355756835c626d99d13a9ce5b672771b9fbe0cd9de04077": {
+    "source": "- Gray accents on the now playing screen (by @MarvinSchenkel in XPLHX0XPLHX#2762XPLHX1XPLHX)\n- Invite members to connect their own music accounts (by @marcelveldt in XPLHX2XPLHX#2773XPLHX3XPLHX)\n- New",
+    "api_result": "- “正在播放”界面上的灰色点缀（由 @MarvinSchenkel 在 XPLHX0XPLHX#2762XPLHX1XPLHX 提出）\n- 邀请成员关联自己的音乐账号（由 @marcelveldt 在 XPLHX2XPLHX#2773XPLHX3XPLHX 中实现）\n- 专辑页面焕然一新（由 @stvncode 在 XPLHX4XPLHX#2760XPLHX5XPLHX 中提出）\n- 向访客显示“派对”、“AI 电台”和可视化效果（由 @marcelveldt 在 XPLHX6XPLHX#2777XPLHX7XPLHX 中实现）\n- 在“派对”仪表盘中显示电台流的封面图（由 @pierosavi 在 XPLHX8XPLHX#2712XPLHX9XPLHX 中实现）\n- 将音源图标与其名称分开显示（由 @stvncode 在 XPLHX10XPLHX#2774XPLHX11XPLHX 中提出）\n- 报告并撤销音乐源重命名失败的操作（由 @marcelveldt 在 XPLHX12XPLHX#2772XPLHX13XPLHX 中提出）\n- 简化应用对已加载插件的追踪方式（由 @marcelveldt 提出，见 XPLHX14XPLHX#2779XPLHX15XPLHX）\n- 在设置面包屑导航中显示音乐源的自身名称（由 @marcelveldt 提交，见 XPLHX16XPLHX#2778XPLHX17XPLHX）\n- 修复测试用例（由 @pierosavi 在 XPLHX18XPLHX#2776XPLHX19XPLHX 中实现）\n- 将 @scure/base 从 2.2.0 升级至 2.4.0（由 @[dependabot[bot]](XPLHX36XPLHX) 在 XPLHX20XPLHX#2767XPLHX21XPLHX 中完成）\n- 将 @vitest/ui 从 4.1.10 升级至 5.0.0（由 @[dependabot[bot]](XPLHX37XPLHX) 在 XPLHX22XPLHX#2769XPLHX23XPLHX 中操作）\n- 将 vite-plugin-webfont-dl 从 3.12.0 升级至 3.13.1 （由 @[dependabot[bot]](XPLHX38XPLHX) 在 XPLHX24XPLHX#2770XPLHX25XPLHX 中完成）\n- 将 @vue/test-utils 从 2.4.11 升级至 2.5.0（由 @[dependabot[bot]](XPLHX39XPLHX) 在 XPLHX26XPLHX#2771XPLHX27XPLHX)\n- 将 @fontsource/roboto 从 5.2.10 升级至 5.3.0（由 @[dependabot[bot]](XPLHX40XPLHX) 在 XPLHX28XPLHX#2764XPLHX29XPLHX 中完成）\n- 将 vite 从 8.1.5 升级至 8.3.0（由 @[dependabot[bot]](XPLHX41XPLHX) 在 XPLHX30XPLHX#2766XPLHX31XPLHX 中完成）\n- 将 vue-tsc 从 3.3.7 升级至 3.3.11（由 @[dependabot[bot]](XPLHX42XPLHX) 在 XPLHX32XPLHX#2768XPLHX33XPLHX 中操作）\n- 将 zod 从 4.5.4 升级至 4.6.2（由 @[dependabot[bot]](XPLHX43XPLHX) 在 XPLHX34XPLHX#2765XPLHX35XPLHX 中完成）",
+    "ts": "2026-09-17T09:16:27.785839+00:00"
+  },
+  "2d1891c828986a9eb3a9332e8aa9184cb66e634979f3ff14118a3e7e23dcfee5": {
+    "source": "- Add tests for XPLHX0XPLHX ingress sign-in (by @marcelveldt in #6367)",
+    "api_result": "- 为 XPLHX0XPLHX 入口登录功能添加测试（由 @marcelveldt 在 #6367 中提出）",
+    "ts": "2026-09-17T09:16:28.679361+00:00"
+  },
+  "107d90b7b1aae790ac748f3a978d650fc7340e0b68db0f79e8d53372000f5aa9": {
+    "source": "@MarvinSchenkel, @OzGav, @RyanAtTanagra, @balloob, @dmoo500, @fontsource, @jdaberkow, @marcelveldt, @pierosavi, @scure, @stvncode, @vitest, @vue",
+    "api_result": "@MarvinSchenkel、@OzGav、@RyanAtTanagra、@balloob、@dmoo500、@fontsource、@jdaberkow、@marcelveldt、@pierosavi、@scure、@stvncode、@vitest、@vue",
+    "ts": "2026-09-17T09:16:29.753605+00:00"
+  },
+  "8c4bf5642d91cc65ba4fdaf2d84ec523ce3e9402b3dd5e04ce8ec8902346ff35": {
+    "source": "XPLHX0XPLHX[2.11.0.dev2026091503] - 15.09.2026",
+    "api_result": "XPLHX0XPLHX[2.11.0.dev2026091503] - 2026年9月15日",
+    "ts": "2026-09-17T09:16:30.675832+00:00"
+  },
+  "55abe15a580260b924594357da0da3f434b1d8a276f4f8840bc755467210e936": {
+    "source": "_Changes since XPLHX0XPLHX2.11.0.dev2026091403XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.11.0.dev2026091403XPLHX1XPLHX_ 以来的更改_",
+    "ts": "2026-09-17T09:16:31.748624+00:00"
+  },
+  "71f44f257ac9b7bb21534ddf088f83b3a69d08be11b3531da012b7aa39391707": {
+    "source": "- Let anyone who may share a playlist pick the members to share it with (by @marcelveldt in #6325)\n- Warn once per album folder about a missing ALBUMARTIST tag (by @balloob in #6330)",
+    "api_result": "- 允许任何可能分享播放列表的用户选择与谁分享（由 @marcelveldt 在 #6325 中提出）\n- 对于每个专辑文件夹，若缺少 ALBUMARTIST 标签，则仅提示一次（由 @balloob 在 #6330 中提出）",
+    "ts": "2026-09-17T09:16:32.826422+00:00"
+  },
+  "fc0544291badbfd93947400d3594c5e00b77ac4da1d3623250370a3bf11ea79a": {
+    "source": "- Fill in unplayable album tracks from another provider (by @OzGav in #6310)\n- Prevent ListenBrainz scrobbling from hanging when the service is unresponsive (by @marcelveldt in #6312)\n- Keep retrying ",
+    "api_result": "- 从其他服务商补全无法播放的专辑曲目（由 @OzGav 在 #6310 中实现）\n- 防止 ListenBrainz 记录功能在服务无响应时卡死（由 @marcelveldt 在 #6312 中实现）\n- 当 PO Token 服务器尚未上线时，持续重试 YouTube Music（由 @CodeCommander 在 #6326 中实现）\n- 当 AirPlay 控制连接或配对被取消时，关闭 pyatv 会话（由 @balloob 在 #6329 中实现）\n- 在轮询时，以调试级别记录不可用的播放器（由 @balloob 在 #6336 中实现）\n- 允许用户控制自己已连接的客户端播放器（由 @MarvinSchenkel 在 #6340 中实现）\n- 随机库混音现优先选择您播放次数最少的曲目（由 @MarvinSchenkel 在 #6343 中提出）\n- 在“最近播放”中显示库外播放的 Qobuz 曲目（由 @chrisuthe 在 #6347 中提出）",
+    "ts": "2026-09-17T09:16:33.930266+00:00"
+  },
+  "d2e04090e16a5dcb22287d527edec11a93c03a8ba75a0de6c38013a26b99fee1": {
+    "source": "- Clearer sources and layout on the artist page (by @stvncode in XPLHX0XPLHX#2758XPLHX1XPLHX)\n- Consistent focus style for the favorite button in item details (by @marcelveldt in XPLHX2XPLHX#2756XPLHX",
+    "api_result": "- 艺术家页面上的来源和布局更加清晰（由 @stvncode 在 XPLHX0XPLHX#2758XPLHX1XPLHX 提出）\n- 统一了项目详情页中“收藏”按钮的焦点样式（由 @marcelveldt 在 XPLHX2XPLHX#2756XPLHX3XPLHX 提出）\n- 歌曲页面焕然一新，支持自定义行布局（由 @stvncode 在 XPLHX4XPLHX#2729XPLHX5XPLHX 中实现）\n- 显示编辑错误，并要求具备写入权限才能编辑播放列表（由 @marcelveldt 在 XPLHX6XPLHX#2755XPLHX7XPLHX 中提出）\n- 通过一个辅助函数解析音乐源的名称（由 @marcelveldt 在 XPLHX8XPLHX#2757XPLHX9XPLHX 中实现）",
+    "ts": "2026-09-17T09:16:34.907653+00:00"
+  },
+  "7bfbb263318e671ddb14f0b132e2da14b6aa317e11483b36bdda747e635bf504": {
+    "source": "XPLHX0XPLHX\nXPLHX1XPLHX13 changesXPLHX2XPLHX",
+    "api_result": "XPLHX0XPLHX\nXPLHX1XPLHX13项变更XPLHX2XPLHX",
+    "ts": "2026-09-17T09:16:35.760639+00:00"
+  },
+  "ea1e515239836cc363ddd4cdddc041054c414eeb7d2a3ad43f4bfbb20f68d576": {
+    "source": "- Give the playlist owner refusal its own message and drop 'household' wording (by @marcelveldt in #6315)\n- Bump modern-colorthief from 0.2.1 to 0.3.0 (by @dependabot[bot] in #6318)\n- Bump syrupy from",
+    "api_result": "- 为播放列表所有者的拒绝操作设置专属提示信息，并移除“家庭”相关表述（由 @marcelveldt 在 #6315 中提出）\n- 将 modern-colorthief 从 0.2.1 升级至 0.3.0（由 @dependabot[bot] 在 #6318 中提出）\n- 将 syrupy 版本从 5.5.3 更新至 6.0.0（由 @dependabot[bot] 在 #6320 中提交）\n- 将 pyblu 版本从 2.0.8 更新至 2.1.0（由 @dependabot[bot] 在 #6321 中提交）\n- 当扫描的文件无法读取时，跳过 traceback（由 @balloob 在 #6331 中实现）\n- 在将内置播放列表 ID 用作文件名之前对其进行验证（由 @marcelveldt 在 #6338 中实现）\n- 修复自动合并功能在处理需要更新版 Python 的依赖项更新时卡住的问题（由 @MarvinSchenkel 在 #6339 中实现）\n- 修复交叉淡入淡出被中断时内存堆积的问题（由 @marcelveldt 在 #6341 中提交）\n- 修复流测试中提升的日志级别泄漏到其他测试中的问题（由 @marcelveldt 在 #6344 中提交）\n- 在诊断转储中显示子进程数量（由 @marcelveldt 在 #6346 中提交）\n- 禁止将音乐源所有者移至无法管理源的角色（由 @marcelveldt 在 #6349 中提交）\n- 仅允许在内置提供程序中使用远程 URL（由 @marcelveldt 在 #6350 中提交）\n- 当淡入淡出被中断时，可靠地停止淡入淡出混音器（由 @marcelveldt 在 #6352 中提交）",
+    "ts": "2026-09-17T09:16:36.861878+00:00"
+  },
+  "7688a8e23700e6d968f738c92d52ed24ac0f3c413f695b7d680889fff4679244": {
+    "source": "@CodeCommander, @MarvinSchenkel, @OzGav, @balloob, @chrisuthe, @marcelveldt, @stvncode",
+    "api_result": "@CodeCommander、@MarvinSchenkel、@OzGav、@balloob、@chrisuthe、@marcelveldt、@stvncode",
+    "ts": "2026-09-17T09:16:37.796896+00:00"
+  },
+  "27104ba7c94b3bd27bae0bc47831786372728148f282684106d477b6561b1523": {
+    "source": "XPLHX1XPLHXXPLHX0XPLHX (NIGHTLY) App",
+    "api_result": "XPLHX1XPLHXXPLHX0XPLHX（夜间版）应用",
+    "ts": "2026-09-17T09:16:38.610096+00:00"
+  },
+  "a245c550ffa825e7b86f055c36a6f2bf8a34ed96d7fef7dd147f81e3b9581515": {
+    "source": "Bleeding edge development builds of XPLHX0XPLHX.",
+    "api_result": "XPLHX0XPLHX 的前沿开发版本。",
+    "ts": "2026-09-17T09:16:39.422011+00:00"
+  },
+  "1af2f4f6a15407dc54864aee71c9f71e850d9b438749d1568ae507f488010f8a": {
+    "source": "XPLHX0XPLHX⚠️ WARNING - FOR ADVANCED USERS ONLY ⚠️",
+    "api_result": "XPLHX0XPLHX⚠️ 警告——仅限高级用户 ⚠️",
+    "ts": "2026-09-17T09:16:40.257361+00:00"
+  },
+  "f46fa38ef22986fea8307ba9b627675956bee9e6835c73b97f8c3d7e8b9fdbb7": {
+    "source": "This is a XPLHX1XPLHXNIGHTLYXPLHX2XPLHX (development) XPLHX5XPLHX of XPLHX0XPLHX. It contains the latest code changes and is XPLHX3XPLHXNOT recommended for daily useXPLHX4XPLHX.",
+    "api_result": "这是 XPLHX0XPLHX 的 XPLHX1XPLHXNIGHTLYXPLHX2XPLHX（开发版）XPLHX5XPLHX。 它包含最新的代码更改，XPLHX3XPLHX不建议用于日常使用XPLHX4XPLHX。",
+    "ts": "2026-09-17T09:16:41.172289+00:00"
+  },
+  "4245e3c0866d31521da791d13866689361f86bcde2f37ee156355ec3fdcde051": {
+    "source": "XPLHX0XPLHX🔴 Critical Information",
+    "api_result": "XPLHX0XPLHX🔴 重要信息",
+    "ts": "2026-09-17T09:16:41.913359+00:00"
+  },
+  "fdcbccb106d2deea8dc9483788dd6648bd11340788eba81be5bc5cc23e98b50f": {
+    "source": "XPLHX0XPLHXThis App is:XPLHX1XPLHX",
+    "api_result": "XPLHX0XPLHX此应用是：XPLHX1XPLHX",
+    "ts": "2026-09-17T09:16:42.718000+00:00"
+  },
+  "a2cf3f7e97c20e274d2a2747b623c35565f18d5411604fa47f1778692a0ca522": {
+    "source": "- ❌ XPLHX0XPLHXNOT XPLHX8XPLHXXPLHX1XPLHX - Can break at any time\n- ❌ XPLHX2XPLHXNOT testedXPLHX3XPLHX - Changes are pushed directly from development\n- ❌ XPLHX4XPLHXNOT supportedXPLHX5XPLHX - Use at y",
+    "api_result": "- ❌ XPLHX0XPLHXNOT XPLHX8XPLHXXPLHX1XPLHX - 可能随时发生故障\n- ❌ XPLHX2XPLHXNOT 未经过测试XPLHX3XPLHX - 更改直接从开发环境推送\n- ❌ XPLHX4XPLHXNOT 未受支持XPLHX5XPLHX - 使用需自行承担风险\n- ❌ XPLHX6XPLHXNOT 不适合初学者XPLHX7XPLHX - 故障排除可能需要技术知识",
+    "ts": "2026-09-17T09:16:43.752659+00:00"
+  },
+  "4790a98b5e08ec5ef5564e9f3797558e597041c8f4a600fd091d894790e35b36": {
+    "source": "XPLHX0XPLHXDO NOT use this unless you:XPLHX1XPLHX",
+    "api_result": "XPLHX0XPLHX除非您符合以下条件，否则请勿使用此功能：XPLHX1XPLHX",
+    "ts": "2026-09-17T09:16:44.612043+00:00"
+  },
+  "4054593cd32ec5f4d979b71beb4f989302b0770e6028ce9ad2f9d7358a48dc16": {
+    "source": "- ✅ Are a developer or advanced user\n- ✅ Understand the risks of running unreleased software\n- ✅ Can debug XPLHX1XPLHX yourself\n- ✅ Have a backup system or test XPLHX0XPLHX\n- ✅ Are willing to lose dat",
+    "api_result": "- ✅ 您是开发人员或高级用户\n- ✅ 了解运行未发布软件的风险\n- ✅ 能够自行调试 XPLHX1XPLHX\n- ✅ 拥有备份系统或可测试 XPLHX0XPLHX\n- ✅ 愿意承担数据丢失或功能失效的风险",
+    "ts": "2026-09-17T09:16:45.573127+00:00"
+  },
+  "78f5b21a29319f38490f192ae3791370ac5bffa90f91240a0847155088686139": {
+    "source": "XPLHX0XPLHXWhat is NIGHTLY?",
+    "api_result": "XPLHX0XPLHX什么是 NIGHTLY？",
+    "ts": "2026-09-17T09:16:46.391118+00:00"
+  },
+  "682718f8c0465d6b0e9fce62cfe19f8151dd99911dd2989fa44a7d045d55804c": {
+    "source": "NIGHTLY builds are automatic builds from the XPLHX0XPLHX XPLHX2XPLHX of XPLHX1XPLHX. They include:",
+    "api_result": "NIGHTLY 构建是 XPLHX1XPLHX 的 XPLHX0XPLHX XPLHX2XPLHX 版本的自动构建。它们包括：",
+    "ts": "2026-09-17T09:16:47.294622+00:00"
+  },
+  "e36f89db984bab13c0f4ce31184e450b86eedd7caca016117cc004e5d3090afa": {
+    "source": "- 🚧 Work-in-progress features\n- 🔬 Experimental code\n- 🐛 Unverified bug fixes\n- ⚡ Latest code changes (within 24 hours)\n- 💥 Potentially breaking changes",
+    "api_result": "- 🚧 正在开发的功能\n- 🔬 实验性代码\n- 🐛 未经验证的错误修复\n- ⚡ 最新的代码更改（24小时内）\n- 💥 可能导致兼容性问题的更改",
+    "ts": "2026-09-17T09:16:48.281676+00:00"
+  },
+  "62c783e342eaafaf5456480a63dc5ad51dbafdf0667a4e562e4538a2a27c0471": {
+    "source": "XPLHX0XPLHXRelease Frequency",
+    "api_result": "XPLHX0XPLHX发布频率",
+    "ts": "2026-09-17T09:16:49.038485+00:00"
+  },
+  "7cf346a5504887779708850c3c0ed2fe4cdbe8aabcfb3cb52d24cd49c74843c2": {
+    "source": "- XPLHX0XPLHXUpdatedXPLHX1XPLHX: Daily (when changes are pushed to dev XPLHX10XPLHX)\n- XPLHX2XPLHXTestingXPLHX3XPLHX: Minimal or none\n- XPLHX4XPLHXXPLHX9XPLHXXPLHX5XPLHX: Varies significantly\n- XPLHX6",
+    "api_result": "- XPLHX0XPLHXUpdatedXPLHX1XPLHX：每日（当更改推送到 dev XPLHX10XPLHX 分支时）\n- XPLHX2XPLHXTestingXPLHX3XPLHX：极少或无\n- XPLHX4XPLHXXPLHX9XPLHXXPLHX5XPLHX：差异显著\n- XPLHX6XPLHXXPLHX8XPLHXXPLHX7XPLHX：⚠️ 本质上不稳定",
+    "ts": "2026-09-17T09:16:50.079820+00:00"
+  },
+  "9fbcf76140982b36b23822f585ff207ac9a29d4a3b0727bab2f35afe330c7fc4": {
+    "source": "XPLHX0XPLHXComparison Matrix",
+    "api_result": "XPLHX0XPLHX比较矩阵",
+    "ts": "2026-09-17T09:16:50.885472+00:00"
+  },
+  "c8422fe28ab5f2a7f2f9bfcbe5022deb12497b6ff3d5739b0b0d2324a865c128": {
+    "source": "| Feature          | XPLHX3XPLHX     | BETA     | NIGHTLY       |\n| ---------------- | ---------- | -------- | ------------- |\n| XPLHX2XPLHX        | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐            |\n| Features         |",
+    "api_result": "| 功能 | XPLHX3XPLHX     | 测试版     | 夜间构建 |\n| ---------------- | ---------- | -------- | ------------- |\n| XPLHX2XPLHX | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐ |\n| 功能 | 已发布   | 测试中  | 最新 |\n| 更新 | 每月    | 每周   | 每日 |\n| 重大变更 | 罕见 | 可能 | 可能 |\n| 数据丢失风险   | 极低   | 低 | XPLHX0XPLHXHIGHXPLHX1XPLHX |\n| 应用场景 | 生产环境 | 测试环境 | 实验环境 |",
+    "ts": "2026-09-17T09:16:51.859124+00:00"
+  },
+  "02d4d5c0d838f986e80054443367e9938b506b0d513ba2a51329904183b19092": {
+    "source": "1. ⚠️ Verify you're using NIGHTLY intentionally\n2. Check if the issue exists in BETA or XPLHX1XPLHX\n3. Search existing XPLHX0XPLHX\n4. Try to reproduce with minimal configuration",
+    "api_result": "1. ⚠️ 请确认您是刻意使用 NIGHTLY 版本\n2. 检查该问题是否也存在于 BETA 或 XPLHX1XPLHX 版本中\n3. 搜索现有的 XPLHX0XPLHX\n4. 尝试在最小配置下复现该问题",
+    "ts": "2026-09-17T09:16:52.906972+00:00"
+  },
+  "5b39aad5ba963959d901e0e97f4966a5a45d0e7e72564be6d7fa0e74ea62f1b6": {
+    "source": "XPLHX0XPLHXWhat to Include",
+    "api_result": "XPLHX0XPLHX应包含的内容",
+    "ts": "2026-09-17T09:16:53.673879+00:00"
+  },
+  "a325f06feae92aab4cca7f89d1c8d555f520fa14fd762d89b94ef0c7a356d795": {
+    "source": "- XPLHX1XPLHXXPLHX15XPLHXXPLHX2XPLHX: Exact NIGHTLY XPLHX16XPLHX number and date\n- XPLHX3XPLHXXPLHX18XPLHXXPLHX4XPLHX: Full debug XPLHX19XPLHX\n- XPLHX5XPLHXXPLHX14XPLHXXPLHX6XPLHX: What you were doing",
+    "api_result": "- XPLHX1XPLHXXPLHX15XPLHXXPLHX2XPLHX：精确的 NIGHTLY XPLHX16XPLHX 版本号和日期\n- XPLHX3XPLHXXPLHX18XPLHXXPLHX4XPLHX：完整调试 XPLHX19XPLHX\n- XPLHX5XPLHXXPLHX14XPLHXXPLHX6XPLHX： 发生故障时您正在进行的操作\n- XPLHX7XPLHXXPLHX13XPLHXXPLHX8XPLHX：XPLHX0XPLHX XPLHX17XPLHX，硬件规格\n- XPLHX9XPLHXXPLHX11XPLHXXPLHX10XPLHX：分步操作 XPLHX12XPLHX 步骤",
+    "ts": "2026-09-17T09:16:54.690106+00:00"
+  },
+  "80fad1ee845f9a135696b6cdcbc02a615bdd43080ee20b223053edcb30664531": {
+    "source": "XPLHX0XPLHXWhere to Report",
+    "api_result": "XPLHX0XPLHX向哪里报告",
+    "ts": "2026-09-17T09:16:55.530498+00:00"
+  },
+  "752e965b5782bc11ffd7ac4f9580ca725abdf2b27de95d19dcab88bc35d3512b": {
+    "source": "- 💬 XPLHX0XPLHXDiscord ServerXPLHX1XPLHX",
+    "api_result": "- 💬 XPLHX0XPLHXDiscord服务器XPLHX1XPLHX",
+    "ts": "2026-09-17T09:16:56.377204+00:00"
+  },
+  "d112aaba4faddfee17c73e5fe589a81a7ec5b017a5a41c507dd1c5f0f237d43b": {
+    "source": "Running NIGHTLY and finding XPLHX0XPLHX is a contribution! You can also:",
+    "api_result": "运行 NIGHTLY 并发现 XPLHX0XPLHX 就是一种贡献！您还可以：",
+    "ts": "2026-09-17T09:16:57.245804+00:00"
+  },
+  "7f1d3070967a992ae974f2e6408b91efa8708a365bb7838598bce715ab1dbbe1": {
+    "source": "- 🐛 XPLHX0XPLHXReport bugs with detailed XPLHX5XPLHXXPLHX1XPLHX\n- 🔧 Submit pull requests with fixes\n- 📝 Document XPLHX4XPLHX and workarounds\n- 💬 Help other NIGHTLY users on XPLHX2XPLHXDiscordXPLHX3XPL",
+    "api_result": "- 🐛 XPLHX0XPLHX请附上详细信息报告 bug XPLHX5XPLHXXPLHX1XPLHX\n- 🔧 提交包含修复方案的拉取请求\n- 📝 编写 XPLHX4XPLHX 文档及解决方法\n- 💬 在 XPLHX2XPLHXDiscordXPLHX3XPLHX 上帮助其他 NIGHTLY 用户\n- 🧪 测试特定功能",
+    "ts": "2026-09-17T09:16:58.259084+00:00"
+  },
+  "5a0df3c5ee62df31ebdac1a22f6a612bb0804454e20ab91330eae812dd2e205e": {
+    "source": "XPLHX0XPLHXFinal Warning",
+    "api_result": "XPLHX0XPLHX最后警告",
+    "ts": "2026-09-17T09:16:58.987899+00:00"
+  },
+  "2254f36544925f18cf6d271ab75ccc69aa61960e59b2340ee35bcff3d60ea05b": {
+    "source": "XPLHX0XPLHXStill Here?",
+    "api_result": "XPLHX0XPLHX还在吗？",
+    "ts": "2026-09-17T09:16:59.752010+00:00"
+  },
+  "bde4ff5d013aa90eaa759927e6a5033b0cd7a64e0e7f951dc44da62a7ab1d63a": {
+    "source": "If you've read this far and still want to use NIGHTLY, you're probably the right kind of user. Welcome to the bleeding edge! 🚀",
+    "api_result": "如果你读到这里还想使用 NIGHTLY，那你八成就是我们想要的用户。欢迎来到最前沿！🚀",
+    "ts": "2026-09-17T09:17:00.607830+00:00"
+  },
+  "d97cdc3ed226bd9860b3725da5e53fd8e9a696e7fd6343ad694b3cabc46f53a3": {
+    "source": "Just remember: XPLHX0XPLHXBACKUP EVERYTHINGXPLHX1XPLHX 💾",
+    "api_result": "请记住：XPLHX0XPLHX备份所有内容XPLHX1XPLHX 💾",
+    "ts": "2026-09-17T09:17:01.430985+00:00"
+  },
+  "e4f622ebcbda8367aab64bc7495bc9431c1fa19d5cd222e5a68785c56c9a00d3": {
+    "source": "XPLHX0XPLHXNetEase Cloud Music API",
+    "api_result": "XPLHX0XPLHX网易云音乐API",
+    "ts": "2026-09-17T09:17:02.201309+00:00"
+  },
+  "e69538620731341f7afc161c3c7b8a984a09624ff06de77f35cfcfe06eb975f1": {
+    "source": "This add-on runs NeteaseCloudMusicApiEnhanced as a local HTTP API service.",
+    "api_result": "该插件将 NeteaseCloudMusicApiEnhanced 作为本地 HTTP API 服务运行。",
+    "ts": "2026-09-17T09:17:03.020879+00:00"
+  },
+  "6c652a9f5979dd7d19f830b6d1a8241cd2ade5b761914dfe9991e38ff2c8087c": {
+    "source": "XPLHX0XPLHX endpoint:",
+    "api_result": "XPLHX0XPLHX 端点：",
+    "ts": "2026-09-17T09:17:03.827629+00:00"
+  },
+  "41fc63c49167ab816f41309159bcdb2066e2b3f0810d3c17b5efd60c659464d1": {
+    "source": "- XPLHX0XPLHX",
+    "api_result": "- XPLHX0XPLHX",
+    "ts": "2026-09-17T09:17:04.642751+00:00"
+  },
+  "e1e1a11d685a1b8cfdee2a53583c0d8ce1a0b4cafe70210ef5daab2e1d207f3b": {
+    "source": "Use this URL in the XPLHX0XPLHX NetEase provider configuration.",
+    "api_result": "请在 XPLHX0XPLHX 网易提供商的配置中使用此 URL。",
+    "ts": "2026-09-17T09:17:05.491234+00:00"
+  }
+}
