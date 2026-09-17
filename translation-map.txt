@@ -18,3 +18,6 @@ Context => 上下文
 Fork => 分叉
 Note => 注意
 issues => 问题
+Version => 版本
+Logs => 日志
+Both => 两者

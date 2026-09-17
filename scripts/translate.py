@@ -399,6 +399,8 @@ def translate_markdown(content: str, api_key: str, quota_used: int) -> tuple:
     # 修复链接 text 前后多余空格：[ text ](url) → [text](url)，[ text ][ref] → [text][ref]
     final = re.sub(r'\[\s*([^\[\]]+?)\s*\]\(', r'[\1](', final)
     final = re.sub(r'\[\s*([^\[\]]+?)\s*\]\[', r'[\1][', final)
+    # 去掉中文字符之间的多余空格（映射表占位符还原后中文词间可能残留空格）
+    final = re.sub(r'([\u4e00-\u9fff]) (?=[\u4e00-\u9fff])', r'\1', final)
     return final, total_used, quota_exceeded, failed_count
 
 
