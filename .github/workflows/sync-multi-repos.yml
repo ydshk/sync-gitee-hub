@@ -230,7 +230,7 @@ jobs:
       - name: Checkout translation-service
         uses: actions/checkout@v5
         with:
-          repository: home-assistant-xin/translation-service
+          repository: ydshk/translation-service
           path: translation-service
           token: ${{ secrets.GH_PAT || github.token }}
 
