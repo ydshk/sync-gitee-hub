@@ -280,8 +280,14 @@ jobs:
             --api-key "$DEEPL_API_KEY" \
             $FORCE_FLAG
 
-          # 3. 提交翻译修改并 push 到 Gitee（缓存不进 Gitee，保持镜像纯净）
+          # 3. 替换 GitHub 图片 URL 为 Gitee URL（图片已同步，链接需指向 Gitee）
           cd "$WORK_DIR/github_repo"
+          find . -name "*.md" -exec sed -i \
+            -e "s|https://github.com/${OWNER}/${REPO}/raw/|https://gitee.com/home-assistant-xin/${GITEE_REPO}/raw/|g" \
+            -e "s|https://raw.githubusercontent.com/${OWNER}/${REPO}/|https://gitee.com/home-assistant-xin/${GITEE_REPO}/raw/|g" \
+            {} +
+
+          # 4. 提交翻译修改并 push 到 Gitee（缓存不进 Gitee，保持镜像纯净）
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
           git add -A
