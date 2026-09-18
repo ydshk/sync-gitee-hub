@@ -1743,5 +1743,55 @@
     "source": "@CodeCommander, @MarvinSchenkel, @OzGav, @RyanAtTanagra, @balloob, @chrisuthe, @fmunkes, @jdaberkow, @marcelveldt, @remon1496",
     "api_result": "@CodeCommander、@MarvinSchenkel、@OzGav、@RyanAtTanagra、@balloob、@chrisuthe、@fmunkes、@jdaberkow、@marcelveldt、@remon1496",
     "ts": "2026-09-18T12:45:09.199924+00:00"
+  },
+  "bd9c052e412a491519c2aebe03483bccf38ed6f6719e50f4c5e0541addc7f600": {
+    "source": "- Keep provider item lookups scoped to their own media type (by @jdaberkow in #6203)\n- Keep the duplicate track walk from freezing the library database (by @OzGav in #6236)\n- Stop a hostname in the Pu",
+    "api_result": "- 将提供商项目的查找范围限定在其自身的媒体类型内（由 @jdaberkow 在 #6203 中提出）\n- 防止重复曲目遍历导致媒体库数据库冻结（由 @OzGav 在 #6236 中提出）\n- 修复“已发布 IP 地址”设置中的主机名导致播放异常的问题（由 @marcelveldt 在 #6305 中提出）\n- 从其他提供商补全无法播放的专辑曲目（由 @OzGav 在 #6310 中提出）\n- 修复 Squeezelite 播放器有时播放杂音而非音乐的问题（由 @marcelveldt 在 #6311 中提出）\n- 修复 Squeezelite 播放器在快速切换曲目时出现静音的问题（由 @marcelveldt 在 #6316 中提出）\n- 当 PO Token 服务器尚未上线时，持续重试 YouTube Music 请求（由 @CodeCommander 在 #6326 中提出）\n- 在轮询时，以调试级别记录不可用的播放器（由 @balloob 在 #6336 中提出）\n- 允许用户控制自己已连接的客户端播放器（由 @MarvinSchenkel 在 #6340 中提出）\n- 在“最近播放”中显示库外播放的 Qobuz 曲目（由 @chrisuthe 在 #6347 中提出）\n- 删除提供商已不再拥有的项目的提供商映射（由 @RyanAtTanagra 在 #6355 中提出）\n- 修复库中的艺人和专辑获取到无效提供商链接的问题（由 @marcelveldt 在 #6362 中提出）\n- 确保在 XPLHX0XPLHX 中的套接字更新期间，库内视图不会“丢失”媒体项目（由 @fmunkes 在 #6363 中提出）\n- 对于非 JSON 格式的登录请求正文，返回 HTTP 400 状态码而非 500（由 @MarvinSchenkel 在 #6371 中提交）\n- 将 YouTube Music 视为实时音源（由 @MarvinSchenkel 在 #6373 中提交）",
+    "ts": "2026-09-18T17:52:50.762421+00:00"
+  },
+  "9a0a7efe3c3e9540838e730880a9c89ffcd3e78877f1a1cf9fe981ef910d30b2": {
+    "source": "XPLHX1XPLHXXPLHX0XPLHX Thanks to our contributors",
+    "api_result": "XPLHX1XPLHXXPLHX0XPLHX 感谢各位贡献者",
+    "ts": "2026-09-18T17:52:51.736995+00:00"
+  },
+  "bdb99f1b36e9f5d6ab326cfcdc4b9c23371d80892527775ab7666fe67d8e4643": {
+    "source": "- Major XPLHX0XPLHX: Every few months (more or less once per quarter)\n- Bug fixes: As needed\n- Security updates: Immediately",
+    "api_result": "- 主要版本 XPLHX0XPLHX：每隔几个月（大致每季度一次）\n- 错误修复：按需发布\n- 安全更新：立即发布",
+    "ts": "2026-09-18T17:52:52.797863+00:00"
+  },
+  "b4454e7ba3b0393654c8f2bb19c4816fbfd58e3a5c6854b12a6691f8f2c70e49": {
+    "source": "This App uses XPLHX2XPLHX XPLHX1XPLHX of XPLHX0XPLHX. For the latest features, consider the BETA or NIGHTLY versions (use at your own risk).",
+    "api_result": "本应用使用 XPLHX2XPLHX XPLHX1XPLHX 版本的 XPLHX0XPLHX。如需体验最新功能，建议尝试 BETA 或 NIGHTLY 版本（使用风险自负）。",
+    "ts": "2026-09-18T17:52:53.862740+00:00"
+  },
+  "7de8c5ecce2e43054e22d8d7f9dcfefa0051c3832e97973698f7fe44a63fc48f": {
+    "source": "BETA XPLHX0XPLHX are feature-complete versions that are being tested before becoming XPLHX2XPLHX XPLHX1XPLHX. They typically include:",
+    "api_result": "BETA XPLHX0XPLHX 是功能齐全的版本，在正式更名为 XPLHX2XPLHX XPLHX1XPLHX 之前正在进行测试。它们通常包括：",
+    "ts": "2026-09-18T17:52:54.920058+00:00"
+  },
+  "b20c370dfc5f25a871b44a62a18fe03e7eef363ac44ab62460e4ff39e540dd0b": {
+    "source": "BETA XPLHX0XPLHX are XPLHX2XPLHX more frequently than XPLHX3XPLHX XPLHX1XPLHX. In general, more or less once a week.",
+    "api_result": "BETA XPLHX0XPLHX 比 XPLHX3XPLHX 和 XPLHX1XPLHX 更频繁地出现为 XPLHX2XPLHX。一般来说，大约每周一次。",
+    "ts": "2026-09-18T17:52:56.015858+00:00"
+  },
+  "4a5b0410f2fe3f567e9af9488b9f054ca0cc2449266dedda75770a2ae08331e9": {
+    "source": "BETA XPLHX0XPLHX are the final XPLHX3XPLHX stage before XPLHX5XPLHX XPLHX1XPLHX. Your XPLHX4XPLHX helps ensure XPLHX2XPLHX for all users!",
+    "api_result": "BETA XPLHX0XPLHX 是 XPLHX5XPLHX XPLHX1XPLHX 之前的最后一个 XPLHX3XPLHX 阶段。您的 XPLHX4XPLHX 有助于确保所有用户都能获得 XPLHX2XPLHX！",
+    "ts": "2026-09-18T17:52:57.161777+00:00"
+  },
+  "0110243fd7725ead6e0c3da2eb653bcba4c58a335ab098056174fa4c8312fc29": {
+    "source": "Unlike the regular XPLHX0XPLHX App which uses pre-built XPLHX1XPLHX, this Dev App:",
+    "api_result": "与使用预构建版 XPLHX0XPLHX 的常规 XPLHX0XPLHX 应用不同，这款开发者应用：",
+    "ts": "2026-09-18T17:52:58.490464+00:00"
+  },
+  "3237101f9d33b13d148600db3577e404c7e93a272efbc32245ef2aa1767082fd": {
+    "source": "| Feature      | Regular App       | DEV App (Nightly mode)    | DEV App (Source mode)    |\n| ------------ | ----------------- | ------------------------- | ------------------------ |\n| Installation |",
+    "api_result": "| 功能 | 常规应用 | 开发版应用（夜间模式）    | 开发版应用（源代码模式）    |\n| ------------ | ----------------- | ------------------------- | ------------------------ |\n| 安装 | 预编译版本 | 镜像中的夜间构建 | 源代码编译 |\n| 启动时间 | 快 | 快 | 较慢（构建时间） |\n| XPLHX0XPLHX    | XPLHX4XPLHX XPLHX1XPLHX   | 夜间构建 | 开发代码 |\n| 前端     | 打包版 | 打包版 | 源代码编译 |\n| 更新 | 自动 | 手动（重启） | 手动（修改配置）   |\n| 用例     | 生产环境 | 快速后端 XPLHX2XPLHX     | 完整开发/XPLHX3XPLHX |",
+    "ts": "2026-09-18T17:52:59.677941+00:00"
+  },
+  "8aef959d7aae8ae989bdf7a2c0981daa02ea2301d063cc1d9d9d6209d06b2701": {
+    "source": "- Properly surface \"Other versions\" of an album from Youtube Music (by @NasaGeek in #6159)\n- Keep the duplicate track walk from freezing the library database (by @OzGav in #6236)\n- Ensure that the in-",
+    "api_result": "- 正确显示 YouTube Music 中专辑的“其他版本”（由 @NasaGeek 在 #6159 中提出）\n- 防止重复曲目浏览导致音乐库数据库冻结（由 @OzGav 在 #6236 中提出）\n- 确保在 XPLHX0XPLHX 中的套接字更新期间，音乐库视图不会“丢失”媒体项目（由 @fmunkes 在 #6363 中提出）\n- 对于非 JSON 格式的登录请求正文，返回 HTTP 400 状态码而非 500（由 @MarvinSchenkel 在 #6371 中提出）\n- 将 YouTube Music 视为实时源（由 @MarvinSchenkel 在 #6373 中提出）",
+    "ts": "2026-09-18T17:53:00.820473+00:00"
   }
 }
