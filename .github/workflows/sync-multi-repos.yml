@@ -242,6 +242,13 @@ jobs:
             --sha-cache "$CACHE_DIR/file_shas.json" \
             $FORCE_FLAG $NO_SHA_SKIP
 
+          # 如果所有文件 SHA 未变，translate.py 会写 .all_skipped 标记，跳过后续同步
+          if [ -f "$CACHE_DIR/.all_skipped" ]; then
+            rm -f "$CACHE_DIR/.all_skipped"
+            echo "All translation files unchanged. Skipping sync to Gitee."
+            exit 0
+          fi
+
           # 3. 替换 GitHub 图片 URL 为 Gitee URL（图片已同步，链接需指向 Gitee）
           cd "$WORK_DIR/github_repo"
           find . -name "*.md" -exec sed -i \
@@ -258,7 +265,7 @@ jobs:
           git remote add gitee "$GITEE_URL"
           git checkout "$DEFAULT_BRANCH" 2>/dev/null || true
           echo "Pushing $DEFAULT_BRANCH to Gitee..."
-          git push gitee "${DEFAULT_BRANCH}:main" --force
+          git push gitee "$DEFAULT_BRANCH" --force
           echo "Pushing tags to Gitee..."
           git push gitee --tags --force
           git remote remove gitee

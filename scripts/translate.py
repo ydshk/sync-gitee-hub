@@ -233,9 +233,10 @@ def main():
     def _translate(text, cache, force_flag):
         return translate_fn(text, api_key, cache, force_flag)
 
-    translated_count = 0
-    skipped_count = 0
+    # 先遍历所有目标文件，计算 SHA，收集变动文件
+    target_files = []
     new_sha_cache = {}
+    changed_files = []
 
     for md_file in sorted(source_dir.rglob('*')):
         if md_file.is_dir():
@@ -248,12 +249,36 @@ def main():
         rel_path = str(md_file.relative_to(source_dir))
         file_sha = _file_sha(md_file)
         new_sha_cache[rel_path] = file_sha
+        target_files.append((md_file, rel_path))
 
-        if not args.force and not args.no_sha_skip and sha_cache.get(rel_path) == file_sha:
-            print(f"\nSkipping (SHA unchanged): {rel_path}")
-            skipped_count += 1
-            continue
+        if sha_cache.get(rel_path) != file_sha:
+            changed_files.append(rel_path)
 
+    # 判断是否可以全部跳过
+    all_unchanged = len(changed_files) == 0 and len(target_files) > 0
+    can_skip = all_unchanged and not args.force and not args.no_sha_skip
+
+    if can_skip:
+        print(f"\nAll {len(target_files)} files unchanged (SHA matches). Skipping translation.")
+        if sha_cache_path:
+            sha_cache_path.parent.mkdir(parents=True, exist_ok=True)
+            sha_cache_path.write_text(json.dumps(new_sha_cache, indent=2, sort_keys=True), encoding='utf-8')
+            (sha_cache_path.parent / ".all_skipped").touch()
+        print(f"\nFinal stats: {cache_mgr.stats()}")
+        print(f"Translated: 0, Skipped (all SHA unchanged): {len(target_files)}")
+        github_output = os.environ.get('GITHUB_OUTPUT')
+        if github_output:
+            with open(github_output, 'a') as f:
+                f.write("skipped=true\n")
+        return
+
+    # 有文件变动（或 force / no_sha_skip），翻译所有目标文件
+    if changed_files:
+        print(f"\nChanged files: {', '.join(changed_files)}")
+    elif not target_files:
+        print("\nNo translation target files found.")
+
+    for md_file, rel_path in target_files:
         print(f"\nTranslating: {rel_path}")
         content = md_file.read_text(encoding='utf-8')
         translated, stats = translate_markdown(content, _translate, cache_mgr, args.force)
@@ -263,7 +288,6 @@ def main():
             print(f"  Written ({len(translated)} chars) - {stats}")
         else:
             print(f"  Unchanged - {stats}")
-        translated_count += 1
 
     cache_mgr.save()
 
@@ -273,14 +297,13 @@ def main():
         sha_cache_path.write_text(json.dumps(new_sha_cache, indent=2, sort_keys=True), encoding='utf-8')
 
     print(f"\nFinal stats: {cache_mgr.stats()}")
-    print(f"Translated: {translated_count}, Skipped (SHA unchanged): {skipped_count}")
+    print(f"Translated: {len(target_files)} files, Changed: {len(changed_files)}")
 
     # 输出 skipped 标记给 GitHub Actions
     github_output = os.environ.get('GITHUB_OUTPUT')
     if github_output:
-        skipped = "true" if translated_count == 0 else "false"
         with open(github_output, 'a') as f:
-            f.write(f"skipped={skipped}\n")
+            f.write("skipped=false\n")
 
 
 if __name__ == '__main__':

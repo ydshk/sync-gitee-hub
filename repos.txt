@@ -11,7 +11,6 @@
 # === 重名场景示例（必须用映射格式）===
 # esphome 和 music-assistant 下都有 home-assistant-addon，必须分别映射
 hassio-addons/repository
-
 esphome/home-assistant-addon => esphome
 music-assistant/home-assistant-addon => music-assistant
 
