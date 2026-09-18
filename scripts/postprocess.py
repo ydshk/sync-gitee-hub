@@ -82,9 +82,11 @@ def fix_title(text):
 
 
 def fix_link(text):
-    """修复链接 text 前后多余空格"""
+    """修复链接 text 前后多余空格 + 去掉含中文链接文本末尾句号"""
     text = re.sub(r'\[\s*([^\[\]]+?)\s*\]\(', r'[\1](', text)
     text = re.sub(r'\[\s*([^\[\]]+?)\s*\]\[', r'[\1][', text)
+    text = re.sub(r'\[([^\[\]]*[\u4e00-\u9fff][^\[\]]*?)\.\]\(', r'[\1](', text)
+    text = re.sub(r'\[([^\[\]]*[\u4e00-\u9fff][^\[\]]*?)\.\]\[', r'[\1][', text)
     return text
 
 
