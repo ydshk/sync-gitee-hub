@@ -225,6 +225,7 @@ jobs:
           token: ${{ secrets.GH_PAT || github.token }}
 
       - name: Mirror + Translate to Gitee
+        id: translate
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
           GITEE_USER: ${{ secrets.GITEE_USERNAME }}
@@ -235,6 +236,18 @@ jobs:
           OWNER="${{ steps.parse.outputs.owner }}"
           REPO="${{ steps.parse.outputs.repo }}"
           GITEE_REPO="${{ steps.parse.outputs.gitee_repo }}"
+
+          # 跳过逻辑：GitHub 源无更新 + 非配置变更触发 + 非强制重译 → 跳过
+          SKIP_SYNC="${{ steps.check_update.outputs.skip_sync }}"
+          EVENT_NAME="${{ github.event_name }}"
+          FORCE_RT="${{ github.event.inputs.force_retranslate }}"
+          if [ "$SKIP_SYNC" = "true" ] && [ "$EVENT_NAME" != "push" ] && [ "$FORCE_RT" != "true" ]; then
+            echo "No changes (GitHub refs identical to Gitee), no config update, no force re-translate."
+            echo "Skipping translation and push for $OWNER/$REPO."
+            echo "skipped=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          echo "skipped=false" >> $GITHUB_OUTPUT
 
           WORK_DIR="$RUNNER_TEMP/sync-$REPO"
           rm -rf "$WORK_DIR"
@@ -289,7 +302,7 @@ jobs:
           fi
 
       - name: Upload cache artifact
-        if: always()
+        if: always() && steps.translate.outputs.skipped != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: cache-${{ steps.parse.outputs.gitee_repo }}
@@ -297,7 +310,12 @@ jobs:
           if-no-files-found: ignore
 
       - name: Report success
+        if: steps.translate.outputs.skipped != 'true'
         run: echo "Synced ${{ steps.parse.outputs.owner }}/${{ steps.parse.outputs.repo }} -> home-assistant-xin/${{ steps.parse.outputs.gitee_repo }}"
+
+      - name: Report skipped
+        if: steps.translate.outputs.skipped == 'true'
+        run: echo "Skipped ${{ steps.parse.outputs.owner }}/${{ steps.parse.outputs.repo }} (no changes detected)"
 
   finalize:
     needs: [prepare, sync]
