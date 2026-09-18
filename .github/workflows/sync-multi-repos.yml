@@ -177,42 +177,18 @@ jobs:
           fi
           exit 1
 
-      - name: Check if sync is needed (compare GitHub vs Gitee refs)
+      - name: Check if sync is needed (get GitHub HEAD SHA)
         id: check_update
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
-          GITEE_USER: ${{ secrets.GITEE_USERNAME }}
-          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
         run: |
           OWNER="${{ steps.parse.outputs.owner }}"
           REPO="${{ steps.parse.outputs.repo }}"
-          GITEE_REPO="${{ steps.parse.outputs.gitee_repo }}"
-
           GH_URL="https://x-access-token:${GH_TOKEN}@github.com/${OWNER}/${REPO}.git"
-          GITEE_URL="https://${GITEE_USER}:${GITEE_TOKEN}@gitee.com/home-assistant-xin/${GITEE_REPO}.git"
 
-          echo "Fetching refs from GitHub: $OWNER/$REPO..."
-          GH_REFS=$(git ls-remote "$GH_URL" 2>&1 | grep -v 'refs/pull/' || true)
-
-          echo "Fetching refs from Gitee: home-assistant-xin/${GITEE_REPO}..."
-          GITEE_REFS=$(git ls-remote "$GITEE_URL" 2>&1 | grep -v 'refs/pull/' || true)
-
-          # 对比两端的所有 refs（branches + tags，过滤掉 PR refs）
-          if [ "$GH_REFS" = "$GITEE_REFS" ] && [ -n "$GH_REFS" ]; then
-            echo "No changes detected. GitHub and Gitee refs are identical."
-            echo "skip_sync=true" >> $GITHUB_OUTPUT
-          else
-            echo "Changes detected (or Gitee is empty). Sync needed."
-            if [ -z "$GITEE_REFS" ]; then
-              echo "  Reason: Gitee target repo is empty (first sync)."
-            else
-              echo "  GitHub refs:"
-              echo "$GH_REFS" | sed 's/^/    /'
-              echo "  Gitee refs:"
-              echo "$GITEE_REFS" | sed 's/^/    /'
-            fi
-            echo "skip_sync=false" >> $GITHUB_OUTPUT
-          fi
+          GH_SHA=$(git ls-remote "$GH_URL" HEAD | awk '{print $1}')
+          echo "GitHub HEAD SHA: $GH_SHA"
+          echo "gh_sha=$GH_SHA" >> $GITHUB_OUTPUT
 
       - name: Checkout sync-gitee-hub (for scripts + config + cache)
         uses: actions/checkout@v5
@@ -237,12 +213,17 @@ jobs:
           REPO="${{ steps.parse.outputs.repo }}"
           GITEE_REPO="${{ steps.parse.outputs.gitee_repo }}"
 
-          # 跳过逻辑：GitHub 源无更新 + 非配置变更触发 + 非强制重译 → 跳过
-          SKIP_SYNC="${{ steps.check_update.outputs.skip_sync }}"
+          # 跳过逻辑：GitHub 源 SHA 与上次同步相同 + 非配置变更触发 + 非强制重译 → 跳过
+          GH_SHA="${{ steps.check_update.outputs.gh_sha }}"
           EVENT_NAME="${{ github.event_name }}"
           FORCE_RT="${{ github.event.inputs.force_retranslate }}"
-          if [ "$SKIP_SYNC" = "true" ] && [ "$EVENT_NAME" != "push" ] && [ "$FORCE_RT" != "true" ]; then
-            echo "No changes (GitHub refs identical to Gitee), no config update, no force re-translate."
+          CACHE_DIR="$GITHUB_WORKSPACE/cache/${GITEE_REPO}"
+          LAST_SHA=""
+          if [ -f "$CACHE_DIR/last_sync_sha.txt" ]; then
+            LAST_SHA=$(cat "$CACHE_DIR/last_sync_sha.txt")
+          fi
+          if [ "$GH_SHA" = "$LAST_SHA" ] && [ -n "$GH_SHA" ] && [ "$EVENT_NAME" != "push" ] && [ "$FORCE_RT" != "true" ]; then
+            echo "No changes (GitHub HEAD $GH_SHA matches last sync), no config update, no force re-translate."
             echo "Skipping translation and push for $OWNER/$REPO."
             echo "skipped=true" >> $GITHUB_OUTPUT
             exit 0
@@ -266,7 +247,7 @@ jobs:
           cd ..
 
           # 2. 翻译（缓存在 sync-gitee-hub 仓库内）
-          CACHE_DIR="$GITHUB_WORKSPACE/cache/${GITEE_REPO}"
+
           FORCE_FLAG=""
           if [ "${{ github.event.inputs.force_retranslate }}" = "true" ]; then
             FORCE_FLAG="--force"
@@ -287,6 +268,9 @@ jobs:
             -e "s|https://raw.githubusercontent.com/${OWNER}/${REPO}/|https://gitee.com/home-assistant-xin/${GITEE_REPO}/raw/|g" \
             {} +
 
+          # 保存 GitHub commit SHA（供下次同步对比）
+          echo "$GH_SHA" > "$CACHE_DIR/last_sync_sha.txt"
+
           # 4. 提交翻译修改并 push 到 Gitee（缓存不进 Gitee，保持镜像纯净）
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
@@ -305,6 +289,9 @@ jobs:
           mkdir -p "$WORK_DIR/artifact"
           if [ -f "$CACHE_DIR/cache.json" ]; then
             cp "$CACHE_DIR/cache.json" "$WORK_DIR/artifact/${GITEE_REPO}.json"
+          fi
+          if [ -f "$CACHE_DIR/last_sync_sha.txt" ]; then
+            cp "$CACHE_DIR/last_sync_sha.txt" "$WORK_DIR/artifact/${GITEE_REPO}.sha"
           fi
 
       - name: Upload cache artifact
@@ -346,7 +333,7 @@ jobs:
           set -e
           mkdir -p cache
 
-          # 合并各仓库缓存文件（artifact 名 cache-<gitee_repo>，内含 <gitee_repo>.json）
+          # 合并各仓库缓存文件（artifact 名 cache-<gitee_repo>，内含 <gitee_repo>.json + .sha）
           MERGED=0
           for dir in artifacts/cache-*/; do
             if [ -d "$dir" ]; then
@@ -357,6 +344,14 @@ jobs:
                   cp "$f" "cache/$GITEE_NAME/cache.json"
                   MERGED=$((MERGED + 1))
                   echo "Merged cache for $GITEE_NAME"
+                fi
+              done
+              for f in "$dir"*.sha; do
+                if [ -f "$f" ]; then
+                  GITEE_NAME=$(basename "$f" .sha)
+                  mkdir -p "cache/$GITEE_NAME"
+                  cp "$f" "cache/$GITEE_NAME/last_sync_sha.txt"
+                  echo "Merged sync SHA for $GITEE_NAME"
                 fi
               done
             fi
