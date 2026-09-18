@@ -202,7 +202,7 @@ jobs:
           GITEE_REPO="${{ steps.parse.outputs.gitee_repo }}"
 
           EVENT_NAME="${{ github.event_name }}"
-          FORCE_RT="${{ github.event.inputs.force_retranslate }}"
+
           CACHE_DIR="$GITHUB_WORKSPACE/cache/${GITEE_REPO}"
 
           WORK_DIR="$RUNNER_TEMP/sync-$REPO"
@@ -221,57 +221,35 @@ jobs:
           echo "Default branch: $DEFAULT_BRANCH"
           cd ..
 
-          # 2. 计算翻译目标文件的组合 SHA，判断是否需要同步
-          cd github_repo
-          FILE_SHAS=""
-          for f in README.md DOCS.md CHANGELOG.md; do
-            while IFS= read -r match; do
-              [ -z "$match" ] && continue
-              FILE_SHAS="${FILE_SHAS}$(sha256sum "$match")"
-            done < <(find . -maxdepth 2 -iname "$f" -not -path './.git/*' | sort)
-          done
-          COMBINED_SHA=$(printf '%s' "$FILE_SHAS" | sha256sum | awk '{print $1}')
-          cd ..
-
-          LAST_SHA=""
-          if [ -f "$CACHE_DIR/last_sync_sha.txt" ]; then
-            LAST_SHA=$(cat "$CACHE_DIR/last_sync_sha.txt")
-          fi
-
-          if [ "$COMBINED_SHA" = "$LAST_SHA" ] && [ -n "$COMBINED_SHA" ] && [ "$EVENT_NAME" != "push" ] && [ "$FORCE_RT" != "true" ]; then
-            echo "No changes (translated file SHA $COMBINED_SHA matches last sync). Skipping."
-            echo "skipped=true" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          echo "skipped=false" >> $GITHUB_OUTPUT
-          echo "Changes detected (SHA: $COMBINED_SHA vs last: $LAST_SHA). Proceeding with sync."
-
-          # 3. 翻译（缓存在 sync-gitee-hub 仓库内）
+          # 2. 翻译（逐文件 SHA 跳过未变动文件，段落缓存避免 API 调用）
 
           FORCE_FLAG=""
           if [ "${{ github.event.inputs.force_retranslate }}" = "true" ]; then
             FORCE_FLAG="--force"
             echo "Force re-translate enabled for this run."
           fi
-          echo "Translating README.md..."
+          NO_SHA_SKIP=""
+          if [ "$EVENT_NAME" = "push" ]; then
+            NO_SHA_SKIP="--no-sha-skip"
+            echo "Push event: re-applying postprocess to all files (paragraph cache still active)."
+          fi
+          echo "Translating..."
           python3 "$GITHUB_WORKSPACE/scripts/translate.py" \
             --source-dir "$WORK_DIR/github_repo" \
             --cache-dir "$CACHE_DIR" \
             --service-dir "$GITHUB_WORKSPACE/translation-service" \
             --api-key "$DEEPL_API_KEY" \
-            $FORCE_FLAG
+            --sha-cache "$CACHE_DIR/file_shas.json" \
+            $FORCE_FLAG $NO_SHA_SKIP
 
-          # 4. 替换 GitHub 图片 URL 为 Gitee URL（图片已同步，链接需指向 Gitee）
+          # 3. 替换 GitHub 图片 URL 为 Gitee URL（图片已同步，链接需指向 Gitee）
           cd "$WORK_DIR/github_repo"
           find . -name "*.md" -exec sed -i \
             -e "s|https://github.com/${OWNER}/${REPO}/raw/|https://gitee.com/home-assistant-xin/${GITEE_REPO}/raw/|g" \
             -e "s|https://raw.githubusercontent.com/${OWNER}/${REPO}/|https://gitee.com/home-assistant-xin/${GITEE_REPO}/raw/|g" \
             {} +
 
-          # 保存翻译文件组合 SHA（供下次同步对比）
-          echo "$COMBINED_SHA" > "$CACHE_DIR/last_sync_sha.txt"
-
-          # 5. 提交翻译修改并 push 到 Gitee（缓存不进 Gitee，保持镜像纯净）
+          # 4. 提交翻译修改并 push 到 Gitee（缓存不进 Gitee，保持镜像纯净）
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
           git add -A
@@ -285,13 +263,13 @@ jobs:
           git push gitee --tags --force
           git remote remove gitee
 
-          # 6. 准备缓存 artifact（供 finalize 合并）
+          # 5. 准备缓存 artifact（供 finalize 合并）
           mkdir -p "$WORK_DIR/artifact"
           if [ -f "$CACHE_DIR/cache.json" ]; then
             cp "$CACHE_DIR/cache.json" "$WORK_DIR/artifact/${GITEE_REPO}.json"
           fi
-          if [ -f "$CACHE_DIR/last_sync_sha.txt" ]; then
-            cp "$CACHE_DIR/last_sync_sha.txt" "$WORK_DIR/artifact/${GITEE_REPO}.sha"
+          if [ -f "$CACHE_DIR/file_shas.json" ]; then
+            cp "$CACHE_DIR/file_shas.json" "$WORK_DIR/artifact/${GITEE_REPO}.shas"
           fi
 
       - name: Upload cache artifact
@@ -333,7 +311,7 @@ jobs:
           set -e
           mkdir -p cache
 
-          # 合并各仓库缓存文件（artifact 名 cache-<gitee_repo>，内含 <gitee_repo>.json + .sha）
+          # 合并各仓库缓存文件（artifact 名 cache-<gitee_repo>，内含 <gitee_repo>.json + .shas）
           MERGED=0
           for dir in artifacts/cache-*/; do
             if [ -d "$dir" ]; then
@@ -346,12 +324,12 @@ jobs:
                   echo "Merged cache for $GITEE_NAME"
                 fi
               done
-              for f in "$dir"*.sha; do
+              for f in "$dir"*.shas; do
                 if [ -f "$f" ]; then
-                  GITEE_NAME=$(basename "$f" .sha)
+                  GITEE_NAME=$(basename "$f" .shas)
                   mkdir -p "cache/$GITEE_NAME"
-                  cp "$f" "cache/$GITEE_NAME/last_sync_sha.txt"
-                  echo "Merged sync SHA for $GITEE_NAME"
+                  cp "$f" "cache/$GITEE_NAME/file_shas.json"
+                  echo "Merged file SHAs for $GITEE_NAME"
                 fi
               done
             fi

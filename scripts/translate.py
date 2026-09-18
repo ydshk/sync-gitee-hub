@@ -15,6 +15,8 @@
 缓存目录由 --cache-dir 指定，物理位置在 sync-gitee-hub 仓库内（cache/<repo>/）。
 """
 import argparse
+import hashlib
+import json
 import os
 import re
 import sys
@@ -190,17 +192,26 @@ def translate_markdown(content, translate_fn, cache_mgr, force=False):
     return '\n\n'.join(results), stats
 
 
+def _file_sha(path):
+    """计算文件内容的 SHA256"""
+    h = hashlib.sha256()
+    h.update(path.read_bytes())
+    return h.hexdigest()
+
+
 def main():
     parser = argparse.ArgumentParser(description='Translate .md files to Chinese')
     parser.add_argument('--source-dir', required=True, help='源目录（英文原版）')
     parser.add_argument('--cache-dir', required=True, help='缓存目录路径')
     parser.add_argument('--service-dir', required=True, help='translation-service 目录路径')
     parser.add_argument('--api-key', default=os.environ.get('DEEPL_API_KEY'))
-    parser.add_argument('--force', action='store_true', help='强制重译，忽略缓存')
+    parser.add_argument('--force', action='store_true', help='强制重译，忽略段落缓存')
+    parser.add_argument('--sha-cache', default=None, help='逐文件 SHA 缓存路径（file_shas.json）')
+    parser.add_argument('--no-sha-skip', action='store_true', help='跳过文件 SHA 对比，处理所有文件（段落缓存仍生效）')
     args = parser.parse_args()
 
     if args.force:
-        print("::warning::--force enabled, ignoring cache.")
+        print("::warning::--force enabled, ignoring paragraph cache.")
 
     # 加载 translation-service（缓存查询 + 翻译）
     service_path = Path(args.service_dir).resolve()
@@ -213,8 +224,18 @@ def main():
     cache_mgr = CacheManager(args.cache_dir).load()
     print(f"Cache: {cache_mgr.stats()}")
 
+    # 加载逐文件 SHA 缓存
+    sha_cache = {}
+    sha_cache_path = Path(args.sha_cache) if args.sha_cache else None
+    if sha_cache_path and sha_cache_path.exists():
+        sha_cache = json.loads(sha_cache_path.read_text(encoding='utf-8'))
+
     def _translate(text, cache, force_flag):
         return translate_fn(text, api_key, cache, force_flag)
+
+    translated_count = 0
+    skipped_count = 0
+    new_sha_cache = {}
 
     for md_file in sorted(source_dir.rglob('*')):
         if md_file.is_dir():
@@ -224,7 +245,16 @@ def main():
         if md_file.parent != source_dir and md_file.parent.parent != source_dir:
             continue
 
-        print(f"\nTranslating: {md_file.relative_to(source_dir)}")
+        rel_path = str(md_file.relative_to(source_dir))
+        file_sha = _file_sha(md_file)
+        new_sha_cache[rel_path] = file_sha
+
+        if not args.force and not args.no_sha_skip and sha_cache.get(rel_path) == file_sha:
+            print(f"\nSkipping (SHA unchanged): {rel_path}")
+            skipped_count += 1
+            continue
+
+        print(f"\nTranslating: {rel_path}")
         content = md_file.read_text(encoding='utf-8')
         translated, stats = translate_markdown(content, _translate, cache_mgr, args.force)
 
@@ -233,9 +263,24 @@ def main():
             print(f"  Written ({len(translated)} chars) - {stats}")
         else:
             print(f"  Unchanged - {stats}")
+        translated_count += 1
 
     cache_mgr.save()
+
+    # 保存逐文件 SHA 缓存
+    if sha_cache_path:
+        sha_cache_path.parent.mkdir(parents=True, exist_ok=True)
+        sha_cache_path.write_text(json.dumps(new_sha_cache, indent=2, sort_keys=True), encoding='utf-8')
+
     print(f"\nFinal stats: {cache_mgr.stats()}")
+    print(f"Translated: {translated_count}, Skipped (SHA unchanged): {skipped_count}")
+
+    # 输出 skipped 标记给 GitHub Actions
+    github_output = os.environ.get('GITHUB_OUTPUT')
+    if github_output:
+        skipped = "true" if translated_count == 0 else "false"
+        with open(github_output, 'a') as f:
+            f.write(f"skipped={skipped}\n")
 
 
 if __name__ == '__main__':
