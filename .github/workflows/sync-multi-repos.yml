@@ -177,18 +177,6 @@ jobs:
           fi
           exit 1
 
-      - name: Check if sync is needed (get GitHub HEAD SHA)
-        id: check_update
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
-        run: |
-          OWNER="${{ steps.parse.outputs.owner }}"
-          REPO="${{ steps.parse.outputs.repo }}"
-          GH_URL="https://x-access-token:${GH_TOKEN}@github.com/${OWNER}/${REPO}.git"
-
-          GH_SHA=$(git ls-remote "$GH_URL" HEAD | awk '{print $1}')
-          echo "GitHub HEAD SHA: $GH_SHA"
-          echo "gh_sha=$GH_SHA" >> $GITHUB_OUTPUT
 
       - name: Checkout sync-gitee-hub (for scripts + config + cache)
         uses: actions/checkout@v5
@@ -213,22 +201,9 @@ jobs:
           REPO="${{ steps.parse.outputs.repo }}"
           GITEE_REPO="${{ steps.parse.outputs.gitee_repo }}"
 
-          # 跳过逻辑：GitHub 源 SHA 与上次同步相同 + 非配置变更触发 + 非强制重译 → 跳过
-          GH_SHA="${{ steps.check_update.outputs.gh_sha }}"
           EVENT_NAME="${{ github.event_name }}"
           FORCE_RT="${{ github.event.inputs.force_retranslate }}"
           CACHE_DIR="$GITHUB_WORKSPACE/cache/${GITEE_REPO}"
-          LAST_SHA=""
-          if [ -f "$CACHE_DIR/last_sync_sha.txt" ]; then
-            LAST_SHA=$(cat "$CACHE_DIR/last_sync_sha.txt")
-          fi
-          if [ "$GH_SHA" = "$LAST_SHA" ] && [ -n "$GH_SHA" ] && [ "$EVENT_NAME" != "push" ] && [ "$FORCE_RT" != "true" ]; then
-            echo "No changes (GitHub HEAD $GH_SHA matches last sync), no config update, no force re-translate."
-            echo "Skipping translation and push for $OWNER/$REPO."
-            echo "skipped=true" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          echo "skipped=false" >> $GITHUB_OUTPUT
 
           WORK_DIR="$RUNNER_TEMP/sync-$REPO"
           rm -rf "$WORK_DIR"
@@ -246,7 +221,32 @@ jobs:
           echo "Default branch: $DEFAULT_BRANCH"
           cd ..
 
-          # 2. 翻译（缓存在 sync-gitee-hub 仓库内）
+          # 2. 计算翻译目标文件的组合 SHA，判断是否需要同步
+          cd github_repo
+          FILE_SHAS=""
+          for f in README.md DOCS.md CHANGELOG.md; do
+            while IFS= read -r match; do
+              [ -z "$match" ] && continue
+              FILE_SHAS="${FILE_SHAS}$(sha256sum "$match")"
+            done < <(find . -maxdepth 2 -iname "$f" -not -path './.git/*' | sort)
+          done
+          COMBINED_SHA=$(printf '%s' "$FILE_SHAS" | sha256sum | awk '{print $1}')
+          cd ..
+
+          LAST_SHA=""
+          if [ -f "$CACHE_DIR/last_sync_sha.txt" ]; then
+            LAST_SHA=$(cat "$CACHE_DIR/last_sync_sha.txt")
+          fi
+
+          if [ "$COMBINED_SHA" = "$LAST_SHA" ] && [ -n "$COMBINED_SHA" ] && [ "$EVENT_NAME" != "push" ] && [ "$FORCE_RT" != "true" ]; then
+            echo "No changes (translated file SHA $COMBINED_SHA matches last sync). Skipping."
+            echo "skipped=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          echo "skipped=false" >> $GITHUB_OUTPUT
+          echo "Changes detected (SHA: $COMBINED_SHA vs last: $LAST_SHA). Proceeding with sync."
+
+          # 3. 翻译（缓存在 sync-gitee-hub 仓库内）
 
           FORCE_FLAG=""
           if [ "${{ github.event.inputs.force_retranslate }}" = "true" ]; then
@@ -261,17 +261,17 @@ jobs:
             --api-key "$DEEPL_API_KEY" \
             $FORCE_FLAG
 
-          # 3. 替换 GitHub 图片 URL 为 Gitee URL（图片已同步，链接需指向 Gitee）
+          # 4. 替换 GitHub 图片 URL 为 Gitee URL（图片已同步，链接需指向 Gitee）
           cd "$WORK_DIR/github_repo"
           find . -name "*.md" -exec sed -i \
             -e "s|https://github.com/${OWNER}/${REPO}/raw/|https://gitee.com/home-assistant-xin/${GITEE_REPO}/raw/|g" \
             -e "s|https://raw.githubusercontent.com/${OWNER}/${REPO}/|https://gitee.com/home-assistant-xin/${GITEE_REPO}/raw/|g" \
             {} +
 
-          # 保存 GitHub commit SHA（供下次同步对比）
-          echo "$GH_SHA" > "$CACHE_DIR/last_sync_sha.txt"
+          # 保存翻译文件组合 SHA（供下次同步对比）
+          echo "$COMBINED_SHA" > "$CACHE_DIR/last_sync_sha.txt"
 
-          # 4. 提交翻译修改并 push 到 Gitee（缓存不进 Gitee，保持镜像纯净）
+          # 5. 提交翻译修改并 push 到 Gitee（缓存不进 Gitee，保持镜像纯净）
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
           git add -A
@@ -285,7 +285,7 @@ jobs:
           git push gitee --tags --force
           git remote remove gitee
 
-          # 4. 准备缓存 artifact（供 finalize 合并）
+          # 6. 准备缓存 artifact（供 finalize 合并）
           mkdir -p "$WORK_DIR/artifact"
           if [ -f "$CACHE_DIR/cache.json" ]; then
             cp "$CACHE_DIR/cache.json" "$WORK_DIR/artifact/${GITEE_REPO}.json"
