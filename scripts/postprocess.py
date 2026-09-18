@@ -51,7 +51,7 @@ def fix_bold(text):
             return line + '**'
         return line[:idx] + line[idx + 2:]
     text = '\n'.join(_fix_bold_per_line(ln) for ln in text.split('\n'))
-    text = re.sub(r'\*\* (?=\S)', '**', text)
+    text = re.sub(r'\*\*(.+?)\*\*', _strip_bold, text)
     return text
 
 
