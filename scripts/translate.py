@@ -112,6 +112,8 @@ def extract_protected(text):
         if term in text:
             text = text.replace(term, _make_ph(term))
 
+    text = re.sub(r':[a-zA-Z0-9_+-]+:', _protect, text)
+
     def _protect_link(m):
         return f'{_make_ph("[")}{m.group(1)}{_make_ph(f"]{m.group(2)}")}'
     text = re.sub(r'\[([^\]]*)\](\([^)]*(?:\s+"[^"]*")?\))', _protect_link, text)

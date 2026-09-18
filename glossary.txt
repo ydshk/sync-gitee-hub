@@ -7,4 +7,9 @@ Music Assistant Server
 Music Assistant
 Home Assistant
 ESPHome
+Actual Budget
+Audiobookshelf
+Stirling PDF
+The Lounge
+AdGuard Home
 
