@@ -1703,5 +1703,45 @@
     "source": "Use this URL in the XPLHX0XPLHX NetEase provider configuration.",
     "api_result": "请在 XPLHX0XPLHX 网易提供商的配置中使用此 URL。",
     "ts": "2026-09-18T04:40:49.926286+00:00"
+  },
+  "44d877c2011da0abdc5b256024b9f7cab1f23a4458b16e8e5b0f43702baf6803": {
+    "source": "XPLHX0XPLHX[2.10.4] - 18.09.2026",
+    "api_result": "XPLHX0XPLHX[2.10.4] - 2026年9月18日",
+    "ts": "2026-09-18T12:45:02.983323+00:00"
+  },
+  "262192b84b0182a4b5fcbf72127d95187cbc3ffb6327a0b7a9768229053f9e5c": {
+    "source": "_Changes since XPLHX0XPLHX2.10.3XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.10.3XPLHX1XPLHX 以来的更改_",
+    "ts": "2026-09-18T12:45:03.800891+00:00"
+  },
+  "87c961b1043b4e9ec8462a9a2fb51fd4d23e6c416485db70227a3e56856968de": {
+    "source": "- Let the sample rates setting apply to Sonos players (by @RyanAtTanagra in #6356)",
+    "api_result": "- 让采样率设置适用于 Sonos 播放器（由 @RyanAtTanagra 在 #6356 中提出）",
+    "ts": "2026-09-18T12:45:04.625603+00:00"
+  },
+  "6e616101b99822c3634ac958d6d71410389ee59f1e690bc8ca6a0169d3cfbcca": {
+    "source": "- Keep provider item lookups scoped to their own media type (by @jdaberkow in #6203)\n- Keep the duplicate track walk from freezing the library database (by @OzGav in #6236)\n- Stop a hostname in the Pu",
+    "api_result": "- 将提供商项目的查找范围限制在其自身的媒体类型内（由 @jdaberkow 在 #6203 中提出）\n- 防止重复曲目遍历导致库数据库冻结（由 @OzGav 在 #6236 中提出）\n- 修复“已发布 IP 地址”设置中的主机名导致播放异常的问题（由 @marcelveldt 在 #6305 中提出）\n- 从其他提供商补全无法播放的专辑曲目（由 @OzGav 在 #6310 中提出）\n- 修复 Squeezelite 播放器有时播放杂音而非音乐的问题（由 @marcelveldt 在 #6311 中提出）\n- 修复 Squeezelite 播放器在快速切换曲目时出现静音的问题（由 @marcelveldt 在 #6316 中提出）\n- 当 PO Token 服务器尚未上线时，持续重试 YouTube Music 连接（由 @CodeCommander 在 #6326 中提出）\n- 在轮询时，以调试级别记录不可用的播放器（由 @balloob 在 #6336 中提交）\n- 允许用户控制自己已连接的客户端播放器（由 @MarvinSchenkel 在 #6340 中提交）\n- 在“最近播放”中显示库外播放的 Qobuz 曲目（由 @chrisuthe 在 #6347 中提出）\n- 移除提供商已不再拥有的项目的提供商映射（由 @RyanAtTanagra 在 #6355 中提出）\n- 修复音乐库中的艺人和专辑错误获取无效提供商链接的问题（由 @marcelveldt 在 #6362 中提出）\n- 确保在 Audiobookshelf 进行套接字更新时，音乐库视图不会“丢失”媒体项目（由 @fmunkes 在 #6363 中提出）\n- 对于非 JSON 格式的登录请求主体，返回 HTTP 400 状态码而非 500（由 @MarvinSchenkel 在 #6371 中提出）\n- 将 YouTube Music 视为实时音源（由 @MarvinSchenkel 在 #6373 中提出）",
+    "ts": "2026-09-18T12:45:05.685713+00:00"
+  },
+  "06bba9509da3dc858b2bf832264f1529ad99791af245084c3c29d86a849ed5c5": {
+    "source": "XPLHX0XPLHXOther Changes",
+    "api_result": "XPLHX0XPLHX其他变更",
+    "ts": "2026-09-18T12:45:06.387143+00:00"
+  },
+  "acbd090c99f03b38e13b08428f588525845d05b7b20e86ab9aaa65e50fb1a3d3": {
+    "source": "- Fix library artists and albums picking up an invalid provider link (by @marcelveldt in #6366)",
+    "api_result": "- 修复了音乐库中的艺人和专辑抓取到无效提供商链接的问题（由 @marcelveldt 在 #6366 中提出）",
+    "ts": "2026-09-18T12:45:07.226652+00:00"
+  },
+  "8a0d5db34acf1db8cad1e287d957e14a181008dce09d1b16aafb3d3208e2ceae": {
+    "source": "- Fix memory build-up when a crossfade gets interrupted (by @marcelveldt in #6341)\n- Clarify that manual button presses are needed for Spotify setup flow (by @remon1496 in #6383)",
+    "api_result": "- 修复了淡入淡出效果被中断时内存堆积的问题（由 @marcelveldt 在 #6341 中提出）\n- 明确指出在 Spotify 设置流程中需要手动点击按钮（由 @remon1496 在 #6383 中提出）",
+    "ts": "2026-09-18T12:45:08.225546+00:00"
+  },
+  "909849cbbf7511f0059ca3964e7d108033a84d0dd745c5b72760c9153b794f47": {
+    "source": "@CodeCommander, @MarvinSchenkel, @OzGav, @RyanAtTanagra, @balloob, @chrisuthe, @fmunkes, @jdaberkow, @marcelveldt, @remon1496",
+    "api_result": "@CodeCommander、@MarvinSchenkel、@OzGav、@RyanAtTanagra、@balloob、@chrisuthe、@fmunkes、@jdaberkow、@marcelveldt、@remon1496",
+    "ts": "2026-09-18T12:45:09.199924+00:00"
   }
 }
