@@ -21,3 +21,5 @@ issues => 问题
 Version => 版本
 Logs => 日志
 stable => 稳定
+Tip => 提示
+Both empty => 两者均为空

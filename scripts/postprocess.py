@@ -36,10 +36,11 @@ def cjk_latin_spacing(text):
 
 
 def fix_bold(text):
-    """修复加粗内部前后空格 + 按行修复奇数个 **"""
+    """修复加粗内部前后空格 + 去掉标点外加粗 + 按行修复奇数个 **"""
     def _strip_bold(m):
         return f'**{m.group(1).strip()}**'
     text = re.sub(r'\*\*(.+?)\*\*', _strip_bold, text)
+    text = re.sub(r'\*\*([。，；！？])\*\*', r'\1', text)
 
     def _fix_bold_per_line(line):
         if line.count('**') % 2 == 0:
