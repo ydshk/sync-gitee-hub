@@ -89,6 +89,8 @@ def fix_link(text):
     text = re.sub(r'\[([^\[\]]*[\u4e00-\u9fff][^\[\]]*?)\.\]\(', r'[\1](', text)
     text = re.sub(r'\[([^\[\]]*[\u4e00-\u9fff][^\[\]]*?)\.\]\[', r'[\1][', text)
     text = re.sub(r'([\u4e00-\u9fff]) \[([\u4e00-\u9fff])', r'\1[\2', text)
+    text = re.sub(r'([\u4e00-\u9fff]\]\([^)]*\))\s+([\u4e00-\u9fff])', r'\1\2', text)
+    text = re.sub(r'([\u4e00-\u9fff]\]\[[^\]]*\])\s+([\u4e00-\u9fff])', r'\1\2', text)
     return text
 
 
