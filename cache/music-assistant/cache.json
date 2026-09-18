@@ -1713,5 +1713,35 @@
     "source": "Use this URL in the XPLHX0XPLHX NetEase provider configuration.",
     "api_result": "请在 XPLHX0XPLHX 网易提供商的配置中使用此 URL。",
     "ts": "2026-09-18T03:51:37.816078+00:00"
+  },
+  "069e8113fb22464d9435a7254761e4e605548a9df345b84376953b4f49ed5235": {
+    "source": "XPLHX0XPLHX[2.11.0.dev2026091803] - 18.09.2026",
+    "api_result": "XPLHX0XPLHX[2.11.0.dev2026091803] - 2026年9月18日",
+    "ts": "2026-09-18T03:57:58.810123+00:00"
+  },
+  "669a13ce47bcb2ca3cdc1eef98ea59cd2233567b68a9e60d20fcb7a66e0e787d": {
+    "source": "_Changes since XPLHX0XPLHX2.11.0.dev2026091703XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.11.0.dev2026091703XPLHX1XPLHX_ 以来的更改_",
+    "ts": "2026-09-18T03:57:59.799378+00:00"
+  },
+  "b627b8bba1898920b114c47d5cc84ed51c5da92872ec1cf71e8e832324f96cc5": {
+    "source": "- Wake sleeping Sonos portable speakers automatically (by @MarvinSchenkel in #6342)\n- Sync a Plex library as soon as Plex reports that it changed (by @RyanAtTanagra in #6354)",
+    "api_result": "- 自动唤醒处于休眠状态的 Sonos 便携式音箱（由 @MarvinSchenkel 在 #6342 中提出）\n- 一旦 Plex 报告内容发生变化，立即同步 Plex 媒体库（由 @RyanAtTanagra 在 #6354 中提出）",
+    "ts": "2026-09-18T03:58:00.916970+00:00"
+  },
+  "763af4029a340f08bde239afc2933f4b05997f68b3959d27d52de6a00d9832a1": {
+    "source": "- Offer a short tour of the app after onboarding and from the profile menu (by @marcelveldt in XPLHX0XPLHX#2791XPLHX1XPLHX)\n- Show the music sources shared with you in Settings and tidy up user manage",
+    "api_result": "- 在完成入门指南后以及从个人资料菜单中提供应用的简短导览（由 @marcelveldt 在 XPLHX0XPLHX#2791XPLHX1XPLHX 提出）\n- 在“设置”中显示与您共享的音乐来源，并优化用户管理（由 @marcelveldt 发布于 XPLHX2XPLHX#2792XPLHX3XPLHX）\n- 在设置向导中显示已检测到的播放器（由 @marcelveldt 提出，见 XPLHX4XPLHX#2790XPLHX5XPLHX）\n- 向新用户询问是否选择标准或专家模式，并将欢迎流程拆分为简短步骤（由 @marcelveldt 在 XPLHX6XPLHX#2789XPLHX7XPLHX 中提出）",
+    "ts": "2026-09-18T03:58:01.913827+00:00"
+  },
+  "3020254af16ced0d860c354c83d117422b7762ca8033b7cd0c5c0de4b70eaee3": {
+    "source": "- Clarify that manual button presses are needed for Spotify setup flow (by @remon1496 in #6383)",
+    "api_result": "- 明确指出 Spotify 设置流程需要手动点击按钮（由 @remon1496 在 #6383 中提出）",
+    "ts": "2026-09-18T03:58:02.830668+00:00"
+  },
+  "c38866b06c707679db9271a14988d7dc00a9c4812e1901aeb0624d8be206505e": {
+    "source": "@MarvinSchenkel, @RyanAtTanagra, @marcelveldt, @remon1496",
+    "api_result": "@MarvinSchenkel、@RyanAtTanagra、@marcelveldt、@remon1496",
+    "ts": "2026-09-18T03:58:03.720805+00:00"
   }
 }
