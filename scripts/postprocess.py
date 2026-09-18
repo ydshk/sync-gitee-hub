@@ -59,11 +59,12 @@ def fix_not_untranslated(text):
 
 
 def fix_duplicate_cjk(text):
-    """去掉连续重复的中文词（版本版本→版本，步骤步骤→步骤）"""
+    """去掉重复的中文词（版本版本→版本，步骤步骤→步骤，问题的问题→问题）"""
     prev = None
     while text != prev:
         prev = text
         text = re.sub(r'([\u4e00-\u9fff]{2,})\1', r'\1', text)
+        text = re.sub(r'([\u4e00-\u9fff]{2,})的\1', r'\1', text)
     return text
 
 
