@@ -102,9 +102,11 @@ def fix_cjk_space(text):
 
 
 def fix_punct_space(text):
-    """去掉中文标点前后的多余空格"""
+    """去掉中文标点前后的多余空格和软换行"""
     text = re.sub(r' ([，。！？；：）」】（])', r'\1', text)
     text = re.sub(r'([，。！？；：（「【]) ', r'\1', text)
+    text = re.sub(r'([\u4e00-\u9fff])\n([，。！？；：）」】（])', r'\1\2', text)
+    text = re.sub(r'([，。！？；：（「【])\n([\u4e00-\u9fff])', r'\1\2', text)
     return text
 
 
