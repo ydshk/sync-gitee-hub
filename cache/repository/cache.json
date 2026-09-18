@@ -10373,5 +10373,20 @@
     "source": "Fully configurable Z-Wave JS control panel and MQTT gateway.",
     "api_result": "完全可配置的 Z-Wave JS 控制面板和 MQTT 网关。",
     "ts": "2026-09-18T14:59:16.548548+00:00"
+  },
+  "eb428bb239b61ad6c227d63671bd3567eb6ca74e8910f4d244f37705894704cd": {
+    "source": "- Restore the administrator role of dashboard users from EMQX 5.2 and older @frenck (XPLHX0XPLHX#179XPLHX1XPLHX)",
+    "api_result": "- 恢复 EMQX 5.2 及更早版本中仪表盘用户的管理员角色 @frenck (XPLHX0XPLHX#179XPLHX1XPLHX)",
+    "ts": "2026-09-18T16:38:46.835534+00:00"
+  },
+  "6ab051ab1dbe86d2ec7732b096586f46f0005b88775e4a52e9df71ca9e841fbc": {
+    "source": "- ⬆️ Update emqx/emqx to v6.3.1 @[renovate[bot]](XPLHX2XPLHX) (XPLHX0XPLHX#178XPLHX1XPLHX)",
+    "api_result": "- ⬆️ 将 emqx/emqx 更新至 v6.3.1 @[renovate[bot]](XPLHX2XPLHX) (XPLHX0XPLHX#178XPLHX1XPLHX)",
+    "ts": "2026-09-18T16:38:47.910441+00:00"
+  },
+  "5c8f8a782ce5f9eac4a266afe29ea627194346bffee08f649ee6d7b1c3af5c17": {
+    "source": "Dashboard users created on EMQX 5.2 or older, which includes the XPLHX2XPLHX\nXPLHX0XPLHX user of any installation from that time, were stored without a role.\nEMQX 6 takes a missing role to mean the us",
+    "api_result": "在 EMQX 5.2 或更早版本上创建的仪表盘用户（包括当时任何安装中名为 XPLHX2XPLHX\nXPLHX0XPLHX 的用户）在存储时未分配角色。\nEMQX 6 将缺少角色视为该用户并非管理员，\n并会以 XPLHX1XPLHX 错误为由拒绝其进行用户和 API 密钥管理。\n该应用在每次启动时都会为这些用户赋予他们原本就拥有的管理员角色，\n因此无需进行任何操作；但如果您在该功能上线前曾遇到过此错误，\n只需更新该应用即可。",
+    "ts": "2026-09-18T16:38:49.053285+00:00"
   }
 }
