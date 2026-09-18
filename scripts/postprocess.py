@@ -95,8 +95,10 @@ def fix_link(text):
 
 
 def fix_cjk_space(text):
-    """去掉中文字符之间的多余空格"""
-    return re.sub(r'([\u4e00-\u9fff]) (?=[\u4e00-\u9fff])', r'\1', text)
+    """去掉中文字符之间的多余空格和软换行"""
+    text = re.sub(r'([\u4e00-\u9fff]) (?=[\u4e00-\u9fff])', r'\1', text)
+    text = re.sub(r'([\u4e00-\u9fff])\n([\u4e00-\u9fff])', r'\1\2', text)
+    return text
 
 
 def fix_punct_space(text):
