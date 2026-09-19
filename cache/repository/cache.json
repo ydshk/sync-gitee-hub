@@ -10318,5 +10318,145 @@
     "source": "Fully configurable Z-Wave JS control panel and MQTT gateway.",
     "api_result": "完全可配置的 Z-Wave JS 控制面板和 MQTT 网关。",
     "ts": "2026-09-18T18:23:23.123684+00:00"
+  },
+  "b4c93bcf8e2977ccc7362b7d71283aa75b0fc96d8766c38b1e167492ba488fb0": {
+    "source": "- Add options for the safe browsing and parental control block hosts @frenck (XPLHX0XPLHX#728XPLHX1XPLHX)",
+    "api_result": "- 为安全浏览和家长控制功能添加阻止主机名的选项 @frenck (XPLHX0XPLHX#728XPLHX1XPLHX)",
+    "ts": "2026-09-19T03:55:30.792488+00:00"
+  },
+  "96c6a031f9562a46fa465f7df2f8394c8144b86ea8c6704adab70b391b67f12f": {
+    "source": "- Restore the XPLHX0XPLHX configuration when it is found damaged on start @frenck (XPLHX1XPLHX#729XPLHX2XPLHX)",
+    "api_result": "- 当在启动时发现 XPLHX0XPLHX 配置已损坏时，将其恢复 @frenck (XPLHX1XPLHX#729XPLHX2XPLHX)",
+    "ts": "2026-09-19T03:55:31.677835+00:00"
+  },
+  "d263ee199231c684503fb4385581ec51d1320ff33f92898543a4fa8c9151e537": {
+    "source": "- Explicitly request NET_RAW privileges @agners (XPLHX0XPLHX#726XPLHX1XPLHX)",
+    "api_result": "- 明确请求 NET_RAW 权限 @agners (XPLHX0XPLHX#726XPLHX1XPLHX)",
+    "ts": "2026-09-19T03:55:32.420441+00:00"
+  },
+  "c6a17de4c3481c3e1b381072c422a48b232af34c5b8fb406e0092948623b4dcc": {
+    "source": "- Migrate the s6 user bundle to /etc/s6-overlay/user-bundles.d @frenck (XPLHX0XPLHX#727XPLHX1XPLHX)",
+    "api_result": "- 将 s6 用户包迁移到 /etc/s6-overlay/user-bundles.d @frenck (XPLHX0XPLHX#727XPLHX1XPLHX)",
+    "ts": "2026-09-19T03:55:33.224883+00:00"
+  },
+  "4f31d72bccd0919320eeab634c780d3da0db923c5a2f9f857e0b07c744552d23": {
+    "source": "- ⬆️ Update hassio-addons/workflows action to v4 @[renovate[bot]](XPLHX10XPLHX) (XPLHX0XPLHX#719XPLHX1XPLHX)\n- ⬆️ Update ghcr.io/hassio-addons/base Docker tag to v21.0.3 @[renovate[bot]](XPLHX11XPLHX)",
+    "api_result": "- ⬆️ 将 hassio-addons/workflows 操作更新至 v4 @[renovate[bot]](XPLHX10XPLHX) (XPLHX0XPLHX#719XPLHX1XPLHX)\n- ⬆️ 将 ghcr.io/hassio-addons/base 的 Docker 标签更新至 v21.0.3 @[renovate[bot]](XPLHX11XPLHX) (XPLHX2XPLHX#721XPLHX3XPLHX)\n- ⬆️ 将 ghcr.io/hassio-addons/base 的 Docker 标签更新为 v21.0.4 @[renovate[bot]](XPLHX12XPLHX) (XPLHX4XPLHX#722XPLHX5XPLHX)\n- ⬆️ 将 alpine_3_24/yq-go 更新至 v4.53.3-r1 @[renovate[bot]](XPLHX13XPLHX) (XPLHX6XPLHX#723XPLHX7XPLHX)\n- ⬆️ 将ghcr.io/hassio-addons/base的Docker标签更新至v21.0.5 @[renovate[bot]](XPLHX14XPLHX) (XPLHX8XPLHX#724XPLHX9XPLHX)",
+    "ts": "2026-09-19T03:55:34.176209+00:00"
+  },
+  "90d336f21c9fc18f59b343950966d82e8951ad132fe08713304cde8f0307c059": {
+    "source": "The host name XPLHX1XPLHX answers with for requests blocked by its safe\nbrowsing filter. By XPLHX2XPLHX, this is XPLHX0XPLHX, which\nresolves to an external block page hosted by AdGuard, and therefore ",
+    "api_result": "主机名 XPLHX1XPLHX 会对其安全\n浏览过滤器拦截的请求作出响应。 通过 XPLHX2XPLHX，该主机名解析为 XPLHX0XPLHX，\n该地址指向由 AdGuard 托管的外部拦截页面，因此将\n被拦截的主机名泄露给了该外部服务。",
+    "ts": "2026-09-19T03:55:35.224721+00:00"
+  },
+  "5406ab50ef4e2bf1905fc9df4f5dd45cd5644bd2005d08db2f0c20904df275d9": {
+    "source": "Set this to a host name of your own to keep those requests local, for\nexample when using a custom block page.",
+    "api_result": "请将此处设置为您自己的主机名，以确保这些请求在本地处理，\n例如在使用自定义阻止页面时。",
+    "ts": "2026-09-19T03:55:36.061656+00:00"
+  },
+  "42f370c7082aa23929daa69043855c96359b0ecb879c8baca0a0414b3576dd09": {
+    "source": "XPLHX0XPLHXXPLHX2XPLHXXPLHX1XPLHX: _This setting is only applied when the option is set. Removing the\noption again keeps the last configured value._",
+    "api_result": "XPLHX0XPLHXXPLHX2XPLHXXPLHX1XPLHX：_此设置仅在启用该选项时生效。再次取消\n该选项后，系统将保留上次配置的值。_",
+    "ts": "2026-09-19T03:55:36.948528+00:00"
+  },
+  "d0c77d9a5e17b48a03ef2f0d8988093aa7747a0bfbd87c81de5d77f115f9f659": {
+    "source": "The host name XPLHX1XPLHX answers with for requests blocked by its parental\ncontrol filter. By XPLHX2XPLHX, this is XPLHX0XPLHX, which\nresolves to an external block page hosted by AdGuard, and therefo",
+    "api_result": "主机名 XPLHX1XPLHX 会对被其家长控制\n过滤器拦截的请求做出响应。 通过 XPLHX2XPLHX，该主机名为 XPLHX0XPLHX，\n该名称解析为由 AdGuard 托管的外部拦截页面，因此将\n被拦截的主机名泄露给了该外部服务。",
+    "ts": "2026-09-19T03:55:37.812727+00:00"
+  },
+  "12b8538cd0ca8018d2fd8bc1e8086a2412000e1261d6a0044299669723e32762": {
+    "source": "- ⬆️ Update sqlite3 to v3.46.1-7+deb13u2 @[renovate[bot]](XPLHX6XPLHX) (XPLHX0XPLHX#455XPLHX1XPLHX)\n- ⬆️ Update nginx to v1.26.3-3+deb13u8 @frenck (XPLHX2XPLHX#457XPLHX3XPLHX)\n- ⬆️ Update vaultwarden/",
+    "api_result": "- ⬆️ 将 sqlite3 更新至 v3.46.1-7+deb13u2 @[renovate[bot]](XPLHX6XPLHX) (XPLHX0XPLHX#455XPLHX1XPLHX)\n- ⬆️ 将 nginx 更新至 v1.26.3-3+deb13u8 @frenck (XPLHX2XPLHX#457XPLHX3XPLHX)\n- ⬆️ 将 vaultwarden/server 的 Docker 标签更新至 v1.37.3 @[renovate[bot]](XPLHX7XPLHX) (XPLHX4XPLHX#456XPLHX5XPLHX)",
+    "ts": "2026-09-19T03:55:38.846522+00:00"
+  },
+  "0525e09b543a7e1937171940ba8522839e7e74f19f9a3c360f00d29bef56b46d": {
+    "source": "- ✨ Add support for InfluxDB v3 @frenck (XPLHX0XPLHX#667XPLHX1XPLHX)",
+    "api_result": "- ✨ 添加了对 InfluxDB v3 的支持 @frenck (XPLHX0XPLHX#667XPLHX1XPLHX)",
+    "ts": "2026-09-19T03:55:39.797212+00:00"
+  },
+  "77359c004a1977c8302a613e5fc4dd4fab8e4852df09d79d288207ccbf9125fa": {
+    "source": "- 🐛 Only signal PIDs that are still running children @matiasmacera (XPLHX0XPLHX#664XPLHX1XPLHX)\n- 🐛 Stop monitoring the size of /share and /media @frenck (XPLHX2XPLHX#666XPLHX3XPLHX)",
+    "api_result": "- 🐛 仅报告仍在运行子进程的信号 PID @matiasmacera (XPLHX0XPLHX#664XPLHX1XPLHX)\n- 🐛 停止监控 /share 和 /media 的大小 @frenck (XPLHX2XPLHX#666XPLHX3XPLHX)",
+    "ts": "2026-09-19T03:55:40.655879+00:00"
+  },
+  "0adc91033690eb2365bb786e0fa5a1211bf4ec81ae22a324f23508fb81f3b394": {
+    "source": "- 🐛 Stop monitoring the size of /share and /media @frenck (XPLHX0XPLHX#666XPLHX1XPLHX)",
+    "api_result": "- 🐛 停止监控 /share 和 /media 的大小 @frenck (XPLHX0XPLHX#666XPLHX1XPLHX)",
+    "ts": "2026-09-19T03:55:41.439171+00:00"
+  },
+  "e1e6884688c0d75642ee8b270da3c9543f844f325fa10c03a230267df746730d": {
+    "source": "- ⬆️ Update uvicorn to v0.53.0 @[renovate[bot]](XPLHX2XPLHX) (XPLHX0XPLHX#665XPLHX1XPLHX)",
+    "api_result": "- ⬆️ 将 uvicorn 更新至 v0.53.0 @[renovate[bot]](XPLHX2XPLHX) (XPLHX0XPLHX#665XPLHX1XPLHX)",
+    "ts": "2026-09-19T03:55:42.262892+00:00"
+  },
+  "16c87aef28758049b5f6709e0a91c83bcb94a0af510fd4c28f8f91135c7c84d6": {
+    "source": "The InfluxDB XPLHX6XPLHX to connect to. Either XPLHX0XPLHX1XPLHX1XPLHX, XPLHX2XPLHX2XPLHX3XPLHX or XPLHX4XPLHX3XPLHX5XPLHX.",
+    "api_result": "要连接的 InfluxDB 实例为 XPLHX6XPLHX。 可以是 XPLHX0XPLHX1XPLHX1XPLHX、XPLHX2XPLHX2XPLHX3XPLHX 或 XPLHX4XPLHX3XPLHX5XPLHX。",
+    "ts": "2026-09-19T03:55:43.099892+00:00"
+  },
+  "ecccf51a94956c003141a234e8485c8b641164be8d665a41b9e02c89134d6b7e": {
+    "source": "> Applied to versions 1 and 3 only",
+    "api_result": "> 仅适用于第 1 版和第 3 版",
+    "ts": "2026-09-19T03:55:43.831506+00:00"
+  },
+  "adf531ab75bc8026fbba2173c70a80c36cf90780be183a7f3bcf2d69ac153d8f": {
+    "source": "> Applied to versions 2 and 3 only",
+    "api_result": "> 仅适用于第 2 版和第 3 版",
+    "ts": "2026-09-19T03:55:44.554413+00:00"
+  },
+  "15c0e304b97266f80e9534274b433bb25d32ff13eb66f093775940027f15248a": {
+    "source": "An InfluxDB token with permissions to write to the given bucket (XPLHX1XPLHX 2)\nor database (XPLHX2XPLHX 3). This should\nlook like XPLHX0XPLHX",
+    "api_result": "一个具有向指定存储桶（XPLHX1XPLHX 2）\n或数据库（XPLHX2XPLHX 3）写入权限的 InfluxDB 令牌。该令牌应\n呈现为 XPLHX0XPLHX 的形式",
+    "ts": "2026-09-19T03:55:45.510866+00:00"
+  },
+  "fd8552597465f111ead786bd7108c2785d803561478ec0fecbbfead91cef0d82": {
+    "source": "The InfluxDB organization that owns the given bucket. Required for XPLHX1XPLHX 2.\nInfluxDB 3 does not use organizations, so for XPLHX2XPLHX 3 this option is\noptional and defaults to XPLHX0XPLHX.",
+    "api_result": "拥有该存储桶的 InfluxDB 组织。对于 XPLHX1XPLHX 2 而言，此项为必填。\nInfluxDB 3 不使用组织，因此对于 XPLHX2XPLHX 3，此选项为\n可选，默认值为 XPLHX0XPLHX。",
+    "ts": "2026-09-19T03:55:46.449338+00:00"
+  },
+  "3127c2a289441e41a46f153e2a58b4e2d1ffc26e9fdd4d13dd4456916d95f577": {
+    "source": "XPLHX0XPLHXGlances configuration file",
+    "api_result": "XPLHX0XPLHXGlances 配置文件",
+    "ts": "2026-09-19T03:55:47.195402+00:00"
+  },
+  "57f7c85618a1b2dc3d8ce5a6b142dee0aaf17b1355ba220511aff4bf5aab82cb": {
+    "source": "On first start, the app copies its Glances configuration template to\nXPLHX0XPLHX. This file is yours:\nit is never overwritten by the app, so any change you make to it is kept\nacross updates. It also m",
+    "api_result": "首次启动时，应用会将其“Glances”配置模板复制到\nXPLHX0XPLHX。该文件归您所有：\n应用绝不会覆盖此文件，因此您对其所做的任何更改都会在\n更新后保留。这也意味着，应用新版本中对模板所做的更改\n不会应用到现有安装中。 删除该文件并重启\n应用，即可获取当前模板的新副本。",
+    "ts": "2026-09-19T03:55:48.126021+00:00"
+  },
+  "159529c8f41f4e08ea75c535621d782c87f7a863d3addaf75df90a9c2ec89f91": {
+    "source": "XPLHX0XPLHXSlow startup with network storage",
+    "api_result": "XPLHX0XPLHX使用网络存储时启动缓慢",
+    "ts": "2026-09-19T03:55:48.817272+00:00"
+  },
+  "64cac3462c3023bb0dbee027c936b7f3d5b93725eb91519fb5a9f732005116cc": {
+    "source": "The XPLHX0XPLHX section of the configuration file lists folders of which\nGlances tracks the size. Glances computes that size by walking every file in\nthe folder, from its main stats loop. When a monit",
+    "api_result": "配置文件中的 XPLHX0XPLHX 部分列出了\nGlances 会跟踪其大小的文件夹。Glances 通过在其主统计循环中遍历\n文件夹中的每个文件来计算该大小。当被监控的文件夹包含一个\n体积庞大或过时的网络共享（通过\nXPLHX1XPLHX“设置”→“系统”→“存储”XPLHX2XPLHX），Glances 在每次\n刷新时都会阻塞数分钟：应用程序启动缓慢，Web 界面需要数分钟才能加载，\n且其数值停止更新。",
+    "ts": "2026-09-19T03:55:50.081199+00:00"
+  },
+  "0ec6f1483c534850f5ef71dc5322a095d11e6dd26ae63df205cc75ffa0144fd2": {
+    "source": "Network storage of the \"share\" and \"media\" types is mounted under XPLHX0XPLHX\nand XPLHX1XPLHX, respectively. Earlier versions of the app listed both\nin the XPLHX2XPLHX section of the template. If your",
+    "api_result": "类型为“share”和“media”的网络存储分别挂载在 XPLHX0XPLHX\n和 XPLHX1XPLHX 下。 该应用的早期版本将这两者\n都列在模板的 XPLHX2XPLHX 部分中。如果您是使用\n这些版本之一进行的安装，并且正在使用网络存储，请从\nXPLHX6XPLHX中与XPLHX4XPLHX及XPLHX5XPLHX相关的条目并重启应用程序，\n或者直接删除该文件以获取最新模板。",
+    "ts": "2026-09-19T03:55:50.948070+00:00"
+  },
+  "61f8014f3dc48d37bb5309e2bc81b17e47b500fe958f14ec4281c7b042c85f93": {
+    "source": "- ⬆️ Update pandas to v3 @[renovate[bot]](XPLHX28XPLHX) (XPLHX0XPLHX#829XPLHX1XPLHX)\n- ⬆️ Update numpy to v2.5.3 @[renovate[bot]](XPLHX29XPLHX) (XPLHX2XPLHX#830XPLHX3XPLHX)\n- ⬆️ Update psycopg2 to v2.",
+    "api_result": "- ⬆️ 将 pandas 更新至 v3 @[renovate[bot]](XPLHX28XPLHX) (XPLHX0XPLHX#829XPLHX1XPLHX)\n- ⬆️ 将 numpy 更新至 v2.5.3 @[renovate[bot]](XPLHX29XPLHX) (XPLHX2XPLHX#830XPLHX3XPLHX)\n- ⬆️ 将 psycopg2 更新至 v2.9.13 @[renovate[bot]](XPLHX30XPLHX) (XPLHX4XPLHX#831XPLHX5XPLHX)\n- ⬆️ 将 scrapy 更新至 v2.19.0 @[renovate[bot]](XPLHX31XPLHX) (XPLHX6XPLHX#832XPLHX7XPLHX)\n- ⬆️ 将 matplotlib 更新至 v3.11.2 @[renovate[bot]](XPLHX32XPLHX) (XPLHX8XPLHX#833XPLHX9XPLHX)\n- ⬆️ 将 dirmngr 更新至 v2.4.7-21+deb13u1+b5 @[renovate[bot]](XPLHX33XPLHX) (XPLHX10XPLHX#834XPLHX11XPLHX)\n- ⬆️ 将 gpg-agent 更新至 v2.4.7-21+deb13u1+b5 @[renovate[bot]](XPLHX34XPLHX) (XPLHX12XPLHX#836XPLHX13XPLHX)\n- ⬆️ 将 nginx 更新至 v1.26.3-3+deb13u8 @frenck (XPLHX14XPLHX#837XPLHX15XPLHX)\n- ⬆️ 将 gpg 更新至 v2.4.7-21+deb13u1+b5 @[renovate[bot]](XPLHX35XPLHX) (XPLHX16XPLHX#835XPLHX17XPLHX)\n- ⬆️ 将 mysqlclient 更新至 v2.3.0 @[renovate[bot]](XPLHX36XPLHX) (XPLHX18XPLHX#838XPLHX19XPLHX)\n- ⬆️ 将 SQLAlchemy 更新至 v2.0.53 @[renovate[bot]](XPLHX37XPLHX) (XPLHX20XPLHX#839XPLHX21XPLHX)\n- ⬆️ 将 SQLAlchemy 更新至 v2.0.54 @[renovate[bot]](XPLHX38XPLHX) (XPLHX22XPLHX#841XPLHX23XPLHX)\n- ⬆️ 将 nginx 更新至 v1.26.3-3+deb13u9 @frenck (XPLHX24XPLHX#843XPLHX25XPLHX)\n- ⬆️ 将 pandas 更新至 v3.0.6 @[renovate[bot]](XPLHX39XPLHX) (XPLHX26XPLHX#842XPLHX27XPLHX)",
+    "ts": "2026-09-19T03:55:51.906453+00:00"
+  },
+  "918336155effad561a6a16968c159a5b4a092ed199e01da4a5e4f45af4e8065a": {
+    "source": "- Explicitly request NET_RAW privileges @agners (XPLHX0XPLHX#1142XPLHX1XPLHX)",
+    "api_result": "- 明确请求 NET_RAW 权限 @agners (XPLHX0XPLHX#1142XPLHX1XPLHX)",
+    "ts": "2026-09-19T03:55:53.003401+00:00"
+  },
+  "395d1e7b08eb489f4feb8b9be362d8499089306ea1968ad79551fe9377727588": {
+    "source": "- Migrate the user bundle to /etc/s6-overlay/user-bundles.d @frenck (XPLHX0XPLHX#1143XPLHX1XPLHX)",
+    "api_result": "- 将用户软件包迁移至 /etc/s6-overlay/user-bundles.d @frenck (XPLHX0XPLHX#1143XPLHX1XPLHX)",
+    "ts": "2026-09-19T03:55:53.859804+00:00"
+  },
+  "7f3221487b79336feef23a818702c62b9befbf50c1296f90740bb9bf6b840eec": {
+    "source": "- ⬆️ Update ghcr.io/hassio-addons/base Docker tag to v21.0.4 @[renovate[bot]](XPLHX10XPLHX) (XPLHX0XPLHX#4XPLHX1XPLHX)\n- ⬆️ Update alpine_3_24/yq-go to v4.53.3-r1 @[renovate[bot]](XPLHX11XPLHX) (XPLHX",
+    "api_result": "- ⬆️ 将ghcr.io/hassio-addons/base的 Docker 标签更新为 v21.0.4 @[renovate[bot]](XPLHX10XPLHX) (XPLHX0XPLHX#4XPLHX1XPLHX)\n- ⬆️ 将 alpine_3_24/yq-go 更新至 v4.53.3-r1 @[renovate[bot]](XPLHX11XPLHX) (XPLHX2XPLHX#6XPLHX3XPLHX)\n- ⬆️ 将ghcr.io/hassio-addons/base的 Docker 标签更新至 v21.0.5 @[renovate[bot]](XPLHX12XPLHX) (XPLHX4XPLHX#8XPLHX5XPLHX)\n- ⬆️ 将 VictoriaMetrics/VictoriaMetrics 更新至 v1.151.0 @[renovate[bot]](XPLHX13XPLHX) (XPLHX6XPLHX#5XPLHX7XPLHX)\n- ⬆️ 将 VictoriaMetrics/VictoriaMetrics 更新至 v1.152.0 @[renovate[bot]](XPLHX14XPLHX) (XPLHX8XPLHX#9XPLHX9XPLHX)",
+    "ts": "2026-09-19T03:55:54.882309+00:00"
   }
 }
