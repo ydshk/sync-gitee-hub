@@ -6,20 +6,20 @@ import re
 
 _LINK_SEP = '\u200b'
 
-PLACEHOLDER_RE = re.compile(r'XPLHX[A-Z]+XPLHX', re.IGNORECASE)
+PLACEHOLDER_RE = re.compile(r'XPLHX\d+XPLHX', re.IGNORECASE)
 
 
 def restore_placeholders(text, placeholders):
     """将占位符替换回原始内容，容忍翻译 API 在占位符内插入空格"""
     if not placeholders:
         return text
-    ph_fuzzy = re.compile(r'XPLHX\s*([A-Z]+)\s*XPLHX', re.IGNORECASE)
-    ph_map = dict(placeholders)
+    ph_fuzzy = re.compile(r'XPLHX\s*(\d+)\s*XPLHX', re.IGNORECASE)
+    sorted_ph = sorted(placeholders.items(), key=lambda x: int(x[0][5:-5]), reverse=True)
+    ph_by_idx = {int(ph[5:-5]): original for ph, original in sorted_ph}
 
     def _restore(m):
-        letters = m.group(1).upper()
-        ph = f"XPLHX{letters}XPLHX"
-        return ph_map.get(ph, m.group())
+        idx = int(m.group(1))
+        return ph_by_idx.get(idx, m.group())
 
     prev = None
     while text != prev:
