@@ -115,6 +115,18 @@ def fix_punct_space(text):
     return text
 
 
+def fix_issue_link_format(text):
+    """统一 issue 链接格式：为应用"XXX"提交问题：/ 为应用提交问题：→ 为该应用提交问题：XXX"""
+    text = re.sub(r'为应用"([^"]+)"提交问题：', r'为该应用提交问题：\1', text)
+    text = re.sub(r'为应用提交问题：', r'为该应用提交问题：', text)
+    return text
+
+
+def fix_copyright_locale(text):
+    """清理版权声明中 DeepL 自动添加的语言标识"""
+    return text.replace(' 简体中文（大陆）', '')
+
+
 def run(translated, placeholders):
     """后处理主入口：还原占位符 + 全部格式修复"""
     translated = cjk_latin_spacing(translated)
@@ -125,6 +137,8 @@ def run(translated, placeholders):
     final = fix_bold(final)
     final = fix_title(final)
     final = fix_link(final)
+    final = fix_issue_link_format(final)
+    final = fix_copyright_locale(final)
     final = fix_cjk_space(final)
     final = fix_duplicate_cjk(final)
     final = fix_double_negation(final)
