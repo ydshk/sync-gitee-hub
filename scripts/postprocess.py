@@ -117,7 +117,7 @@ def fix_punct_space(text):
 
 def fix_issue_link_format(text):
     """统一 issue 链接格式：为应用"XXX"提交问题：/ 为应用提交问题：→ 为该应用提交问题：XXX"""
-    text = re.sub(r'为应用"([^"]+)"提交问题：', r'为该应用提交问题：\1', text)
+    text = re.sub(r'为应用["\u201c]([^"\u201d]+)["\u201d]提交问题：', r'为该应用提交问题：\1', text)
     text = re.sub(r'为应用提交问题：', r'为该应用提交问题：', text)
     return text
 
