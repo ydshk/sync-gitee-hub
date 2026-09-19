@@ -4,12 +4,18 @@
 # 注意：本文件有条目时，DEFAULT_GLOSSARY 不生效，需把所有术语都列在这里
 
 Music Assistant Server
+UniFi Network Application
 Music Assistant
+Nginx Proxy Manager
+Network UPS Tools
 Home Assistant
-ESPHome
 Actual Budget
 Audiobookshelf
 Stirling PDF
-The Lounge
 AdGuard Home
+The Lounge
+Glances
+NZBGet
+Lidarr
+ESPHome
 
