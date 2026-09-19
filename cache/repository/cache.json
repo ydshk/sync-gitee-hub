@@ -10458,5 +10458,300 @@
     "source": "- ⬆️ Update ghcr.io/hassio-addons/base Docker tag to v21.0.4 @[renovate[bot]](XPLHX10XPLHX) (XPLHX0XPLHX#4XPLHX1XPLHX)\n- ⬆️ Update alpine_3_24/yq-go to v4.53.3-r1 @[renovate[bot]](XPLHX11XPLHX) (XPLHX",
     "api_result": "- ⬆️ 将ghcr.io/hassio-addons/base的 Docker 标签更新为 v21.0.4 @[renovate[bot]](XPLHX10XPLHX) (XPLHX0XPLHX#4XPLHX1XPLHX)\n- ⬆️ 将 alpine_3_24/yq-go 更新至 v4.53.3-r1 @[renovate[bot]](XPLHX11XPLHX) (XPLHX2XPLHX#6XPLHX3XPLHX)\n- ⬆️ 将ghcr.io/hassio-addons/base的 Docker 标签更新至 v21.0.5 @[renovate[bot]](XPLHX12XPLHX) (XPLHX4XPLHX#8XPLHX5XPLHX)\n- ⬆️ 将 VictoriaMetrics/VictoriaMetrics 更新至 v1.151.0 @[renovate[bot]](XPLHX13XPLHX) (XPLHX6XPLHX#5XPLHX7XPLHX)\n- ⬆️ 将 VictoriaMetrics/VictoriaMetrics 更新至 v1.152.0 @[renovate[bot]](XPLHX14XPLHX) (XPLHX8XPLHX#9XPLHX9XPLHX)",
     "ts": "2026-09-19T03:55:54.882309+00:00"
+  },
+  "0053e157ce845d9149f22ca6a3915822ebed5f2f5214962ab1068ea28a3c4036": {
+    "source": "- XPLHX11XPLHXOpen an issue for the app: XPLHX4XPLHXXPLHX12XPLHX\n- XPLHX13XPLHXOpen an issue for the app: XPLHX6XPLHXXPLHX14XPLHX\n- XPLHX15XPLHXOpen an issue for the app: Advanced SSH & Web TerminalXP",
+    "api_result": "- XPLHX11XPLHX为该应用提交问题：XPLHX4XPLHXXPLHX12XPLHX\n- XPLHX13XPLHX为该应用提交问题：XPLHX6XPLHXXPLHX14XPLHX\n- XPLHX15XPLHX为应用提交问题：Advanced SSH & Web TerminalXPLHX16XPLHX\n- XPLHX17XPLHX为应用提交问题：AirCastXPLHX18XPLHX\n- XPLHX19XPLHX为该应用提交问题：AirSonosXPLHX20XPLHX\n- XPLHX21XPLHX为该应用提交问题：AppDaemonXPLHX22XPLHX\n- XPLHX23XPLHX为该应用提交问题：XPLHX3XPLHXXPLHX24XPLHX\n- XPLHX25XPLHX为该应用提交问题：BazarrXPLHX26XPLHX\n- XPLHX27XPLHX为该应用提交问题：BookstackXPLHX28XPLHX\n- XPLHX29XPLHX为该应用提交问题：Calibre-WebXPLHX30XPLHX\n- XPLHX31XPLHX为应用提交问题：EMQXXPLHX32XPLHX\n- XPLHX33XPLHX为应用提交问题：ExampleXPLHX34XPLHX\n- XPLHX35XPLHX为应用提交问题：FTPXPLHX36XPLHX\n- XPLHX37XPLHX为应用提交问题：文件资源管理器XPLHX38XPLHX\n- XPLHX39XPLHX为该应用提交问题：Folding@homeXPLHX40XPLHX\n- XPLHX41XPLHX为该应用提交问题：FreshRSSXPLHX42XPLHX\n- XPLHX43XPLHX为应用“XPLHX8”提交问题XPLHXXPLHX44XPLHX\n- XPLHX45XPLHX为应用“Grafana”提交问题XPLHX46XPLHX\n- XPLHX47XPLHX为应用提交问题：GrocyXPLHX48XPLHX\n- XPLHX49XPLHX为应用提交问题：HomeboxXPLHX50XPLHX\n- XPLHX51XPLHX为该应用提交问题：InfluxDB v1XPLHX52XPLHX\n- XPLHX53XPLHX为该应用提交问题：JellyfinXPLHX54XPLHX\n- XPLHX55XPLHX为该应用提交问题：JupyterLabXPLHX56XPLHX\n- XPLHX57XPLHX为该应用提交问题：XPLHX10XPLHXXPLHX58XPLHX\n- XPLHX59XPLHX为应用提交问题：MQTT ExplorerXPLHX60XPLHX\n- XPLHX61XPLHX为应用提交问题：MQTT IOXPLHX62XPLHX\n- XPLHX63XPLHX为该应用提交问题：MealieXPLHX64XPLHX\n- XPLHX65XPLHX为该应用提交问题：XPLHX9XPLHXXPLHX66XPLHX\n- XPLHX67XPLHX为应用提交问题：XPLHX2XPLHXXPLHX68XPLHX\n- XPLHX69XPLHX为应用提交问题：XPLHX1XPLHXXPLHX70XPLHX\n- XPLHX71XPLHX为该应用提交问题：Node-REDXPLHX72XPLHX\n- XPLHX73XPLHX为该应用提交问题：Plex Media ServerXPLHX74XPLHX\n- XPLHX75XPLHX为该应用提交问题：ProwlarrXPLHX76XPLHX\n- XPLHX77XPLHX为该应用提交问题：RadarrXPLHX78XPLHX\n- XPLHX79XPLHX为应用提交问题：SABnzbdXPLHX80XPLHX\n- XPLHX81XPLHX为应用提交问题：SQLite WebXPLHX82XPLHX\n- XPLHX83XPLHX为该应用提交问题：SeerrXPLHX84XPLHX\n- XPLHX85XPLHX为该应用提交问题：SonarrXPLHX86XPLHX\n- XPLHX87XPLHX为应用提交问题：Spotify ConnectXPLHX88XPLHX\n- XPLHX89XPLHX为应用提交问题：SpotwebXPLHX90XPLHX\n- XPLHX91XPLHX为该应用提交问题：XPLHX5XPLHXXPLHX92XPLHX\n- XPLHX93XPLHX为该应用提交问题：Studio Code ServerXPLHX94XPLHX\n- XPLHX95XPLHX为该应用提交问题：SyncthingXPLHX96XPLHX\n- XPLHX97XPLHX为该应用提交问题：TailscaleXPLHX98XPLHX\n- XPLHX99XPLHX为应用提交问题：TasmoAdminXPLHX100XPLHX\n- XPLHX101XPLHX为应用提交问题：TautulliXPLHX102XPLHX\n- XPLHX103XPLHX为应用提交问题：XPLHX7XPLHXXPLHX104XPLHX\n- XPLHX105XPLHX为应用提交问题：TorXPLHX106XPLHX\n- XPLHX107XPLHX为该应用提交问题：TraccarXPLHX108XPLHX\n- XPLHX109XPLHX为该应用提交问题：XPLHX0XPLHXXPLHX110XPLHX\n- XPLHX111XPLHX为该应用提交问题：Uptime KumaXPLHX112XPLHX\n- XPLHX113XPLHX为该应用提交问题：VaultwardenXPLHX114XPLHX\n- XPLHX115XPLHX为该应用提交问题：VictoriaMetricsXPLHX116XPLHX\n- XPLHX117XPLHX为该应用提交问题：WhisparrXPLHX118XPLHX\n- XPLHX119XPLHX为应用提交问题：WireGuardXPLHX120XPLHX\n- XPLHX121XPLHX为应用提交问题：Z-Wave JS UIXPLHX122XPLHX\n- XPLHX123XPLHX为应用提交问题：ZeroTier OneXPLHX124XPLHX\n- XPLHX125XPLHX为应用提交问题：chronyXPLHX126XPLHX\n- XPLHX127XPLHX为该应用提交问题：motionEyeXPLHX128XPLHX\n- XPLHX129XPLHX为该应用提交问题：n8nXPLHX130XPLHX\n- XPLHX131XPLHX为该应用提交问题：phpMyAdminXPLHX132XPLHX\n- XPLHX133XPLHX为该应用提交问题：qBittorrentXPLHX134XPLHX",
+    "ts": "2026-09-19T06:33:34.330436+00:00"
+  },
+  "28d67992177a16e47d0292a497d778d5ae76a69b590c07825fcf711e6e0010b9": {
+    "source": "XPLHX0XPLHX is a cross-platform monitoring tool which aims to present a maximum of\ninformation in a minimum of space through a Web-based interface.",
+    "api_result": "XPLHX0XPLHX 是一款跨平台监控工具，旨在通过基于 Web 的界面，在尽可能小的空间内呈现尽可能多的\n信息。",
+    "ts": "2026-09-19T06:33:35.511009+00:00"
+  },
+  "11af1494ccee6cf98af71a0844698fcac0f3fadab0ded248c3ec23ef23d1111a": {
+    "source": "XPLHX0XPLHX can export all system statistics to InfluxDB, allowing you to look\nat all your system information and its behavior over time.",
+    "api_result": "XPLHX0XPLHX 可以将所有系统统计数据导出到 InfluxDB，从而让您能够\n查看所有系统信息及其随时间变化的趋势。",
+    "ts": "2026-09-19T06:33:36.659401+00:00"
+  },
+  "cc6b1bf97276de8ccab05af27035fc7df1fd03e1d94ac784c3804bbcc4e80868": {
+    "source": "1. Click the \"Install\" button to install the app.\n1. Disable \"Protection mode\" in the app panel.\n1. Start the \"XPLHX0XPLHX\" app.\n1. Check the XPLHX1XPLHX of the \"XPLHX0XPLHX\" to see if everything went",
+    "api_result": "1. 点击“安装”按钮以安装该应用。\n1. 在应用面板中禁用“保护模式”。\n1. 启动“XPLHX0XPLHX”应用。\n1. 检查“XPLHX0XPLHX”的 XPLHX1XPLHX，确认一切是否正常。\n1. 点击“打开 Web UI”按钮，查看 XPLHX0XPLHX。",
+    "ts": "2026-09-19T06:33:37.809332+00:00"
+  },
+  "05628356157016a54bc8d4203b4f973a7dc544de6575e4884d3d0ddbbe5f3915": {
+    "source": "If set to XPLHX0XPLHX, it will enable the process module of XPLHX1XPLHX and gives\ndetailed insight into each individual process running on the system.",
+    "api_result": "如果设置为 XPLHX0XPLHX，将启用 XPLHX1XPLHX 的进程模块，并提供\n关于系统上运行的每个单独进程的详细信息。",
+    "ts": "2026-09-19T06:33:38.778734+00:00"
+  },
+  "34a561b85eb40cd719c0eb43299330e2dedf488cb9b2a2f5ec7be1ef9743cb9c": {
+    "source": "Enables/Disables SSL (HTTPS) on the XPLHX2XPLHX Web UI. Set it XPLHX0XPLHX to enable it,\nXPLHX1XPLHX otherwise.",
+    "api_result": "在 XPLHX2XPLHX Web UI 上启用/禁用 SSL（HTTPS）。将其设置为 XPLHX0XPLHX 以启用该功能，\n否则设置为 XPLHX1XPLHX。",
+    "ts": "2026-09-19T06:33:39.758777+00:00"
+  },
+  "b596bf4eca25f4131ac8bb2659318480b97265729f1d9a00fe9ca5421193d570": {
+    "source": "The following options are for the option group: XPLHX0XPLHX. These settings\nonly apply to the XPLHX1XPLHX InfluxDB data export.",
+    "api_result": "以下选项适用于选项组：XPLHX0XPLHX。这些设置\n仅适用于 XPLHX1XPLHX InfluxDB 数据导出。",
+    "ts": "2026-09-19T06:33:40.751248+00:00"
+  },
+  "ae0f31a65aa8abff8e48a46a90a820cc4a1ad692d9d7fdb47a550f45c505e134": {
+    "source": "Enables/Disables the XPLHX0XPLHX data export to InfluxDB.",
+    "api_result": "启用/禁用将 XPLHX0XPLHX 数据导出到 InfluxDB 的功能。",
+    "ts": "2026-09-19T06:33:41.642077+00:00"
+  },
+  "d62e16902e45caca2f366ca11073456ab9fa20ff09732d2e81ac097accc46d82": {
+    "source": "Defines the interval (in seconds) on how often XPLHX0XPLHX exports data to InfluxDB.",
+    "api_result": "定义了 XPLHX0XPLHX 向 InfluxDB 导出数据的间隔（以秒为单位）。",
+    "ts": "2026-09-19T06:33:42.563531+00:00"
+  },
+  "2d521122c1fde7d40c9121a903e07b01693f763407b469a35a4727085feb6bcb": {
+    "source": "XPLHX2XPLHXXPLHX4XPLHXXPLHX3XPLHX: _For the Grafana XPLHX1XPLHX dashboard set this to XPLHX0XPLHX._",
+    "api_result": "XPLHX2XPLHXXPLHX4XPLHXXPLHX3XPLHX：_对于 Grafana XPLHX1XPLHX 仪表板，请将此值设置为 XPLHX0XPLHX。_",
+    "ts": "2026-09-19T06:33:43.555990+00:00"
+  },
+  "c5cce66dca0aab27dfb1ceb002343e6661232e9cb3ae67f466b8a4f77c0ad289": {
+    "source": "The username that you have created for XPLHX0XPLHX to authenticate against\nInfluxDB.",
+    "api_result": "您为 XPLHX0XPLHX 创建的、用于对\nInfluxDB 进行身份验证的用户名。",
+    "ts": "2026-09-19T06:33:44.475490+00:00"
+  },
+  "9c984d6dd9e419df4c4fcdc9358d48245bff3ca17352e9b5562eb6d9c0070981": {
+    "source": "The name of the database to store all XPLHX0XPLHX information into.",
+    "api_result": "用于存储所有 XPLHX0XPLHX 信息的数据库名称。",
+    "ts": "2026-09-19T06:33:45.409318+00:00"
+  },
+  "20552f0c767caa195727d8418a763413784de5420a9dda94a6372d1ef3f14da8": {
+    "source": "The name of the bucket to store all XPLHX0XPLHX information into.",
+    "api_result": "用于存储所有 XPLHX0XPLHX 信息的桶的名称。",
+    "ts": "2026-09-19T06:33:46.284011+00:00"
+  },
+  "1c211945fbc2b9d2e4256407256a691656951e60dcbb5ee4889cd5aef28d0e9d": {
+    "source": "XPLHX1XPLHXXPLHX0XPLHX configuration file",
+    "api_result": "XPLHX1XPLHXXPLHX0XPLHX 配置文件",
+    "ts": "2026-09-19T06:33:47.135609+00:00"
+  },
+  "7b00466c21fb3041cdeb0f6317e4c99733b6978dda0099d1867d444907fac598": {
+    "source": "On first start, the app copies its XPLHX1XPLHX configuration template to\nXPLHX0XPLHX. This file is yours:\nit is never overwritten by the app, so any change you make to it is kept\nacross updates. It al",
+    "api_result": "首次启动时，应用程序会将其 XPLHX1XPLHX 配置模板复制到\nXPLHX0XPLHX。该文件归您所有：\n应用程序绝不会覆盖该文件，因此您对其所做的任何更改都会在\n更新后保留。 这也意味着，应用新版本中对模板所做的更改\n不会应用到现有安装中。请删除该文件并重新启动\n应用，以获取当前模板的全新副本。",
+    "ts": "2026-09-19T06:33:48.185805+00:00"
+  },
+  "94f0deb5c6b26116a6a03df68efae4e304c47cfc26e80970ac6a09dcc89f0687": {
+    "source": "The XPLHX0XPLHX section of the configuration file lists folders of which\nXPLHX1XPLHX tracks the size. XPLHX1XPLHX computes that size by walking every file in\nthe folder, from its main stats loop. When",
+    "api_result": "配置文件中的 XPLHX0XPLHX 部分列出了\nXPLHX1XPLHX 会跟踪其大小的文件夹。XPLHX1XPLHX 通过在其主统计循环中遍历\n文件夹中的每个文件来计算该大小。当被监控的文件夹包含一个\n体积庞大或过时的网络共享（通过\nXPLHX2XPLHX设置 -> 系统 -> 存储XPLHX3XPLHX）时，XPLHX1XPLHX会在每次\n刷新时阻塞数分钟：应用程序启动缓慢，Web 界面需要数分钟才能加载\n，且其数值停止更新。",
+    "ts": "2026-09-19T06:33:49.257062+00:00"
+  },
+  "b912397c10090222d98bccea8b63a750acfcf84c6303ed1e92e8c1940e9a70a9": {
+    "source": "XPLHX2XPLHXAdding XPLHX1XPLHX as a sensor into XPLHX0XPLHX",
+    "api_result": "XPLHX2XPLHX将XPLHX1XPLHX作为传感器添加到XPLHX0XPLHX中",
+    "ts": "2026-09-19T06:33:50.210709+00:00"
+  },
+  "99836466c964f6d72c4b4c029c1e0ae375d35301b75c50a4abfcb788e4a28784": {
+    "source": "The XPLHX0XPLHX XPLHX1XPLHX sensor platform is consuming the system information\nprovided by the XPLHX1XPLHX API.",
+    "api_result": "XPLHX0XPLHX XPLHX1XPLHX 传感器平台正在使用\nXPLHX1XPLHX API 提供的系统信息。",
+    "ts": "2026-09-19T06:33:51.127184+00:00"
+  },
+  "50589ce2f1dff59a1d6f6cae2a8d11437157455f4963da67210191d5d236fcf4": {
+    "source": "Set up the integration through XPLHX1XPLHXSettings -> Devices & Services -> Integrations -> Add integration -> XPLHX0XPLHXXPLHX2XPLHX.",
+    "api_result": "通过 XPLHX1XPLHX设置 -> 设备与服务 -> 集成 -> 添加集成 -> XPLHX0XPLHXXPLHX2XPLHX 设置集成。",
+    "ts": "2026-09-19T06:33:52.080931+00:00"
+  },
+  "18bc104fdabe4a97bd0f6528dbac3e92c4635055b2b827e1fb41555c4383c55d": {
+    "source": "More information about the XPLHX1XPLHX sensor platform can be found in the\nXPLHX0XPLHX documentation:",
+    "api_result": "有关 XPLHX1XPLHX 传感器平台的更多信息，请参阅\nXPLHX0XPLHX 文档：",
+    "ts": "2026-09-19T06:33:53.004127+00:00"
+  },
+  "37d93ebb251b8882dbc2df09a879f0110cbd84179557dcb49119ebdbd01557aa": {
+    "source": "XPLHX0XPLHX is a cross-platform system monitoring tool written in Python.",
+    "api_result": "XPLHX0XPLHX 是一款用 Python 编写的跨平台系统监控工具。",
+    "ts": "2026-09-19T06:33:53.971807+00:00"
+  },
+  "c7f8c2521059fd199025bead535b1ea75b04d7094ea69dc8f9919b8ce3a4026d": {
+    "source": "1. Click the \"Install\" button to install the app.\n1. Start the \"XPLHX0XPLHX\" app\n1. Check the XPLHX1XPLHX of the \"XPLHX0XPLHX\" app to see if everything went well.\n1. Click \"OPEN WEB UI\" to open the XP",
+    "api_result": "1. 点击“安装”按钮以安装该应用。\n1. 启动“XPLHX0XPLHX”应用\n1. 检查“XPLHX0XPLHX”应用的XPLHX1XPLHX，以确认一切是否正常。\n1. 点击“打开 Web 界面”以打开 XPLHX0XPLHX 界面。\n1. 完成屏幕上显示的向导。",
+    "ts": "2026-09-19T06:33:55.082429+00:00"
+  },
+  "6c0c14fc5448bf47c37badc8328135a423dc0476fa800099e4009a60f4b93a54": {
+    "source": "[XPLHX0XPLHX] is a music collection manager for Usenet and BitTorrent users. It can\nmonitor multiple RSS feeds for new tracks from your favorite artists and will\ngrab, sort and rename them. It can als",
+    "api_result": "[XPLHX0XPLHX] 是一款面向 Usenet 和 BitTorrent 用户的音乐收藏管理器。它可以\n监控多个 RSS 订阅源，以获取您喜爱的艺人的新曲目，并会\n自动下载、排序和重命名这些曲目。 此外，还可以配置该软件，\n当出现更优质的 XPLHX2XPLHX XPLHX3XPLHX 时，\n自动升级已下载文件的 XPLHX1XPLHX。",
+    "ts": "2026-09-19T06:33:56.179340+00:00"
+  },
+  "a2b6e48e8a7fd3aa0239bf09ac2ec528e3a92582dad30f69f219e65a465b03bc": {
+    "source": "XPLHX1XPLHX",
+    "api_result": "XPLHX1XPLHX",
+    "ts": "2026-09-19T06:33:57.024144+00:00"
+  },
+  "6520fae671ea569f4093346c8aaf88cd9d8562bf69fd058b76cde507e1e4409a": {
+    "source": "XPLHX2XPLHXXPLHX1XPLHX Community App: XPLHX0XPLHX",
+    "api_result": "XPLHX2XPLHXXPLHX1XPLHX 社区应用：XPLHX0XPLHX",
+    "ts": "2026-09-19T06:33:58.001715+00:00"
+  },
+  "fc16806d9beea2571ba64f3d7d4ab63757dad70d3bbc512aca1b4c44cb8a32ba": {
+    "source": "1. Click the \"Install\" button to install the app.\n1. Start the \"XPLHX2XPLHX\" app\n1. Check the XPLHX4XPLHX of the \"XPLHX2XPLHX\" app to see if everything went well.\n1. Click the \"OPEN WEB UI\" button and",
+    "api_result": "1. 点击“安装”按钮以安装该应用。\n1. 启动“XPLHX2XPLHX”应用\n1. 检查“XPLHX2XPLHX”应用的XPLHX4XPLHX，确认一切是否正常。\n1. 点击“打开 Web 界面”按钮，并按照设置向导的指引创建\n   管理员账户。\n1. 将路由器上的端口 XPLHX0XPLHX（以及可选的 XPLHX1XPLHX）转发到您的\n   XPLHX3XPLHX 机器。\n1. 尽情享受这款应用吧！",
+    "ts": "2026-09-19T06:33:59.022617+00:00"
+  },
+  "a6f174735f5758582a12e111f4f8056f9f7b84936567077372c309584589d942": {
+    "source": "The primary goal of the XPLHX0XPLHX (NUT) project is to provide support\nfor Power Devices, such as Uninterruptible Power Supplies, Power Distribution\nUnits, Automatic Transfer Switch, Power Supply Uni",
+    "api_result": "XPLHX0XPLHX（NUT）项目的主要目标是提供对\n各类电源设备的支持，例如不间断电源、配电\n单元、自动转换开关、电源单元和太阳能控制器。",
+    "ts": "2026-09-19T06:34:00.028452+00:00"
+  },
+  "dcb4f9311017a956d592165a2066f101d679072773a063dfc1084e5249c36363": {
+    "source": "The XPLHX0XPLHX (NUT) project is the combined effort of\nmany XPLHX1XPLHXindividuals and companiesXPLHX2XPLHX.",
+    "api_result": "XPLHX0XPLHX（NUT）项目是\n众多XPLHX1XPLHX个人和企业XPLHX2XPLHX共同努力的成果。",
+    "ts": "2026-09-19T06:34:00.942629+00:00"
+  },
+  "228c412257e2676a0f174afc111771943fae761474d6db64d85638119bc7540b": {
+    "source": "1. Click the \"Install\" button to install the app.\n1. Configure the XPLHX0XPLHX and XPLHX1XPLHX options, as described below.\n1. Start the \"XPLHX4XPLHX\" app.\n1. Check the XPLHX11XPLHX of the \"XPLHX4XPLH",
+    "api_result": "1. 点击“安装”按钮以安装该应用程序。\n1. 按照以下说明配置 XPLHX0XPLHX 和 XPLHX1XPLHX 选项。\n1. 启动“XPLHX4XPLHX”应用程序。\n1. 检查“XPLHX4XPLHX”应用程序的 XPLHX11XPLHX，以确认一切是否正常。\n1. 在“XPLHX4XPLHX”应用程序的“信息”选项卡中，查看列出的 XPLHX2XPLHX。\n1. 使用应用程序的主机名（如上所述）、端口 XPLHX3XPLHX 以及在应用程序中配置的用户名/密码来配置 XPLHX6XPLHXNUT 集成 XPLHX7XPLHX。\n1. 有关在 XPLHX5XPLHX 中配置 NUT 集成的更多信息，请参阅\n   XPLHX8XPLHXNUT 集成文档 XPLHX9XPLHX。",
+    "ts": "2026-09-19T06:34:01.997238+00:00"
+  },
+  "5ce629294686edeb532d59b6e0b915db054bc2c2d6da7c390921d9d42b06ba54": {
+    "source": "XPLHX0XPLHX app configuration:",
+    "api_result": "XPLHX0XPLHX 应用程序配置：",
+    "ts": "2026-09-19T06:34:02.851147+00:00"
+  },
+  "e7e134473ec517f4aee5ab76f0a445538497cd63521750a27742e817dd2e03d4": {
+    "source": "A XPLHX0XPLHX daemon to allow you to easily manage battery backup (UPS)\ndevices connected to your XPLHX1XPLHX machine.",
+    "api_result": "一个 XPLHX0XPLHX 守护进程，可让您轻松管理连接到 XPLHX1XPLHX 机器上的电池备份（UPS）\n设备。",
+    "ts": "2026-09-19T06:34:04.113100+00:00"
+  },
+  "6070766674fffc4b48dab3dc2b6bc941e675a4af46c6181ba0e0ac2a4c4b012f": {
+    "source": "XPLHX1XPLHXXPLHX0XPLHXXPLHX2XPLHX is a Usenet downloader built around doing the work with as\nlittle as it can. It was written in C++ for hardware that had nothing to spare,\nand on anything larger that",
+    "api_result": "XPLHX1XPLHXXPLHX0XPLHXXPLHX2XPLHX 是一款 Usenet 下载器，其设计理念是\n以尽可能少的资源完成工作。 它采用 C++ 编写，最初是为资源极其有限的硬件设计的，\n但在配置更强的设备上运行时，下载任务会占用全部带宽，而\n机器的其他部分却仿佛什么也没发生一样继续运行。",
+    "ts": "2026-09-19T06:34:05.375460+00:00"
+  },
+  "06b85ceb4d91bd376980b09c94cded761980ed9f4aa00dbbd584cf707ffea857": {
+    "source": "XPLHX0XPLHX does nothing until it knows where to download from, and it says so in\nthe log on every start until it does:",
+    "api_result": "在确定下载来源之前，XPLHX0XPLHX 不会执行任何操作，并且在确定之前，它会在每次启动时的日志中显示这一信息：",
+    "ts": "2026-09-19T06:34:06.478675+00:00"
+  },
+  "945ffa99e940589254d11fb6e9d1424eedeb6daa55c5b4105cf6daf28b7a6b0a": {
+    "source": "Providers hand out a \"block account\" alongside the main one often enough that\nit is worth knowing XPLHX0XPLHX takes several servers, each with its own level. A\nserver on level 1 is only used to fill i",
+    "api_result": "服务商通常会在主账户之外额外提供一个“区块账户”，因此\n有必要了解：XPLHX0XPLHX 包含多个服务器，每个服务器都有自己的层级。\n位于第 1 层的服务器仅用于补充第 0 层服务器无法\n提供的内容，而这正是区块账户的用途。",
+    "ts": "2026-09-19T06:34:07.683747+00:00"
+  },
+  "05135b394af19d5afaf8b14b8d1611c254a2128f5954df76499bf76c332dcebc": {
+    "source": "On the first start this app creates two folders and points XPLHX0XPLHX at them:",
+    "api_result": "首次启动时，该应用会创建两个文件夹，并将 XPLHX0XPLHX 指向这两个文件夹：",
+    "ts": "2026-09-19T06:34:08.679637+00:00"
+  },
+  "fb62473928bae00d46ef7cb713b97a70d94a9decfc0d76fd063513f9bb04c814": {
+    "source": "Both are in the XPLHX0XPLHX folder, which means the files show up in Home\nAssistant's media browser and are reachable from the other apps that map it,\nsuch as the Sonarr, Radarr and XPLHX1XPLHX apps.",
+    "api_result": "这两个文件都位于 XPLHX0XPLHX 文件夹中，这意味着它们会显示在 Home\nAssistant 的媒体浏览器中，并且可以通过其他映射该文件夹的应用程序访问，\n例如 Sonarr、Radarr 和 XPLHX1XPLHX 等应用。",
+    "ts": "2026-09-19T06:34:09.779837+00:00"
+  },
+  "b07a095893190f7d83e87970c3f2c68982ccf7b67c9fdca2fc299e1158240178": {
+    "source": "Downloading straight into the completed folder is the other common way to run\nthis, and clearing the intermediate folder in XPLHX0XPLHX's own settings is all that\ntakes. Keeping them apart means a hal",
+    "api_result": "直接下载到“已完成”文件夹是运行该程序的另一种常见方式，\n只需在 XPLHX0XPLHX 的设置中清空中间文件夹即可。 将它们分开存放意味着未完成的下载文件不会出现在\n已完成文件旁边，并且允许解压程序从一个文件夹读取数据并写入\n另一个文件夹，但代价是在下载完成时需要进行一次移动操作。",
+    "ts": "2026-09-19T06:34:10.855698+00:00"
+  },
+  "8fdb7411d73fb58a4c786d8d2e892e0a85e2352e6abbce1885e70b3352e89700": {
+    "source": "These are starting values only. Where things are saved is settled inside\nXPLHX0XPLHX from here on, per category if you want, and this app does not touch the\nsetting again.",
+    "api_result": "这些仅为初始值。此后，各项设置将保存在\nXPLHX0XPLHX 中（如需按类别分类亦可），且本应用不会再次修改该\n设置。",
+    "ts": "2026-09-19T06:34:12.226676+00:00"
+  },
+  "8fd01a79daba07a9c2688ba6a8a00a78c6dfea85bff2d2fdc2c9449325007888": {
+    "source": "Opening it from the sidebar goes through XPLHX0XPLHX's Ingress, which has\nalready established who you are, and XPLHX1XPLHX is configured to let those requests\nthrough without a second login. That is t",
+    "api_result": "从侧边栏打开时，请求会经过 XPLHX0XPLHX 的 Ingress，该 Ingress 已\n确认了您的身份，而 XPLHX1XPLHX 已配置为允许这些请求\n直接通过，无需二次登录。这是大多数人唯一会\n使用的路径，且无需任何配置。",
+    "ts": "2026-09-19T06:34:13.276546+00:00"
+  },
+  "322c36f22e2c87b98a0bbb271c8feaca6e0b3367c567606d5355b5606042df90": {
+    "source": "The published port is a different matter. Anything arriving there is asked for\na username and a password, because XPLHX0XPLHX is not standing in front of\nit. XPLHX1XPLHX ships with the same password f",
+    "api_result": "已公开的端口则是另一回事。 任何连接到该端口的请求都会被要求\n输入用户名和密码，因为 XPLHX0XPLHX 并没有\n直接连接到该端口。XPLHX1XPLHX 默认给所有用户设置相同的密码，因此该应用会在\n首次启动时将其替换为自定义密码，并将新密码写入日志：",
+    "ts": "2026-09-19T06:34:14.490505+00:00"
+  },
+  "e1c67b0cb5c4b00c8c8b4892715d9a5c8a2f45b9123b4efb573658e2245dc361": {
+    "source": "This one is not a temporary password: it is written into XPLHX2XPLHX's configuration\nand stays until you change it. You can look it up and change it at any time\nfrom the sidebar panel, where you are a",
+    "api_result": "这不是一个临时密码：它已被写入 XPLHX2XPLHX 的配置中，\n并将一直保留，直到您将其更改为止。 您可以随时在侧边栏面板中查看并修改它，\n此时您已登录：XPLHX3XPLHXSettingsXPLHX4XPLHX >\nXPLHX5XPLHXSECURITYXPLHX6XPLHX，位于 XPLHX0XPLHX 和 XPLHX1XPLHX 之下。",
+    "ts": "2026-09-19T06:34:15.544223+00:00"
+  },
+  "2bff6099f86846e7f5caf15ed39a9eabab99c11e09d4a615bfd7e67cc0f61ff4": {
+    "source": "The XPLHX2XPLHXXPLHX1XPLHX integrationXPLHX3XPLHX brings the download rate, the size of the\nqueue and the amount downloaded into XPLHX0XPLHX as sensors, and adds\nservices to pause and resume the queue",
+    "api_result": "XPLHX2XPLHXXPLHX1XPLHX集成XPLHX3XPLHX将下载速率、队列大小\n和已下载量作为传感器引入XPLHX0XPLHX，并增加了\n用于暂停和恢复队列以及设置速率限制的服务。",
+    "ts": "2026-09-19T06:34:16.621031+00:00"
+  },
+  "0dcc8cbae9dfc22690a036095e000b2319d04d7388378afdf655c947e7ff1876": {
+    "source": "1. Look up the username and password first, as described in\n   XPLHX1XPLHXLogging inXPLHX2XPLHX. The integration cannot use the Ingress path and\n   has to log in like any other client.\n1. Go to XPLHX3",
+    "api_result": "1. 请先按照\n   XPLHX1XPLHX登录XPLHX2XPLHX中的说明查找用户名和密码。该集成无法使用 Ingress 路径，\n   必须像其他客户端一样登录。\n1. 进入 XPLHX3XPLHX“设置”XPLHX4XPLHX > XPLHX5XPLHX“设备与服务”XPLHX6XPLHX > XPLHX7XPLHX“添加集成”XPLHX8XPLHX，并选择\n   XPLHX9XPLHXXPLHX0XPLHXXPLHX10XPLHX。\n1. 填写：",
+    "ts": "2026-09-19T06:34:18.552700+00:00"
+  },
+  "aa56f71b366448dfda2c79792b06d7c8e083adcdec6686a69aec34082bf3b0d0": {
+    "source": "Almost everything about XPLHX0XPLHX is configured inside XPLHX0XPLHX, under\nXPLHX1XPLHXSettingsXPLHX2XPLHX, and is kept across restarts and updates. The one option below is\nwhat has to be settled befo",
+    "api_result": "关于 XPLHX0XPLHX 的几乎所有设置都在 XPLHX0XPLHX 内部配置，位于\nXPLHX1XPLHXSettingsXPLHX2XPLHX 之下，且这些设置在重启和更新后仍会保留。下文提到的那个选项是\n在程序启动前必须设置好的。",
+    "ts": "2026-09-19T06:34:19.692360+00:00"
+  },
+  "ac5c8ce38ec545167de483082d899f746c40dde7da154ded0c885b0853e9a849": {
+    "source": "XPLHX3XPLHX's own messages follow this as well. It does not take a single threshold\nof its own; it decides per severity where a message goes, so this option is\nspread over those five settings. XPLHX0X",
+    "api_result": "XPLHX3XPLHX 的自有消息也遵循这一规则。它本身不采用单一阈值，\n而是根据严重程度决定消息的流向，因此该选项\n分散在上述五个设置中。 XPLHX0XPLHX 保留了标准版 XPLHX3XPLHX 的设置，\nXPLHX1XPLHX 增加了按下载条目的详细行，而 XPLHX2XPLHX 及以上版本则\n减少了这些信息。 通过过滤的消息会填充 Web 界面的“消息”视图，因此\n降低此设置也会清空该视图。",
+    "ts": "2026-09-19T06:34:21.287947+00:00"
+  },
+  "eb457b5b643db4911d2d9e337c8c567142bf15a099130d3ceb920b7f2f9188f4": {
+    "source": "That port has XPLHX1XPLHX's own login in front of it, so know\nXPLHX2XPLHXwhat the password isXPLHX3XPLHX before publishing it. There is no HTTPS\noption here: XPLHX1XPLHX does not serve TLS on the same",
+    "api_result": "该端口前带有 XPLHX1XPLHX 自身的登录信息，因此请在发布前确认\nXPLHX2XPLHX 密码是什么XPLHX3XPLHX。 此处没有 HTTPS\n选项：XPLHX1XPLHX 不会在与普通 HTTP 相同的端口上提供 TLS 服务，而是在\n另一个端口上提供，而该应用并未公开该端口，因此 XPLHX0XPLHX 被禁用。 如果\n您需要在此应用前端启用 TLS，请在该位置部署能够终止 TLS 连接的组件，例如\nXPLHX4XPLHXNGINX 代理管理器应用XPLHX5XPLHX。",
+    "ts": "2026-09-19T06:34:22.361639+00:00"
+  },
+  "280e9cc5bb61540308014ba9d228c61d478786032ce906e9d0e706fb07cd9d43": {
+    "source": "XPLHX1XPLHX can run scripts of its own at various points, most usefully after a\ndownload finishes, and this app keeps them in XPLHX0XPLHX inside its\nconfiguration folder. Anything you drop there shows",
+    "api_result": "XPLHX1XPLHX 可以在不同时间点运行其自身的脚本，其中最实用的是在\n下载完成后运行，而该应用会将这些脚本保存在其\n配置文件夹内的 XPLHX0XPLHX 目录中。 只要将脚本拖放到该位置，当您在 Web 界面中点击“重新加载”后，这些脚本就会出现在 XPLHX2XPLHXSettingsXPLHX3XPLHX >\nXPLHX4XPLHXEXTENSION SCRIPTSXPLHX5XPLHX 之下。",
+    "ts": "2026-09-19T06:34:23.689191+00:00"
+  },
+  "521e2660a5f43b5390d55bd661aeadd961449c08c75567bb07776250b10211a1": {
+    "source": "This app is backed up cold, which means XPLHX0XPLHX stops it for the moment\nit takes to copy the settings. XPLHX1XPLHX writes its queue and history as it goes,\nand a copy taken mid-write can come back",
+    "api_result": "该应用采用“冷备份”方式，这意味着 XPLHX0XPLHX 会在复制设置的瞬间\n暂停该应用。而 XPLHX1XPLHX 会在运行过程中实时写入其队列和历史记录，\n如果在写入过程中截取一份副本，该副本可能会恢复为一个\n已丢失当前处理状态的队列。",
+    "ts": "2026-09-19T06:34:25.014875+00:00"
+  },
+  "fb757b7fc85de0d34739a3b85a7d77ccdda7af3f977e0e6b15a28c64d17f8513": {
+    "source": "- The log says \"No servers are configured\" until you add one, and nothing will\n  download before that. See XPLHX3XPLHXAdding a news serverXPLHX4XPLHX.\n- The sidebar panel never asks for a login. That ",
+    "api_result": "- 在您添加服务器之前，日志会显示“未配置任何服务器”，在此之前\n  无法下载任何内容。请参阅 XPLHX3XPLHX添加新闻服务器XPLHX4XPLHX。\n- 侧边栏面板不会要求登录。这是有意为之：XPLHX1XPLHX\n  在请求到达之前就已经确认了您的身份。密码所保护的\n  正是已发布的端口。\n- 设置界面中显示的部分内容由本应用在每次启动时自动生成，\n  因此在此处更改的值仅在下次重启前有效。这包括\n  XPLHX2XPLHX 的文件存储位置、控制端口、允许\n  无需登录访问的地址、是否提供 HTTPS 服务，以及日志消息的存储位置。 上述\n  各项必须始终与周围的容器保持一致：XPLHX0XPLHX 是\n  侧边栏面板的代理目标，也是“网络”部分中端口\n  发布的端口，无需登录的环回连接使得该面板能够打开，而\n  路径设置则确保了 XPLHX2XPLHX 的状态保存在备份中，其程序文件\n  则保留在备份之外。\n- 设置界面中的其他内容均由您自行决定，包括下载文件的保存位置\n  以及解压命令——这些设置允许编辑，因为额外的开关参数\n  正是 XPLHX2XPLHX 采用命令而非路径作为输入的原因。\n- XPLHX2XPLHX 的独立日志文件已被禁用，因为其中的每一行内容都已包含在\n  本应用的日志中，而额外的日志副本会保存在配置文件夹内，\n  并随每次备份一并被包含进去。\n- XPLHX2XPLHX 会通过 XPLHX5XPLHX 检查自身更新。此处已将其关闭；\n  更新将作为本应用的更新推送。",
+    "ts": "2026-09-19T06:34:26.160543+00:00"
+  },
+  "df16eea379223767e2a22fa630a2c50d2cc60154dbe1a712822dde9cceab0bc1": {
+    "source": "Downloads land in the XPLHX0XPLHX folder, which puts them in reach of Home\nAssistant's media browser and of the other apps that map it. XPLHX1XPLHX\nalso has XPLHX3XPLHXan integration for XPLHX2XPLHXXP",
+    "api_result": "下载的文件会保存到 XPLHX0XPLHX 文件夹中，这样 Home\nAssistant 的媒体浏览器以及其他映射该文件夹的应用程序都能访问这些文件。 XPLHX1XPLHX\n还集成了 XPLHX3XPLHX 与 XPLHX2XPLHXXPLHX4XPLHX 的集成，因此队列的速度和大小\n可以显示在您的仪表盘上，并提供暂停、恢复以及通过自动化设置\n下载速率上限的功能。",
+    "ts": "2026-09-19T06:34:27.283722+00:00"
+  },
+  "db6281b0a72de7ea22ea49d3469e9a7488e77b0afe386f46e8e8a7534a1b651c": {
+    "source": "[Prowlarr] is an indexer manager/proxy built on the popular *arr .net/reactjs\nbase stack to integrate with your various PVR apps. Prowlarr supports management\nof both Torrent Trackers and Usenet Index",
+    "api_result": "[Prowlarr] 是一款基于流行的 *arr .net/reactjs\n基础栈构建的索引器管理器/代理，可与您的各类 PVR 应用集成。 Prowlarr 支持管理\nTorrent 追踪器和 Usenet 索引器。它与\nXPLHX0XPLHX、Mylar3、Radarr、Readarr 和 Sonarr 无缝集成，可全面管理\n您的索引器，无需为每个应用单独配置索引器（它会自动完成所有操作）。",
+    "ts": "2026-09-19T06:34:28.421003+00:00"
+  },
+  "e82f4e6247833554192c59b2a198db97ea1c1591fc72db8ef386127a573365c2": {
+    "source": "- ⬆️ Update XPLHX0XPLHX to v10.6.106 @[renovate[bot]](XPLHX3XPLHX) (XPLHX1XPLHX#670XPLHX2XPLHX)",
+    "api_result": "- ⬆️ 将 XPLHX0XPLHX 更新至 v10.6.106 @[renovate[bot]](XPLHX3XPLHX) (XPLHX1XPLHX#670XPLHX2XPLHX)",
+    "ts": "2026-09-19T06:34:29.598657+00:00"
+  },
+  "2ff4d58f122fc249a05c601b6f1f5670b701be3993f4be4b81c692fb370b4ab3": {
+    "source": "This app runs Ubiquiti Networks' XPLHX0XPLHX software, which\nallows you to manage your UniFi network via the web browser. The app\nprovides a single-click installation and run solution for XPLHX1XPLHX,",
+    "api_result": "该应用运行 Ubiquiti Networks 的 XPLHX0XPLHX 软件，该软件\n可让您通过网页浏览器管理 UniFi 网络。 该应用\n为 XPLHX1XPLHX 提供了“一键安装并运行”的解决方案，\n使用户能够轻松地搭建并运行网络，以及 XPLHX2XPLHX。",
+    "ts": "2026-09-19T06:34:30.786957+00:00"
+  },
+  "783abdc9c67c4fffa19ec16cb5a96b6118ca39eb6ee196f82dc648697dad2f0b": {
+    "source": "1. Click the \"Install\" button to install the app.\n1. Check the XPLHX4XPLHX of the \"XPLHX2XPLHX\" to see if everything went\n   well.\n1. Click the \"OPEN WEB UI\" button, and follow the initial wizard.\n1. ",
+    "api_result": "1. 点击“安装”按钮以安装该应用。\n1. 检查“XPLHX2XPLHX”中的XPLHX4XPLHX，确认一切是否\n   正常。\n1. 点击“打开 Web UI”按钮，并按照初始向导的提示操作。\n1. 完成向导后，使用刚刚创建的凭据登录。\n1. 选择左侧菜单中的“Unifi 设备”。进入后，点击右上角的“设备更新与设置”。\n1. 向下滚动至“设备设置”部分，在 XPLHX0XPLHX 标签下方，输入运行 XPLHX3XPLHX 的设备的 IP 地址或主机名。\n1. 勾选 XPLHX1XPLHX 旁边的复选框，使其处于“已选中”状态。\n1. 点击“应用更改”按钮以启用设置。\n1. 准备就绪！",
+    "ts": "2026-09-19T06:34:31.877183+00:00"
+  },
+  "7c9a2ac9bda65d4bd7eac20169329a5d84218a25bf0c49cdfe1c9de0a68ee88a": {
+    "source": "The XPLHX0XPLHX ships with an automated backup feature. This\nfeature works but has been adjusted to put the created backups in a different\nlocation.",
+    "api_result": "XPLHX0XPLHX 默认配备自动备份功能。该\n功能虽然正常工作，但已进行调整，将生成的备份保存到另一个\n位置。",
+    "ts": "2026-09-19T06:34:32.860384+00:00"
+  },
+  "4075c8d40caa8e8413ae0e1bc7eb92d2ed4c3ba4886198342ccfe942c8736ed5": {
+    "source": "XPLHX2XPLHXThe standalone XPLHX0XPLHX is approaching end-of-life.XPLHX3XPLHX\nUbiquiti is transitioning to UniFi OS Server, a multi-container architecture\nbased on podman and systemd that does not tran",
+    "api_result": "XPLHX2XPLHX独立版 XPLHX0XPLHX 即将达到产品生命周期终止。XPLHX3XPLHX\nUbiquiti 正在向 UniFi OS Server 过渡，这是一种基于 podman 和 systemd 的多容器架构，\n无法转换为 Docker/XPLHX1XPLHX\n应用程序。只要 Ubiquiti 继续提供该独立\n应用程序，该应用程序将保持正常运行，但该应用程序无法升级至 UniFi OS Server。\n有长期规划的用户应考虑迁移至专用服务器或虚拟机。",
+    "ts": "2026-09-19T06:34:33.998080+00:00"
+  },
+  "123e18496757947c7905f2a1d3beb72d1d58c2bc02b0624456fa9f0b2e9b5355": {
+    "source": "- Due to security policies in the XPLHX1XPLHX software, it is\n  currently impossible to add the UniFI web interface to your XPLHX2XPLHX\n  frontend using a XPLHX0XPLHX.\n- The broadcast feature of the E",
+    "api_result": "- 由于 XPLHX1XPLHX 软件中的安全策略，\n  目前无法使用 XPLHX0XPLHX 将 UniFI Web 界面\n  添加到您的 XPLHX2XPLHX 前端。\n- EDU 类型 AP 的广播功能目前无法与\n  此应用配合使用。由于 XPLHX2XPLHX 的限制，目前无法\n  打开该功能正常运行所需的“范围”内的端口。\n- 由于 UniFi 软件的技术限制，\n  本应用无法支持 Ingress。\n- 通过 XPLHX2XPLHX 对本应用进行备份时，本应用将\n  暂时关闭，并在备份完成后重新启动。此举可防止\n  备份过程中发生数据损坏。",
+    "ts": "2026-09-19T06:34:35.548585+00:00"
+  },
+  "df8a7d4b82c2016d47f17fb4d19e62a413d7ce7b4f4acd1c877bf0de411cd55f": {
+    "source": "The XPLHX0XPLHX allows you to manage your UniFi network\nusing a web browser.",
+    "api_result": "XPLHX0XPLHX 允许您通过\n网页浏览器管理您的 UniFi 网络。",
+    "ts": "2026-09-19T06:34:36.485136+00:00"
+  },
+  "0fa2e9e3843e3fb36ff94f74b882fb15731b2ab19a4771152405f96a7c1874eb": {
+    "source": "XPLHX2XPLHXThe standalone XPLHX0XPLHX is approaching end-of-life.XPLHX3XPLHX\nUbiquiti is transitioning to UniFi OS Server, which does not translate to a\nDocker/XPLHX1XPLHX app. There is no upgrade pat",
+    "api_result": "XPLHX2XPLHX独立版 XPLHX0XPLHX 即将停止支持。XPLHX3XPLHX\nUbiquiti 正在向 UniFi OS Server 过渡，该系统不支持\nDocker/XPLHX1XPLHX 应用程序。 该应用程序无法升级至 UniFi OS\nServer。只要 Ubiquiti 继续提供该独立\n应用程序，该应用程序将保持正常运行，但有长期规划的用户应考虑迁移至\n专用服务器或虚拟机。",
+    "ts": "2026-09-19T06:34:37.998197+00:00"
   }
 }
