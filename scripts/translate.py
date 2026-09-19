@@ -83,7 +83,18 @@ _TRANSLATION_MAP_PATTERNS = [
     for source, target in _TRANSLATION_MAP_SORTED
 ]
 
-PLACEHOLDER_RE = re.compile(r'XPLHX\d+XPLHX')
+def _idx_to_letters(idx):
+    """将序号编码为字母：0→A, 1→B, ..., 25→Z, 26→AA, 27→AB"""
+    result = ''
+    n = idx + 1
+    while n > 0:
+        n -= 1
+        result = chr(ord('A') + n % 26) + result
+        n //= 26
+    return result
+
+
+PLACEHOLDER_RE = re.compile(r'XPLHX[A-Z]+XPLHX')
 _LINK_SEP = '\u200b'
 
 
@@ -95,7 +106,7 @@ def extract_protected(text):
     def _make_ph(original):
         idx = counter[0]
         counter[0] += 1
-        ph = f"XPLHX{idx}XPLHX"
+        ph = f"XPLHX{_idx_to_letters(idx)}XPLHX"
         placeholders[ph] = original
         return ph
 

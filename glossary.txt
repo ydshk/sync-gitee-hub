@@ -15,6 +15,7 @@ Stirling PDF
 AdGuard Home
 The Lounge
 Glances
+Grafana
 NZBGet
 Lidarr
 ESPHome
