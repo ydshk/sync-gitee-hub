@@ -210,6 +210,7 @@ def main():
     parser.add_argument('--force', action='store_true', help='强制重译，忽略段落缓存')
     parser.add_argument('--sha-cache', default=None, help='逐文件 SHA 缓存路径（file_shas.json）')
     parser.add_argument('--no-sha-skip', action='store_true', help='跳过文件 SHA 对比，处理所有文件（段落缓存仍生效）')
+    parser.add_argument('--gitee-dir', default=None, help='Gitee 仓库目录（用于恢复未变动文件的中文版）')
     args = parser.parse_args()
 
     if args.force:
@@ -274,13 +275,27 @@ def main():
                 f.write("skipped=true\n")
         return
 
-    # 有文件变动（或 force / no_sha_skip），翻译所有目标文件
+    # 有文件变动（或 force / no_sha_skip），处理目标文件
+    gitee_dir = Path(args.gitee_dir).resolve() if args.gitee_dir else None
+
     if changed_files:
         print(f"\nChanged files: {', '.join(changed_files)}")
     elif not target_files:
         print("\nNo translation target files found.")
 
+    translated_count = 0
+    restored_count = 0
+
     for md_file, rel_path in target_files:
+        # 未变动文件：从 Gitee 恢复中文版（避免英文覆盖中文）
+        if rel_path not in changed_files and not args.force and not args.no_sha_skip and gitee_dir:
+            gitee_file = gitee_dir / rel_path
+            if gitee_file.exists():
+                md_file.write_text(gitee_file.read_text(encoding='utf-8'), encoding='utf-8')
+                print(f"\nRestored from Gitee (SHA unchanged): {rel_path}")
+                restored_count += 1
+                continue
+
         print(f"\nTranslating: {rel_path}")
         content = md_file.read_text(encoding='utf-8')
         translated, stats = translate_markdown(content, _translate, cache_mgr, args.force)
@@ -290,6 +305,7 @@ def main():
             print(f"  Written ({len(translated)} chars) - {stats}")
         else:
             print(f"  Unchanged - {stats}")
+        translated_count += 1
 
     cache_mgr.save()
 
@@ -299,7 +315,7 @@ def main():
         sha_cache_path.write_text(json.dumps(new_sha_cache, indent=2, sort_keys=True), encoding='utf-8')
 
     print(f"\nFinal stats: {cache_mgr.stats()}")
-    print(f"Translated: {len(target_files)} files, Changed: {len(changed_files)}")
+    print(f"Translated: {translated_count}, Restored from Gitee: {restored_count}, Changed: {len(changed_files)}")
 
     # 输出 skipped 标记给 GitHub Actions
     github_output = os.environ.get('GITHUB_OUTPUT')

@@ -201,7 +201,6 @@ jobs:
           REPO="${{ steps.parse.outputs.repo }}"
           GITEE_REPO="${{ steps.parse.outputs.gitee_repo }}"
 
-          EVENT_NAME="${{ github.event_name }}"
 
           CACHE_DIR="$GITHUB_WORKSPACE/cache/${GITEE_REPO}"
 
@@ -221,17 +220,16 @@ jobs:
           echo "Default branch: $DEFAULT_BRANCH"
           cd ..
 
-          # 2. 翻译（逐文件 SHA 跳过未变动文件，段落缓存避免 API 调用）
+          # 1.5 Clone Gitee 仓库（用于恢复未变动文件的中文版，浅拷贝指定分支）
+          echo "Cloning Gitee home-assistant-xin/$GITEE_REPO (branch $DEFAULT_BRANCH)..."
+          git clone --depth 1 --branch "$DEFAULT_BRANCH" "$GITEE_URL" "$WORK_DIR/gitee_repo" 2>/dev/null || echo "Gitee repo or branch not found, will translate all files."
+
+          # 2. 翻译（变动文件翻译，未变动文件从 Gitee 恢复中文版）
 
           FORCE_FLAG=""
           if [ "${{ github.event.inputs.force_retranslate }}" = "true" ]; then
             FORCE_FLAG="--force"
             echo "Force re-translate enabled for this run."
-          fi
-          NO_SHA_SKIP=""
-          if [ "$EVENT_NAME" = "push" ]; then
-            NO_SHA_SKIP="--no-sha-skip"
-            echo "Push event: re-applying postprocess to all files (paragraph cache still active)."
           fi
           echo "Translating..."
           python3 "$GITHUB_WORKSPACE/scripts/translate.py" \
@@ -240,7 +238,8 @@ jobs:
             --service-dir "$GITHUB_WORKSPACE/translation-service" \
             --api-key "$DEEPL_API_KEY" \
             --sha-cache "$CACHE_DIR/file_shas.json" \
-            $FORCE_FLAG $NO_SHA_SKIP
+            --gitee-dir "$WORK_DIR/gitee_repo" \
+            $FORCE_FLAG
 
           # 如果所有文件 SHA 未变，translate.py 会写 .all_skipped 标记，跳过后续同步
           if [ -f "$CACHE_DIR/.all_skipped" ]; then
