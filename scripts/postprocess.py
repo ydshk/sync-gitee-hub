@@ -10,7 +10,7 @@ PLACEHOLDER_RE = re.compile(r'XPLHX\d+XPLHX', re.IGNORECASE)
 
 
 def restore_placeholders(text, placeholders):
-    """将占位符替换回原始内容，容忍翻译 API 在占位符内插入空格"""
+    """将占位符替换回原始内容，容忍翻译 API 在占位符内插入空格或拆开占位符"""
     if not placeholders:
         return text
     ph_fuzzy = re.compile(r'XPLHX\s*(\d+)\s*XPLHX', re.IGNORECASE)
@@ -25,6 +25,11 @@ def restore_placeholders(text, placeholders):
     while text != prev:
         prev = text
         text = ph_fuzzy.sub(_restore, text)
+
+    # 处理占位符被 API 拆开只剩前半部分的情况：XPLHX{N} 后面不跟 XPLHX
+    # 例：DeepL 把 XPLHX8XPLHX 拆为 XPLHX8" （后半个 XPLHX 被替换为引号）
+    ph_partial = re.compile(r'XPLHX(\d+)(?![\dX])', re.IGNORECASE)
+    text = ph_partial.sub(_restore, text)
     return text
 
 
