@@ -1793,5 +1793,35 @@
     "source": "- Properly surface \"Other versions\" of an album from Youtube Music (by @NasaGeek in #6159)\n- Keep the duplicate track walk from freezing the library database (by @OzGav in #6236)\n- Ensure that the in-",
     "api_result": "- 正确显示 YouTube Music 中专辑的“其他版本”（由 @NasaGeek 在 #6159 中提出）\n- 防止重复曲目浏览导致音乐库数据库冻结（由 @OzGav 在 #6236 中提出）\n- 确保在 XPLHX0XPLHX 中的套接字更新期间，音乐库视图不会“丢失”媒体项目（由 @fmunkes 在 #6363 中提出）\n- 对于非 JSON 格式的登录请求正文，返回 HTTP 400 状态码而非 500（由 @MarvinSchenkel 在 #6371 中提出）\n- 将 YouTube Music 视为实时源（由 @MarvinSchenkel 在 #6373 中提出）",
     "ts": "2026-09-18T17:53:00.820473+00:00"
+  },
+  "929850672b6db6cf4a23fe09ea0beff0dc67dfde88b336a2ab236a6119d8c7a7": {
+    "source": "XPLHX0XPLHX[2.11.0.dev2026092003] - 20.09.2026",
+    "api_result": "XPLHX0XPLHX[2.11.0.dev2026092003] - 2026年9月20日",
+    "ts": "2026-09-20T04:12:48.449811+00:00"
+  },
+  "8a18843881d5d2b5078b188bd122743dc349923533267fec548fc8e6bec5e152": {
+    "source": "_Changes since XPLHX0XPLHX2.11.0.dev2026091803XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.11.0.dev2026091803XPLHX1XPLHX_ 以来的更改_",
+    "ts": "2026-09-20T04:12:49.271003+00:00"
+  },
+  "6739cebec6ceb6b56e86fbc7d59c31ffb782bc6c853eb3a0deffe4536a4468cb": {
+    "source": "- Register Plex Connect players on plex.tv so mobile Plexamp apps can discover them (by @markjohnson303 in #4570)\n- Serve the app on the first-time setup page (by @marcelveldt in #6403)",
+    "api_result": "- 在 plex.tv 上注册 Plex Connect 播放器，以便移动端 Plexamp 应用能够发现它们（由 @markjohnson303 在 #4570 中提出）\n- 在首次设置页面中提供该应用（由 @marcelveldt 在 #6403 中提出）",
+    "ts": "2026-09-20T04:12:50.168872+00:00"
+  },
+  "89a3c1fa3a9814072982080289ea6c53f6984fc8189ba7c74ca77786f57bfb76": {
+    "source": "- Fix OpenSubsonic credential preservation during reconfiguration (by @teancom in #6376)\n- Stop the audio analysis background scan from spawning a task per track (by @balloobbot in #6384)\n- Update py-",
+    "api_result": "- 修复了 OpenSubsonic 在重新配置过程中凭据保留的问题（由 @teancom 在 #6376 中提交）\n- 阻止音频分析后台扫描为每首曲目创建一个任务（由 @balloobbot 在 #6384 中提交）\n- 将 py-opensonic 更新至 10.4.1 版本（由 @khers 在 #6388 中提交）\n- 修复了扬声器组播放公告时出现不同步的问题（由 @marcelveldt 在 #6392 中提交）\n- 修复了播放动态混音时播放器随机播放/循环播放功能失效的问题（由 @marcelveldt 在 #6404 中提交）",
+    "ts": "2026-09-20T04:12:51.110287+00:00"
+  },
+  "865638e63f2e2dca6433782ad2236427eede33666b2b571d417dc4ad738d1119": {
+    "source": "- Tidy up the background tasks card view (by @marcelveldt in XPLHX0XPLHX#2795XPLHX1XPLHX)\n- Remove dead playMenuShown store field (by @marcelveldt in XPLHX2XPLHX#2794XPLHX3XPLHX)\n- Tidy up the music s",
+    "api_result": "- 整理后台任务卡片视图（由 @marcelveldt 在 XPLHX0XPLHX#2795XPLHX1XPLHX 中提出）\n- 移除已废弃的 playMenuShown 存储字段（由 @marcelveldt 在 XPLHX2XPLHX#2794XPLHX3XPLHX 中提出）\n- 整理音乐源设置页面（由 @marcelveldt 在 XPLHX4XPLHX#2793XPLHX5XPLHX 中提出）\n- 在设置向导中创建首个管理员账户（由 @marcelveldt 在 XPLHX6XPLHX#2799XPLHX7XPLHX 中实现）\n- 在字段旁以弹出窗口形式显示设置帮助（由 @marcelveldt 在 XPLHX8XPLHX#2796XPLHX9XPLHX 中实现）\n- 整理后台任务列表视图（由 @marcelveldt 在 XPLHX10XPLHX#2797XPLHX11XPLHX 中实现）\n- 整理提供商名称查找功能（由 @marcelveldt 提出，见 XPLHX12XPLHX#2798XPLHX13XPLHX）\n- 提升播放器组的用户体验清晰度（由 @trisweb 在 XPLHX14XPLHX#2695XPLHX15XPLHX 中提出）",
+    "ts": "2026-09-20T04:12:52.033663+00:00"
+  },
+  "7cd8348725ef060723086a8bafd452f1ada3dbba8500cd73904046b3012848cd": {
+    "source": "@balloobbot, @khers, @marcelveldt, @markjohnson303, @teancom, @trisweb",
+    "api_result": "@balloobbot、@khers、@marcelveldt、@markjohnson303、@teancom、@trisweb",
+    "ts": "2026-09-20T04:12:52.824699+00:00"
   }
 }
