@@ -17858,5 +17858,10 @@
     "source": "- Z-Wave JS UI supports XPLHX0XPLHX Discovery over MQTT. It is\n  XPLHX1XPLHXSTRONGLYXPLHX2XPLHX recommended XPLHX3XPLHXNOTXPLHX4XPLHX to use that option. Use the Z-Wave JS\n  integration as documented ",
     "api_result": "- Z-Wave JS UI 支持通过 MQTT 进行 XPLHX0XPLHX 设备发现。\n  XPLHX1XPLHX强烈XPLHX2XPLHX建议XPLHX3XPLHX不要XPLHX4XPLHX使用该选项。 请改用上文所述的 Z-Wave JS\n  集成方案。",
     "ts": "2026-09-19T10:43:12.211919+00:00"
+  },
+  "77bf3e8c0add843264d2ce78ebe998b36acceda78f4a8cad05c1ecf9f99f8a0c": {
+    "source": "- ⬆️ Update alpine_3_24/tzdata to v2026d-r0 @[renovate[bot]](XPLHX4XPLHX) (XPLHX0XPLHX#2XPLHX1XPLHX)\n- ⬆️ Update n8n to v2.39.8 @[renovate[bot]](XPLHX5XPLHX) (XPLHX2XPLHX#3XPLHX3XPLHX)",
+    "api_result": "- ⬆️ 将 alpine_3_24/tzdata 更新至 v2026d-r0 @[renovate[bot]](XPLHX4XPLHX) (XPLHX0XPLHX#2XPLHX1XPLHX)\n- ⬆️ 将 n8n 更新至 v2.39.8 @[renovate[bot]](XPLHX5XPLHX) (XPLHX2XPLHX#3XPLHX3XPLHX)",
+    "ts": "2026-09-21T02:07:21.993466+00:00"
   }
 }
