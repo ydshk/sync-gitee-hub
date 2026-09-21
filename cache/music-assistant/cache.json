@@ -1823,5 +1823,45 @@
     "source": "@balloobbot, @khers, @marcelveldt, @markjohnson303, @teancom, @trisweb",
     "api_result": "@balloobbot、@khers、@marcelveldt、@markjohnson303、@teancom、@trisweb",
     "ts": "2026-09-20T04:12:52.824699+00:00"
+  },
+  "9ff892ef0f8a9cc5fb6357099898c40b909397f3c8f871a30b976add5a4a987f": {
+    "source": "XPLHX0XPLHX[2.11.0.dev2026092103] - 21.09.2026",
+    "api_result": "XPLHX0XPLHX[2.11.0.dev2026092103] - 2026年9月21日",
+    "ts": "2026-09-21T04:10:25.633220+00:00"
+  },
+  "b898fc8d82cf8d0a82bd8469c2d00556d38addfe50ff3ef2fa3b2dc179605b64": {
+    "source": "_Changes since XPLHX0XPLHX2.11.0.dev2026092003XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.11.0.dev2026092003XPLHX1XPLHX_ 以来的更改_",
+    "ts": "2026-09-21T04:10:26.583787+00:00"
+  },
+  "60d886731c476c5c96332d2593f33007078ab5794976605d012d9b6f6f2ca617": {
+    "source": "- Apply the announcement volume consistently on grouped speakers (by @marcelveldt in #6412)",
+    "api_result": "- 在分组扬声器上统一应用广播音量（由 @marcelveldt 在 #6412 中提出）",
+    "ts": "2026-09-21T04:10:27.476607+00:00"
+  },
+  "30b042c75afc96c4416edfa5ddf4dcdc3385d779708efecd77b294c24820bfb7": {
+    "source": "- Move the ibroadcast item mapping to strings only (by @robsonke in #6405)\n- Fix a crash caused by a broken leftover player setting (by @marcelveldt in #6410)\n- Fix false permission error opening an a",
+    "api_result": "- 将 ibroadcast 项映射改为仅支持字符串（由 @robsonke 在 #6405 中提出）\n- 修复了由残留的播放器设置异常导致的崩溃问题（由 @marcelveldt 在 #6410 中提交）\n- 修复了打开艺人页面时出现的错误权限提示（由 @marcelveldt 在 #6411 中提交）",
+    "ts": "2026-09-21T04:10:28.483912+00:00"
+  },
+  "a8b0416c74d02cd0a2d9a58c533c3b0b119af54ce661861e531955d27b61e3be": {
+    "source": "- Share the remote access ID grouping (by @marcelveldt in XPLHX0XPLHX#2806XPLHX1XPLHX)\n- Reuse shared provider-name lookup in the settings breadcrumb (by @marcelveldt in XPLHX2XPLHX#2805XPLHX3XPLHX)\n-",
+    "api_result": "- 共享远程访问 ID 分组（由 @marcelveldt 在 XPLHX0XPLHX#2806XPLHX1XPLHX 中提出）\n- 在设置面包屑导航中复用共享的提供商名称查找功能（由 @marcelveldt 在 XPLHX2XPLHX#2805XPLHX3XPLHX 中提出）\n- 修复对话框、弹出框和下拉菜单中无效的 z-index 类（由 @marcelveldt 在 XPLHX4XPLHX#2803XPLHX5XPLHX 中提出）",
+    "ts": "2026-09-21T04:10:29.535248+00:00"
+  },
+  "516df3850306d81ddd9dd90d28d31ff07c81e0881cf4cfb04835222dc50e38d3": {
+    "source": "XPLHX0XPLHX\nXPLHX1XPLHX4 changesXPLHX2XPLHX",
+    "api_result": "XPLHX0XPLHX\nXPLHX1XPLHX4 更改XPLHX2XPLHX",
+    "ts": "2026-09-21T04:10:30.644928+00:00"
+  },
+  "74b8393e018abfe62cc8f384ffe8b4656d86139a336bedab910a79e37d76224c": {
+    "source": "- Bump docker/setup-buildx-action from 4.3.0 to 4.4.0 (by @dependabot[bot] in #6389)\n- Bump docker/build-push-action from 7.3.0 to 7.4.0 (by @dependabot[bot] in #6390)\n- Improve Sonos cloud-queue debu",
+    "api_result": "- 将 docker/setup-buildx-action 从 4.3.0 升级至 4.4.0（由 @dependabot[bot] 在 #6389 中完成）\n- 将 docker/build-push-action 从 7.3.0 升级至 7.4.0（由 @dependabot[bot] 在 #6390 中完成）\n- 改进 Sonos 云队列的调试日志记录（由 @marcelveldt 在 #6414 中完成）\n- 更新开发者文档中的提供商清单表（由 @marcelveldt 在 #6415 中完成）",
+    "ts": "2026-09-21T04:10:31.663225+00:00"
+  },
+  "9b5214fba3c39d2db5207a7bdfdc995d135471827028aa138fbb5913bd0be8c9": {
+    "source": "@marcelveldt, @robsonke",
+    "api_result": "@marcelveldt, @robsonke",
+    "ts": "2026-09-21T04:10:32.409166+00:00"
   }
 }
