@@ -231,6 +231,14 @@ jobs:
             FORCE_FLAG="--force"
             echo "Force re-translate enabled for this run."
           fi
+
+          # push 触发（配置变更）：处理所有文件，段落缓存命中不调 API，只重新应用后处理
+          NO_SHA_SKIP_FLAG=""
+          if [ "${{ github.event_name }}" = "push" ]; then
+            NO_SHA_SKIP_FLAG="--no-sha-skip"
+            echo "Push trigger: processing all files (paragraph cache applies, no API calls for cached segments)."
+          fi
+
           echo "Translating..."
           python3 "$GITHUB_WORKSPACE/scripts/translate.py" \
             --source-dir "$WORK_DIR/github_repo" \
@@ -239,7 +247,8 @@ jobs:
             --api-key "$DEEPL_API_KEY" \
             --sha-cache "$CACHE_DIR/file_shas.json" \
             --gitee-dir "$WORK_DIR/gitee_repo" \
-            $FORCE_FLAG
+            $FORCE_FLAG \
+            $NO_SHA_SKIP_FLAG
 
           # 如果所有文件 SHA 未变，translate.py 会写 .all_skipped 标记，跳过后续同步
           if [ -f "$CACHE_DIR/.all_skipped" ]; then
@@ -255,19 +264,34 @@ jobs:
             -e "s|https://raw.githubusercontent.com/${OWNER}/${REPO}/|https://gitee.com/home-assistant-xin/${GITEE_REPO}/raw/|g" \
             {} +
 
-          # 4. 提交翻译修改并 push 到 Gitee（缓存不进 Gitee，保持镜像纯净）
-          git config user.email "action@github.com"
-          git config user.name "GitHub Action"
-          git add -A
-          git commit -m "Sync from GitHub + translate README.md to Chinese" || echo "No changes to commit (all cached)"
-
-          git remote add gitee "$GITEE_URL"
-          git checkout "$DEFAULT_BRANCH" 2>/dev/null || true
-          echo "Pushing $DEFAULT_BRANCH to Gitee..."
-          git push gitee "$DEFAULT_BRANCH" --force
-          echo "Pushing tags to Gitee..."
-          git push gitee --tags --force
-          git remote remove gitee
+          # 4. 同步翻译结果到 Gitee 并推送（保留 Gitee 提交历史，非 force push）
+          if [ -d "$WORK_DIR/gitee_repo/.git" ]; then
+            # Gitee 仓库已存在：把翻译结果同步到 gitee_repo，在其历史基础上提交
+            rsync -a --delete --exclude='.git' "$WORK_DIR/github_repo/" "$WORK_DIR/gitee_repo/"
+            cd "$WORK_DIR/gitee_repo"
+            git config user.email "action@github.com"
+            git config user.name "GitHub Action"
+            git add -A
+            git commit -m "Sync from GitHub + translate README.md to Chinese" || echo "No changes to commit (all cached)"
+            echo "Pushing $DEFAULT_BRANCH to Gitee..."
+            git push origin "$DEFAULT_BRANCH"
+            echo "Pushing tags to Gitee..."
+            git push origin --tags
+          else
+            # Gitee 仓库不存在（首次同步）：在 github_repo 中提交并 force push
+            cd "$WORK_DIR/github_repo"
+            git config user.email "action@github.com"
+            git config user.name "GitHub Action"
+            git add -A
+            git commit -m "Sync from GitHub + translate README.md to Chinese" || echo "No changes to commit (all cached)"
+            git remote add gitee "$GITEE_URL"
+            git checkout "$DEFAULT_BRANCH" 2>/dev/null || true
+            echo "Pushing $DEFAULT_BRANCH to Gitee (initial sync, force)..."
+            git push gitee "$DEFAULT_BRANCH" --force
+            echo "Pushing tags to Gitee..."
+            git push gitee --tags --force
+            git remote remove gitee
+          fi
 
           # 5. 准备缓存 artifact（供 finalize 合并）
           mkdir -p "$WORK_DIR/artifact"
