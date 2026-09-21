@@ -1,33 +1,53 @@
 # sync-gitee-hub
 
-批量将 GitHub 仓库自动同步到 Gitee 的集中式工作流。
+批量将 GitHub 仓库自动同步到 Gitee 并翻译 markdown 文档为中文的集中式工作流。
 
 ## 工作原理
 
 ```
 GitHub (多owner)  ──┐
-                    │  GitHub Actions (定时/手动/推送触发)
-                    │  ──遍历 repos.txt──┐
-                    │                      ▼
-                    │              逐个仓库镜像推送
-                    │                      │
-                    └──────────────► Gitee (固定owner: home-assistant-xin)
+                     │  GitHub Actions (定时/手动/推送触发)
+                     │  ──遍历 repos.txt──┐
+                     │                      ▼
+                     │         逐个仓库：clone + 增量翻译 + 推送
+                     │                      │
+                     └──────────────► Gitee (固定owner: home-assistant-xin)
 ```
 
 - **源端（GitHub）**：每个仓库的 owner 可以不同，在 `repos.txt` 中按 `owner/repo` 指定
 - **目标端（Gitee）**：所有仓库都同步到固定账号 `home-assistant-xin` 下
-- **Gitee 仓库名**：默认与 GitHub 端 repo 名一致；若两个 owner 下有同名仓库导致冲突，可用映射格式 `owner/repo => gitee_name` 指定不同的 Gitee 仓库名
+- **翻译**：用 DeepLF API 将 `README.md` 等文件翻译为中文，术语表保护专有名词不译
+
+### 增量翻译流程
+
+1. Clone GitHub 仓库（英文原版）+ Clone6.tee 仓库（中文版，浅拷贝）
+2. 逐文件 SHA 对比：
+   - 所有文件 SHA 未变 → 写 `.all_skipped` 标记 → 跳过推送
+   - 有变动 → 变动文件调 API 翻译，未变动文件从 Gitee 恢复中文版
+3. 后处理：还原占位符 + 格式修复（中英混排空格、链接修复等）
+4. rsync 同步到 Gitee clone 目录 → commit → 非 force push（保留 Gitee 提交历史）
 
 ## 文件结构
 
 ```
 sync-gitee-hub/
-├── .github/
-│   └── workflows/
-│       └── sync-multi-repos.yml   # 同步工作流
-├── repos.txt                       # 仓库清单（owner/repo 或 owner/repo => gitee_name）
-└── README.md                       # 本文档
+├── .github/workflows/
+│   └── sync-multi-repos.yml       # 同步+翻译工作流
+├── scripts/
+│   ├── translate.py               # 翻译主逻辑（占位符保护、段落拆分、文件遍历）
+│   └── postprocess.py             # 后处理（还原占位符 + 格式修复）
+├── repos.txt                      # 仓库清单（owner/repo 或 owner/repo => gitee_name）
+├── glossary.txt                   # 术语表（专有名词保持英文不译）
+├── translation-map.txt            # 映射表（英文词 => 中文译法）
+├── translate-files.txt            # 翻译目标文件名（README.md、DOCS.md、CHANGELOG.md）
+├── cache/                         # 翻译缓存（段落级 + 逐文件 SHA）
+│   └── <gitee_repo>/
+│       ├── cache.json            B  殡落缓存（key=保护后文本，value=API 返回）
+│       └── file_shas.json         # 逐文件 SHA 字典
+└── README.md                      # 本文档
 ```
+
+> `translation-service`（`ydshk/translation-service`）为独立仓库，提供翻译 API 调用 + 缓存管理。
 
 ## 配置步骤
 
@@ -43,11 +63,10 @@ sync-gitee-hub/
 |------|---------|------|---------|
 | `GITEE_USERNAME` | ✅ 必选 | Gitee 登录用户名 | Gitee 个人主页 |
 | `GITEE_TOKEN` | ✅ 必选 | Gitee 私人令牌 | Gitee → 头像 → 设置 → 私人令牌，勾选 `projects` 权限 |
-| `GH_PAT` | ⚪ 可选 | GitHub Personal Access Token | GitHub → 头像 → Settings → Developer settings → Personal access tokens → Tokens (classic)，勾选 `repo` 权限 |
+| `DEEPL_API_KEY` | ✅ 必选 | DeepL API Free 密钥 | https://www.deepl.com/pro-api 需 DeepL API Free 账户，50 万字符/月 |
+| `GH_PAT` | ⚪ 可选 | GitHub Personal Access Token | GitHub → Settings → Developer settings → PAT (classic)，勾选 `repo` 权限 |
 
-> 💡 **公开仓库无需配置 `GH_PAT`**：若 `repos.txt` 中全部是公开仓库，工作流会自动使用 GitHub 内置的 `GITHUB_TOKEN` 拉取代码，无需额外创建 PAT。
->
-> ⚠️ **仅当清单中包含私有仓库时**，才需要配置 `GH_PAT`，且该 token 必须拥有这些私有仓库的读取权限（若私有仓库属于其他用户，需对方把你加入协作者）。
+> 💡 **公开仓库无需配置 `GH_PAT`**：若 `repos.txt` 中全部是公开仓库，工作流会自动使用 GitHub 内置的 `GITHUB_TOKEN` 拉取代码。
 
 ### 3. 在 Gitee 预建空仓库
 
@@ -56,23 +75,10 @@ sync-gitee-hub/
 - 简单格式 `owner/repo`：Gitee 仓库名 = `repo`
 - 映射格式 `owner/repo => gitee_name`：Gitee 仓库名 = `gitee_name`
 - **不要**勾选"使用 Readme 初始化仓库"
-- 公开/私有属性应与 GitHub 端保持一致
 
 ### 4. 编辑仓库清单
 
-打开 [`repos.txt`](repos.txt)，按格式添加要同步的仓库。支持两种格式：
-
-```
-# 简单格式（两端仓库名一致）
-your-github-username/repo-one
-other-github-user/repo-two
-
-# 映射格式（重名场景，自定义 Gitee 端仓库名）
-esphome/home-assistant-addon => esphome--home-assistant-addon
-music-assistant/home-assistant-addon => music-assistant--home-assistant-addon
-```
-
-提交并推送后，工作流会自动触发首次同步。
+打开 [`repos.txt`](repos.txt)，按格式添加要同步的仓库。提交并推送后，工作流会自动触发首次同步。
 
 ## repos.txt 格式规范
 
@@ -88,104 +94,104 @@ music-assistant/home-assistant-addon => music-assistant--home-assistant-addon
 | 规则 | 说明 |
 |------|------|
 | 必须包含且仅包含一个 `/` | GitHub 端 `owner/repo` 中只能有一个斜杠 |
-| `/` 前后都必须有内容 | owner 和 repo 均不能为空 |
-| `=>` 前后都必须有空格（建议） | `owner/repo => gitee_name` |
 | `=>` 后的 Gitee 名 | 仅允许字母数字、点 `.`、下划线 `_`、连字符 `-` |
-| 仅允许字符 | 字母 `a-z A-Z`、数字 `0-9`、点 `.`、下划线 `_`、连字符 `-` |
 | 注释行 | 以 `#` 开头的行会被忽略 |
 | 空行 | 自动忽略 |
-| **Gitee 仓库名不可重复** | 多个条目映射到同一 Gitee 仓库时会报错（防止互相覆盖） |
-
-### 合法示例 ✅
-
-```
-# 简单格式
-your-name/repo-one
-user.name/my-repo
-
-# 映射格式（重名场景）
-esphome/home-assistant-addon => esphome--home-assistant-addon
-music-assistant/home-assistant-addon => music-assistant--home-assistant-addon
-```
-
-### 非法示例 ❌
-
-```
-repo-one              # 缺少 owner，无斜杠
-/repo-one             # owner 为空
-your-name/            # repo 为空
-your-name/repo/extra  # 多个斜杠
-your-name/repo one    # 含空格
-your-name/repo@x      # 含非法字符 @
-=> something          # 缺少 GitHub 端 owner/repo
-your-name/repo =>     # 缺少 => 后的 Gitee 名
-```
-
-### 重名场景处理
-
-当两个不同 GitHub owner 下有同名仓库时，由于 Gitee 端 owner 固定为 `home-assistant-xin`，必须用映射格式为它们指定不同的 Gitee 仓库名，否则会互相覆盖。
-
-```
-# ❌ 错误写法：两个仓库会同步到同一个 Gitee 仓库 home-assistant-xin/home-assistant-addon
-esphome/home-assistant-addon
-music-assistant/home-assistant-addon
-
-# ✅ 正确写法：用映射格式指定不同的 Gitee 名
-esphome/home-assistant-addon => esphome--home-assistant-addon
-music-assistant/home-assistant-addon => music-assistant--home-assistant-addon
-```
-
-> 若 `repos.txt` 中出现 Gitee 仓库名重复，prepare 阶段会直接报错退出并指出冲突的条目，不会执行任何同步。
-
-> 格式校验失败时，整个工作流会立即报错退出，不会执行任何同步操作。
+| **Gitee 仓库名不可重复** | 多个条目映射到同一 Gitee 仓库时会报错 |
 
 ## 触发方式
 
-| 触发方式 | 说明 |
-|---------|------|
-| **定时同步** | 每天北京时间 08:00 自动同步 `repos.txt` 中全部仓库 |
-| **手动触发** | Actions → 选择此 workflow → Run workflow，可在输入框中指定要同步的仓库（逗号分隔，格式 `owner/repo` 或 `owner/repo=>gitee_name`），留空则同步全部 |
-| **配置变更** | 修改 `repos.txt` 或 workflow 文件本身并推送后自动触发 |
+| 触发方式 | 说明 | SHA 跳过 | 段落缓存 |
+|---------|------|----------|----------|
+| **定时同步** | 每天北京时间 00:00 自动同步全部仓库 | ✅ 生效 | ✅ 生效 |
+| **手动触发** | Actions → Run workflow，可指定仓库或强制重译 | ✅ 生效（除非 force） | ✅ 生效（除非 force） |
+| **配置变更推送** | 修改 workflow/repos9. repos.txt/glossary.txt/translation-map.txt/scripts/ 后推送 | ❌ 跳过（处理所有文件） | ✅ 生效 |
 
-### 手动触发指定仓库示例
+> **配置变更推送**时传 `--no-sha-skip`：处理所有文件但段落缓存命中不调 API，只重新应用后处理。改了 `postprocess.py`/`glossary.txt` 后推送即可生效，无需消耗 API 额度。
 
-在 Run workflow 的 `repos` 输入框中填入：
+### 手动触发选项
+
+- **`repos`**：指定要同步的仓库（逗号分隔，格式 `owner/repo` 或 `owner/repo=>gitee_name`），留空则同步全部
+- **`force_retranslate`**：强制重新翻译（忽略段落缓存，所有 README 重新调用翻译 API）
+
+## 翻译配置
+
+### glossary.txt — 术语表
+
+每行一个专有名词，翻译时保持英文不译。按长度降序匹配（避免子串问题）。
 
 ```
-user-a/repo-1,user-b/repo-2=>repo-2-alt
+UniFi Network Application
+Music Assistant Server
+Actual Budget
+AdGuard Home
+Glances
+Grafana
+ESPHome
 ```
 
-将只同步这两个仓库，不影响 `repos.txt` 中的其他条目。手动触发同样支持映射格式（`=>` 前后可省略空格，但建议保留）。
+> ⚠️ 本文件有条目时，`translate.py` 中的 `DEFAULT_GLOSSARY` 不生效，需把所有术语都列在这里。
+
+### translation-map.txt — 映射表
+
+指定英文词的中文译法，格式 `英文 => 中文`：
+
+```
+Releases => 版本发布
+procedure => 步骤
+stream => 流
+```
+
+### translate-files.txt — 翻译目标文件
+
+指定哪些文件名需要翻译（不区分大小写）：
+
+```
+README.md
+DOCS.md
+CHANGELOG.md
+```
+
+## 缓存机制
+
+### 两层缓存
+
+1. **逐文件 SHA**（`file_shas.json`）：决定是否跳过整个文件
+2. **段落级缓存**（`cache.json`）：决定是否调 DeepL API（key=保护后文本，value=API 返回）
+
+### 缓存失效场景
+
+| 改动 | 是否需要删缓存 | 原因 |
+|------|---------------|------|
+| 改 `postprocess.py` | ❌ 不需要 | 后处理每次重新应用，推送后自动生效 |
+| 改 `glossary.txt` | ✅ 需删缓存 | 保护后文本变 → 缓存 key 变 → 不命中旧缓存 → 调 API 重译 |
+| 改 `translation-map.txt` | ✅ 需删缓存 | 同上 |
+| 改 `translate.py` 占位符逻辑 | ✅ 需删缓存 | 占位符格式变 → 缓存不兼容 |
+
+> 删缓存时只需删对应仓库的 `cache/<repo>/` 目录，不影响其他仓库。
 
 ## 注意事项
 
-### 1. 强制覆盖
+### 1. Gitee 提交历史
 
-工作流默认使用 `git push --force`，**请勿在 Gitee 端直接修改代码**，否则本地修改会被覆盖。所有代码改动应在 GitHub 端进行。
+- **已存在仓库**：rsync 同步内容 + commit + 非 force push，保留 Gitee 提交历史，每次同步只新增一个提交
+- **首次同步**（仓库不存在）：force push 初始化
+- **请勿在 Gitee 端直接修改代码**，否则 push 可能失败（非 fast-forward）
 
-### 2. 仓库名一致性
+### 2. DeepL API 额度
 
-- **简单格式** `owner/repo`：GitHub 端 `repo` 部分必须与 Gitee 端仓库名**完全一致**（区分大小写），否则推送会失败
-- **映射格式** `owner/repo => gitee_name`：Gitee 端仓库名以 `=>` 后的 `gitee_name` 为准（区分大小写），预建 Gitee 空仓库时必须用这个名字
-- **不可重复**：多个条目映射到同一个 Gitee 仓库名时，prepare 阶段会直接报错退出
+- DeepL API Free：50 万字符/月
+- 额度耗尽时 API 静默失败（不报错，仅替换术语表保留英文原文）
+- �A 殀查方法：翻译结果只替换了术语表但未翻译 → 查 `DEEPL_API_KEY` 是否有效或额度是否用完
 
-### 3. 私有仓库同步
+### 3. 分支名
 
-若 GitHub 源仓库是私有的：
-- 必须在 Secrets 中配置 `GH_PAT`，且该 token 必须拥有该仓库的读取权限
-- 公开仓库无需配置 `GH_PAT`，工作流自动使用 GitHub 内置 `GITHUB_TOKEN`
-- Gitee 目标仓库也建议设为私有，避免代码泄露
+push 到同名分支，不强制映射 `main`：master 仓保持 master，main 仓保持 main。
 
 ### 4. Token 安全
 
-- `GITEE_TOKEN` 和 `GH_PAT` 都通过 GitHub Secrets 存储，不会出现在日志中
-- workflow 末尾会执行 `git remote remove gitee` 清理 URL 中的凭证
+- `GITEE_TOKEN`、`DEEPL_API_KEY`、`GH_PAT` 都通过 GitHub Secrets 存储
 - 建议定期轮换 token
-
-### 5. GitHub Actions 限额
-
-- 公开仓库：免费且无限制
-- 私有仓库：每月有免费分钟数限额（免费账号 2000 分钟/月），定时任务会消耗额度
 
 ## 故障排查
 
@@ -193,59 +199,37 @@ user-a/repo-1,user-b/repo-2=>repo-2-alt
 
 - 检查 `repos.txt` 中 `owner/repo` 拼写是否正确
 - 若是**私有**仓库，确认已配置 `GH_PAT` 且拥有该仓库读取权限
-- 检查 Gitee 端 `home-assistant-xin/<repo>` 仓库是否已创建
-- 若使用了映射格式（`=>`），检查 Gitee 端仓库是否按**映射后的名字**创建
+- 检查 Gitee 端仓库是否已创建
 
-### Q: 同步失败，提示 `Invalid format`
+### Q: 翻译结果只替换了术语表但未翻译
 
-- 检查对应行的格式是否符合 [`repos.txt 格式规范`](#repostxt-格式规范)
-- Actions 日志会显示具体哪一行出错
+- DeepL API 额度可能已耗尽（HTTP 456 Quota exceeded）
+- 检查 `DEEPL_API_KEY` 是否有效
+- API 失败时静默保留#留英文原文，不报错
 
-### Q: 同步失败，提示 `Duplicate Gitee repo name detected`
+### Q: 改了 `postprocess.py` 推送后 Gitee 未更新
 
-- `repos.txt` 中有多个条目映射到了同一个 Gitee 仓库名
-- 通常发生在两个 GitHub owner 下有同名仓库、且都用了简单格式 `owner/repo` 的情况
-- 解决：用映射格式 `owner/repo => unique_gitee_name` 为冲突仓库指定不同的 Gitee 名
-- 日志会显示具体冲突的两个条目，方便定位
+- 确认是 push 触发（非 schedule）：push 触发会传 `--no-sha-skip` 处理所有文件
+- 段落缓存命中不调 API，但后处理会重新应用
+- 检查 Actions 日志是否有 `Push trigger: processing all files`
 
-### Q: 清单里有多个条目，但只同步了第一个 / 看不到后面的条目
+### Q: 改了 `glossary.txt` 推送后翻译未变
 
-通常是 **Windows CRLF 行尾** 导致的：
-
-- 在 Windows 上编辑 `repos.txt` 保存为 CRLF 行尾，推送到 GitHub 后 Actions 在 Ubuntu 上运行 bash
-- bash 的 `read` 会把 `\r` 当作行内容的一部分，导致第二行及之后的条目解析时 `\r` 残留
-- 校验 `=>` 后的 Gitee 名时 `\r` 不在 `[A-Za-z0-9._-]` 范围内 → 校验失败 → 条目被静默跳过
-- 表现：Actions 列表里看不到后续条目对应的 job，像是"只同步了第一个"
-
-**解决方案**（项目已内置防御，无需手动处理）：
-
-1. `.gitattributes` 强制 `repos.txt` 使用 LF 行尾
-2. workflow 内 `tr -d '\r'` 主动去除残留的 `\r`
-3. `parse_entry` 失败时 `|| exit 1` 中止 prepare，不再静默吞错
-
-如果仍遇到此问题，可在本地执行 `dos2unix repos.txt` 转换行尾后重新提交。
+- 改术语表需删对应仓库缓存（`cache/<repo>/`）后重译
+- 推送会触发 `--no-sha-skip`，但段落缓存命中旧翻译（保护后文本变 → key 变 → 不命中 → 调 API 重译）
+- 若未自动重译，手动触发 `force_retranslate=true`
 
 ### Q: 定时任务没有触发
 
-- GitHub Actions 的定时任务可能有几分钟到十几分钟的延迟，属于正常现象
-- 检查仓库是否超过 60 天未活动（GitHub 会自动停用闲置仓库的定时任务，进入 Actions 重新启用即可）
-
-### Q: 想要更频繁的同步
-
-修改 `sync-multi-repos.yml` 中的 `cron` 表达式：
-
-```yaml
-schedule:
-  - cron: '0 */6 * * *'   # 每 6 小时同步一次
-```
-
-> ⚠️ 不建议设置过于频繁（如每 5 分钟），可能触发 GitHub 限流。
-
-### Q: 想要实时同步某个仓库
-
-对于需要实时同步的核心仓库，可以单独配置 [`sync-to-gitee.yml`](../.github/workflows/sync-to-gitee.yml)（基于 push 事件触发），其他仓库仍走本集中方案。
+- GitHub Actions 的定时任务可能有几分钟到十几分钟的延迟
+- 检查仓库是否超过 60 天未活动（GitHub 会自动停用闲置仓库的定时任务）
 
 ## 相关文件
 
 - [工作流定义](.github/workflows/sync-multi-repos.yml)
 - [仓库清单](repos.txt)
+- [术语表](glossary.txt)
+- [映射表](translation-map.txt)
+- [翻译目标文件](translate-files.txt)
+- [翻译主逻辑](scripts/translate.py)
+- [后处理逻辑](scripts/postprocess.py)

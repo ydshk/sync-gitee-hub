@@ -3,8 +3,8 @@ name: Sync Multiple Repos to Gitee
 # 触发方式：定时 + 手动 + 推送配置文件变更
 on:
   schedule:
-    # 每天北京时间 8:00 自动同步（UTC 0:00）
-    - cron: '0 0 * * *'
+    # 每天北京时间 0:00 自动同步（UTC 16:00）
+    - cron: '0 16 * * *'
   workflow_dispatch:
     inputs:
       repos:
