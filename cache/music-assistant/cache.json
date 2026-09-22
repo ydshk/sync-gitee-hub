@@ -1863,5 +1863,35 @@
     "source": "@marcelveldt, @robsonke",
     "api_result": "@marcelveldt, @robsonke",
     "ts": "2026-09-21T04:10:32.409166+00:00"
+  },
+  "5ac74dfa0827a1e1d9d1b7b14c1034ca13cf6ead6c521a5516ca1b1dd9275a57": {
+    "source": "XPLHX0XPLHX[2.11.0.dev2026092203] - 22.09.2026",
+    "api_result": "XPLHX0XPLHX[2.11.0.dev2026092203] - 2026年9月22日",
+    "ts": "2026-09-22T19:34:50.671809+00:00"
+  },
+  "0b223bd1c6a98dcee4dafddc33375c38bf9caaa80a4108fc929c55ae89338bb3": {
+    "source": "_Changes since XPLHX0XPLHX2.11.0.dev2026092103XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.11.0.dev2026092103XPLHX1XPLHX_ 以来的更改_",
+    "ts": "2026-09-22T19:34:51.580831+00:00"
+  },
+  "25b0d9814a06b6a5749cd9ad7a598da80611cc352c595a1edc03cc694892f49c": {
+    "source": "- Log an error when Bandcamp returns invalid JSON (by @teancom in #6417)",
+    "api_result": "- 当 Bandcamp 返回无效的 JSON 时记录错误（由 @teancom 在 #6417 中提出）",
+    "ts": "2026-09-22T19:34:52.382925+00:00"
+  },
+  "7d723c7620b2636f86be325379e003bf7258c62afd13864d532fbb9582e55e23": {
+    "source": "- Show listeners a fitting AI Radio empty state (by @marcelveldt in XPLHX0XPLHX#2810XPLHX1XPLHX)\n- Share the player rename helper with the rename dialog (by @marcelveldt in XPLHX2XPLHX#2808XPLHX3XPLHX",
+    "api_result": "- 向听众显示一个合适的 AI Radio 空状态（由 @marcelveldt 在 XPLHX0XPLHX#2810XPLHX1XPLHX 中提出）\n- 将播放器重命名辅助功能与重命名对话框共享（由 @marcelveldt 在 XPLHX2XPLHX#2808XPLHX3XPLHX 中提出）\n- 清理对话框按钮上的冗余加载标记（由 @marcelveldt 在 XPLHX4XPLHX#2807XPLHX5XPLHX 中提出）",
+    "ts": "2026-09-22T19:34:53.275798+00:00"
+  },
+  "275859e90882f76fc04044ebd2e56ee35d48b00f669ebb5699fc97f5f951b7b6": {
+    "source": "- Bump wiim from 0.1.7 to 0.1.8 (by @dependabot[bot] in #6419)\n- Bump mashumaro from 3.20 to 3.22 (by @dependabot[bot] in #6420)\n- Bump websocket-client from 1.9.0 to 1.9.2 (by @dependabot[bot] in #64",
+    "api_result": "- 将 wiim 从 0.1.7 更新至 0.1.8（由 @dependabot[bot] 在 #6419 中操作）\n- 将 mashumaro 从 3.20 升级至 3.22（由 @dependabot[bot] 在 #6420 中完成）\n- 将 websocket-client 从 1.9.0 升级至 1.9.2（由 @dependabot[bot] 在 #6421 中完成）",
+    "ts": "2026-09-22T19:34:54.347467+00:00"
+  },
+  "7d3b7458a760a54487d0ceb8cf45e3e8f271f733b9a36075135dc6c6c74ba027": {
+    "source": "@marcelveldt, @teancom",
+    "api_result": "@marcelveldt, @teancom",
+    "ts": "2026-09-22T19:34:55.049999+00:00"
   }
 }
