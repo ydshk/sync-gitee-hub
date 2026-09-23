@@ -1893,5 +1893,40 @@
     "source": "@marcelveldt, @teancom",
     "api_result": "@marcelveldt, @teancom",
     "ts": "2026-09-22T19:34:55.049999+00:00"
+  },
+  "2d3cfc5a6f55737448e09386e98632f62c8250599a1dbe550c530f47b311c362": {
+    "source": "XPLHX0XPLHX[2.11.0.dev2026092303] - 23.09.2026",
+    "api_result": "XPLHX0XPLHX[2.11.0.dev2026092303] - 2026年9月23日",
+    "ts": "2026-09-23T19:27:23.770254+00:00"
+  },
+  "54bbf4b405896c7511cdecc8421014c8de8b64fba2abaa42267e7cfefd304809": {
+    "source": "_Changes since XPLHX0XPLHX2.11.0.dev2026092203XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.11.0.dev2026092203XPLHX1XPLHX_ 以来的更改_",
+    "ts": "2026-09-23T19:27:24.732071+00:00"
+  },
+  "c2d51ca4e8cb6dca32df0af44792c82bb2e883a696d62b67ab5626ea6187a6f9": {
+    "source": "- Use the loudness provided by Tidal (by @StollD in #6406)",
+    "api_result": "- 使用 Tidal 提供的响度值（由 @StollD 在 #6406 中提供）",
+    "ts": "2026-09-23T19:27:25.667478+00:00"
+  },
+  "27a32cd345c4ec2731dc5dfb1d53f0f4fc3c64f3a67ff70e5a5040dc8845ee26": {
+    "source": "- Fix YTMusic album resolution crash on null audioPlaylistId (by @frosty-geek in #6435)",
+    "api_result": "- 修复了当 audioPlaylistId 为空时 YTMusic 专辑解析导致的崩溃问题（由 @frosty-geek 在 #6435 中提出）",
+    "ts": "2026-09-23T19:27:26.649258+00:00"
+  },
+  "3019104875a5d60f323dbd3193cc08635f00e65736e68cd3a39d921dd387e29e": {
+    "source": "- Stop the add-provider dialog fetching while hidden (by @marcelveldt in XPLHX0XPLHX#2822XPLHX1XPLHX)\n- Announce list rows to screen readers in settings lists (by @marcelveldt in XPLHX2XPLHX#2821XPLHX",
+    "api_result": "- 阻止“添加提供程序”对话框在隐藏状态下加载数据（由 @marcelveldt 在 XPLHX0XPLHX#2822XPLHX1XPLHX 中提出）\n- 在设置列表中向屏幕阅读器朗读列表行（由 @marcelveldt 在 XPLHX2XPLHX#2821XPLHX3XPLHX 中提出）",
+    "ts": "2026-09-23T19:27:27.634140+00:00"
+  },
+  "9c39ddf2cd67cff686dd352de9dc5f25ceefcc8a80673b443fef76ee65effe8e": {
+    "source": "- Add test coverage for Ingress username-match sign-in (by @marcelveldt in #6437)",
+    "api_result": "- 为 Ingress 的用户名匹配登录功能添加测试覆盖率（由 @marcelveldt 在 #6437 中提出）",
+    "ts": "2026-09-23T19:27:28.578015+00:00"
+  },
+  "2f3bff523b95962e38759160096c9a2a57f336b77815081316f747d9d3c6da88": {
+    "source": "@StollD, @frosty-geek, @marcelveldt",
+    "api_result": "@StollD、@frosty-geek、@marcelveldt",
+    "ts": "2026-09-23T19:27:29.369492+00:00"
   }
 }
