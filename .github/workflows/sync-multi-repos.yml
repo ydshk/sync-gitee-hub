@@ -264,7 +264,17 @@ jobs:
             -e "s|https://raw.githubusercontent.com/${OWNER}/${REPO}/|https://gitee.com/home-assistant-xin/${GITEE_REPO}/raw/|g" \
             {} +
 
-          # 4. 同步翻译结果到 Gitee 并推送（保留 Gitee 提交历史，非 force push）
+          # 4. 准备缓存 artifact（供 finalize 合并）—— 在 push 之前准备，确保 push 失败不丢缓存
+          mkdir -p "$WORK_DIR/artifact"
+          if [ -f "$CACHE_DIR/cache.json" ]; then
+            cp "$CACHE_DIR/cache.json" "$WORK_DIR/artifact/${GITEE_REPO}.json"
+          fi
+          if [ -f "$CACHE_DIR/file_shas.json" ]; then
+            cp "$CACHE_DIR/file_shas.json" "$WORK_DIR/artifact/${GITEE_REPO}.shas"
+          fi
+
+          # 5. 同步翻译结果到 Gitee 并推送（保留 Gitee 提交历史，非 force push）
+          git config http.postBuffer 524288000
           if [ -d "$WORK_DIR/gitee_repo/.git" ]; then
             # Gitee 仓库已存在：把翻译结果同步到 gitee_repo，在其历史基础上提交
             rsync -a --delete --exclude='.git' "$WORK_DIR/github_repo/" "$WORK_DIR/gitee_repo/"
@@ -291,15 +301,6 @@ jobs:
             echo "Pushing tags to Gitee..."
             git push gitee --tags --force
             git remote remove gitee
-          fi
-
-          # 5. 准备缓存 artifact（供 finalize 合并）
-          mkdir -p "$WORK_DIR/artifact"
-          if [ -f "$CACHE_DIR/cache.json" ]; then
-            cp "$CACHE_DIR/cache.json" "$WORK_DIR/artifact/${GITEE_REPO}.json"
-          fi
-          if [ -f "$CACHE_DIR/file_shas.json" ]; then
-            cp "$CACHE_DIR/file_shas.json" "$WORK_DIR/artifact/${GITEE_REPO}.shas"
           fi
 
       - name: Upload cache artifact
