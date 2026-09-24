@@ -1928,5 +1928,35 @@
     "source": "@StollD, @frosty-geek, @marcelveldt",
     "api_result": "@StollD、@frosty-geek、@marcelveldt",
     "ts": "2026-09-23T19:27:29.369492+00:00"
+  },
+  "26aeebe0191404df66cb1980888d44745c5e3c6b9f4e40980896b68ac2945115": {
+    "source": "XPLHX0XPLHX[2.11.0.dev2026092403] - 24.09.2026",
+    "api_result": "XPLHX0XPLHX[2.11.0.dev2026092403] - 2026年9月24日",
+    "ts": "2026-09-24T06:57:28.982891+00:00"
+  },
+  "065f4d02b0d9bd74ef8cd59dc170ddcbf43c7f53653768de2abe4f1a500a93d6": {
+    "source": "_Changes since XPLHX0XPLHX2.11.0.dev2026092303XPLHX1XPLHX_",
+    "api_result": "_自 XPLHX0XPLHX2.11.0.dev2026092303XPLHX1XPLHX_ 以来的更改_",
+    "ts": "2026-09-24T06:57:29.866127+00:00"
+  },
+  "c99c3e5c5dbad7023f62ece6ed83288c1af784fbc8b66002ef2c90004035c60b": {
+    "source": "- Nicovideo: show the MFA code as separate digit boxes (by @marcelveldt in #6444)",
+    "api_result": "- Nicovideo：将MFA验证码显示为独立的数字框（由 @marcelveldt 在 #6444 中提出）",
+    "ts": "2026-09-24T06:57:30.697426+00:00"
+  },
+  "1cb48b8509cf1330017f0b6741446cfae24d64ed41778e200c699e2cf03c152a": {
+    "source": "- Improved syncing in case it fails halfway on a single item (by @robsonke in #6418)\n- Keep the stale mapping pass from emptying a library on mismatched ids (by @RyanAtTanagra in #6427)\n- Fix AirPlay ",
+    "api_result": "- 改进了同步机制，以应对单个项目同步中途失败的情况（由 @robsonke 在 #6418 中提交）\n- 防止因 ID 不匹配导致过期映射处理清空音乐库（由 @RyanAtTanagra 在 #6427 中提交）\n- 修复了 AirPlay 扬声器在播放启动失败后忽略停止指令的问题（由 @marcelveldt 在 #6439 中提出）\n- 当 ListenBrainz 令牌失效时显示错误提示（由 @marcelveldt 在 #6447 中提出）",
+    "ts": "2026-09-24T06:57:31.701254+00:00"
+  },
+  "92028546503e6156570b25147f7246ec075a66e4d459a418f906a36f67ec3d93": {
+    "source": "- Add support for authors/ narrators as artists and collections to the test provider (by @fmunkes in #6396)\n- Deduplicate the streams controller test setup helper (by @marcelveldt in #6442)",
+    "api_result": "- 在测试提供程序中添加对作者/叙述者作为艺术家和收藏集的支持（由 @fmunkes 在 #6396 中提出）\n- 去除流控制器测试设置辅助函数中的重复内容（由 @marcelveldt 在 #6442 中提出）",
+    "ts": "2026-09-24T06:57:32.649103+00:00"
+  },
+  "7c87fa96f257122f54354032b6d8291d58f30e971b9b98d66188307caa6cedab": {
+    "source": "@RyanAtTanagra, @fmunkes, @marcelveldt, @robsonke",
+    "api_result": "@RyanAtTanagra、@fmunkes、@marcelveldt、@robsonke",
+    "ts": "2026-09-24T06:57:33.387351+00:00"
   }
 }
