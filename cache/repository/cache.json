@@ -17863,5 +17863,20 @@
     "source": "- ⬆️ Update alpine_3_24/tzdata to v2026d-r0 @[renovate[bot]](XPLHX4XPLHX) (XPLHX0XPLHX#2XPLHX1XPLHX)\n- ⬆️ Update n8n to v2.39.8 @[renovate[bot]](XPLHX5XPLHX) (XPLHX2XPLHX#3XPLHX3XPLHX)",
     "api_result": "- ⬆️ 将 alpine_3_24/tzdata 更新至 v2026d-r0 @[renovate[bot]](XPLHX4XPLHX) (XPLHX0XPLHX#2XPLHX1XPLHX)\n- ⬆️ 将 n8n 更新至 v2.39.8 @[renovate[bot]](XPLHX5XPLHX) (XPLHX2XPLHX#3XPLHX3XPLHX)",
     "ts": "2026-09-21T02:07:21.993466+00:00"
+  },
+  "14580e7c0c158e5b0640af6cf08a4823876215bd967f6c0f8b6473b528c4556a": {
+    "source": "- Fix error handling during services import @lmagyar (XPLHX0XPLHX#762XPLHX1XPLHX)\n- Accept https+insecure as target for services option @lmagyar (XPLHX2XPLHX#763XPLHX3XPLHX)",
+    "api_result": "- 修复服务导入过程中的错误处理 @lmagyar (XPLHX0XPLHX#762XPLHX1XPLHX)\n- 允许将 https+insecure 作为服务选项的目标 @lmagyar (XPLHX2XPLHX#763XPLHX3XPLHX)",
+    "ts": "2026-09-24T06:57:32.036628+00:00"
+  },
+  "37bebab9dee6e26b150bbcd4e88d83ff2b85a545216b6e5ef68d6d610ae9d3eb": {
+    "source": "- Fix local network related code comments @lmagyar (XPLHX0XPLHX#760XPLHX1XPLHX)",
+    "api_result": "- 修复了与本地网络相关的代码注释 @lmagyar (XPLHX0XPLHX#760XPLHX1XPLHX)",
+    "ts": "2026-09-24T06:57:32.941947+00:00"
+  },
+  "bef7bbace71da5015c3a478c1d5e6761f87ff18c2147629030f350462f9d0e6a": {
+    "source": "- The XPLHX0XPLHX must be a local address reachable from this app. Use XPLHX1XPLHX,\n  XPLHX2XPLHX or XPLHX3XPLHX targets for HTTP/HTTPS protocols, and\n  XPLHX4XPLHX targets for TCP and tls-terminated-",
+    "api_result": "- XPLHX0XPLHX 必须是本应用可访问的本地地址。对于 HTTP/HTTPS 协议，请使用 XPLHX1XPLHX、\n  XPLHX2XPLHX 或 XPLHX3XPLHX 作为目标地址，而\n  对于 TCP 和 tls-terminated-tcp 协议，请使用 XPLHX4XPLHX 目标，例如\n  XPLHX5XPLHX。",
+    "ts": "2026-09-24T06:57:34.120615+00:00"
   }
 }
