@@ -285,6 +285,7 @@ def main():
 
     translated_count = 0
     restored_count = 0
+    failed_no_backup = []
 
     for md_file, rel_path in target_files:
         # 未变动文件：从 Gitee 恢复中文版（避免英文覆盖中文）
@@ -298,7 +299,20 @@ def main():
 
         print(f"\nTranslating: {rel_path}")
         content = md_file.read_text(encoding='utf-8')
-        translated, stats = translate_markdown(content, _translate, cache_mgr, args.force)
+        try:
+            translated, stats = translate_markdown(content, _translate, cache_mgr, args.force)
+        except Exception as e:
+            print(f"  ::error::Translation failed: {e}")
+            if gitee_dir:
+                gitee_file = gitee_dir / rel_path
+                if gitee_file.exists():
+                    md_file.write_text(gitee_file.read_text(encoding='utf-8'), encoding='utf-8')
+                    print(f"  Restored from Gitee (translation failed): {rel_path}")
+                    restored_count += 1
+                    continue
+            print(f"  Skipped (no Gitee backup, keeping English): {rel_path}")
+            failed_no_backup.append(rel_path)
+            continue
 
         if translated != content:
             md_file.write_text(translated, encoding='utf-8')
@@ -309,13 +323,15 @@ def main():
 
     cache_mgr.save()
 
-    # 保存逐文件 SHA 缓存
+    # 保存逐文件 SHA 缓存（翻译失败且无 Gitee 备份的文件不记录 SHA，下次重试）
     if sha_cache_path:
+        for rel_path in failed_no_backup:
+            new_sha_cache.pop(rel_path, None)
         sha_cache_path.parent.mkdir(parents=True, exist_ok=True)
         sha_cache_path.write_text(json.dumps(new_sha_cache, indent=2, sort_keys=True), encoding='utf-8')
 
     print(f"\nFinal stats: {cache_mgr.stats()}")
-    print(f"Translated: {translated_count}, Restored from Gitee: {restored_count}, Changed: {len(changed_files)}")
+    print(f"Translated: {translated_count}, Restored from Gitee: {restored_count}, Changed: {len(changed_files)}, Failed (no backup): {len(failed_no_backup)}")
 
     # 输出 skipped 标记给 GitHub Actions
     github_output = os.environ.get('GITHUB_OUTPUT')
