@@ -1,5 +1,5 @@
 {
-  "README.md": "7fd745d5839429f59b84433915169064080c9eb5ad533c5f64a44086c0dcd4f9",
+  "README.md": "441fddb3480ed00c5c859c591d9fde0602951adfbe3a6d0a47d47ce569a82485",
   "actual-budget/CHANGELOG.md": "f22365c505374c99bce6fa8f7e5e0d5df0d42578fdc137ea8ce638269e7585a3",
   "actual-budget/DOCS.md": "97e5a219cac45815c8536a5c356229763ced78b94737770980a02d1cc0519b7f",
   "actual-budget/README.md": "789f56b793ad1d12615c0d706eac7499d25e1816e69307cd5f04f650edf3c9de",
@@ -165,9 +165,9 @@
   "unifi/CHANGELOG.md": "d206a687efcb25b249df662deece1da3158f7689dcf42d2cb55917d0be32d596",
   "unifi/DOCS.md": "9c3c059a1a62533b51ba4d88400ec3c12638b82308540c9fd55dec025e303e9b",
   "unifi/README.md": "e8963c4387294fd5cd54860eab0eeaf995be51796fe199df6d9685e79ab89443",
-  "uptime-kuma/CHANGELOG.md": "fd0ff130d6884c926a9b113cc1c07aca7b59f8b6d3710f811a662a8c4f215d2d",
+  "uptime-kuma/CHANGELOG.md": "b3fb468c07e49592cb3e27b7cf3070c09744a1564ad1f6b75dc6258eafbff87a",
   "uptime-kuma/DOCS.md": "fb0b0eaa645937be7d39051054a8735d15c75122a652bcc8c5644a6fab6f4710",
-  "uptime-kuma/README.md": "aab96154b628fbf153747a9afd68ed939d460f59f6ad91480295610989d36e31",
+  "uptime-kuma/README.md": "02ab6bd49699a4e1e2f14a890f6b8a2eb6d8afaf37e8fb1ba3d5e60fb9ec3c96",
   "victoriametrics/CHANGELOG.md": "65dce418deb46e5872e401070d37547e465142002c50f99cb43c700bad36afe5",
   "victoriametrics/DOCS.md": "58cf2213dc2f2862ab9e9a972c15cd74a5bbc469a698286fbbcf2b97188afe8c",
   "victoriametrics/README.md": "cc22f3542ed2c888928fa090d05c70e90991e03bd69cd68392364cd304bb86aa",
