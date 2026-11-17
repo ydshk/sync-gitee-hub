@@ -1,14 +1,10 @@
 {
   "README.md": "5ee90f60f6139fb6fa676447245666ab48094e6f260a24eee0af2939caeb865e",
-  "esphome-beta/CHANGELOG.md": "de65131144621366de0e21de9e0bca922a7f4cb92fb01baae485c96c9a316b88",
   "esphome-beta/DOCS.md": "9ff3ce81ae9733f959287680828a3e232e3f2c43cbf10a8407c6a26cab527351",
   "esphome-beta/README.md": "b1adb68b180c2c0400067dba3add32f484afec6a0f7fc39b372559ca3d1fea77",
   "esphome-dev/CHANGELOG.md": "c91f7597e83df135bab60dd8676ebb4e805acdb4aafec29877f5d46a11a3882f",
   "esphome-dev/DOCS.md": "9541f83ceb98a1591901fa0a9a69120fcf0634a0acc57f5ea221fa62509d33fe",
   "esphome-dev/README.md": "292a0bc3775af3a9c97f29962a4ffe701d5b1dec51d0ada22baf013d87517e78",
-  "esphome/CHANGELOG.md": "c3779d86d6dc9fca940f84f5f2a9542a8dcca8a745ee780da79ccd8a62f6ed3c",
   "esphome/DOCS.md": "9ff3ce81ae9733f959287680828a3e232e3f2c43cbf10a8407c6a26cab527351",
-  "esphome/README.md": "46dd71b5859ba35d59c30ff7f8dd254ba2add43c16e92219eda0e352d523fab4",
-  "template/DOCS.md": "9ff3ce81ae9733f959287680828a3e232e3f2c43cbf10a8407c6a26cab527351",
-  "template/README.md": "46dd71b5859ba35d59c30ff7f8dd254ba2add43c16e92219eda0e352d523fab4"
+  "template/DOCS.md": "9ff3ce81ae9733f959287680828a3e232e3f2c43cbf10a8407c6a26cab527351"
 }
