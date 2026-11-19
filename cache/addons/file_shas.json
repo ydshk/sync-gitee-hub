@@ -1,5 +1,5 @@
 {
-  "README.md": "335f3f12b201e7d00f0f3742510120c244198d34764e3f1d3996e93f0e94fd1b",
+  "README.md": "dcc3002e2b638a6965759954323ecffaebf724785842bb6693b3cc4edfb904b2",
   "assist_microphone/CHANGELOG.md": "a60204fee60c70128e52ddb61f51fffa33aa16020414d0d1267f1bc184ed0402",
   "assist_microphone/DOCS.md": "42459db1a39f6764857a1dc5dbd6bfa1d750c4d9e9f150d5a050adf97a0cbce0",
   "assist_microphone/README.md": "ada904623c715a65fd4d6dc85d5cbdc76fb8ade1bc9e44fdf8370f44c7f9cd5b",
@@ -69,8 +69,8 @@
   "voice_support/CHANGELOG.md": "bb7b748073a4ba1f3bcae4803758fd86c6964d2fd97a8e1a58b9c4f066527b2d",
   "voice_support/DOCS.md": "6a2eb868ca8e9e6e3df8bb9715cc11804181c2ea321ea32e1d4b038bda720555",
   "voice_support/README.md": "6a2eb868ca8e9e6e3df8bb9715cc11804181c2ea321ea32e1d4b038bda720555",
-  "whisper/CHANGELOG.md": "667b484518d7fc9fbfe9a9736adcd291949d527a1eddf0905c4055fe4aafecba",
-  "whisper/DOCS.md": "2ad1e92cc2bd739836289306b19dc87a7afb07d48559dfe02f14a8951c9283fd",
+  "whisper/CHANGELOG.md": "57b08266ac47b62eeebb5b950a19eba7128d1a408cc65375374f22ad73a522a7",
+  "whisper/DOCS.md": "9a7be7f4df1794876c0f4dc1a7a77434b394f4794fd4160f84bb7868daec6824",
   "whisper/README.md": "1c53233c76118f066387321ae62e56b89b3beae70d306220f7f251226813e16b",
   "zwave_js/CHANGELOG.md": "1e1c470a207db0ffdfc13ab3a679b10b1909d5d8340f2384527f1dad3e675c33",
   "zwave_js/DOCS.md": "52a52f8c0d7170ee9db6dcc1a7a11672fbf53b34d5dcab6cf7982c4674bf1e57",
