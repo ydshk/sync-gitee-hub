@@ -2,12 +2,12 @@
   "README.md": "26dc2f35420ecb9ec910e02f58041caf4fb14fe7b098e7258fa493c0f2219d9f",
   "local_audio/CHANGELOG.md": "b708473df483d273354b8147c6061044f1b9bd066bac58c2f2f2af78a5cef2d6",
   "local_audio/README.md": "ad442a416466153bc5fc1bc17b47b4ea12fdd9c66de22ebcf69cac403c398d47",
-  "music_assistant/CHANGELOG.md": "08c8a19f6b27144133229b6c2e661b144b75e17f685b24e3c8d66e9a8d392e84",
+  "music_assistant/CHANGELOG.md": "8fe04ecedb303f845e4f88d84713b82b71de71e1d47502795939a12863898d2c",
   "music_assistant/README.md": "fff9958b4746ccde0e9cc07bae94a736d24178daa56ce849ae21e77e5f8beb74",
-  "music_assistant_beta/CHANGELOG.md": "3b1757373f5479da3f69ac6ce2f3275094d1016a7b8ecf68a57766262a77e652",
+  "music_assistant_beta/CHANGELOG.md": "6c99308fe54b93ec3254ef35ab12de52fc28f8421e76b29f715a16b9b9e3500b",
   "music_assistant_beta/README.md": "331e79380dc83640ae6e346287b5d86a6a070d5c703918d40adeaa27d09dd385",
   "music_assistant_dev/README.md": "6fdff503c63c2836671b33bb405ba50b0fdafc3c567bc017e3d7727b82123cba",
-  "music_assistant_nightly/CHANGELOG.md": "efdc24e90137ab6f0b5928eeed21f1f9707c7d47f125e64a2be639b3f3b9cb1f",
+  "music_assistant_nightly/CHANGELOG.md": "df4120e28855eaede12d69b753e45b5bd3b4830c127441fd7e47789d6a4c05b3",
   "music_assistant_nightly/README.md": "6b02b9b3812a2418f0df2ae3ca4eb37478b957447007714f8808c2482e687435",
   "netease_cloud_music_api/README.md": "50a9e1ed497580d76eabbe9ded83681802711ad9b662ffcae6af6dcda11338c8"
 }
